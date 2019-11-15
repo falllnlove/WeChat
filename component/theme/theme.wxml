@@ -1,0 +1,13 @@
+<view class="item J_itentionCityItem j_touch_slide swiper-slide">
+            <view class="photo">
+              <view class="img" style="background-image:url(https://pic.tujia.com/upload/resourcespic/day_190523/201905231754441259.png);"></view>
+              <view>
+                <text class="tit">北京</text>
+                <view class="item-per-capita">
+                  约￥
+                  <text class="val">420</text>
+                  /晚
+                </view>
+              </view>
+            </view>
+          </view>

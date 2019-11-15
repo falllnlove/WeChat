@@ -111,6 +111,60 @@
     </view>
   </view>
 </view>
+<view id="j_net_red_wrap">
+  <view class="tuhome-2-module tuhome-2-module-0">
+    <view class="box-head">
+      <text class="tit">网红美宿</text>
+    </view>
+    <view class="con">
+      <view class="con-1 j_net_red_left" data-ind="2">
+        <swiper style="height: 12.38rem;" autoplay="true" circular="true">
+          <block wx:for="{{beauty_lodge_list}}" wx:key="title" wx:if="{{index!=3}}">
+            <swiper-item>
+              <image src="{{item.subPictureUrl}}"></image>
+              <view class="tips">
+                <view class="tit">
+                  #
+                  <text class="val">{{item.title}}</text>
+                </view>
+                <view class="txt">
+                  <view class="unit"></view>
+                  <view class="val">{{item.subTitle}}</view>
+                </view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="con-2">
+        <view class="item item-1 j_small_pic_right">
+          <image src="https://pic.tujia.com/upload/resourcespic/day_191111/201911111854115121.jpg" mode="aspectFit"></image>
+          <view class="tips">
+            <text class="txt">种草笔记</text>
+          </view>
+        </view>
+        <view class="item item-1 j_small_pic_right">
+          <image src="https://pic.tujia.com/upload/resourcespic/day_191106/201911061500141438.jpg" mode="aspectFit"></image>
+          <view class="tips">
+            <text class="txt">古董民宿</text>
+          </view>
+        </view>
+        <view class="item item-1 j_small_pic_right">
+          <image src="https://pic.tujia.com/upload/resourcespic/day_191028/201910281719578743.jpg" mode="aspectFit"></image>
+          <view class="tips">
+            <text class="txt">爆款清单</text>
+          </view>
+        </view>
+        <view class="item item-1 j_small_pic_right">
+          <image src="https://pic.tujia.com/upload/resourcespic/day_190806/201908062132584077.jpg" mode="aspectFit"></image>
+          <view class="tips">
+            <text class="txt txt-btn">去逛逛</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
 <view class="box-head">
   <text class="tit">民宿榜单</text>
 </view>
@@ -265,6 +319,36 @@
             </view>
           </block>
         </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>
+<view id="j_intentCityContainer">
+  <view class="bnbhome-2-module bnbhome-2-module-featured">
+    <view class="box-head">
+      <text class="tit">热门目的地</text>
+    </view>
+    <view class="box-body">
+      <view class="slides slides-featured" style="height:12rem;">
+        <view class="slides-list swiper-wrapper">
+          <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+            <block wx:for="{{Hot_destination}}" wx:key="title">
+              <view class="item J_itentionCityItem j_touch_slide swiper-slide">
+                <view class="photo">
+                  <view class="img" style="background-image:url({{item.pictureUrl}});"></view>
+                  <view>
+                    <text class="tit">{{item.title}}</text>
+                    <view class="item-per-capita">
+                      约￥
+                      <text class="val">{{item.subTitle}}</text>
+                      /晚
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </view>
       </view>
     </view>
   </view>
