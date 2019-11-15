@@ -1376,7 +1376,7 @@ margin-left: -1.5rem;
   height: 1.2rem;
 }
 .pop-order-product-box .bnbdetail-box-service .list-device .ico {
-  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-02.v4.png?v=0);
+  background-image: url(http://pic.c-ctrip.com/h5/bnb/ico-02.v4.png?v=0);
   background-size: 12.9rem 11.6rem;
   background-repeat: no-repeat;
 }
