@@ -1,0 +1,330 @@
+.bnblist-header-fix {
+    text-align: center;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.bnblist-header-fix .con .btn-o-back::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -0.6rem;
+    margin-top: -0.6rem;
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-21.v2.png?v=0);
+    background-size: 5.9rem 5.9rem;
+    background-repeat: no-repeat;
+    background-position: -4.7rem -2.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.bnblist-header-fix > .con {
+    background: 
+    #fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    min-height: 4.1rem;
+}
+
+.bnblist-header-fix .con .btn-o-back  {
+    width: 2.4rem;
+    float: left;
+    position: relative;
+}
+
+.bnblist-header-fix .con .btn-o-back::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -0.6rem;
+    margin-top: -0.6rem;
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-21.v2.png?v=0);
+    background-size: 5.9rem 5.9rem;
+    background-repeat: no-repeat;
+    background-position: -4.7rem -2.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.bnblist-header-fix .btn-o-back, .bnblist-header-fix .btn-o-map {
+    height: 2.2rem;
+    box-sizing: border-box;
+}
+
+.bnblist-header-fix .con .btn-o-map {
+    width: 2.4rem;
+    float: right;
+    position: relative;
+}
+
+.bnblist-header-fix .con .btn-o-map::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -0.6rem;
+    margin-top: -0.6rem;
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-21.v2.png?v=0);
+    background-size: 5.9rem 5.9rem;
+    background-repeat: no-repeat;
+    background-position: -4.7rem -1.3rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.bnblist-header-fix .con .input-search {
+    height: 1.6rem;
+    margin-top: 0.3rem;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    background: 
+    #f4f4f4;
+}
+
+.bnblist-header-fix .input-search {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.bnblist-header-fix .con .input-search .con-city {
+    font-size: 0.7rem;
+}
+
+.bnblist-header-fix .con-city.con-city-word2 {
+    line-height: 1.6rem;
+}
+
+.bnblist-header-fix .con-city {
+    margin-top: .24rem;
+    margin-bottom: .1rem;
+    text-align: left;
+    overflow: hidden;
+    width: auto;
+    white-space: nowrap;
+}
+
+.bnblist-header-fix .con-city, .bnblist-header-fix .con-date, .bnblist-header-fix .con-input {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bnblist-header-fix .con-city view{
+    min-width: 2.6rem;
+    box-sizing: border-box;
+}
+
+.bnblist-header-fix .con-city text {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    height: 1.6rem;
+    min-width: 1.4rem;
+}
+
+.bnblist-header-fix .con-city text {
+    display: block;
+    box-sizing: border-box;
+}
+
+.bnblist-header-fix .con-date::before, .bnblist-header-fix .con-date::after {
+    content: "";
+    display: block;
+    border-style: solid;
+    border-color: 
+    #ddd;
+    position: absolute;
+    border-width: 0 0 0 1px;
+    left: 0;
+    top: 0.2rem;
+    bottom: 0.2rem;
+}
+
+iphoneinweb .bnblist-header-fix .con .input-search .con-date {
+    font-weight: 500;
+}
+.bnblist-header-fix .con-date {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    text-align: left;
+    border-width: 0;
+    height: 1.6rem;
+    position: relative;
+}
+
+.bnblist-header-fix .con-date::after {
+    left: auto;
+    right: 0;
+}
+.bnblist-header-fix .con-date::before, .bnblist-header-fix .con-date::after {
+    content: "";
+    display: block;
+    border-style: solid;
+    border-color: 
+    #ddd;
+    position: absolute;
+    border-width: 0 0 0 1px;
+    top: 0.2rem;
+    bottom: 0.2rem;
+}
+
+
+.bnblist-header-fix .con .input-search .con-date {
+    font-size: 9px;
+    line-height: 0.7rem;
+}
+.bnblist-header-fix .con .input-search .con-date .txt-checkin, .bnblist-header-fix .con .input-search .con-date .txt-checkout {
+    min-width: 1.8rem;
+}
+.bnblist-header-fix .con-date > div {
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+.bnblist-header-fix .con-date > div + div {
+    margin-top: 0.05rem;
+}
+
+.bnblist-header-fix .con .input-search input {
+    font-size: 0.65rem;
+    display: block;
+    width: 100%;
+    height: 1.6rem;
+    padding: 0.4rem 0rem 0.4rem 0.6rem;
+    box-sizing: border-box;
+}
+.bnblist-tabs-filter {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    transition: all 0.5s ease-in-out;
+    justify-content: space-between;
+}
+
+.body-iphone .bnblist-tabs-filter .item, .body-iphoneinweb .bnblist-tabs-filter .item {
+    font-weight: 500;
+}
+
+.bnblist-tabs-filter .item-sort, .bnblist-tabs-filter .item-date {
+    padding-left: 1rem;
+}
+
+.bnblist-tabs-filter .item {
+    flex: 0;
+    flex-basis: auto;
+    position: relative;
+}
+.bnblist-tabs-filter .item {
+
+    font-size: 0.7rem;
+    line-height: 0.9rem;
+    padding: 0.5rem 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    white-space: normal;
+    color: #666;
+}
+
+.bnblist-tabs-filter .item::before {
+    content: '\2003\2003\2003\2003\2003';
+}
+
+.bnblist-tabs-filter .item {
+    font-size: 0.7rem;
+    line-height: 0.9rem;
+    white-space: normal;
+    color: #666;
+}
+.bnblist-tabs-filter .item-area .txt {
+    text-overflow: clip;
+}
+.bnblist-tabs-filter .item .txt {
+    position: absolute;
+    right: 0.75rem;
+}
+
+.bnblist-tabs-filter .item .txt {
+    max-width: 4.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.bnblist-tabs-filter .item::after {
+    content: '';
+    display: block;
+    line-height: 0.7rem;
+    margin-left: 0.15rem;
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-06.v9.png?v=0);
+    background-size: 14rem 8.7rem;
+    background-repeat: no-repeat;
+    background-position: -3rem -6.4rem;
+    width: 0.4rem;
+    height: 0.3rem;
+    transition: transform 0.2s;
+    
+}
+.bnblist-tabs-filter .item-filter::before {
+    content: '\2003\2003';
+}
+.bnblist-tabs-filter .item-filter {
+    padding-right: 1rem;
+}
+.bnblist-tabs-filter .item-filter .txt {
+    right: 1.55rem;
+}
+
+.bnblist-header-fix .bnblist-fastfilter {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.bnblist-fastfilter {
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transform: translate3d(0, 0, 0);
+    font-size: 0;
+    text-align: left;
+    box-shadow: inset 0 -1px 1px -1px #e1e1e1;
+    background: #fff;
+    padding: 0.3rem 0.5rem 0.5rem 1rem;
+}
+
+.bnblist-fastfilter .item {
+    background: 
+    #f4f4f4;
+}
+.bnblist-fastfilter .item {
+    max-width: 30%;
+    color: 
+    #999;
+    position: relative;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 0.7rem;
+    padding: 0.35rem 0.55rem;
+    border-radius: 1.4rem;
+    margin-right: 0.35rem;
+    display: inline-block;
+}
+
+

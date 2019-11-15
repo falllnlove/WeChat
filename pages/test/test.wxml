@@ -1,0 +1,22 @@
+<view id="main">
+  <view class="main-frame">
+    <view class="main-viewport">
+      <view id="client_id_viewport_5_1573439788181">
+        <view class="bnb-header bnbdate-header is-fix">
+          <text class="tit">选择入离日期</text>
+        </view>
+        <view id="ui-view-10" class="view">
+          <view class="cui_cldweek">
+          <text>日</text>
+          <text>一</text>
+          <text>二</text>
+          <text>三</text>
+          <text>四</text>
+          <text>五</text>
+          <text>六</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

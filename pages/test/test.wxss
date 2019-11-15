@@ -1,0 +1,54 @@
+main {
+  height: 100%;
+}
+X
+.main-frame {
+  min-width: 240px;
+  height: 100%;
+}
+
+.main-viewport {
+  position: relative;
+  height: 100%;
+}
+.tit {
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    font-size: 0.85rem;
+    color: 
+    #333;
+    line-height: 2.2rem;
+    height: 2.2rem;
+    overflow: hidden;
+    margin-left: 4.2rem;
+    margin-right: 4.2rem;
+    font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3',       'Microsoft YaHei', arial, sans-serif;
+}
+
+.cui_cldweek {
+    z-index: 2;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    font: 400 12px/24px verdana;
+    border-bottom: 1px solid #c8c8c8;
+    background:
+    #f7f7f7;
+    border-bottom-color:
+#ddd !important;
+color:
+#666;
+}
+
+.cui_cldweek text {
+    float: left;
+    width: 14%;
+    text-align: center;
+}
+
+.cui_cldweek text:nth-of-type(7n+1), .cui_cldweek text:nth-of-type(7n), .cui_cld_daybox text:nth-of-type(7n+1) {
+    color: 
+    #ff6d57 !important;
+}

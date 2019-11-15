@@ -1,0 +1,63 @@
+<view id="topbar_container" class="bnblist-header-fix">
+  <view class="con">
+    <text class="btn-o-back J_back"></text>
+    <text class="btn-o-map J_map"></text>
+    <view class="input-search">
+      <view class="con-city con-city-word2">
+        <view class="J_cityItem">
+          <text class="J_city">洛阳</text>
+        </view>
+      </view>
+      <view class="con-date J_selectDate">
+        <view class="txt-checkin">
+          <text class="txt">住</text>
+          <text class="val J_cktime">11-13</text>
+        </view>
+
+        <view class="txt-checkout">
+          <text class="txt">离</text>
+          <text class="val J_ottime">11-14</text>
+        </view>
+      </view>
+      <view class="con-input">
+        <view>
+          <input class="input J_inputKeywords" type="text" name="" readonly="" placeholder="关键字/位置/民宿名"></input>
+        </view>
+      </view>
+    </view>
+    <view class="bnblist-tabs-filter">
+      <view class="item item-sort J_sortFilter">
+        <text class="txt">推荐排序</text>
+      </view>
+      <view class="item item-area J_areaFilter">
+        <text class="txt">位置区域</text>
+      </view>
+      <view class="item item-price J_priceFilterr">
+        <text class="txt">价格区间</text>
+      </view>
+      <view class="item item-filter J_chooseFilterr">
+        <text class="txt">筛选</text>
+      </view>
+    </view>
+  </view>
+  <view class="bnblist-fastfilter J_fastFilter">
+    <view class="item  " data-ind="0" data-id="4005" data-trackid="0" data-type="salesStrategyType" data-name="salesStrategyType" data-value="1">连住优惠</view>
+    <view class="item  " data-ind="0" data-id="4005" data-trackid="0" data-type="salesStrategyType" data-name="salesStrategyType" data-value="1">新房特惠</view>
+    <view class="item  " data-ind="0" data-id="4005" data-trackid="0" data-type="salesStrategyType" data-name="salesStrategyType" data-value="1">优选PRO</view>
+    <view class="item  " data-ind="0" data-id="4005" data-trackid="0" data-type="salesStrategyType" data-name="salesStrategyType" data-value="1">闪订</view>
+    <view class="item  " data-ind="0" data-id="4005" data-trackid="0" data-type="salesStrategyType" data-name="salesStrategyType" data-value="1">市区</view>
+    <view class="item  " data-ind="0" data-id="4005" data-trackid="0" data-type="salesStrategyType" data-name="salesStrategyType" data-value="1">位置极好</view>
+    <view class="item  " data-ind="0" data-id="4005" data-trackid="0" data-type="salesStrategyType" data-name="salesStrategyType" data-value="1">干净舒心</view>
+    <view class="item  " data-ind="0" data-id="4005" data-trackid="0" data-type="salesStrategyType" data-name="salesStrategyType" data-value="1">房东热情 </view>
+  </view>
+  <view class="bnblist-pop bnblist-pop-rank is-hide J_sortlist"></view>
+  <view class="bnblist-pop bnblist-pop-location is-hide J_arealist">
+    <view class="con-list  dflex J_areaContainer">
+      <view class="bnb-filter-sort dflex1 j_condition_wrap" style="-webkit-overflow-scrolling:touch">
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10" style="">
+      </view>
+    </view>
+  </view>
+
+</view>

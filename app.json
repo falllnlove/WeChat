@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/houseList/houseList",
+    "pages/rili/rili",
+    "pages/test/test",
+    "pages/index/index",
+    "pages/logs/logs"
+    
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "测试"
+      }
+      ,
+      {
+        "pagePath": "pages/rili/rili",
+        "text": "日历"
+      }
+      ,
+      {
+        "pagePath": "pages/houseList/houseList",
+        "text": "房屋列表"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
