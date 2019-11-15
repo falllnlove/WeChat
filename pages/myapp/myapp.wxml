@@ -1,0 +1,234 @@
+<!--myapp.wxml-->
+
+<view class="header">
+  <swiper autoplay="true" circular="true">
+    <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHVWHQqI8R9rpZeja7Mpibes3d7KVibe6a2sOx2s6Svhj37tIteicibOQQdzJwGKNnnq8oY2Dpcc7QesLA/0"></image></swiper-item>
+  <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHUicScREpdI4KdBYhFzchbO7cT37m3RueeA0h8UyofjEzPic530wXLAByHRf1tibC4VdnCBm9NtN58VA/0"></image></swiper-item>
+  <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHVWHQqI8R9rpZeja7Mpibes3rFqpu42TpqiaSX02Mcomu3l2sXE9J0x4W6icRUwSqCgKibf5oFmQx5hEw/0"></image></swiper-item>
+  <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHUicScREpdI4KdBYhFzchbO7icicKiakXXFTQDFp3TeJI2XPxnfZ1NNQPvJmbOq3NdbmXAL9VksEAvHSA/0"></image></swiper-item>
+  <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHUicScREpdI4KdBYhFzchbO7iaX5QMz1l80osrzlgbamYJMG0BuOuibaPOJicHvaFcbU9bg8OTupnTCIg/0"></image></swiper-item>
+  </swiper>
+</view>
+<view class="choice_area">
+  <view style="font-size:{{size_china}}px;font-weight: {{bold_c}};color:#3c3c3c;"  bindtap="Underline_china">国内</view>
+  <view style="font-size:{{size_overseas}}px;font-weight: {{bold_o}};color:#3c3c3c;" bindtap="Underline_overseas">海外</view>
+</view>
+<view class="Underline_inland">
+  <view class="{{Underline_china}}"></view>
+  <view class="{{Underline_overseas}}"></view>
+</view>
+<view class="con-box">
+  <view class="con-city">
+    <view class="btn-o-your-location"><view>当前位置</view></view>
+    <view class="con-input"><text class="txt">{{city}}</text></view>
+  </view>
+  <view class="con con-date">
+    <view class="btn-o-person">
+      <view class="j_person_text">不限人数</view>
+    </view>
+    <view class="j_date">
+      <view class="txt txt-default j_date_defalut" style="display: none;">入住离店日期</view>
+      <view style="display: inline;">
+        <view class="txt-date j_ckin">11.08</view>
+        <view class="txt-week j_ckin_week">今天</view>
+        <view class="txt-day j_night">1晚</view>
+        <view class="txt-date j_ckout">11.09</view>
+        <view class="txt-week j_ckout_week">明天</view>
+      </view>
+    </view>
+  </view>
+  <view class="con con-keyword">
+      <view class="btn-o-close j_delete" style="display: none;"></view>
+      <view class="con-input j_keyword">
+        <view class="txt txt-default j_key_default">关键字/位置/民宿名</view>
+        <view class="txt j_search_text" style="display: none;"></view>
+      </view>
+    </view>
+</view>
+<view class="btn-o-search j_search_btn">查找民宿</view>
+<view class="con-btns">
+  <view class="btn-browser j_my_scan">
+    <view class="ico"></view>
+    <view class="txt1">
+      收藏
+      <text class="txt-sign">·</text>
+      浏览
+    </view>
+  </view>
+  <view class="btn-order j_my_order">
+    <view class="ico"></view>
+    <view class="txt1">我的订单</view>
+  </view>
+</view>
+<view class="cut-off rule"></view>
+<view class="j_red_envelope">
+  <view class="bnbhome-2-module bnbhome-2-module-coupon-t3">
+    <view class="tit">150元起民宿优惠券</view>
+    <view class="btn-o-receive">领取</view>
+  </view>
+</view>
+<view class="j_tra_theme">
+  <view class="bnbhome-2-module bnbhome-2-module-topic-t2 is-type-10">
+    <view class="j_theme_item  item item-ico-001" data-index="0">
+      <view class="ico_theme"></view>
+      <view class="tit">家庭出游</view>
+    </view>
+    <view class="j_theme_item  item item-ico-003" data-index="1">
+      <view class="ico_theme"></view>
+      <view class="tit">商务差旅</view>
+    </view>
+    <view class="j_theme_item  item item-ico-004" data-index="2">
+      <view class="ico_theme"></view>
+      <view class="tit">宠物出游</view>
+    </view>
+    <view class="j_theme_item  item item-ico-002" data-index="3">
+      <view class="ico_theme"></view>
+      <view class="tit">聚会轰趴</view>
+    </view>
+    <view class="j_theme_item  item item-ico-005" data-index="4">
+      <view class="ico_theme"></view>
+      <view class="tit">允许做饭</view>
+    </view>
+    <view class="j_theme_item  item item-ico-006" data-index="5">
+      <view class="ico_theme"></view>
+      <view class="tit">途家豪宅</view>
+    </view>
+    <view class="j_theme_item  item item-ico-007" data-index="6">
+      <view class="ico_theme"></view>
+      <view class="tit">老洋房</view>
+    </view>
+    <view class="j_theme_item  item item-ico-008" data-index="7">
+      <view class="ico_theme"></view>
+      <view class="tit">Top美宿</view>
+    </view>
+    <view class="j_theme_item  item item-ico-011" data-index="8">
+      <view class="ico_theme"></view>
+      <view class="tit">小清新风</view>
+    </view>
+    <view class="j_theme_item  item item-ico-013" data-index="9">
+      <view class="ico_theme"></view>
+      <view class="tit">北欧风</view>
+    </view>
+  </view>
+</view>
+<view class="box-head">
+  <text class="tit">民宿榜单</text>
+</view>
+<view class="bnb-product-list-t2 bnbhome-2-product-list-t2 bnbhome-2-product-list-t2-editor-selection swiper-container-horizontal swiper-container">
+  <view class="con-scroll swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);transition-duration: 0ms;">
+    <view wx:for="{{bangdans}}" wx:key="mainTitle">
+      <view class="list-item swiper-slide j_touch_slide j_selectedTop_item swiper-slide-active active_{{index}}">
+      <view class="bnb-list-photo">
+        <image src="{{item.firstImage}}" style="opacity: 1;"></image>
+      </view>
+      <view class="list-item-con">
+        <view class="tit">{{item.mainTitle}}</view>
+        <view class="tit-tip">{{item.subTitle}}</view>
+      </view>
+    </view>
+    </view>
+  </view>
+</view>
+<wxs src='../../wxs/utils.wxs' module='tools'/>
+<view id="j_hot_zone">
+  <view class="bnbhome-2-module bnbhome-2-module-hot">
+    <view class="box-head">
+      <text class="tit">热门商圈</text>
+    </view>
+    <view class="tabs swiper-container-horizontal swiper-container-ios">
+      <view class="con-scroll swiper-wrapper">
+        <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+          <block wx:for="{{business_list}}" wx:key="zoneName" wx:if="{{index==0}}">
+            <view class="{{isSelect==index?'active':''}} item swiper-slide j_hot_zone_item swiper-slide-active" data-id="{{index}}" data-zoneId="{{item.zoneId}}" bindtap="business_tap">
+              <text class="tit">{{item.zoneName}}</text>
+              <view class="txt">
+                <text class="val">{{item.hot}}</text>
+              </view>
+            </view>
+          </block>
+          <block wx:for="{{business_list}}" wx:key="zoneName" wx:if="{{index>0}}">
+            <view class="{{isSelect==index?'active':''}} item swiper-slide j_hot_zone_item swiper-slide-active" data-id="{{index}}" data-zoneId="{{item.zoneId}}" bindtap="business_tap">
+              <text class="tit">{{item.zoneName}}</text>
+              <view class="txt">
+                <text class="val">{{item.hot}}</text>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+      <text class="swiper-notification" aria-live="assertive" aria-atomic="true"></text>
+    </view>
+    <view id="j_zone_pro_wrap" class="bnb-product-list-t3 bnbhome-2-product-list-t3 bnbhome-2-product-list-t3-hot">
+      <block wx:for="{{room_list}}" wx:key="pname" wx:for-item="page">
+        <view class="list-item j_hot_zone_pro_item j_touch_slide">
+          <view class="bnb-list-photo">
+            <view class="con-slides">
+              <view>
+                <image class="lazy" src="{{tools.sub_img(page.proimg)}}" style="opacity: 1;"></image>
+              </view>
+            </view>
+          </view>
+          <view class="list-item-con">
+            <view class="con-rule">
+              <text class="txt-point">{{page.commentScore}}分</text>
+              <text class="txt-topic">{{page.theHouseType}}</text>
+              <view class="txt-size">
+                {{page.rname}}
+              </view>
+              <view class="txt-bed">
+                {{page.beds}}床
+              </view>
+            </view>
+            <view class="tit">{{page.pname}}</view>
+            <view class="con-price">
+              <view class="txt-price-now">
+                <text class="unit">￥</text>
+                <text class="price">{{page.price.price}}</text>
+              </view>
+              <block wx:if="{{page.price.originalPrice != page.price.price}}">
+                <view class="txt-price-origin">
+                  <text class="val">￥{{page.price.originalPrice}}</text>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="btn-o-more j_hot_zone_more">
+      查看更多
+    </view>
+  </view>
+</view>
+<view class="j_promotion_portal">
+  <view class="bnbhome-2-module bnbhome-2-module-promotions-t3">
+    <view class="box-head">
+      <text class="tit">超值特惠</text>
+    </view>
+    <view class="con">
+      <view class="con-0 j_promotion_item">
+        <view class="item item-0">
+          <text class="tit">今日甩卖</text>
+          <view class="txt">
+            <text class="val">1折</text>
+          </view>
+        </view>
+      </view>
+      <view class="con-1">
+        <view class="item item-1 j_promotion_item">
+          <text class="tit">新房特惠</text>
+          <view class="txt">
+            <text class="val">5折</text>
+          </view>
+        </view>
+        <view class="item item-2 j_promotion_item">
+          <text class="tit">连住优惠</text>
+          <view class="txt">
+            <text class="val">7折</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+222222222222222222222222222222222222222222222222222222222222222

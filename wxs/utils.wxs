@@ -1,0 +1,7 @@
+var sub_img = function(url){
+  if (url.length == 0 || url == undefined) {
+    return;
+  }
+  return url.substring(0, parseInt(url.length - 6))
+}
+module.exports.sub_img = sub_img;

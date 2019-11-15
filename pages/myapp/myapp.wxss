@@ -1,0 +1,1130 @@
+button,  text{
+  color: #3c3c3c;
+  font: 400 0.6rem/1.5 -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
+}
+.header swiper swiper-item image{
+  width: 100%;
+  height: 250%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.choice_area view{
+  display: inline-block;
+  margin:2% 0 0 25%;
+}
+.Underline_inland{
+  margin-top: 0.5%;
+  height: 10rpx;
+}
+.Underline_inland view{
+  border-radius: 10rpx;
+  float: left;
+  height: 80%;
+  width: 9%;
+  margin-left: 26%;
+}
+.Underline_inland view:last-child{
+  margin-left: 27%;
+}
+.show{
+  background-image:linear-gradient(-90deg, #ff9337 0%, #ff6a50 100%);
+}
+.con{
+  border-width: 0 0 1px;
+  padding: .8rem 0 .6rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.con-box{
+  margin-top:0.4rem;
+  font-size: .75rem;
+}
+.con-city{
+  height: 3.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #f5f5f5;
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+  border: none;
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 auto;
+}
+.btn-o-your-location{
+  padding-top: 0.475rem;
+  padding-bottom: 0.475rem;
+  padding-right: 0;
+  font-size: 0.7rem;
+  float: right;
+  text-align: center;
+  padding: 0.8rem 0.4rem 0.25rem;
+  margin-left: .5rem;
+}
+.btn-o-your-location::before{
+  transform: scale(1.3);
+  margin-bottom: 0.2rem;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  content: "";
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-05.v3.png?v=0);
+  background-size: 5rem 5rem;
+  background-repeat: no-repeat;
+  background-position: -2.4rem -1.4rem;
+  width: 1rem;
+  height: 1rem;
+}
+.con-input{
+  padding: 1.1rem 0;
+  font-size: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.txt{
+  line-height: 2.3rem;
+  display: inline-block;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.con-date{
+  height: 3.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #f5f5f5;
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+  border: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+  margin: 0.5rem 1.3rem 0 1.3rem;
+}
+.btn-o-person{
+  min-width: 3.5rem;
+  position: relative;
+  border: none;
+  color: #3c3c3c;
+  display: block;
+  float: right;
+  height: 1.8rem;
+  line-height: 1.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-right: -0.3rem;
+  margin-top: 0rem;
+  margin-bottom: -0.2rem;
+  padding: 0 0.7rem;
+  box-sizing: border-box;
+}
+.j_person_text{
+  color: #3c3c3c;
+  line-height: 1.9rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.btn-o-person:after{
+  left: 0;
+  top: 0.1rem;
+  bottom: 0;
+  height: auto;
+  border: none;
+  background: #ddd;
+  content: '';
+  position: absolute;
+  width: 1px;
+  transform: scaleX(0.5);
+  transform-origin: 0 0;
+}
+.txt-default{
+  color: #999;
+}
+.txt-date{
+  font-weight: 700;
+  display: inline-block;
+  line-height: 1.8rem;
+  font-size: 1.3rem;
+  padding-right: .2rem;
+  color: #3c3c3c;
+}
+.txt-week{
+  display: inline-block;
+  line-height: 1rem;
+  color: #3c3c3c;
+  font-size: .6rem;
+}
+.txt-day{
+  display: inline-block;
+  font-size: 0.6rem;
+  padding: 0 0.4rem;
+  margin: 0 .4rem;
+  vertical-align: text-top;
+  position: relative;
+  border: none;
+}
+.con-keyword{
+  padding-top: 0.725rem;
+  padding-bottom: 0.725rem;
+  height: 3.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #f5f5f5;
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+  border: none;
+  box-sizing: border-box;
+  margin:0.5rem 1.3rem 0 1.3rem;
+}
+.btn-o-close{
+  width: 1rem;
+  height: 1rem;
+  float: right;
+  position: relative;
+  white-space: nowrap;
+}
+.con-input{
+  display: block;
+  margin-right: 1.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0.6rem 0 0 0;
+}
+.txt-default{
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: #ccc;
+}
+.btn-o-search{
+  font-weight: 500;
+  border-radius: 1.225rem;
+  font-size: 1rem;
+  height: 2.7rem;
+  line-height: 2.7rem;
+  background-image: linear-gradient(-89deg, #ff8440 2%, #ff6a50 100%);
+  text-align: center;
+  color: #fff;
+  padding: 0 0.4rem;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(255, 128, 65, 0.25);
+  margin: 0.5rem 1rem 1rem;
+}
+.con-btns{
+  margin: -0.8rem 1rem 0.2rem;
+  background: none;
+  font-size: 0;
+  color: #3c3c3c;
+  display: flex;
+  padding: 0;
+}
+.btn-browser{
+  position: relative;
+  font-size: 0.7rem;
+  width: 50%;
+  height: 2.45rem;
+  text-align: center;
+  line-height: 2.45rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-browser::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0.65rem;
+  background: #ddd;
+  width: 1px;
+  height: 1.25rem;
+  transform: scaleX(0.5);
+  transform-origin: 0 0;
+}
+.ico{
+  background-image: url(http://pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: -27.175rem -5.4rem;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0!important;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.3rem;
+}
+.con-btns .txt1{
+  display: inline-block;
+  margin-top: 0;
+  line-height: 0.7rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.txt-sign{
+  font-weight: 500;
+  padding: 0 0.1rem;
+  line-height: 0.7rem;
+}
+.btn-order{
+  position: relative;
+  border: none;
+  font-size: 0.7rem;
+  width: 50%;
+  height: 2.45rem;
+  text-align: center;
+  line-height: 2.45rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3c3c3c;
+}
+.btn-order .ico{
+  background-image: url(http://pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: -26.075rem -5.4rem;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0!important;
+}
+.cut-off{
+  background-color: #f5f5f5;
+  height: 0.5rem;
+}
+.j_red_envelope{
+  color: #3c3c3c;
+  font: 400 1rem/1.5 -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
+}
+.box-head{
+  padding-bottom: 0.6rem;
+  padding-top: 0;
+  padding: 1rem;
+}
+.box-head .tit{
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.3rem;
+  display: inline-block;
+  letter-spacing: -0.025rem;
+  color: #3c3c3c;
+}
+.bnbhome-2-module-coupon-t3{
+  display: flex;
+  margin: 1rem;
+  width: auto;
+  height: 3rem;
+  border-radius: 0.15rem;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #fee3e7;
+}
+.bnbhome-2-module-coupon-t3::before{
+  background-image: url(http://pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: -27.7rem -3.75rem;
+  width: 5.05rem;
+  height: 1.2rem;
+  content: '';
+  display: inline-block;
+  margin-left: 0.6rem;
+  z-index: 1;
+}
+.bnbhome-2-module-coupon-t3::after{
+  background-image: url(http://pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: -14.15rem 0;
+  width: 26.275rem;
+  height: 2.75rem;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
+  z-index: 0;
+}
+.bnbhome-2-module-coupon-t3 .tit{
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #b91927;
+  line-height: 1.05rem;
+  letter-spacing: 0.0235rem;
+  margin-left: 0.35rem;
+  z-index: 1;
+}
+.btn-o-receive{
+  font-size: 0.85rem;
+  margin-right: 1rem;
+  line-height: 1.05rem;
+  color: #c11524;
+  letter-spacing: -0.01575rem;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.06);
+  position: absolute;
+  right: 0.2rem;
+  z-index: 1;
+}
+.btn-o-receive::after{
+  background-image: url(http://pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: -35.8rem -2.85rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0.1rem;
+  margin-left: 0.1rem;
+}
+.is-type-10{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem 0.65rem;
+}
+.is-type-10 .item{
+  width: 20%;
+  margin-bottom: 0.85rem;
+}
+.ico_theme{
+  margin: 0 auto;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.ico_theme::before{
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-19-3x.png?v=3);
+  background-repeat: no-repeat;
+  background-size: 11.1rem 11.1rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  transform: scale(0.55555556);
+  transform-origin: 0 0;
+  content: '';
+  display: block;
+  position: absolute;
+}
+.item-ico-001 .ico_theme:before{
+  background-position: -2.8rem 0;
+}
+.item-ico-003 .ico_theme:before{
+  background-position: 0 -2.8rem;
+}
+.item-ico-004 .ico_theme:before{
+  background-position: -2.8rem -2.8rem;
+}
+.item-ico-002 .ico_theme:before{
+  background-position: -2.8rem -5.6rem;
+}
+.item-ico-005 .ico_theme:before{
+  background-position: -5.6rem 0;
+}
+.item-ico-006 .ico_theme:before{
+  background-position: -5.6rem -2.8rem;
+}
+.item-ico-007 .ico_theme:before{
+  background-position: 0 -5.6rem;
+}
+.item-ico-008 .ico_theme:before{
+  background-position: 0 0;
+}
+.item-ico-011 .ico_theme:before{
+  background-position: -8.4rem -2.8rem;
+}
+.item-ico-013 .ico_theme:before{
+  background-position: 0 -8.4rem;
+}
+.j_theme_item.item .tit{
+  min-width: 3.35rem;
+  font-size: 0.6rem;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  margin-top: 0.35rem;
+  color: #3c3c3c;
+  text-align: center;
+}
+.bnbhome-2-product-list-t2-editor-selection{
+  border-radius: 0 0 0.15rem 0.15rem;
+  padding-bottom: 0.4rem;
+  font-size: 0;
+  display: block;
+  padding-left: 0.4rem;
+  padding-right: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.con-scroll{
+  white-space: nowrap;
+}
+.bnb-product-list-t2 .list-item{
+  padding: 0.5rem 0 1rem;
+  font-size: 0.65rem;
+  position: relative;
+  transition: all 0.5s;
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item{
+  display: inline-block;
+  width: 16.25rem;
+  padding: 0;
+  vertical-align: top;
+  margin-right: 0.6rem;
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item{
+  width: 13rem;
+  min-height: 12.95rem;
+  box-shadow: 0 0.175rem 0.575rem 0 rgba(66, 82, 101, 0.16);
+  border-radius: 0.15rem;
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item{
+  width: 7.5rem;
+  min-height: 10.925rem;
+  box-shadow: none;
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item{
+  width: 8rem;
+}
+.bnb-product-list-t2 .list-item:first-child{
+  border: none;
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item .bnb-list-photo{
+  width: 8rem;
+  height: 7.5rem;
+  position: relative;
+  background: #e5e5e5;
+  z-index: 1;
+  font-size: 0.65rem;
+  border-radius: 0.15rem;
+}
+.bnb-product-list-t2 .bnb-list-photo:after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.15rem;
+  background: rgba(255, 255, 255, 0);
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item .bnb-list-photo image{
+  height: 100%;
+  min-width: 100%;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  user-select: none;
+  border-radius: 0.15rem;
+  vertical-align: middle;
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item .list-item-con{
+  position: relative;
+  padding-top: 0.65rem;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0 0 0.15rem 0.15rem;
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item .list-item-con:before{
+  content: '';
+  display: inline-block;
+  top: -0.15rem;
+  left: 0rem;
+  position: absolute;
+  background-image: url(http://pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: -27.7rem -2.85rem;
+  width: 8rem;
+  height: 0.8rem;
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item .list-item-con>.tit{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  line-height: 0.95rem;
+  padding-top: 0;
+  color: #3c3c3c;
+  margin-top: 0.2rem;
+  font-weight: 700;
+  text-align: left;
+}
+.bnbhome-2-product-list-t2-editor-selection .list-item .list-item-con .tit-tip{
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  color: #3c3c3c;
+  max-width: 7rem;
+  font-size: 0.65rem;
+  line-height: 0.85rem;
+  margin-top: 0.1rem;
+}
+.active{
+  transform: scale(0.95)
+}
+.bnb-product-list-t2 .con-scroll{
+  animation: go 12s linear infinite alternate;
+}
+@keyframes go {
+    0% { transform: translate3d(0px, 0px, 0px)}
+   10% { transform: translate3d(-43.5px, 0px, 0px)}
+   20% { transform: translate3d(-87px, 0px, 0px)}
+   30% { transform: translate3d(-103.5px, 0px, 0px)}
+   40% { transform: translate3d(-174px, 0px, 0px)}
+   50% { transform: translate3d(-217.5px, 0px, 0px)}
+   60% { transform: translate3d(-261px, 0px, 0px)}
+   70% { transform: translate3d(-304.5px, 0px, 0px)}
+   80% { transform: translate3d(-348px, 0px, 0px)}
+   90% { transform: translate3d(-391.5px, 0px, 0px)}
+  100% { transform: translate3d(-435px, 0px, 0px)}
+}
+.bnbhome-2-module-hot{
+  padding-bottom: 1.5rem;
+}
+.bnbhome-2-module-hot .tabs{
+  font-size: 0;
+  position: relative;
+  z-index: 1;
+  padding-left: 0.2rem;
+  padding-right: 1rem;
+  padding-bottom: 0.8rem;
+  overflow: hidden;
+}
+.bnbhome-2-module-hot .tabs .con-scroll{
+  font-size: 0;
+  white-space: nowrap;
+}
+.bnbhome-2-module-hot .tabs .item{
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+}
+.bnbhome-2-module-hot .tabs .item{
+  width: auto;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0.2rem 1rem 0rem;
+  border-radius: 2.35rem;
+  border: 1rpx solid #e6e6e6;
+  max-width: 8.75rem;
+  margin-left: 0.6rem;
+  min-height: 2.35rem;
+  vertical-align: top;
+  position: relative;
+}
+.active{
+  color: #fff;
+  background-image: linear-gradient(-90deg, #ff9337 0%, #ff6a50 100%);
+}
+.bnbhome-2-module-hot .tabs .item.active:before{
+  content: '';
+  opacity: 0.58;
+  background-image: linear-gradient(-90deg, #ff9337 0%, #ff6a50 100%);
+  border-radius: 1.175rem;
+  filter: blur(0.45rem);
+  position: absolute;
+  top: 0.225rem;
+  left: 0rem;
+  transform: scale(0.87);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 0.1s;
+}
+.bnbhome-2-module-hot .tabs .item.active .tit{
+  color: #fff;
+}
+.bnbhome-2-module-hot .tabs .item .tit{
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  text-align: center;
+  display: block;
+}
+.bnbhome-2-module-hot .tabs .item .txt{
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  font-size: 0.6rem;
+  line-height: 0.75rem;
+  margin-top: 0.1rem;
+  color: #666;
+}
+.bnbhome-2-module-hot .tabs .item.active .txt{
+  color:#fff;
+  font-weight: 400;
+  display: block;
+  overflow: visible;
+}
+.bnbhome-2-module-hot .tabs .item .txt .val{
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  color: #666;
+}
+.bnb-product-list-t3{
+  background-color: #fff;
+  padding: 0 1rem;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 559px){
+  .bnb-product-list-t3{
+    margin: 0 0.75rpx 0 0.7rem;
+    padding: 0; 
+  }
+}
+.bnbhome-2-product-list-t3-hot{
+  margin-top: -0.5rem;
+  background: none;
+  width: 94%;
+}
+.bnb-product-list-t3 .list-item{
+  padding: 0.5rem 0 1rem;
+  font-size: 0.65rem;
+  position: relative;
+  transition: all 0.5s;
+}
+.bnb-product-list-t3 .list-item{
+  width: 8.125rem;
+  padding-bottom: 0.5rem;
+}
+@media screen and (max-width: 559px){
+  .bnb-product-list-t3 .list-item{
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    width: 50%;
+    box-sizing: border-box;
+    position: relative;
+  }
+}
+.bnb-product-list-t3 .list-item:first-child{
+  border: none;
+}
+.bnb-list-photo{
+  position: relative;
+  overflow: hidden;
+  height: 11.25rem;
+  border-radius: 0.15rem;
+  z-index: 1;
+}
+.bnb-product-list-t3 .bnb-list-photo{
+  position: relative;
+}
+.bnb-product-list-t3 .bnb-list-photo{
+  height: auto;
+  position: relative;
+  background: #e5e5e5;
+}
+.bnb-list-photo .con-slides{
+  height: 11.25rem;
+  overflow: visible!important;
+  position: relative;
+  width: 9999px;
+  font-size: 0;
+  z-index: 1;
+}
+.bnb-product-list-t3 .bnb-list-photo .con-slides{
+  width: auto;
+  height: auto;
+}
+.bnb-list-photo:before{
+  transform: scale(0.58571429);
+}
+.bnb-product-list-t3 .bnb-list-photo:before{
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: 0 -5.4rem;
+  width: 3.5rem;
+  height: 3.8rem;
+}
+.bnb-product-list-t3 .bnb-list-photo:before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.75rem;
+  margin-top: -1.9rem;
+}
+.bnb-list-photo:after{
+  z-index: 2;
+}
+.bnb-product-list-t3 .bnb-list-photo:after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.15rem;
+  background: rgba(255, 255, 255, 0);
+}
+.bnb-product-list-t3 .bnb-list-photo image{
+  position: relative;
+}
+.bnb-product-list-t3 .bnb-list-photo image{
+  width: 100%;
+  height: 5.5rem;
+  user-select: none;
+}
+.bnb-product-list-t3 .bnb-list-photo image{
+  display: block;
+}
+.bnb-product-list-t3 .list-item .bnb-list-photo .lazy{
+  height: 220rpx;
+}
+.bnbhome-2-product-list-t3-recommend .list-item-con{
+  padding-top: 0.3rem;
+}
+.bnb-product-list-t3 .con-rule{
+  line-height: 0.8rem;
+  font-size: 0.5rem;
+  padding-top: 0;
+  font-weight: 700;
+}
+.bnb-product-list-t3 .con-rule{
+  font-weight: 500;
+}
+.bnb-product-list-t3 .txt-point, .bnb-product-list-t3 .txt-tip{
+  font-weight: 700;
+  color: #2dbeb0;
+}
+.bnb-product-list-t3 .con-rule .txt-size{
+  display: inline-block;
+}
+.bnb-product-list-t3 .con-rule .txt-bed{
+  display: inline-block;
+}
+.bnb-product-list-t3 .con-rule .txt-size::before{
+  content: '·';
+  font-size: 0.6rem;
+  margin: 0 0.05rem;
+}
+.bnb-product-list-t3 .con-rule>text{
+  display: inline-block;
+  font-size: 0.5rem;
+  color: #406590;
+}
+.bnb-product-list-t3 .con-rule .txt-point{
+  font-size: 0.5rem;
+  color: #406590;
+}
+.bnb-product-list-t3 .con-rule .txt-topic::before{
+  content: '|';
+  display: inline-block;
+  margin: 0 0.15rem;
+}
+.bnb-product-list-t3 .list-item-con>.tit{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  color: #3c3c3c;
+  font-weight: 700;
+}
+.bnb-product-list-t3 .list-item-con>.tit{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-size: 0.7rem;
+  line-height: 0.95rem;
+  padding-top: 0;
+}
+.bnb-product-list-t3 .con-price {
+  padding-top: 0.3rem;
+  font-size: 0.6rem;
+  color: #333;
+  line-height: 1.1rem;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+.bnb-product-list-t3 .con-price {
+    padding-top: 0;
+}.bnb-product-list-t3 .list-item-con{
+  padding-top: 0.3rem;
+}
+.bnb-product-list-t3 .txt-price-now{
+  font-size: 1.1rem;
+  color: #ff6a50;
+  line-height: 1.1rem;
+  font-weight: 700;
+}
+.bnb-product-list-t3 .txt-price-now .price{
+  display: inline-block;
+  font-size: 0.9rem;
+  line-height: 1.15rem;
+  color: #ff6a50;
+}
+.bnb-product-list-t3 .txt-price-now .unit{
+  font-size: 0.55rem;
+}
+.bnb-product-list-t3 .txt-price-origin{
+  padding-left: 0.2rem;
+  line-height: 1.1rem;
+  white-space: nowrap;
+  text-decoration : line-through;
+}
+.bnb-product-list-t3 .txt-price-origin{
+  font-size: 0.6rem;
+  line-height: 1.15rem;
+  color: #999;
+}
+.bnbhome-2-module-hot .btn-o-more{
+  font-weight: 700;
+  display: block;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #3c3c3c;
+  background: #f5f5f5;
+  border-radius: 0.15rem;
+  height: 2.2rem;
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  line-height: 2.2rem;
+  background: #fff;
+  margin: 0.5rem 1rem 0;
+  padding: 0;
+}
+.bnbhome-2-module-hot .btn-o-more{
+  font-weight: 500;
+}
+.bnbhome-2-module-hot .btn-o-more:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: left top;
+}
+.bnbhome-2-module-hot .btn-o-more:after{
+  border: 1px solid #ccc;
+  border-radius: 2.2rem;
+}
+.bnbhome-2-module-promotions-t3{
+  padding-bottom: 1rem;
+  position: relative;
+  background-color: #f5f5f5;
+  margin-bottom: 1.5rem;
+}
+.bnbhome-2-module-promotions-t3 .box-head{
+  padding-bottom: 0.6rem;
+  padding: 1rem;
+}
+.bnbhome-2-module .box-head .tit{
+  font-size: 1.2rem;
+  line-height: 1.45rem;
+  letter-spacing: -0.025rem;
+  color: #3c3c3c;
+  font-weight: 700;
+}
+.bnbhome-2-module .box-head .tit{
+  font-size: 1.05rem;
+  line-height: 1.3rem;
+  display: inline-block;
+}
+.bnbhome-2-module-promotions-t3::before{
+  content: '';
+  position: absolute;
+  display: inline-block;
+  right: 1rem;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: -14.15rem -2.85rem;
+  width: 10rem;
+  height: 2.4rem;
+}
+.bnbhome-2-module-promotions-t3 .con{
+  display: flex;
+  height: 7.5rem;
+  justify-content: space-between;
+  margin: 0 1rem;
+}
+.bnbhome-2-module-promotions-t3 .con .con-0{
+  width: 51%;
+  background-color: #fff;
+  border-radius: 0.15rem;
+  overflow: hidden;
+}
+.bnbhome-2-module-promotions-t3 .con .item{
+  box-sizing: border-box;
+  padding: 0.6rem;
+}
+.bnbhome-2-module-promotions-t3 .con .item .tit{
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #3c3c3c;
+  line-height: 1.1rem;
+  display: block;
+}
+.bnbhome-2-module-promotions-t3 .con .item .txt{
+  font-size: 0.6rem;
+  color: #666;
+  letter-spacing: 0.01625rem;
+  line-height: 0.7rem;
+  margin-top: 0.1rem;
+  display: block;
+}
+.bnbhome-2-module-promotions-t3 .con .item .txt .val{
+  font-weight: 700;
+  font-size: 0.65rem;
+  color: #fd9012;
+  letter-spacing: 0.01625rem;
+  line-height: 0.7rem;
+}
+.bnbhome-2-module-promotions-t3 .con .item-0{
+  padding: 0.75rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.bnbhome-2-module-promotions-t3 .con .item-0::before{
+  content: '';
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: linear-gradient(-180deg, #fff 66%, rgba(245, 245, 245, 0) 100%);
+  height: 4.3rem;
+}
+.bnbhome-2-module-promotions-t3 .con .item-0::after{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom left;
+  z-index: -2;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 14.05rem;
+  height: 5.3rem;
+}
+.bnbhome-2-module-promotions-t3 .con .item-0 .tit{
+  font-size: 0.95rem;
+  line-height: 1.15rem;
+  margin-right: 0.65rem;
+  display: inline-block;
+}
+.bnbhome-2-module-promotions-t3 .con .item-0 .txt{
+  font-size: 0.65rem;
+  line-height: 0.75rem;
+  margin-top: 0.225rem;
+}
+.bnbhome-2-module-promotions-t3 .con .item-0 .txt::before{
+  display: inline-block;
+  content: '今夜特价最低';
+}
+.bnbhome-2-module-promotions-t3 .con .item-0 .txt .val{
+  font-size: 0.7rem;
+  color: #fd9012;
+  letter-spacing: 0.0175rem;
+  line-height: 0.8rem;
+}
+.bnbhome-2-module-promotions-t3 .con .con-1{
+  width: 46%;
+}
+.bnbhome-2-module-promotions-t3 .con .item-1{
+  width: 100%;
+  border-radius: 0.15rem;
+  overflow: hidden;
+  background-image: none;
+  background-color: #fff;
+  position: relative;
+  height: 3.55rem;
+}
+.bnbhome-2-module-promotions-t3 .con .item-1:after{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: -3.6rem -5.4rem;
+  width: 3.275rem;
+  height: 2.65rem;
+}
+.bnbhome-2-module-promotions-t3 .con .item-1 .txt:before{
+  display: inline-block;
+  content: '低至';
+}
+.bnbhome-2-module-promotions-t3 .con .item-2{
+  width: 100%;
+  margin-top: 0.4rem;
+  border-radius: 0.15rem;
+  overflow: hidden;
+  background-image: none;
+  background-color: #fff;
+  position: relative;
+  height: 3.55rem;
+}
+.bnbhome-2-module-promotions-t3 .con .item-2:after{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-12.v9.png?v=3);
+  background-size: 40.425rem 13.5rem;
+  background-repeat: no-repeat;
+  background-position: -24.25rem -2.85rem;
+  width: 3.35rem;
+  height: 2.25rem;
+}
+.bnbhome-2-module-promotions-t3 .con .item-2 .txt:before{
+  display: inline-block;
+  content: '全场';
+}
+.bnbhome-2-module-promotions-t3 .con .item-2 .txt:after{
+  display: inline-block;
+  content: '起';
+}
