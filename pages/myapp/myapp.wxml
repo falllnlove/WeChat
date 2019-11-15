@@ -231,4 +231,41 @@
     </view>
   </view>
 </view>
-555555555555555555555555555555555555555555555555555555555555555555555
+<view id="j_brandpavilion">
+  <view id="j_brandPavilions_div" class="bnbhome-2-module bnbhome-2-module-brand">
+    <view class="box-head">
+      <text class="tit">民宿品牌馆</text>
+    </view>
+    <view id="j_brandPavilions_slide" class="bnbhome-2-product-list-brand swiper-container-horizontal swiper-container-ios">
+      <view class="con-scroll swiper-wrapper">
+        <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+          <block wx:for="{{home_stay}}" wx:key="mainTitle">
+            <view class="list-item swiper-slide j_touch_slide j_brandPavilions_item swiper-slide-active">
+              <view class="list-item-con">
+                <view class="con-1">
+                  <image  class="con-logo lazy" src="{{item.logo}}"></image>
+                </view>
+                <view class="con-2">
+                  <view class="con-name">
+                    {{item.mainTitle}}
+                  </view>
+                  <view class="con-tags">
+                    <block wx:for="{{item.tags}}" wx:key="key" wx:for-item="page" wx:for-index="idx">
+                      <text class="tag">{{page}}</text>
+                    </block>
+                  </view>
+                </view>
+              </view>
+              <view class="list-item-tips">
+                {{item.subTitle}}
+              </view>
+              <view class="list-item-photo">
+                <image class="lazy"  src="{{item.image}}"></image>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

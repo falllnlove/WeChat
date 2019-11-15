@@ -4,4 +4,15 @@ var sub_img = function(url){
   }
   return url.substring(0, parseInt(url.length - 6))
 }
-module.exports.sub_img = sub_img;
+
+var tags_one = function(tag){
+  console.log(tag.split(','))
+  if (tag.length == 0 || tag == undefined) {
+    return;
+  }
+  console.log(tag.split(','))
+}
+module.exports = {
+  sub_img : sub_img,
+  tags_one : tags_one,
+}
