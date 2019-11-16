@@ -349,3 +349,53 @@
     </view>
   </view>
 </view>
+<view id="j_selectedpro">
+  <view class="bnbhome-2-module bnbhome-2-module-bestv2">
+    <view class="box-head">
+      <view class="tit">
+        优选
+        <text class="txt-light">P</text>
+        RO.
+      </view>
+      <text class="txt-tip">每一套都是为您精挑细选的优质房源</text>
+    </view>
+    <view class="bnbhome-2-product-list-bestv2 swiper-container-horizontal swiper-container-android">
+      <view class="con-scroll swiper-wrapper">
+        <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+          <block wx:for="{{optimization_PRO_list}}" wx:key="pname">
+            <view class="list-item swiper-slide j_touch_slide j_selected_pro_item swiper-slide-active">
+              <view class="bnb-list-photo">
+                <image class="lazy" src="{{tools.sub_img(item.proimg)}}" style="opacity: 1;"></image>
+              </view>
+              <view class="bnb-list-con">
+                <view class="list-item-con">
+                  <view class="con-rule">
+                    <text class="txt-point">{{item.commentScore}}分</text>
+                    <text class="txt-house-type">{{item.theHouseType}}</text>
+                    <view class="txt-size">
+                      <text class="val">{{item.rname}}</text>
+                      <text class="val">{{item.beds}}床</text>
+                    </view>
+                    <view class="txt-people">
+                      宜住
+                      <text class="val">{{item.people}}人</text>
+                    </view>
+                  </view>
+                  <view class="tit">{{item.pname}}</view>
+                </view>
+                <view class="list-item-price">
+                  <text class="unit">¥</text>
+                  {{item.price.price}}
+                
+                </view>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="btn-o-more j_selected_pro_more">
+      查看更多
+    </view>
+  </view>
+</view>

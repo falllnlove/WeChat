@@ -1491,3 +1491,188 @@ button,  text{
   line-height: 0.7rem;
   text-align: left;
 }
+.bnbhome-2-module-bestv2{
+  padding-bottom: 1.5rem;
+}
+.bnbhome-2-module-bestv2 .box-head{
+  padding-bottom: 0.8rem;
+  padding: 1rem;
+}
+.bnbhome-2-module .box-head .tit{
+  font-size: 1.05rem;
+  line-height: 1.3rem;
+  display: inline-block;
+}
+.bnbhome-2-module-bestv2 .box-head .tit{
+  display: block;
+}
+.bnbhome-2-module-bestv2 .box-head .tit .txt-light{
+  color: #ff6a50;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  margin-left: -1%;
+  margin-right: -1%;
+  font-weight: 600;
+}
+.bnbhome-2-module-bestv2 .box-head .txt-tip{
+  font-size: 0.65rem;
+  line-height: 0.8rem;
+  margin-top: 0.15rem;
+  color: #666;
+  margin-left: 0;
+}
+.bnbhome-2-product-list-bestv2{
+  font-size: 0;
+  display: block;
+  padding-right: 1rem;
+  overflow: hidden;
+  padding-bottom: 1rem;
+  padding-left: 0.075rem;
+}
+.bnbhome-2-product-list-bestv2 .con-scroll{
+  white-space: nowrap;
+}
+.bnbhome-2-product-list-bestv2 .list-item{
+  display: inline-block;
+  width: 16.25rem;
+  padding: 0;
+  vertical-align: top;
+  margin-left: 0.6rem;
+}
+.bnbhome-2-product-list-bestv2 .list-item{
+  width: 15rem;
+  height: 10rem;
+  margin-left: 0.925rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0;
+  box-shadow: 0 0.6rem 1rem -0.4rem rgba(0, 0, 0, 0.2);
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-photo{
+  height: auto;
+  position: relative;
+}
+.bnb-list-photo image {
+  width: 16.75rem;
+  height: 11.25rem;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-photo image{
+  position: relative;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-photo image{
+  width: 100%;
+  height: 10rem;
+  user-select: none;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con {
+  width: 15rem;
+  height: 5.9rem;
+  bottom: 0;
+  z-index: 1;
+  border-bottom-right-radius: 0.15rem;
+  border-bottom-left-radius: 0.15rem;
+  background-image: linear-gradient(179deg, rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0.56) 100%);
+  position: absolute;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con {
+  position: absolute;
+  z-index: 1;
+  bottom: 0.675rem;
+  left: 0.6rem;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule {
+  font-weight: 700;
+  font-size: 0;
+  color: #fff;
+  position: relative;
+  top: 0.1rem;
+  text-align: left;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule .txt-point, .bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule .txt-house-type, .bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule .txt-size, .bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule .txt-people {
+  font-size: 0.55rem;
+  line-height: 0.7rem;
+  color: #fff;
+  font-weight: 700;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule>text{
+  display: inline;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule>view{
+  display: inline;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule .txt-house-type:before{
+  border-color: #fff;
+  content: '|';
+  display: inline-block;
+  margin: 0 0.15rem;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule .txt-size .val ,.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule .txt-people .val{
+  color: #fff;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule .txt-size::before{
+  content: '\00b7';
+  padding: 0 0.05rem;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .con-rule .txt-people::before{
+  content: '\00b7';
+  padding: 0 0.05rem;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-con .tit {
+  font-weight: 700;
+  width: 9.075rem;
+  font-size: 0.8rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  color: #fff;
+  margin-top: 0.2rem;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-price {
+  font-weight: 700;
+  position: absolute;
+  bottom: 0.625rem;
+  right: -0.4rem;
+  font-size: 0.95rem;
+  line-height: 1.15rem;
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+  background-image: linear-gradient(91deg, #ff8440 2%, #ff6a50 100%);
+}
+.bnbhome-2-product-list-bestv2 .list-item .bnb-list-con .list-item-price .unit{
+  font-size: 0.7rem;
+  line-height: 0.85rem;
+  color: #fff;
+  font-weight: 700;
+}
+.bnbhome-2-module-bestv2 .btn-o-more {
+  font-weight: 700;
+  display: block;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #3c3c3c;
+  border-radius: 0.15rem;
+  height: 2.2rem;
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  line-height: 2.2rem;
+  background: #fff;
+  margin: 0 1rem;
+  padding: 0;
+}
+.bnbhome-2-module-bestv2 .btn-o-more:after{
+  border: 1px solid #ccc;
+  border-radius: 2.2rem;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: left top;
+}

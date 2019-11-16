@@ -1,13 +1,28 @@
-<view class="item J_itentionCityItem j_touch_slide swiper-slide">
-            <view class="photo">
-              <view class="img" style="background-image:url(https://pic.tujia.com/upload/resourcespic/day_190523/201905231754441259.png);"></view>
-              <view>
-                <text class="tit">北京</text>
-                <view class="item-per-capita">
-                  约￥
-                  <text class="val">420</text>
-                  /晚
+<view class="list-item swiper-slide j_touch_slide j_selected_pro_item swiper-slide-active">
+          <view class="bnb-list-photo">
+            <image class="lazy" src="https://dimg04.c-ctrip.com/images/2B0u0x000000lehk43561_R_750_560_Q80.jpg" style="opacity: 1;"></image>
+          </view>
+          <view class="bnb-list-con">
+            <view class="list-item-con">
+              <view class="con-rule">
+                <text class="txt-point">4.9分</text>
+                <text class="txt-house-type">民居</text>
+                <view class="txt-size">
+                  <text class="val">2室</text>
+                  <text class="val">2厅</text>
+                  <text class="val">2床</text>
+                </view>
+                <view class="txt-people">
+                  宜住
+                  <text class="val">4人</text>
                 </view>
               </view>
+              <view class="tit">【有家】杏叶/迪±尼接送/外滩/杜蜡馆/</view>
+            </view>
+            <view class="list-item-price">
+              <text class="unit">¥</text>
+              395
+						
             </view>
           </view>
+        </view>
