@@ -326,7 +326,7 @@
 <view id="j_intentCityContainer">
   <view class="bnbhome-2-module bnbhome-2-module-featured">
     <view class="box-head">
-      <text class="tit">热门目的地</text>
+      <text class="tit">猜你想去</text>
     </view>
     <view class="box-body">
       <view class="slides slides-featured" style="height:12rem;">
@@ -335,14 +335,10 @@
             <block wx:for="{{Hot_destination}}" wx:key="title">
               <view class="item J_itentionCityItem j_touch_slide swiper-slide">
                 <view class="photo">
-                  <view class="img" style="background-image:url({{item.pictureUrl}});"></view>
+                  <view class="img" style="background-image:url({{item.img}});"></view>
                   <view>
-                    <text class="tit">{{item.title}}</text>
-                    <view class="item-per-capita">
-                      约￥
-                      <text class="val">{{item.subTitle}}</text>
-                      /晚
-                    </view>
+                    <text class="tit">{{item.name}}</text>
+                    <view class="item-per-capita">{{item.praise}}</view>
                   </view>
                 </view>
               </view>

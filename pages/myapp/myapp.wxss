@@ -1490,13 +1490,4 @@ button,  text{
   display: block;
   line-height: 0.7rem;
   text-align: left;
-  margin-left: -3%;
-}
-.bnbhome-2-module-featured .slides-featured .item .item-per-capita .val{
-  font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
-  font-weight: 400;
-  white-space: nowrap;
-  line-height: 0.7rem;
-  font-size: 0.8rem;
-  color: #3c3c3c;
 }
