@@ -399,3 +399,59 @@
     </view>
   </view>
 </view>
+<view id="j_introduce_info">
+  <view class="bnbhome-2-service">
+    <view class="item">
+      <view class="ico ico-o-1"></view>
+      <view class="tit">安心入住</view>
+      <view class="txt">多种保障安心住</view>
+    </view>
+    <view class="item">
+      <view class="ico ico-o-2"></view>
+      <view class="tit">安心入住</view>
+      <view class="txt">多种保障安心住</view>
+    </view>
+    <view class="item">
+      <view class="ico ico-o-3"></view>
+      <view class="tit">安心入住</view>
+      <view class="txt">多种保障安心住</view>
+    </view>
+  </view>
+</view>
+<view class="j_recommend_pro">
+  <view class="bnbhome-2-module bnbhome-2-module-recommend">
+    <view class="box-head">
+      <text class="tit">为你推荐</text>
+    </view>
+    <view class="bnb-product-list-t3 bnbhome-2-product-list-t3 bnbhome-2-product-list-t3-recommend">
+      <block wx:for="{{Recommend_for_me_list}}" wx:key="pname">
+        <view class="list-item j_recommend_item j_touch_slide">
+          <view class="bnb-list-photo">
+            <view class="con-slides">
+              <image class="lazy" src="{{tools.sub_img(item.proimg)}}" style="opacity: 1;"></image>
+            </view>
+          </view>
+          <view class="list-item-con">
+            <view class="con-rule">
+              <text class="txt-point" wx:if="{{item.countryCode == 5 || item.countryCode == 4}}">{{item.countryCode}}.0分</text>
+              <text class="txt-point" wx:else>{{item.countryCode}}分</text>
+              <text class="txt-topic">{{item.theHouseType}}</text>
+              <text class="txt-size">{{item.rname}}</text>
+              <text class="txt-bed">{{item.beds}}床</text>
+            </view>
+            <view class="tit">{{item.pname}}</view>
+            <view class="con-price">
+              <view class="txt-price-now">
+                <view class="unit">¥</view>
+                <view >{{item.price.price}}</view>
+              </view>
+              <view class="txt-price-origin" wx:if="{{item.price.originalPrice != item.price.price}}">
+                <text class="val">¥{{item.price.originalPrice}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

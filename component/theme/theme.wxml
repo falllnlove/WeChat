@@ -1,28 +1,25 @@
-<view class="list-item swiper-slide j_touch_slide j_selected_pro_item swiper-slide-active">
-          <view class="bnb-list-photo">
-            <image class="lazy" src="https://dimg04.c-ctrip.com/images/2B0u0x000000lehk43561_R_750_560_Q80.jpg" style="opacity: 1;"></image>
+<view class="list-item j_recommend_item j_touch_slide">
+        <view class="bnb-list-photo">
+          <view class="con-slides">
+            <image class="lazy" src="https://dimg04.c-ctrip.com/images/2B0d0x000000l4szc6C51_R_750_560_Q80.jpg" style="opacity: 1;"></image>
           </view>
-          <view class="bnb-list-con">
-            <view class="list-item-con">
-              <view class="con-rule">
-                <text class="txt-point">4.9分</text>
-                <text class="txt-house-type">民居</text>
-                <view class="txt-size">
-                  <text class="val">2室</text>
-                  <text class="val">2厅</text>
-                  <text class="val">2床</text>
-                </view>
-                <view class="txt-people">
-                  宜住
-                  <text class="val">4人</text>
-                </view>
-              </view>
-              <view class="tit">【有家】杏叶/迪±尼接送/外滩/杜蜡馆/</view>
+        </view>
+        <view class="list-item-con">
+          <view class="con-rule">
+            <text class="txt-point">5.0</text>
+            <text class="txt-topic">民居</text>
+            <text class="txt-size">1室1厅</text>
+            <text class="txt-bed">1床</text>
+          </view>
+          <view class="tit">云笙·近海洋公园滴水湖/16号线/配厨房</view>
+          <view class="con-price">
+            <view class="txt-price-now">
+              <view class="unit">¥</view>
+              <view >278</view>
             </view>
-            <view class="list-item-price">
-              <text class="unit">¥</text>
-              395
-						
+            <view class="txt-price-origin">
+              <text class="val">¥308</text>
             </view>
           </view>
         </view>
+      </view>
