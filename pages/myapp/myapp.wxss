@@ -1773,3 +1773,34 @@ button,  text{
 .bnb-product-list-t3 .txt-price-now view:last-child{
   display: inline-block;
 }
+.bnbhome-2-module-recommend .btn-o-more {
+  font-weight: 700;
+  display: block;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #3c3c3c;
+  margin: 1rem 1rem 0;
+  border-radius: 0.15rem;
+  height: 2.2rem;
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  line-height: 2.2rem;
+  background: #fff;
+  padding: 0;
+}
+.bnbhome-2-module-recommend .btn-o-more:after {
+  border: 1px solid #ccc;
+  border-radius: 2.2rem;
+}
+.bnbhome-2-module-recommend .btn-o-more:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: left top;
+}

@@ -20,7 +20,7 @@
 <view class="con-box">
   <view class="con-city">
     <view class="btn-o-your-location"><view>当前位置</view></view>
-    <view class="con-input"><text class="txt">{{city}}</text></view>
+    <view class="con-input"><text class="txt">{{location}}</text></view>
   </view>
   <view class="con con-date">
     <view class="btn-o-person">
@@ -29,10 +29,10 @@
     <view class="j_date">
       <view class="txt txt-default j_date_defalut" style="display: none;">入住离店日期</view>
       <view style="display: inline;">
-        <view class="txt-date j_ckin">11.08</view>
+        <view class="txt-date j_ckin">11.18</view>
         <view class="txt-week j_ckin_week">今天</view>
         <view class="txt-day j_night">1晚</view>
-        <view class="txt-date j_ckout">11.09</view>
+        <view class="txt-date j_ckout">11.19</view>
         <view class="txt-week j_ckout_week">明天</view>
       </view>
     </view>
@@ -453,5 +453,9 @@
         </view>
       </block>
     </view>
+    <view class="btn-o-more j_recommend_pro_more">
+      查看更多
+    </view>
   </view>
 </view>
+<view style="height:2rem;"></view>
