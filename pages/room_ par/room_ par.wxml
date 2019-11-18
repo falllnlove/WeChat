@@ -1,0 +1,38 @@
+<!--room_par.wxml-->
+<view class="bnb-header-bgnone bnbdetail-header-bgnone is-fix J_initHeader">
+  <text class="btn-o btn-o-back J_back"></text>
+  <view class="btn-o btn-o-favor J_handleFavor {{state==1?'active':''}}" data-state="{{state}}" bindtap="collect">
+    <view class="tooltip-favor J_favorTip J_toFavorList" style="{{collect}}">
+      <text class="txt txt-1 J_toFavorList">收藏成功！</text>
+      <text class="txt txt-2 J_toFavorList">查看收藏列表</text>
+    </view>
+  </view>
+</view>
+<view class="bnb-header bnbdetail-header is-fix J_fixedHeader" style="display:none">
+  <text class="btn-o btn-o-back J_back"></text>
+  <text class="btn-o btn-o-favor J_handleFavor"></text>
+  <view class="tit tit-img J_detailHeaderProName">
+    <image class="J_detailHeaderProImage" src="https://dimg04.c-ctrip.com/images/2B0k13000000thrll79F8_R_750_560_Q80.jpg"></image>
+  </view>
+  <view class="bnbdetail-tabs J_tabs">
+    <text class="item J_topStatus active">民宿</text>
+    <text class="item J_detailStatus">详情</text>
+    <text class="item J_ruleStatus">须知</text>
+    <text class="item J_recommendStatus">推荐</text>
+  </view>
+</view>
+<scroll-view upper-threshold="50" bindscrolltoupper="aa" scroll-y>
+  <view class="focus-box">
+    <view id="J_pic" class="focus-mode-t2 bnbdetail-focus-mode-t2">
+      <view class="J_slideUl" style="height: 100% !important;">
+        <view class="item-slide J_picItem">
+          <image class="lazy opacity-fade-in" src="https://dimg04.c-ctrip.com/images/2B0k13000000thrll79F8_R_750_560_Q80.jpg"></image>
+        </view>
+      </view>
+      <view class="stage_num">
+        <text class="J_num">1/</text>
+        <text class="J_numTotal">28</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

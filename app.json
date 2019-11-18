@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/room_ par/room_ par",
     "pages/myapp/myapp",
     "pages/index/index",
     "pages/logs/logs"
