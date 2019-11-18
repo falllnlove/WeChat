@@ -1,4 +1,5 @@
 <!--room_par.wxml-->
+
 <view class="bnb-header-bgnone bnbdetail-header-bgnone is-fix J_initHeader">
   <text class="btn-o btn-o-back J_back"></text>
   <view class="btn-o btn-o-favor J_handleFavor {{state==1?'active':''}}" data-state="{{state}}" bindtap="collect">
@@ -8,7 +9,7 @@
     </view>
   </view>
 </view>
-<view class="bnb-header bnbdetail-header is-fix J_fixedHeader" style="display:none">
+<view class="bnb-header bnbdetail-header is-fix J_fixedHeader" wx:if="{{fixedTop>0 || fixedTop != 0}}">
   <text class="btn-o btn-o-back J_back"></text>
   <text class="btn-o btn-o-favor J_handleFavor"></text>
   <view class="tit tit-img J_detailHeaderProName">
@@ -21,18 +22,92 @@
     <text class="item J_recommendStatus">推荐</text>
   </view>
 </view>
+<wxs src='../../wxs/utils.wxs' module='tools' />
 <scroll-view upper-threshold="50" bindscrolltoupper="aa" scroll-y>
   <view class="focus-box">
     <view id="J_pic" class="focus-mode-t2 bnbdetail-focus-mode-t2">
       <view class="J_slideUl" style="height: 100% !important;">
-        <view class="item-slide J_picItem">
-          <image class="lazy opacity-fade-in" src="https://dimg04.c-ctrip.com/images/2B0k13000000thrll79F8_R_750_560_Q80.jpg"></image>
-        </view>
+        <swiper style="height:15rem;" bindchange="img_index">
+          <block wx:for="{{get_room_info_list.img}}" wx:key="key">
+            <swiper-item>
+              <view class="item-slide J_picItem">
+                <image class="lazy opacity-fade-in" src="{{tools.sub_img(item.url)}}"></image>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
       </view>
       <view class="stage_num">
-        <text class="J_num">1/</text>
-        <text class="J_numTotal">28</text>
+        <text class="J_num">{{img_index}}/</text>
+        <text class="J_numTotal">{{get_room_info_list.img.length}}</text>
       </view>
     </view>
   </view>
 </scroll-view>
+<view class="J_productInfo" style="height:1000px">
+  <view class="bnbdetail-box bnbdetail-box-info">
+    <view class="con-tag J_scrollTags ">
+      <view class="item-tags">
+        <view class="item-tags-con">
+          <text class="tag tag-08 J_freeCancel">免费取消</text>
+          <text class="tag tag">免押金</text>
+          <text class="tag tag">闪订</text>
+          <text class="tag tag">智能门锁</text>
+        </view>
+      </view>
+      <view class="txt-favor">
+        <text class="val">14人收藏</text>
+      </view>
+    </view>
+    <view id="tit" class="tit">地铁11号线日式休闲度假别墅单人房</view>
+    <view class="con-price-date">
+      <view class="J_productPriceInfo">
+        <view class="con-price">
+          <view class="txt-price-now">
+            <text class="unit">¥116</text>
+          </view>
+          <view class="txt-price-origin">
+            <text class="val">¥128</text>
+          </view>
+        </view>
+      </view>
+      <view class="con-pro-date J_proCheckDate" style="position:relative; display: none;">
+        <text class="J_proCheckin">11.27入</text>
+        <text class="item J_proCheckout">11.29离</text>
+      </view>
+    </view>
+    <view class="con-rule">
+      <view class="item item-room">
+        <text class="ico"></text>
+        <text class="txt txt-1">1室 1厨1卫</text>
+        <view class="txt txt-2">
+          别墅单间
+          <text class="val">/15</text> ㎡
+        </view>
+        <text class="txt txt-3">不允许做饭</text>
+      </view>
+      <view class="item item-bed J_bedTip">
+        <text class="ico"></text>
+        <text class="txt txt-1">宜住1人 1床</text>
+        <view class="txt txt-2">
+          <view class="txt-val">
+            单人床
+            <text class="val">(1x2m)</text>
+            <text class="val">1</text> 张
+          </view>
+          <view class="pot-tooltip" bindtap="bed_show">
+            <view class="tooltip-bed J_bedTipInfo" style="{{bed_show}}">
+              <view class="item">
+                单人床
+                <text class="val">(1x</text>
+                <text class="val">2m)</text>
+                <text class="val">1</text> 张
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="txt txt-3">不可加床</view>
+      </view>
+    </view>
+  </view>
+</view>
