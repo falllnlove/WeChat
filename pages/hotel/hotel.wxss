@@ -1,3 +1,32 @@
+/* .bnb-header .btn-o-back {
+    float: left;
+}
+.bnb-header .btn-o {
+    height: 2.2rem;
+    display: block;
+    position: relative;
+    width: 1.2rem;
+    padding: 0 0.6rem;
+}
+.bnb-header .btn-o:after {
+    transform: translate(-50%, -50%);
+}
+.bnb-header .btn-o:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.bnb-header .btn-o-back:after {
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-21.v2.png?v=0);
+    background-size: 5.9rem 5.9rem;
+    background-repeat: no-repeat;
+    background-position: -4.7rem -2.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+} */
+
 /*酒店信息*/
 view{
   display: block;
@@ -849,7 +878,7 @@ image{
 .pop-product-hd {
   font-size: 0.75rem;
 }
-.bnbbook-pop-order-product-box .pop-product-hd-fix:after {
+.bnbbook-pop-order-product-box .pop-product-hd-fix::after {
   content: '';
   display: block;
   position: absolute;
@@ -887,12 +916,12 @@ navigator {
   color: #000;
   text-decoration: none;
 }
-.bnbbook-pop-order-product-box .pop-product-hd-fix .close:before {
+.bnbbook-pop-order-product-box .pop-product-hd-fix .close::before {
   background-position: 0 -1.3rem;
   width: 1.2rem;
   height: 1.2rem;
 }
-.bnbbook-pop-order-product-box .pop-product-hd .close:before {
+.bnbbook-pop-order-product-box .pop-product-hd .close::before {
   content: '';
   display: block;
   background-image: url(//pic.c-ctrip.com/h5/bnb/ico-04.v4.png?v=0);
@@ -939,7 +968,7 @@ navigator {
   right: 0;
   top: 0;
 }
-.bnbbook-pop-order-product-box .pop-product-hd .close:before {
+.bnbbook-pop-order-product-box .pop-product-hd .close::before {
   content: '';
   display: block;
   background-image: url(//pic.c-ctrip.com/h5/bnb/ico-04.v4.png?v=0);
@@ -1019,7 +1048,7 @@ navigator {
   width: 55px;
   float: left;
 }
-.bnbbook-pop-order-product-box .focus-mode .stage-num:before {
+.bnbbook-pop-order-product-box .focus-mode .stage-num::before {
   background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v8.png?v=0);
   background-size: 8.1rem 7.4rem;
   background-repeat: no-repeat;
@@ -1205,10 +1234,10 @@ margin-left: 1.25rem;
   padding-right: 0.7rem;
   width: 8rem;
 }
-.bnbbook-comment .con-brief .con-info:after {
+.bnbbook-comment .con-brief .con-info::after {
   top: 0;
 }
-.bnbbook-comment .con-brief .con-info:after {
+.bnbbook-comment .con-brief .con-info::after {
   content: '';
   position: absolute;
   right: 0px;
@@ -1284,7 +1313,7 @@ margin-left: -1.5rem;
   overflow: hidden;
   position: relative;
 }
-.bnbbook-comment .con-brief .con-list-parts .process .val:before {
+.bnbbook-comment .con-brief .con-list-parts .process .val::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1368,10 +1397,250 @@ margin-left: -1.5rem;
   margin-bottom: 0.25rem;
   position: relative;
   text-align: center;
-  padding: 0.25rem 0 0.25rem 0.75rem;
+  /* padding: 0.25rem 0 0.25rem 0.75rem; */
 }
 .pop-order-product-box .list-device .item-device-e062 .ico {
   background-position: -1.3rem 0;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e04c .ico {
+  background-position:-5.2rem -5.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e043 .ico {
+  background-position: 0 -7.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e065 .ico {
+  background-position: -2.6rem 0;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e039 .ico {
+  background-position: -2.6rem -1.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e04d .ico {
+  background-position: -5.2rem 0;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e127 .ico {
+  background-position: -5.2rem -3.9rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e049 .ico {
+  background-position: -5.2rem -2.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e055 .ico {
+  background-position: 0 -2.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e059 .ico {
+  background-position: -2.6rem -2.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e03d .ico {
+  background-position: -1.3rem -2.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e04f .ico {
+  background-position: 0 -3.9rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e03e .ico {
+  background-position: -2.6rem -3.9rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e05e .ico {
+  background-position: -3.9rem -1.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e11d .ico {
+  background-position: 0 -5.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e121 .ico {
+  background-position: -11.7rem -1.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e12a .ico {
+  background-position: -1.3rem -5.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e128 .ico {
+  background-position: 0 -9.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e11c .ico {
+  background-position: -11.7rem 0;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e124 .ico {
+  background-position: -5.2rem -1.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e057 .ico {
+  background-position: -6.5rem -5.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e063 .ico {
+  background-position: 0 -6.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e051 .ico {
+  background-position: -2.6rem -6.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e069 .ico {
+  background-position: -1.3rem -6.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e046 .ico {
+  background-position: -6.5rem -2.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e023 .ico {
+  background-position: -5.2rem -6.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e067 .ico {
+  background-position: -6.5rem -6.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e061 .ico {
+  background-position: -3.9rem -6.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e060 .ico {
+  background-position: -9.1rem -1.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e066 .ico {
+  background-position: -9.1rem -5.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e12b .ico {
+  background-position: -9.1rem 0;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e02d .ico {
+  background-position: -7.8rem -9.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e02e .ico {
+  background-position: -9.1rem -9.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e0d8 .ico {
+  background-position: -10.4rem 0;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e031 .ico {
+  background-position: -10.4rem -1.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e0d9 .ico {
+  background-position: -10.4rem -5.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e0da .ico {
+  background-position: -10.4rem -2.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e030 .ico {
+  background-position: -10.4rem -3.9rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e02f .ico {
+  background-position: -6.5rem -9.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e120 .ico {
+  background-position: -10.4rem -6.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e0d2 .ico {
+  background-position: -10.4rem -7.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e02b .ico {
+  background-position: -9.1rem -7.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e053 .ico {
+  background-position: -11.7rem -2.6rem;
+  width: 1rem;
+  height: 1rem;
+}
+.pop-order-product-box .list-device .item-device-e054 .ico {
+  background-position: -1.3rem -9.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e048 .ico {
+  background-position: -3.9rem -9.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e06f .ico {
+  background-position: -2.6rem -5.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e03c .ico {
+  background-position: -3.9rem -5.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e125 .ico {
+  background-position: -3.9rem -3.9rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e0db .ico {
+  background-position: -9.1rem -10.4rem;
   width: 1.2rem;
   height: 1.2rem;
 }
@@ -1381,11 +1650,423 @@ margin-left: -1.5rem;
   background-repeat: no-repeat;
 }
 .pop-order-product-box .bnbdetail-box-service .list-device .ico {
-  background: no-repeat;
   display: block;
   margin: 0 auto 0.35rem;
 }
 .pop-order-product-box .bnbdetail-box-service .list-device .txt {
   display: block;
   line-height: 0.7rem;
+}
+.pop-order-product-box .list-device .item .txt{
+  margin-left: -22px;
+}
+.bnbdetail-box-service .btn-o-more {
+  text-align: center;
+  color: #ff6a50;
+  font-size: 0.7rem;
+  padding-top: 1rem;
+}
+
+.bnbdetail-box-service .btn-o-more .ico {
+  display: inline-block;
+  margin-left: 0.25rem;
+  position: relative;
+  font-style: normal;
+  font-weight: 400;
+}
+.bnbdetail-box-service .btn-o-more .ico::after {
+  content: '';
+  position: absolute;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
+  background-size: 4.4rem 4.1rem;
+  background-repeat: no-repeat;
+  background-position: 0 -3.7rem;
+  width: 0.6rem;
+  height: 0.4rem;
+  display: inline-block;
+  vertical-align: top;
+  border: none;
+  transform: none;
+  top: -0.4rem;
+  left: 0;
+}
+.bnbdetail-box-service .is-type-1 .ico::after {
+    transform: rotateX(180deg);
+    transform-origin: center;
+    top: -0.45rem;
+}
+.bnbdetail-box-service .btn-o-more .ico::after {
+    content: '';
+    position: absolute;
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
+    background-size: 4.4rem 4.1rem;
+    background-repeat: no-repeat;
+    background-position: 0 -3.7rem;
+    width: 0.6rem;
+    height: 0.4rem;
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+    left: 0;
+}
+/* 入住须知 begin */
+.pop-order-product-box .bnbdetail-box + .bnbdetail-box {
+    margin-top: 0.4rem;
+}
+.pop-order-product-box .bnbdetail-box {
+    background: #fff;
+    padding: 1rem;
+}
+.pop-order-product-box .bnbdetail-box .box-head {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1rem;
+    padding-bottom: 1.25rem;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention>.item {
+    display: flex;
+    font-size: 0.7rem;
+    line-height: 1.15rem;
+    color: #333;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .lbl {
+    color: #999;
+    white-space: nowrap;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .lbl::after {
+    content: "：";
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .txt {
+    font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+    font-weight: 200;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .txt .val {
+    font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
+    font-weight: 400;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule {
+    margin-top: -0.3rem;
+    flex-basis: 80%;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .txt {
+    font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+    font-weight: 200;
+    margin-left: 30px; 
+    margin-top: -0.55rem;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item {
+    float: left;
+    width: 50%;
+    margin-top: 0.35rem;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
+    background-size: 8.1rem 7.4rem;
+    background-repeat: no-repeat;
+    background-position: -1.8rem -6.6rem;
+    width: 0.6rem;
+    height: 0.6rem;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
+    content: '\2713';
+    margin-right: 0.5rem;
+    text-indent: -249.975rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0.05rem;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item.is-disabled {
+    color: #999;
+    text-decoration: line-through;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item.is-disabled::before {
+    background-position: -2.5rem -6.6rem;
+    width: 0.6rem;
+    height: 0.6rem;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item.is-disabled::before {
+    content: '\2717';
+    color: #999;
+    text-decoration: none;
+}
+/* .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
+    background-size: 8.1rem 7.4rem;
+    background-repeat: no-repeat;
+} */
+/* .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
+    margin-right: 0.5rem;
+    text-indent: -249.975rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0.05rem;
+} */
+/* 入住须知 end */
+/* 透明背景 begin */
+.cui-mask {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 3000;
+}
+.cui-mask {
+    background: rgba(0,0,0,0.5);
+}
+.view .cui-mask{
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+/* 透明背景 end */
+/* 其他要求 begin */
+.pop-order-product-box .bnbdetail-box + .bnbdetail-box {
+    margin-top: 0.4rem;
+}
+.bnbbook-pop-order-product-box .bnbbook-box-other {
+    padding: 1rem;
+}
+.pop-order-product-box .bnbdetail-box {
+    background: #fff;
+}
+.pop-order-product-box .bnbdetail-box .box-head {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1rem;
+    padding-bottom: 0.9rem;
+}
+.pop-order-product-box .bnbdetail-box-other .list-other>.item {
+    font-size: 0.7rem;
+    line-height: 2.4rem;
+    color: #333;
+}
+.pop-order-product-box .bnbdetail-box-other .list-other .lbl {
+    color: #999;
+    white-space: nowrap;
+}
+.pop-order-product-box .bnbdetail-box-other .list-other .lbl::after {
+    content: "：";
+}
+.pop-order-product-box .bnbdetail-box-other .list-other .txt {
+    font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+    font-weight: 200;
+    margin-left: 40px;
+    margin-top: -23px;
+}
+.pop-order-product-box .bnbdetail-box-other .list-other .txt .val {
+    font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
+    font-weight: 400;
+}
+.bnbdetail-box-other .btn-o-more {
+    text-align: center;
+    color: #ff6a50;
+    font-size: 0.7rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+.bnbdetail-box-other .btn-o-more .ico {
+    display: inline-block;
+    margin-left: 0.25rem;
+    position: relative;
+    font-style: normal;
+    font-weight: 400;
+}
+.bnbdetail-box-other .btn-o-more .ico:after {
+    content: '';
+    position: absolute;
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
+    background-size: 4.4rem 4.1rem;
+    background-repeat: no-repeat;
+    background-position: 0 -3.7rem;
+    width: 0.6rem;
+    height: 0.4rem;
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+    transform: none;
+    top: -0.4rem;
+    left: 0;
+}
+.bnbdetail-box-other .is-type-1 .ico:after {
+    transform: rotateX(180deg);
+    transform-origin: center;
+    top: -0.45rem;
+}
+.bnbdetail-box-other .btn-o-more .ico:after {
+    content: '';
+    position: absolute;
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
+    background-size: 4.4rem 4.1rem;
+    background-repeat: no-repeat;
+    background-position: 0 -3.7rem;
+    width: 0.6rem;
+    height: 0.4rem;
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+    left: 0;
+}
+/* 其他要求 end */
+/* 添加 */
+.bnb-header-fix {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2.2rem;
+    opacity: 1;
+    z-index: 3;
+    transition: opacity 0.1s ease-in;
+}
+.bnb-header-fix:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: -1;
+}
+.bnb-header-fix:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: #e9e9e9;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5);
+    transform-origin: 0 0;
+    left: 0;
+    right: 0;
+}
+.bnb-header-fix .btn-o-back:after {
+    border-color: #666;
+}
+.bnb-header-fix .btn-o-back:after {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 2px solid  #666;
+    border-width: 2px 2px 0 0;
+    transform: rotate(-135deg);
+    transform-origin: 30% 30%;
+    left: 26rem;
+}
+.bnb-header-fix .btn-o-back:after, .bnb-header-fix .btn-o-message:after, .bnb-header-fix .btn-o-share:after, .bnb-header-fix .btn-o-favor:after, .bnb-header-fix .btn-o-fin:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.bnb-header-fix .btn-o-back {
+    float: left;
+}
+.bnb-header-fix .btn-o-back, .bnb-header-fix .btn-o-message, .bnb-header-fix .btn-o-share, .bnb-header-fix .btn-o-favor, .bnb-header-fix .btn-o-fin {
+    height: 2.2rem;
+    display: block;
+    position: relative;
+    width: 2.2rem;
+}
+.bnb-header-fix .btn-o-fin{
+   right: -23rem;
+    top: -1.55rem;
+}
+.bnb-header-fix .btn-o-fin:after {
+    content: none;
+}
+.bnb-header-fix .btn-o-fin:after {
+    content: '';
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-05.v3.png?v=0);
+    background-size: 5rem 5rem;
+    background-repeat: no-repeat;
+    margin-top: -0.5rem;
+    margin-left: -0.5rem;
+}
+.bnb-header-fix>.tit, .bnb-header-fix>.con>.tit {
+    text-align: center;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 2.2rem;
+    height: 2.2rem;
+    overflow: hidden;
+    margin-left: 2.2rem;
+    margin-right: 2.2rem;
+    font: 400 1.286em/2 Tahoma;
+    margin-top: -38px;
+}
+.bnb-bodyer-fix {
+    padding-top: 2.2rem;
+}
+.addition-list {
+    border-width: 0 0 1px;
+    background-color: #fff;
+    padding-left: 0.75rem;
+    overflow: hidden;
+    border-style: solid;
+    border-color: #ddd;
+}
+.addition-list .add-Mess{
+    padding: 0.2rem 0.75rem 0.2rem 4rem;
+    border-width: 1px 0 0;
+    margin-top: -1px;
+    font-size: 0.7rem;
+    overflow: hidden;
+    float: left;
+}
+.addition-list .add-Mess .add-Mess-input {
+    width: 100%;
+    padding: 0.3rem 0;
+    font-size: 0.7rem;
+}
+.addition-btn {
+    padding: 0.75rem;
+}
+.addition-btn .book-btn-primary {
+    float: none;
+    display: block;
+    text-align: center;
+    padding: 0.3rem 0;
+    font-size: 0.75rem;
+}
+.btn-ora {
+    background-color: #ff6d57;
+    border-radius: 0;
+}
+.book-btn-primary {
+    color: #fff;
+}
+.addition-list .arr-r {
+    width: 3rem;
+    padding: 0.3rem 0;
+    text-align: right;
+    color: #666;
+    white-space: nowrap;
+    margin-right: 1rem;
+    float: left;
+    margin-left: -4rem;
+    position: relative;
+}
+.addition-list .arr-r:after {
+    right: -0.6rem;
+}
+.arr-r:after {
+    width: 0.4rem;
+    height: 0.4rem;
+}
+.arr-r:after, .arr-down:after, .arr-up:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    border: 1px solid #c1c1c1;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg) translateY(-50%);
+    transform-origin: 50% 0;
 }
