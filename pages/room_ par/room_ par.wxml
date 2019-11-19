@@ -136,14 +136,15 @@
         </view>
       </block>
     </view>
-    <view id="J_coupons" class="bnbdetail-list-coupon">
+    <view id="J_coupons" class="bnbdetail-list-coupon" wx:if="{{coupons_list!=null}}">
       <view class="tit">优惠券</view>
       <view class="btn">领取</view>
       <view class="con-list">
-        <view class="list-item">最高减500</view>
-        <view class="list-item">最高减80</view>
-        <view class="list-item">最高减60</view>
+        <block wx:for="{{coupons_list}}" wx:key="strategyid" wx:if="{{index<=2}}">
+          <view class="list-item">{{item.priceDesc}}</view>
+        </block>
       </view>
     </view>
   </view>
 </view>
+<view style="background-color: #F5F5F5;height:0.5rem;"></view>
