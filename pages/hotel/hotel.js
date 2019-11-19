@@ -21,6 +21,7 @@ Page({
     cust_Mess_del:'none',
     cusDel:'block',
     addMessUsermore:'none',
+    editMessUser:'none',
     // leftMove:0,
     // show: false,
     // buttons: [
@@ -180,6 +181,24 @@ Page({
     this.setData({
       addMessUsermore:'block',
       hotelMess:'none'
+    })
+  },
+  addMessUsermoreClose(){
+    this.setData({
+      addMessUsermore: 'none',
+      hotelMess: 'block'
+    })
+  },
+  addMoreEdit(){
+    this.setData({
+      addMessUsermore:'none',
+      editMessUser:'block'
+    })
+  },
+  editMess_close(){
+    this.setData({
+      addMessUsermore: 'block',
+      editMessUser: 'none'
     })
   },
   getMess_image(){

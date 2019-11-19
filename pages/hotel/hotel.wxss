@@ -1,4 +1,29 @@
-/* .bnb-header .btn-o-back {
+.bnb-header.is-fix {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.bnb-header {
+    text-align: center;
+    height: 2.2rem;
+    opacity: 1;
+    z-index: 4;
+    transition: opacity 0.1s ease-in;
+}
+.bnb-header:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: -1;
+    box-shadow: inset 0 -1px 1px -1px #e1e1e1;
+}
+.bnb-header .btn-o-back {
     float: left;
 }
 .bnb-header .btn-o {
@@ -7,6 +32,7 @@
     position: relative;
     width: 1.2rem;
     padding: 0 0.6rem;
+    margin-top: -0.1rem;
 }
 .bnb-header .btn-o:after {
     transform: translate(-50%, -50%);
@@ -25,9 +51,24 @@
     background-position: -4.7rem -2.6rem;
     width: 1.2rem;
     height: 1.2rem;
-} */
-
+}
+.body-iphoneinweb .bnb-header>.tit{
+  font-weight: 500;
+  text-align: center;
+    display: block;
+    font-size: 0.85rem;
+    color: #333;
+    /* line-height: 2.2rem; */
+    height: 2.2rem;
+    overflow: hidden;
+    margin-left: 4.2rem;
+    margin-right: 4.2rem;
+    font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
+}
 /*酒店信息*/
+.move{
+  margin-top:33px; 
+}
 view{
   display: block;
 }
@@ -2165,6 +2206,10 @@ background-color: rgba(0, 0, 0, 0.75);
 }
 
 /* 添加更多 */
+.a-more{
+  height: 999px;
+  background-color: rgb(244, 244, 244)
+}
 .bnb-header.is-fix {
   position: fixed;
   left: 0;
@@ -2283,17 +2328,30 @@ background-color: rgba(0, 0, 0, 0.75);
     height: 3rem;
     border-radius: 8px;
     background: #ff6d57;
-    color: #fff;
-    font-size: 0.8rem;
+}
+.btn-add-word{
+  font-size: 0.8rem;
+  color: #fff;
+  line-height: 3.5;
+}
+.addMess-namemore{
+  margin-top: -0.35rem;
 }
 .addition-list-add .moress {
     border-width: 1px 0 0;
     font-size: 0.75rem;
     overflow: hidden;
-    box-shadow: 0 -1px 0 0 #efefef inset;
+    /* box-shadow: 0 -1px 0 0 #efefef inset; */
     padding: 0 4.2rem 0 4rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
-.addition-list-add .moress addMess-namemore {
+.addition-list-add .chin{
+  width: 100%;
+  height: 1px;
+  background-color: #f5f5f5;
+}
+.addition-list-add .moress text {
     width: 3rem;
     padding: 0.45rem 0 0.2rem;
     text-align: right;
@@ -2304,12 +2362,12 @@ background-color: rgba(0, 0, 0, 0.75);
     position: relative;
     line-height: 0.73rem;
 }
-.addition-list-add .moress input {
+ /* .addition-list-add .moress input {
     width: 100%;
     font-size: 0.75rem;
     padding: 0.55rem 0 0.45rem;
     box-sizing: border-box;
-}
+} */
 .addition-list-add .moress .eng {
     font-size: 0.5rem;
 }
@@ -2317,7 +2375,7 @@ background-color: rgba(0, 0, 0, 0.75);
     right: -0.6rem;
     top: 1.1rem;
 }
-.arr-r:after {
+/* .arr-r:after {
     width: 0.4rem;
     height: 0.4rem;
 }
@@ -2328,12 +2386,12 @@ background-color: rgba(0, 0, 0, 0.75);
     border-width: 1px 1px 0 0;
     transform: rotate(45deg) translateY(-50%);
     transform-origin: 50% 0;
-}
+} */
 .addition-warning {
     font-size: 0.6rem;
     padding: 0.5rem 0 0.5rem 0.75rem;
     color: #3c3c3c;
-    background: #e9e9e9;
+    background:rgb(233,233,233);
 }
 .choice-hd {
     color: #999;
@@ -2356,8 +2414,8 @@ background-color: rgba(0, 0, 0, 0.75);
 .taker-select .ico-edit {
     position: absolute;
     right: 0.25rem;
-    top: 50%;
-    margin-top: -1.1rem;
+    /* top: 50%; */
+    margin-top: 0.4rem;
     width: 1.1rem;
     height: 1.1rem;
     padding: 0.5rem;
@@ -2395,9 +2453,11 @@ input[type="checkbox"]:checked, .checked {
 }
 .taker-select .in-checkbox-tar {
     position: absolute;
-    top: 50%;
+    /* top: 50%;
     left: 0;
-    margin-top: -0.5rem;
+    margin-top: -0.5rem; */
+    margin-left: -1.25rem;
+    margin-top: 1.15rem;
 }
 .in-checkbox-tar {
     width: 0.8rem;
@@ -2422,13 +2482,28 @@ input[type="checkbox"]:checked, .checked {
 }
 .tak-att-icon {
     width: 1.1rem;
-    height: 0.9rem;
+    height: 1.1rem;
     background-position: -8.75rem 0;
     display: inline-block;
     overflow: hidden;
     vertical-align: text-bottom;
     margin-left: 0.5rem;
+    margin-top: -1rem;
 }
 .taker-select .gray-txt-number {
     font-size: 0.65rem;
+    /* margin-top:-1.25rem;  */
+}
+.txt-name{
+  margin-top: 0.5rem
+}
+.tak-att-icon {
+  background-image: url(https://pic.c-ctrip.com/h5/bnb/bnb-order-sprite1.png);
+  background-repeat: no-repeat;
+  background-size: 10rem auto;
+}
+.taker-select .ico-edit{
+  background-image: url(https://pic.c-ctrip.com/h5/bnb/bnb-order-sprite1.png);
+  background-repeat: no-repeat;
+  background-size: 10rem auto;
 }
