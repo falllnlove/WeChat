@@ -190,7 +190,7 @@ image{
 
 /*入离时间*/
 .bnbdetail-box{
-  width: 90%;
+  width: 92%;
   margin: 0 auto;
   margin-top: 2%;
 }
@@ -461,8 +461,83 @@ image{
   height: 1.2rem;
   font-size: 0.8rem;
 }
-
-
+.bnbbook-box-guest-list .con-edit .item {
+    padding: 0.75rem 1rem 0.75rem 1.5rem;
+    position: relative;
+    border: none;
+     width: 100%; 
+    margin-left: -2.8rem;
+}
+.bnbbook-box-guest-list .con-edit .item:before {
+    margin-left: -1.5rem;
+}
+.bnbbook-box-guest-list .con-edit .item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    background: #e9e9e9;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5);
+    transform-origin: 0 0;
+}
+.bnbbook-box-guest-list .con-edit .item .btn-o-del {
+    display: block;
+    width: 0.85rem;
+    height: 0.85rem;
+    position: absolute;
+    margin-left: -1.3rem;
+    margin-top: 0.5rem;
+}
+.bnbbook-box-guest-list .con-edit .item .btn-o-del:before {
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-04.v4.png?v=0);
+    background-size: 4.8rem 4.5rem;
+    background-repeat: no-repeat;
+    background-position: -3.9rem 0;
+    width: 0.9rem;
+    height: 0.9rem;
+    content: '';
+    display: block;
+    position: absolute;
+}
+.bnbbook-box-guest-list .con-edit .item .tit {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #3c3c3c;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+.bnbbook-box-guest-list .con-edit .item .txt {
+    font-size: 0.7rem;
+    color: #3c3c3c;
+    margin-left: -1.5rem;
+}
+.bnbbook-box-guest-list .con-edit .item .btn-o-del2 {
+    font-size: 0.9rem;
+    background: #ff6a50;
+    color: #fff;
+    width: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    padding: 1rem 0;
+    text-align: center;
+}
+.bnbbook-box-guest-list .con-edit .item:after {
+    content: '';
+    position: absolute;
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
+    background-size: 8.1rem 7.4rem;
+    background-repeat: no-repeat;
+    background-position: -7.6rem -3.6rem;
+    width: 0.3rem;
+    height: 0.6rem;
+    right: 0;
+    top: 1.4rem;
+}
 /*发票*/
 .qsw1{
   margin-top: -10px;
@@ -1691,239 +1766,419 @@ margin-left: -1.5rem;
   left: 0;
 }
 .bnbdetail-box-service .is-type-1 .ico::after {
-    transform: rotateX(180deg);
-    transform-origin: center;
-    top: -0.45rem;
+  transform: rotateX(180deg);
+  transform-origin: center;
+  top: -0.45rem;
 }
 .bnbdetail-box-service .btn-o-more .ico::after {
-    content: '';
-    position: absolute;
-    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
-    background-size: 4.4rem 4.1rem;
-    background-repeat: no-repeat;
-    background-position: 0 -3.7rem;
-    width: 0.6rem;
-    height: 0.4rem;
-    display: inline-block;
-    vertical-align: top;
-    border: none;
-    left: 0;
+  content: '';
+  position: absolute;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
+  background-size: 4.4rem 4.1rem;
+  background-repeat: no-repeat;
+  background-position: 0 -3.7rem;
+  width: 0.6rem;
+  height: 0.4rem;
+  display: inline-block;
+  vertical-align: top;
+  border: none;
+  left: 0;
 }
 /* 入住须知 begin */
 .pop-order-product-box .bnbdetail-box + .bnbdetail-box {
-    margin-top: 0.4rem;
+  margin-top: 0.4rem;
 }
 .pop-order-product-box .bnbdetail-box {
-    background: #fff;
-    padding: 1rem;
+  background: #fff;
+  padding: 1rem;
 }
 .pop-order-product-box .bnbdetail-box .box-head {
-    font-weight: 700;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1rem;
-    padding-bottom: 1.25rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1rem;
+  padding-bottom: 1.25rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention>.item {
-    display: flex;
-    font-size: 0.7rem;
-    line-height: 1.15rem;
-    color: #333;
+  display: flex;
+  font-size: 0.7rem;
+  line-height: 1.45rem;
+  color: #333;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .lbl {
-    color: #999;
-    white-space: nowrap;
+  color: #999;
+  white-space: nowrap;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .lbl::after {
-    content: "：";
+  content: "：";
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .txt {
-    font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
-    font-weight: 200;
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .txt .val {
-    font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
-    font-weight: 400;
+  font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
+  font-weight: 400;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule {
-    margin-top: -0.3rem;
-    flex-basis: 80%;
+  margin-top: -0.4rem;
+  flex-basis: 80%;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .txt {
-    font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
-    font-weight: 200;
-    margin-left: 30px; 
-    margin-top: -0.55rem;
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  margin-top: 8px;
+  margin-left: -1.35rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item {
-    float: left;
-    width: 50%;
-    margin-top: 0.35rem;
+  float: left;
+  width: 50%;
+  margin-top: 0.5rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
-    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
-    background-size: 8.1rem 7.4rem;
-    background-repeat: no-repeat;
-    background-position: -1.8rem -6.6rem;
-    width: 0.6rem;
-    height: 0.6rem;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
+  background-size: 8.1rem 7.4rem;
+  background-repeat: no-repeat;
+  background-position: -1.8rem -6.6rem;
+  width: 0.6rem;
+  height: 0.6rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
-    content: '\2713';
-    margin-right: 0.5rem;
-    text-indent: -249.975rem;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 0.05rem;
+  content: '\2713';
+  margin-right: 0.5rem;
+  text-indent: -249.975rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0.05rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item.is-disabled {
-    color: #999;
-    text-decoration: line-through;
+  color: #999;
+  text-decoration: line-through;
+  margin-top: -0.1rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item.is-disabled::before {
-    background-position: -2.5rem -6.6rem;
-    width: 0.6rem;
-    height: 0.6rem;
+  background-position: -2.5rem -6.6rem;
+  width: 0.6rem;
+  height: 0.6rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item.is-disabled::before {
-    content: '\2717';
-    color: #999;
-    text-decoration: none;
+  content: '\2717';
+  color: #999;
+  text-decoration: none;
 }
-/* .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
-    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
-    background-size: 8.1rem 7.4rem;
-    background-repeat: no-repeat;
-} */
-/* .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
-    margin-right: 0.5rem;
-    text-indent: -249.975rem;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 0.05rem;
-} */
+.pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
+  background-size: 8.1rem 7.4rem;
+  background-repeat: no-repeat;
+}
+.pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
+  margin-right: 0.5rem;
+  text-indent: -249.975rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0.05rem;
+}
 /* 入住须知 end */
 /* 透明背景 begin */
 .cui-mask {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.75);
-    z-index: 3000;
-}
-.cui-mask {
-    background: rgba(0,0,0,0.5);
-}
-.view .cui-mask{
+  top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.75);
+  z-index: 3000;
+}
+.cui-mask {
+  background: rgba(0,0,0,0.5);
+}
+.view .cui-mask{
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.75);
 }
 /* 透明背景 end */
 /* 其他要求 begin */
 .pop-order-product-box .bnbdetail-box + .bnbdetail-box {
-    margin-top: 0.4rem;
+  margin-top: 0.4rem;
 }
 .bnbbook-pop-order-product-box .bnbbook-box-other {
-    padding: 1rem;
+  padding: 1rem;
 }
 .pop-order-product-box .bnbdetail-box {
-    background: #fff;
+  background: #fff;
 }
 .pop-order-product-box .bnbdetail-box .box-head {
-    font-weight: 700;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1rem;
-    padding-bottom: 0.9rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1rem;
+  padding-bottom: 0.9rem;
 }
 .pop-order-product-box .bnbdetail-box-other .list-other>.item {
-    font-size: 0.7rem;
-    line-height: 2.4rem;
-    color: #333;
+  font-size: 0.7rem;
+  line-height: 2.4rem;
+  color: #333;
 }
 .pop-order-product-box .bnbdetail-box-other .list-other .lbl {
-    color: #999;
-    white-space: nowrap;
+  color: #999;
+  white-space: nowrap;
 }
 .pop-order-product-box .bnbdetail-box-other .list-other .lbl::after {
-    content: "：";
+  content: "：";
 }
 .pop-order-product-box .bnbdetail-box-other .list-other .txt {
-    font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
-    font-weight: 200;
-    margin-left: 40px;
-    margin-top: -23px;
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  margin-left: 40px;
+  margin-top: -23px;
 }
 .pop-order-product-box .bnbdetail-box-other .list-other .txt .val {
-    font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
-    font-weight: 400;
+  font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
+  font-weight: 400;
 }
 .bnbdetail-box-other .btn-o-more {
-    text-align: center;
-    color: #ff6a50;
-    font-size: 0.7rem;
-    padding-top: 1rem;
-    padding-bottom: 3rem;
+  text-align: center;
+  color: #ff6a50;
+  font-size: 0.7rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
 }
 .bnbdetail-box-other .btn-o-more .ico {
-    display: inline-block;
-    margin-left: 0.25rem;
-    position: relative;
-    font-style: normal;
-    font-weight: 400;
+  display: inline-block;
+  margin-left: 0.25rem;
+  position: relative;
+  font-style: normal;
+  font-weight: 400;
 }
 .bnbdetail-box-other .btn-o-more .ico:after {
-    content: '';
-    position: absolute;
-    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
-    background-size: 4.4rem 4.1rem;
-    background-repeat: no-repeat;
-    background-position: 0 -3.7rem;
-    width: 0.6rem;
-    height: 0.4rem;
-    display: inline-block;
-    vertical-align: top;
-    border: none;
-    transform: none;
-    top: -0.4rem;
-    left: 0;
+  content: '';
+  position: absolute;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
+  background-size: 4.4rem 4.1rem;
+  background-repeat: no-repeat;
+  background-position: 0 -3.7rem;
+  width: 0.6rem;
+  height: 0.4rem;
+  display: inline-block;
+  vertical-align: top;
+  border: none;
+  transform: none;
+  top: -0.4rem;
+  left: 0;
 }
 .bnbdetail-box-other .is-type-1 .ico:after {
-    transform: rotateX(180deg);
-    transform-origin: center;
-    top: -0.45rem;
+  transform: rotateX(180deg);
+  transform-origin: center;
+  top: -0.45rem;
 }
 .bnbdetail-box-other .btn-o-more .ico:after {
-    content: '';
-    position: absolute;
-    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
-    background-size: 4.4rem 4.1rem;
-    background-repeat: no-repeat;
-    background-position: 0 -3.7rem;
-    width: 0.6rem;
-    height: 0.4rem;
-    display: inline-block;
-    vertical-align: top;
-    border: none;
-    left: 0;
+  content: '';
+  position: absolute;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-07.v3.png);
+  background-size: 4.4rem 4.1rem;
+  background-repeat: no-repeat;
+  background-position: 0 -3.7rem;
+  width: 0.6rem;
+  height: 0.4rem;
+  display: inline-block;
+  vertical-align: top;
+  border: none;
+  left: 0;
 }
 /* 其他要求 end */
 /* 添加 */
 .bnb-header-fix {
-    text-align: center;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 2.2rem;
-    opacity: 1;
-    z-index: 3;
-    transition: opacity 0.1s ease-in;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2.2rem;
+  opacity: 1;
+  z-index: 3;
+  transition: opacity 0.1s ease-in;
 }
 .bnb-header-fix:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: -1;
+}
+.bnb-header-fix:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background: #e9e9e9;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+  transform-origin: 0 0;
+  left: 0;
+  right: 0;
+}
+.bnb-header-fix .btn-o-back:after {
+  border-color: #666;
+}
+.bnb-header-fix .btn-o-back:after {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 2px solid  #666;
+  border-width: 2px 2px 0 0;
+  transform: rotate(-135deg);
+  transform-origin: 30% 30%;
+  left: 26rem;
+}
+.bnb-header-fix .btn-o-back:after, .bnb-header-fix .btn-o-message:after, .bnb-header-fix .btn-o-share:after, .bnb-header-fix .btn-o-favor:after, .bnb-header-fix .btn-o-fin:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.bnb-header-fix .btn-o-back {
+  float: left;
+}
+.bnb-header-fix .btn-o-back, .bnb-header-fix .btn-o-message, .bnb-header-fix .btn-o-share, .bnb-header-fix .btn-o-favor, .bnb-header-fix .btn-o-fin {
+  height: 2.2rem;
+  display: block;
+  position: relative;
+  width: 2.2rem;
+  margin-top: -2px;
+}
+.bnb-header-fix .btn-o-fin{
+/* right: -17rem; */
+/* margin-left: 23rem; */
+  margin-top: 5px;
+  float: right;
+  color:  #ff6d57;
+  margin-right:6px; 
+}
+.bnb-header-fix .btn-o-fin:after {
+  content: none;
+}
+.bnb-header-fix .btn-o-fin:after {
+  content: '';
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-05.v3.png?v=0);
+  background-size: 5rem 5rem;
+  background-repeat: no-repeat;
+  margin-top: -0.5rem;
+  margin-left: -0.5rem;
+}
+.bnb-header-fix>.tit, .bnb-header-fix>.con>.tit {
+  text-align: center;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  height: 2.2rem;
+  overflow: hidden;
+  margin-left: 2.2rem;
+  margin-right: 2.2rem;
+  font: 400 1.2em/2 Tahoma;
+  margin-top: -3px;
+}
+.bnb-bodyer-fix {
+  padding-top: 2.2rem;
+}
+.addition-list {
+  border-width: 0 0 1px;
+  background-color: #fff;
+  padding-left: 0.75rem;
+  overflow: hidden;
+  border-style: solid;
+  border-color: #ddd;
+}
+.addition-list .add-Mess{
+  padding: 0.2rem 0.75rem 0.2rem 4rem;
+  border-width: 1px 0 0;
+  margin-top: -1px;
+  font-size: 0.9rem;
+  overflow: hidden;
+  float: left; 
+  margin-top: 0.9rem;
+}
+.addition-list .add-Mess .add-Mess-input {
+  width: 100%;
+  padding: 0.3rem 0;
+  font-size: 0.7rem;
+  margin-top: -24px;
+}
+.addition-btn {
+  padding: 0.75rem;
+}
+.addition-btn .book-btn-primary {
+  float: none;
+  display: block;
+  text-align: center;
+  padding: 0.3rem 0;
+  font-size: 0.75rem;
+}
+.btn-ora {
+  background-color: #ff6d57;
+  border-radius: 0;
+}
+.book-btn-primary {
+  color: #fff;
+}
+/* .addition-list .arr-r {
+  width: 3rem;
+  padding: 0.3rem 0;
+  text-align: right;
+  color: #666;
+  white-space: nowrap;
+  margin-right: 1rem;
+  float: left;
+  margin-left: -4rem;
+  position: relative;
+} */
+/* .addition-list .arr-r:after {
+  right: -0.6rem;
+}
+.arr-r:after {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+.arr-r:after, .arr-down:after, .arr-up:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  border: 1px solid #c1c1c1;
+  border-width: 1px 1px 0 0;
+  transform: rotate(45deg) translateY(-50%);
+  transform-origin: 50% 0;
+} */
+.addMess-name{
+  margin-left: -64px;
+}
+.a{
+  background: #e9e9e9;
+  height: 623px;
+}
+.r{
+  margin-top: 0.3rem;
+}
+
+/* 添加更多 */
+.bnb-header.is-fix {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.bnb-header {
+  text-align: center;
+  height: 2.2rem;
+  opacity: 1;
+  z-index: 4;
+  transition: opacity 0.1s ease-in;
+}
+.bnb-header:before {
     content: '';
     display: block;
     position: absolute;
@@ -1933,140 +2188,247 @@ margin-left: -1.5rem;
     bottom: 0;
     background: #fff;
     z-index: -1;
+    box-shadow: inset 0 -1px 1px -1px #e1e1e1;
 }
-.bnb-header-fix:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    background: #e9e9e9;
-    width: 100%;
-    height: 1px;
-    transform: scaleY(0.5);
-    transform-origin: 0 0;
-    left: 0;
-    right: 0;
+.bnb-header .btn-o-back {
+    float: left;
 }
-.bnb-header-fix .btn-o-back:after {
-    border-color: #666;
+.bnb-header .btn-os {
+    height: 2.2rem;
+    display: block;
+    position: relative;
+    width: 1.2rem;
+    padding: 0 0.6rem;
+    margin-top: -0.1rem;
 }
-.bnb-header-fix .btn-o-back:after {
-    width: 0.5rem;
-    height: 0.5rem;
-    border: 2px solid  #666;
-    border-width: 2px 2px 0 0;
-    transform: rotate(-135deg);
-    transform-origin: 30% 30%;
-    left: 26rem;
+.bnb-header .btn-os:after {
+    transform: translate(-50%, -50%);
 }
-.bnb-header-fix .btn-o-back:after, .bnb-header-fix .btn-o-message:after, .bnb-header-fix .btn-o-share:after, .bnb-header-fix .btn-o-favor:after, .bnb-header-fix .btn-o-fin:after {
+.bnb-header .btn-os:after {
     content: "";
     display: block;
     position: absolute;
     left: 50%;
     top: 50%;
 }
-.bnb-header-fix .btn-o-back {
-    float: left;
+.bnb-header .btn-o-back:after {
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-21.v2.png?v=0);
+    background-size: 5.9rem 5.9rem;
+    background-repeat: no-repeat;
+    background-position: -4.7rem -2.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
 }
-.bnb-header-fix .btn-o-back, .bnb-header-fix .btn-o-message, .bnb-header-fix .btn-o-share, .bnb-header-fix .btn-o-favor, .bnb-header-fix .btn-o-fin {
+.bnb-header .btn-o-fin {
+    width: auto;
+    line-height: 2.2rem;
+    color: #ff6a50;
+    font-size: 0.9rem;
+    padding-right: 0.6rem;
+    float: right;
+    text-align: right;
+}
+.bnb-header .btn-os {
     height: 2.2rem;
-    display: block;
     position: relative;
-    width: 2.2rem;
+    padding: 0 0.6rem;
 }
-.bnb-header-fix .btn-o-fin{
-   right: -23rem;
-    top: -1.55rem;
-}
-.bnb-header-fix .btn-o-fin:after {
+.bnb-header .btn-o-fin:after {
     content: none;
 }
-.bnb-header-fix .btn-o-fin:after {
-    content: '';
-    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-05.v3.png?v=0);
-    background-size: 5rem 5rem;
-    background-repeat: no-repeat;
-    margin-top: -0.5rem;
-    margin-left: -0.5rem;
+.bnb-header .btn-os:after {
+    transform: translate(-50%, -50%);
 }
-.bnb-header-fix>.tit, .bnb-header-fix>.con>.tit {
+.bnb-header .btn-os:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.body-iphone .bnb-header>.tit, .body-iphone .bnb-header>.con>.tit, .body-iphoneinweb .bnb-header>.tit, .body-iphoneinweb .bnb-header>.con>.tit {
+    font-weight: 500;
+}
+.bnb-header>.tit, .bnb-header>.con>.tit {
     text-align: center;
     display: block;
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-size: 1.15rem;
+    color: #333;
     line-height: 2.2rem;
     height: 2.2rem;
     overflow: hidden;
-    margin-left: 2.2rem;
-    margin-right: 2.2rem;
-    font: 400 1.286em/2 Tahoma;
-    margin-top: -38px;
+    margin-left: 4.2rem;
+    margin-right: 4.2rem;
+    font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
 }
 .bnb-bodyer-fix {
     padding-top: 2.2rem;
 }
-.addition-list {
+.addition-list-add {
     border-width: 0 0 1px;
     background-color: #fff;
     padding-left: 0.75rem;
     overflow: hidden;
-    border-style: solid;
-    border-color: #ddd;
 }
-.addition-list .add-Mess{
-    padding: 0.2rem 0.75rem 0.2rem 4rem;
-    border-width: 1px 0 0;
-    margin-top: -1px;
-    font-size: 0.7rem;
-    overflow: hidden;
-    float: left;
+.add-btn-div {
+    position: absolute;
+    top: 0;
+    background: #fff;
+    bottom: 0;
+    right: 0;
+    padding: 0.6rem 0.75rem;
 }
-.addition-list .add-Mess .add-Mess-input {
-    width: 100%;
-    padding: 0.3rem 0;
-    font-size: 0.7rem;
-}
-.addition-btn {
-    padding: 0.75rem;
-}
-.addition-btn .book-btn-primary {
-    float: none;
-    display: block;
-    text-align: center;
-    padding: 0.3rem 0;
-    font-size: 0.75rem;
-}
-.btn-ora {
-    background-color: #ff6d57;
-    border-radius: 0;
-}
-.book-btn-primary {
-    color: #fff;
-}
-.addition-list .arr-r {
+.add-btn {
     width: 3rem;
-    padding: 0.3rem 0;
+    height: 3rem;
+    border-radius: 8px;
+    background: #ff6d57;
+    color: #fff;
+    font-size: 0.8rem;
+}
+.addition-list-add .moress {
+    border-width: 1px 0 0;
+    font-size: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 -1px 0 0 #efefef inset;
+    padding: 0 4.2rem 0 4rem;
+}
+.addition-list-add .moress addMess-namemore {
+    width: 3rem;
+    padding: 0.45rem 0 0.2rem;
     text-align: right;
     color: #666;
     white-space: nowrap;
-    margin-right: 1rem;
     float: left;
     margin-left: -4rem;
     position: relative;
+    line-height: 0.73rem;
 }
-.addition-list .arr-r:after {
+.addition-list-add .moress input {
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 0.55rem 0 0.45rem;
+    box-sizing: border-box;
+}
+.addition-list-add .moress .eng {
+    font-size: 0.5rem;
+}
+.addition-list-add .arr-r:after {
     right: -0.6rem;
+    top: 1.1rem;
 }
 .arr-r:after {
     width: 0.4rem;
     height: 0.4rem;
 }
-.arr-r:after, .arr-down:after, .arr-up:after {
+.arr-r:after {
     content: "";
     position: absolute;
-    top: 50%;
     border: 1px solid #c1c1c1;
     border-width: 1px 1px 0 0;
     transform: rotate(45deg) translateY(-50%);
     transform-origin: 50% 0;
+}
+.addition-warning {
+    font-size: 0.6rem;
+    padding: 0.5rem 0 0.5rem 0.75rem;
+    color: #3c3c3c;
+    background: #e9e9e9;
+}
+.choice-hd {
+    color: #999;
+    padding: 1rem 0.5rem 0.4rem 0.75rem;
+    font-size: 0.65rem;
+}
+.cdark {
+    color: #565a5c;
+    font-style: normal;
+    font-weight: 400;
+}
+.taker-select {
+    margin-bottom: 0.5rem;
+    border-width: 1px 0;
+    background-color: #fff;
+}
+.taker-select .moress:last-child {
+    box-shadow: none;
+}
+.taker-select .ico-edit {
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    margin-top: -1.1rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    padding: 0.5rem;
+    background-position: -5.6rem 0.6rem;
+    z-index: 2;
+    background-clip: content-box;
+}
+.passenger-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 85%;
+}
+input[type="checkbox"]:checked, .checked {
+    background-position: -190px -23.5px;
+}
+.taker-select .in-checkbox {
+    left: -0.75rem;
+}
+.in-checkbox {
+    position: absolute;
+    z-index: 1;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 100%;
+}
+.in-checkbox:checked + .in-checkbox-tar, .voice-checkbox-tar {
+    border-color: #ff6d57;
+}
+.taker-select .in-checkbox-tar2 {
+    border-radius: 0;
+    background-clip: content-box;
+}
+.taker-select .in-checkbox-tar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -0.5rem;
+}
+.in-checkbox-tar {
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 1px solid #999;
+    background-color: #fff;
+}
+.in-checkbox:checked + .in-checkbox-tar:after, .voice-checkbox-tar:after {
+    opacity: 1;
+    top: 1px;
+    left: 0.15rem;
+}
+.in-checkbox-tar:after {
+    content: '';
+    position: absolute;
+    width: 0.65rem;
+    height: 0.25rem;
+    border-left: 2px solid #ff6d57;
+    border-bottom: 2px solid #ff6d57;
+    box-shadow: 0 -3px 0 #fff inset, 0 2px 0 #fff;
+    transform: rotate(-45deg);
+}
+.tak-att-icon {
+    width: 1.1rem;
+    height: 0.9rem;
+    background-position: -8.75rem 0;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: text-bottom;
+    margin-left: 0.5rem;
+}
+.taker-select .gray-txt-number {
+    font-size: 0.65rem;
 }

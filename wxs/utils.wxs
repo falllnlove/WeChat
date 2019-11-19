@@ -1,0 +1,18 @@
+var sub_img = function (url) {
+  if (url.length == 0 || url == undefined) {
+    return;
+  }
+  return url.substring(0, parseInt(url.length - 6))
+}
+
+var tags_one = function (tag) {
+  console.log(tag.split(','))
+  if (tag.length == 0 || tag == undefined) {
+    return;
+  }
+  console.log(tag.split(','))
+}
+module.exports = {
+  sub_img: sub_img,
+  tags_one: tags_one,
+}

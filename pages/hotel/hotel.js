@@ -17,6 +17,11 @@ Page({
     it_show:'none',
     addMessUser:'none',
     hotelMess:'block',
+    inputValue:'',
+    cust_Mess_del:'none',
+    cusDel:'block',
+    addMessUsermore:'none',
+    // leftMove:0,
     // show: false,
     // buttons: [
     //   {
@@ -153,6 +158,30 @@ Page({
        hotelMess:'none'
      })
   },
+  addMess_close(){
+    this.setData({
+      addMessUser: 'none',
+      hotelMess: 'block'
+    })
+  },
+  cust_MessShow(){
+    this.setData({
+      cust_Mess_del:'block',
+      cusDel: 'none'
+    })
+  },
+  cust_MessClose(){
+    this.setData({
+      cust_Mess_del:'none',
+      cusDel: 'block'
+    })
+  },
+  addMessUsermoreShow(){
+    this.setData({
+      addMessUsermore:'block',
+      hotelMess:'none'
+    })
+  },
   getMess_image(){
     var that=this
     wx.request({
@@ -160,7 +189,7 @@ Page({
       data: { "cityid": 2, "rentType": "0", "orderBy": 0, "pindex": 1, "keywords": "", "filterTitle": null, "cityname": "上海", "conds": [{ "cond": "date", "value": "2019-11-15,2019-11-16" }], "userDataPos": { "cityId": "2", "lat": "31.248194094262946", "lng": "121.4879869806514" }, "sequenceId": "4f4b07ce-16df-5f3e-691b-a1966096bd9b", "pageCode": "600003546", "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success: function(res) {
-        console.log(res)
+        console.log(res.data.product)
         that.setData({
           test: res.data.product
         })
