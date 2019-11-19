@@ -19,6 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.get_room_info()
     console.log(this.data.get_room_info_list)
   },
 
@@ -26,22 +27,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    // this.get_room_info()
-    // let query = wx.createSelectorQuery();
-    // query.select('#tit').boundingClientRect(res => {
-    //   this.setData({
-    //     fixedTop: res.top
-    //   })
-    // }).exec()
 
-    // wx.getSystemInfo({
-    //   success: (res => {
-    //     console.log(res)
-    //     this.setData({
-    //       screenHeight: res.screenHeight
-    //     })
-    //   })
-    // })
   },
 
   /**
@@ -94,10 +80,10 @@ Page({
     var that = this
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendProductDetail?_fxpcqlniredt=09031107111018024259&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
-      data: { "pid": 941273318, "cktime": "2019-11-18", "ottime": "2019-11-19", "head": { "cid": "09031107111018024259", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "pid": 874527468, "cktime": "2019-11-19", "ottime": "2019-11-20", "head": { "cid": "09031107111018024259", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method:'post',
       success(res){
-        console.log(JSON.stringify(res.data.product))
+        console.log(res.data.product)
         that.setData({
           get_room_info_list: res.data.product
         })

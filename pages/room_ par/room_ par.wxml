@@ -44,30 +44,29 @@
     </view>
   </view>
 </scroll-view>
-<view class="J_productInfo" style="height:1000px">
+<view class="J_productInfo">
   <view class="bnbdetail-box bnbdetail-box-info">
     <view class="con-tag J_scrollTags ">
       <view class="item-tags">
         <view class="item-tags-con">
-          <text class="tag tag-08 J_freeCancel">免费取消</text>
-          <text class="tag tag">免押金</text>
-          <text class="tag tag">闪订</text>
-          <text class="tag tag">智能门锁</text>
+          <block wx:for="{{get_room_info_list.tags}}" wx:key="key">
+            <text class="tag {{item.icon}}">{{item.tagName}}</text>
+          </block>
         </view>
       </view>
       <view class="txt-favor">
-        <text class="val">14人收藏</text>
+        <text class="val">{{get_room_info_list.favorites}}人收藏</text>
       </view>
     </view>
-    <view id="tit" class="tit">地铁11号线日式休闲度假别墅单人房</view>
+    <view id="tit" class="tit">{{get_room_info_list.pname}}</view>
     <view class="con-price-date">
       <view class="J_productPriceInfo">
         <view class="con-price">
           <view class="txt-price-now">
-            <text class="unit">¥116</text>
+            <text class="unit">¥{{get_room_info_list.price.price}}</text>
           </view>
-          <view class="txt-price-origin">
-            <text class="val">¥128</text>
+          <view class="txt-price-origin" wx:if="{{get_room_info_list.price.originalPrice != get_room_info_list.price.price}}">
+            <text class="val">¥{{get_room_info_list.price.originalPrice}}</text>
           </view>
         </view>
       </view>
@@ -79,34 +78,71 @@
     <view class="con-rule">
       <view class="item item-room">
         <text class="ico"></text>
-        <text class="txt txt-1">1室 1厨1卫</text>
+        <text class="txt txt-1">{{get_room_info_list.rmstic.layoutty}}</text>
         <view class="txt txt-2">
-          别墅单间
-          <text class="val">/15</text> ㎡
+          {{get_room_info_list.rmstic.roomty}}
+          <text class="val">/{{get_room_info_list.rmattr.houseSize}}</text>㎡
         </view>
-        <text class="txt txt-3">不允许做饭</text>
+        <block wx:for="{{get_room_info_list.rmattr.specialRule}}" wx:key="name">
+          <text class="txt txt-3" wx:if="{{item.name == '做饭' && item.value=='允许'}}">允许做饭</text>
+          <text class="txt txt-3" wx:if="{{item.name == '做饭' && item.value!='允许'}}">不允许做饭</text>
+        </block>
       </view>
       <view class="item item-bed J_bedTip">
         <text class="ico"></text>
-        <text class="txt txt-1">宜住1人 1床</text>
+        <text class="txt txt-1">宜住{{get_room_info_list.rmattr.maxck}}人 {{get_room_info_list.rmattr.bedNum}}床</text>
         <view class="txt txt-2">
-          <view class="txt-val">
-            单人床
-            <text class="val">(1x2m)</text>
-            <text class="val">1</text> 张
-          </view>
+          <block wx:for="{{get_room_info_list.rmattr.detailbeds}}" wx:key="key" wx:if="{{index==0}}">
+            <view class="txt-val">
+              {{item.bedType}}
+              <text class="val">({{item.width}}x{{item.length}}m)</text>
+              <text class="val">{{item.quantity}}</text> 张
+            </view>
+          </block>
           <view class="pot-tooltip" bindtap="bed_show">
             <view class="tooltip-bed J_bedTipInfo" style="{{bed_show}}">
-              <view class="item">
-                单人床
-                <text class="val">(1x</text>
-                <text class="val">2m)</text>
-                <text class="val">1</text> 张
-              </view>
+              <block wx:for="{{get_room_info_list.rmattr.detailbeds}}" wx:key="key">
+                <view class="item">
+                  {{item.bedType}}
+                  <text class="val">({{item.width}}x</text>
+                  <text class="val">{{item.length}}m)</text>
+                  <text class="val">{{item.quantity}}</text> 张
+                </view>
+              </block>
             </view>
           </view>
         </view>
-        <view class="txt txt-3">不可加床</view>
+        <block wx:for="{{get_room_info_list.rmattr.specialRule}}" wx:key="name">
+          <text class="txt txt-3" wx:if="{{item.name == '额外加床' && item.value=='允许'}}">可加床</text>
+          <text class="txt txt-3" wx:if="{{item.name == '额外加床' && item.value!='允许'}}">不可加床</text>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<view style="background-color: #F5F5F5;height:0.5rem;"></view>
+<view class="J_discountInfo">
+  <view class="bnbdetail-box bnbdetail-box-coupon J_discountInfo2" style="display: block;">
+    <view class="bnbdetail-list-activity">
+      <block wx:for="{{get_room_info_list.saleStrategys}}" wx:key="name">
+        <view class="item">
+          <view class="lbl">
+            <text class="{{item.icon}}"></text>
+            {{item.name}}
+          </view>
+          <view class="txt">
+            {{item.discount}}
+          </view>
+        </view>
+      </block>
+    </view>
+    <view id="J_coupons" class="bnbdetail-list-coupon">
+      <view class="tit">优惠券</view>
+      <view class="btn">领取</view>
+      <view class="con-list">
+        <view class="list-item">最高减500</view>
+        <view class="list-item">最高减80</view>
+        <view class="list-item">最高减60</view>
       </view>
     </view>
   </view>
