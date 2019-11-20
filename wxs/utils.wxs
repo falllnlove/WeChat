@@ -12,7 +12,17 @@ var tags_one = function(tag){
   }
   console.log(tag.split(','))
 }
+
+var conceal_name = function(name){
+  if (name.length == 0 || name == undefined) {
+    return;
+  }
+  var str = name
+  var str_sub = str.substring(1, str.length - 3)
+  return str.replace(str_sub, '****')
+}
 module.exports = {
   sub_img : sub_img,
   tags_one : tags_one,
+  conceal_name: conceal_name,
 }

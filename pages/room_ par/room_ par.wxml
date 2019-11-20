@@ -16,10 +16,10 @@
     <image class="J_detailHeaderProImage" src="https://dimg04.c-ctrip.com/images/2B0k13000000thrll79F8_R_750_560_Q80.jpg"></image>
   </view>
   <view class="bnbdetail-tabs J_tabs">
-    <text class="item J_topStatus active">民宿</text>
-    <text class="item J_detailStatus">详情</text>
-    <text class="item J_ruleStatus">须知</text>
-    <text class="item J_recommendStatus">推荐</text>
+    <text class="item J_topStatus {{ioc==1?'active':''}}">民宿</text>
+    <text class="item J_detailStatus {{ioc==2?'active':''}}">详情</text>
+    <text class="item J_ruleStatus {{ioc==3?'active':''}}">须知</text>
+    <text class="item J_recommendStatus {{ioc==4?'active':''}}">推荐</text>
   </view>
 </view>
 <wxs src='../../wxs/utils.wxs' module='tools' />
@@ -144,6 +144,107 @@
           <view class="list-item">{{item.priceDesc}}</view>
         </block>
       </view>
+    </view>
+  </view>
+</view>
+<view style="background-color: #F5F5F5;height:0.5rem;"></view>
+<view class="J_commentInfo">
+  <view class="bnbdetail-comment J_commentArrow">
+    <view class="con-brief">
+      <view class="con-info">
+        <view class="val" wx:if="{{comment_list.rateStat.avgTotalRate == 5}}">{{comment_list.rateStat.avgTotalRate}}.0</view>
+        <view class="val" wx:else>{{comment_list.rateStat.avgTotalRate}}</view>
+        <view class="txt">{{comment_list.rateStat.commentDesc}}</view>
+      </view>
+      <view class="con-list-parts">
+        <view class="item item-0">
+          <text class="txt-lbl">卫生</text>
+          <view class="process">
+            <text class="val" style="width: {{comment_list.rateStat.avgHygieneRate*20}}%;"></text>
+          </view>
+          <text class="txt" wx:if="{{comment_list.rateStat.avgHygieneRate == 5}}">{{comment_list.rateStat.avgHygieneRate}}.0</text>
+          <text class="txt" wx:else>{{comment_list.rateStat.avgHygieneRate}}</text>
+        </view>
+        <view class="item item-1">
+          <text class="txt-lbl">服务</text>
+          <view class="process">
+            <text class="val" style="width: {{comment_list.rateStat.avgLandlordServiceRate*20}}%;"></text>
+          </view>
+          <text class="txt" wx:if="{{comment_list.rateStat.avgLandlordServiceRate == 5}}">{{comment_list.rateStat.avgLandlordServiceRate}}.0</text>
+          <text class="txt" wx:else>{{comment_list.rateStat.avgLandlordServiceRate}}</text>
+        </view>
+        <view class="item item-2">
+          <text class="txt-lbl">设施</text>
+          <view class="process">
+            <text class="val" style="width: {{comment_list.rateStat.avgFacilityRate*20}}%;"></text>
+          </view>
+          <text class="txt" wx:if="{{comment_list.rateStat.avgFacilityRate == 5}}">{{comment_list.rateStat.avgFacilityRate}}.0</text>
+          <text class="txt" wx:else>{{comment_list.rateStat.avgFacilityRate}}</text>
+        </view>
+        <view class="item item-3">
+          <text class="txt-lbl">环境</text>
+          <view class="process">
+            <text class="val" style="width: {{comment_list.rateStat.avgEnvironmentRate*20}}%;"></text>
+          </view>
+          <text class="txt" wx:if="{{comment_list.rateStat.avgEnvironmentRate == 5}}">{{comment_list.rateStat.avgEnvironmentRate}}.0</text>
+          <text class="txt" wx:else>{{comment_list.rateStat.avgEnvironmentRate}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="con-list-tag">
+      <block wx:for="{{comment_list.bnbCommentTags}}" wx:key="tagName" wx:if="{{index>2 && index<7}}">
+        <view class="item J_tagTab">{{item.tagName}}</view>
+      </block>
+    </view>
+    <view class="con-comment">
+      <view class="con-user">
+        <view class="con-1">
+          <view class="con-photo">
+            <image src="{{comment_list.clist[0].uinfo.face}}"></image>
+          </view>
+          <view class="txt-username is-type-0" wx:if="{{comment_list.clist[0].uinfo.userId}}">{{tools.conceal_name(comment_list.clist[0].uinfo.userId)}}</view>
+        </view>
+        <view class="con-2">
+          <view class="con-2-1">
+            <text class="txt-type">旅游出行</text>
+            <view class="txt-date">{{comment_list.clist[0].ctime}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="con-detail">
+        <view class="txt">{{comment_list.clist[0].content}}</view>
+      </view>
+      <view class="btn-o-more">
+        查看全部{{comment_list.count}}条点评
+      </view>
+    </view>
+  </view>
+</view>
+<view style="background-color: #F5F5F5;height:0.5rem;"></view>
+<view class="J_mapAndPoi">
+  <view class="bnbdetail-box bnbdetail-box-mapguide">
+    <view class="item-map J_mapWrapVerSecond">
+      <image src="https://api.map.baidu.com/staticimage/v2?ak=0nkPRtvpmAUg6sx80mGQh6Kw&center={{get_room_info_list.pos.lon}},{{get_room_info_list.pos.lat}}&height=225&width=375&zoom=16&scale=2&markers={{get_room_info_list.pos.lon}},{{get_room_info_list.pos.lat}}" style="width: 100%;"></image>
+    </view>
+    <view class="item-con J_mapWrapVerSecond">
+      <text class="tooltip-copy" style="display:none;">复制地址</text>
+      <view class="tit J_mapAddress">{{get_room_info_list.pos.attr}}</view>
+      <view class="btn-map">
+        地图/周边
+        <view class="ico"></view>
+      </view>
+    </view>
+    <view id="J_poiverTwo">
+      <view class="list">
+        <block wx:for="{{room_rim_list}}" wx:key="poiName">
+          <view class="item item-{{item.icon}}">
+            <view class="ico"></view>
+            <view class="tit">{{item.poiName}}</view>
+            <view class="txt">{{item.distanceText}}，{{item.trafficType}}仅{{item.timeText}}</view>
+          </view>
+        </block>
+      </view>
+      <view class="box-foot link-more J_showTrafficInfoModal">查看更多周边</view>
     </view>
   </view>
 </view>

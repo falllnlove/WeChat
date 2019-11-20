@@ -844,3 +844,528 @@ page{
   color: #fff;
   background-image: linear-gradient(-90deg, #464646 15%, #595959 85%);
 }
+.bnbdetail-comment {
+  margin-top: 0.4rem;
+  background: #fff;
+}
+.bnbdetail-comment .con-brief {
+  justify-content: space-between;
+  padding: 1rem;
+  background: #fff;
+  display: inline-flex;
+}
+.bnbdetail-comment .con-brief {
+    box-sizing: border-box;
+    width: 100%;
+}
+.bnbdetail-comment .con-brief .con-info {
+  border: none;
+  position: relative;
+  box-sizing: border-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  align-items: center;
+  padding-right: 0.7rem;
+  width: 8rem;
+}
+.bnbdetail-comment .con-brief .con-info {
+    width: auto;
+    padding-right: 2rem;
+}
+.bnbdetail-comment .con-brief .con-info .val {
+  font-weight: 700;
+  display: inline-block;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: #3c3c3c;
+}
+.bnbdetail-comment .con-brief .con-info .val {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+.bnbdetail-comment .con-brief .con-info .val {
+  font-weight: 500;
+}
+.bnbdetail-comment .con-brief .con-info .txt {
+  font-weight: 700;
+  display: inline-block;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  color: #ff6a50;
+}
+.bnbdetail-comment .con-brief .con-info .txt {
+  line-height: 1rem;
+  padding-left: 0.15rem;
+  padding-top: 0.3rem;
+  white-space: nowrap;
+}
+.body-iphoneinweb .bnbdetail-comment .con-brief .con-info .txt {
+  font-weight: 500;
+}
+.bnbdetail-comment .con-brief .con-info:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  background: #e9e9e9;
+  width: 1px;
+  height: 100%;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.bnbdetail-comment .con-brief .con-info:after {
+  top: 0;
+}
+.bnbdetail-comment .con-brief .con-list-parts {
+  margin-top: -0.3rem;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.bnbdetail-comment .con-brief .con-list-parts {
+    width: 100%;
+    margin-left: -0.08333333rem;
+}
+.bnbdetail-comment .con-brief .con-list-parts .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0.55rem;
+  line-height: 0.7rem;
+  align-items: center;
+  padding-left: 0.5rem;
+  margin-top: 0.25rem;
+  color: #666;
+}
+.bnbdetail-comment .con-brief .con-list-parts .item {
+  padding-left: 0;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  width: 5.5rem;
+  margin-left: 0.4rem;
+}
+.bnbdetail-comment .con-brief .con-list-parts .item {
+  width: 50%;
+  margin-left: 0;
+  box-sizing: border-box;
+  justify-content: flex-end;
+}
+.bnbdetail-comment .con-brief .con-list-parts .process {
+  height: 0.2rem;
+  display: block;
+  background: #d8d8d8;
+  border-radius: 0.1rem;
+  margin: 0 0.35rem;
+  position: relative;
+}
+.bnbdetail-comment .con-brief .con-list-parts .process {
+  width: 2.5rem;
+}
+.bnbdetail-comment .con-brief .con-list-parts .item .process {
+  width: 66%;
+}
+.bnbdetail-comment .con-brief .con-list-parts .process .val {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.bnbdetail-comment .con-brief .con-list-parts .process .val:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  border-radius: 0.1rem;
+  background-image: -webkit-linear-gradient(-89deg, #ffc040 3%, #ffa040 98%);
+  background-image: linear-gradient(-89deg, #ffc040 3%, #ffa040 98%);
+}
+.bnbdetail-comment .con-brief .con-list-parts .process .val:before {
+  width: 2.5rem;
+}
+.bnbdetail-comment .con-brief .con-list-parts .item .process .val:before {
+    width: auto;
+}
+.bnbdetail-comment .con-brief .con-list-parts .item .txt {
+    min-width: 1.1rem;
+}
+.bnbdetail-comment .con-list-tag {
+  background: #fff;
+  font-size: 0;
+  padding: 0.4rem 1rem 0 0.75rem;
+  margin-bottom: 1rem;
+  margin-top: -0.75rem;
+  height: 1.85rem;
+  overflow: hidden;
+}
+.bnbdetail-comment .con-list-tag .item {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 0.6rem;
+  min-width: 2.4rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  padding: 0 0.6rem;
+  text-align: center;
+  background: #fdeeeb;
+  border-radius: 0.625rem;
+  margin-top: 0.6rem;
+  margin-left: 0.25rem;
+}
+.bnbdetail-comment .con-list-tag .item {
+  margin-bottom: 0;
+}
+.bnbdetail-comment .con-comment {
+  background: #fff;
+  padding: 0 1rem;
+}
+.bnbdetail-comment .con-comment .con-user {
+  display: flex;
+  justify-content: space-between;
+}
+.bnbdetail-comment .con-comment .con-user .con-1 {
+  display: flex;
+  align-items: center;
+}
+.bnbdetail-comment .con-comment .con-user .con-photo {
+  display: block;
+  width: 2.05rem;
+  height: 2.05rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 0.4rem;
+}
+.bnbdetail-comment .con-comment .con-user .con-photo image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.bnbdetail-comment .con-comment .con-user .txt-username {
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+  margin-top: -0.05rem;
+  margin-bottom: -0.05rem;
+  color: #3c3c3c;
+  max-width: 7.5rem;
+}
+.bnbdetail-comment .con-comment .con-user .con-2 {
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  font-size: 0.6rem;
+  line-height: 0.75rem;
+  text-align: right;
+  color: #666;
+  white-space: nowrap;
+}
+.bnbdetail-comment .con-comment .con-user .con-2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.bnbdetail-comment .con-comment .con-user .con-2 .txt-type, .bnbdetail-comment .con-comment .con-user .con-2 .txt-date {
+  padding-left: 0.3rem;
+}
+.bnbdetail-comment .con-comment .con-user .con-2 .txt-type {
+  position: relative;
+  border: none;
+  padding-right: 0.3rem;
+}
+.bnbdetail-comment .con-comment .con-user .con-2 .txt-type:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  background: #e9e9e9;
+  width: 1px;
+  height: 100%;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.bnbdetail-comment .con-comment .con-user .con-2 .txt-type:after {
+  background: #bbb;
+  height: 0.6rem;
+  top: 50%;
+  margin-top: -0.3rem;
+}
+.bnbdetail-comment .con-comment .con-user .con-2 .txt-date {
+  display: inline-block;
+}
+.bnbdetail-comment .con-comment .con-detail {
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+  margin-top: 0.75rem;
+  margin-left: 2.05rem;
+  color: #3c3c3c;
+}
+.bnbdetail-comment .con-comment .con-detail {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  margin-left: 0;
+}
+.bnbdetail-comment .con-comment .con-detail .txt, .bnbdetail-comment .con-comment .con-detail .btn-o-fold {
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+}
+.bnbdetail-comment .con-comment .btn-o-more {
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  font-size: 0.7rem;
+  line-height: 0.7rem;
+  padding: 1rem 0 1.25rem;
+  text-align: center;
+  color: #ff6a50;
+}
+.bnbdetail-box {
+  background: #fff;
+  padding: 1rem;
+}
+.bnbdetail-box-mapguide {
+  background: #fff;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  overflow: hidden;
+}
+.bnbdetail-box-mapguide .item-map {
+  height: 7.25rem;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0.75rem;
+}
+.bnbdetail-box-mapguide .item-map {
+  margin: 0;
+}
+.bnbdetail-box-mapguide .item-map image {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.bnbdetail-box-mapguide .item-map:after {
+  content: '';
+  display: block;
+  position: absolute;
+  margin: 1.1125rem auto 0;
+  left: 0;
+  right: 0;
+}
+.bnbdetail-box-mapguide .item-map:after {
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
+  background-size: 8.1rem 7.4rem;
+  background-repeat: no-repeat;
+  background-position: 0 -2.3rem;
+  width: 1.7rem;
+  height: 2rem;
+}
+.bnbdetail-box-mapguide .item-con .tooltip-copy:after {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 0.325rem solid transparent;
+  border-top-color: rgba(58, 58, 58, 0.9);
+  margin-left: 2.4rem;
+}
+.bnbdetail-box-mapguide .item-con {
+  height: 2.5rem;
+  margin: -3.75rem 1.25rem 1.25rem;
+  background: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.35rem 0 rgba(198, 198, 198, 0.7);
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.bnbdetail-box-mapguide .item-con {
+  margin: -3.25rem 1.5rem 0.75rem;
+}
+.bnbdetail-box-mapguide .item-con .tooltip-copy {
+  white-space: nowrap;
+  overflow: visible;
+  background: rgba(58, 58, 58, 0.9);
+  box-shadow: 0 0.1rem 0.2rem 0 rgba(58, 58, 58, 0.5);
+  border-radius: 0.15rem;
+  font-size: 0.7rem;
+  color: #fff;
+  line-height: 1.75rem;
+  width: 5.5rem;
+  height: 1.75rem;
+  position: absolute;
+  text-align: center;
+  top: -1.55rem;
+  left: 3.5rem;
+  z-index: 1001;
+}
+.bnbdetail-box-mapguide .item-con .tit {
+  font-size: 0.7rem;
+  line-height: 0.85rem;
+  font-weight: 700;
+  color: #3c3c3c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+.bnbdetail-box-mapguide .btn-map {
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  color: #666;
+}
+.bnbdetail-box-mapguide .item-con .btn-map {
+  float: right;
+  font-size: 0.6rem;
+  color: #666;
+  line-height: 2.5rem;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+}
+.bnbdetail-box-mapguide .btn-map .ico {
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
+  background-size: 8.1rem 7.4rem;
+  background-repeat: no-repeat;
+  background-position: -7.6rem -3.6rem;
+  width: 0.3rem;
+  height: 0.6rem;
+  font-style: normal;
+  font-weight: 400;
+}
+.bnbdetail-box-mapguide .item-con .btn-map .ico {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.15rem;
+  top: 0.1rem;
+}
+.bnbdetail-box-mapguide .list {
+  padding: 0.75rem 0.75rem 0;
+  margin-top: -0.75rem;
+  overflow: hidden;
+}
+.bnbdetail-box-mapguide .list {
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.bnbdetail-box-mapguide .list .item {
+  float: left;
+  width: 50%;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  margin-bottom: 1.05rem;
+}
+.bnbdetail-box-mapguide .list .item {
+  padding-bottom: 0;
+  padding-top: 1rem;
+  margin-bottom: 0;
+}
+.bnbdetail-box-mapguide .list .ico {
+  float: left;
+  margin-left: -1rem;
+  margin-top: -0.05rem;
+}
+.bnbdetail-box-mapguide .list .item .ico {
+  border: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  position: relative;
+}
+.bnbdetail-box-mapguide .list .item .ico:before {
+  content: '';
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
+  background-size: 8.1rem 7.4rem;
+  background-repeat: no-repeat;
+  display: block;
+}
+.bnbdetail-box-mapguide .list .item .ico:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #e9e9e9;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: left top;
+}
+.bnbdetail-box-mapguide .list .item-map-1 .ico::before {
+  background-position: -5.2rem -2.3rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.bnbdetail-box-mapguide .list .item-map-2 .ico::before {
+  background-position: -5.7rem -5.3rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.bnbdetail-box-mapguide .list .item-map-3 .ico::before {
+  background-position: -6.6rem -5.3rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.bnbdetail-box-mapguide .list .item-map-4 .ico::before {
+  background-position: 0 -6.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.bnbdetail-box-mapguide .list .item .ico:after {
+  background-repeat: no-repeat;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-color: #3c3c3c;
+  border-radius: 50%;
+}
+.bnbdetail-box-mapguide .list .tit {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+  color: #3c3c3c;
+}
+.bnbdetail-box-mapguide .list .txt {
+  font-size: 0.6rem;
+  line-height: 0.6rem;
+  color: #999;
+  margin-top: 0.4rem;
+}
+.bnbdetail-box-mapguide .list .txt {
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  font-size: 0.6rem;
+  color: #666;
+  text-align: left;
+  line-height: 0.6rem;
+}
+.bnbdetail-box .box-foot {
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  font-size: 0.7rem;
+  line-height: 0.7rem;
+  color: #ff6a50;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: -0.75rem;
+}
