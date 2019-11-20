@@ -223,7 +223,7 @@
 <view style="background-color: #F5F5F5;height:0.5rem;"></view>
 <view class="J_mapAndPoi">
   <view class="bnbdetail-box bnbdetail-box-mapguide">
-    <view class="item-map J_mapWrapVerSecond">
+    <view class="item-map J_mapWrapVerSecond" bindtap='intoMap'>
       <image src="https://api.map.baidu.com/staticimage/v2?ak=0nkPRtvpmAUg6sx80mGQh6Kw&center={{get_room_info_list.pos.lon}},{{get_room_info_list.pos.lat}}&height=225&width=375&zoom=16&scale=2&markers={{get_room_info_list.pos.lon}},{{get_room_info_list.pos.lat}}" style="width: 100%;"></image>
     </view>
     <view class="item-con J_mapWrapVerSecond">
@@ -249,3 +249,84 @@
   </view>
 </view>
 <view style="background-color: #F5F5F5;height:0.5rem;"></view>
+<view class="J_DetailWrap"></view>
+<view class="J_DetailWrap">
+  <view class="J_OwnerPlaceHolder">
+    <view class="bnbdetail-box bnbdetail-box-owner-t2 J_Owner">
+      <view class="con-img-photo">
+        <image class="img-avatar" src="{{landlord_list.face}}"></image>
+      </view>
+      <view class="tit">{{landlord_list.name}}</view>
+      <view class="con-lbls">
+        <block wx:if="{{landlord_list.nameCertification == 'Y'}}">
+          <view class="item">个人房东</view>
+          <view class="item">实名认证</view>
+        </block>
+        <block wx:if="{{landlord_list.nameCertification == 'N'}}">
+          <view class="item">商户房东</view>
+        </block>
+      </view>
+      <view class="con-lbls-2" style="display:none;">
+        <view class="item">70后</view>
+        <view class="item">{{landlord_list.horoscope}}</view>
+      </view>
+      <view class="con-stats">
+        <view class="item">
+          <view class="txt-val">100%</view>
+          <view class="txt-lbl">预定成功率</view>
+        </view>
+        <view class="item" wx:if="{{landlord_list.avgConfirm != 0}}">
+          <view class="txt-val" style="font-weight:600;">{{landlord_list.avgConfirm}}分钟</view>
+          <view class="txt-lbl">平均确认时长</view>
+        </view>
+        <view class="item">
+          <view class="txt-val">{{landlord_list.spaceCount}}</view>
+          <view class="txt-lbl">房源数</view>
+        </view>
+      </view>
+    </view>
+    <view class="bnbdetail-box bnbdetail-box-description" style="margin-top: 0">
+      <view class="box-head">房屋描述</view>
+      <view class="box-body con-txt">{{get_room_info_list.desc}}</view>
+      <view class="box-foot link-more J_showHouseDetailInfoModal">查看更多</view>
+    </view>
+  </view>
+  <view style="background-color: #F5F5F5;height:0.5rem;"></view>
+  <view class="bnbdetail-box bnbdetail-box-service">
+    <view class="box-head">配套设施</view>
+    <view class="list-device J_showFacilityInfoModal">
+      <block wx:for="{{get_room_info_list.rmattr.facility[0].bases}}" wx:key="name" wx:if="{{index<7}}">
+        <view class="item item-device-{{item.icon}}">
+          <text class="ico"></text>
+          <text class="txt">{{item.name}}</text>
+        </view>
+      </block>
+      <view class="item item-more">
+        <text class="ico">29+</text>
+        <text class="txt">更多设施</text>
+      </view>
+    </view>
+  </view>
+  <view style="background-color: #F5F5F5;height:0.5rem;"></view>
+  <view class="bnbdetail-box bnbdetail-box-service J_newCalendarInfo">
+    <view class="box-head">入离日期</view>
+    <view class="J_newCalendar">
+      <view class="bnbdetail-box-date">
+        <view class="con-start">
+          <text class="tit">入住</text>
+          <text class="txt-date">11月20日</text>
+          <text class="txt-day">周三</text>
+        </view>
+        <view class="con-day">
+          <text class="txt">1晚</text>
+        </view>
+        <view class="con-end">
+          <text class="tit">离店</text>
+          <text class="txt-date">11月21日</text>
+          <text class="txt-day">周四</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view style="height:100rem;"></view>

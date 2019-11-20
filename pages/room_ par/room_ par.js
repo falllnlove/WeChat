@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    room_id: 554880206,
+    room_id: 486753476,
     get_room_info_list: null,
     state:0,
     ioc:1,
@@ -19,7 +19,11 @@ Page({
     comment_list: null,
     lat:null,
     lon:null,
+    address_name:null,
+    place :null,
     room_rim_list:null,
+    landlord_list:null,
+    ownerid : null,
   },
 
   /**
@@ -27,6 +31,9 @@ Page({
    */
   onLoad: function (options) {
     this.get_room_info()
+      .then(res =>{
+        this.landlord(res)
+      })
     this.coupons()
     this.comment()
     this.room_rim()
@@ -36,7 +43,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -81,31 +88,35 @@ Page({
     
   },
 
-  onPageScroll: function (e) {
-    console.log(e.scrollTop)
-  },
 
   /**
    * 房间信息
    */
   get_room_info(){
     var that = this
-    var day2 = new Date();
-    day2.setTime(day2.getTime());
-    var start = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
-    var end = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + (day2.getDate() + 1);
-    wx.request({
-      url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendProductDetail?_fxpcqlniredt=09031107111018024259&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
-      data: { "pid": that.data.room_id, "cktime": ""+ start +"", "ottime": ""+ end +"", "head": { "cid": "09031107111018024259", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
-      method:'post',
-      success(res){
-        that.setData({
-          get_room_info_list: res.data.product,
-          lat: res.data.product.pos.lat,
-          lon : res.data.product.pos.lon
-        })
-      }
+    return new Promise(function (resolve, reject) {
+      var day2 = new Date();
+      day2.setTime(day2.getTime());
+      var start = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
+      var end = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + (day2.getDate() + 1);
+      wx.request({
+        url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendProductDetail?_fxpcqlniredt=09031107111018024259&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
+        data: { "pid": that.data.room_id, "cktime": "" + start + "", "ottime": "" + end + "", "head": { "cid": "09031107111018024259", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+        method: 'post',
+        success(res) {
+          that.setData({
+            get_room_info_list: res.data.product,
+            lat: res.data.product.pos.lat,
+            lon: res.data.product.pos.lon,
+            address_name: res.data.product.pos.attr,
+            place: res.data.product.pos.locationName,
+            ownerid: res.data.product.ownerid,
+          })
+          resolve(res.data.product.ownerid)
+        }
+      })
     })
+    return p
   },
 
   /**
@@ -152,9 +163,25 @@ Page({
       data: { "productId": that.data.room_id, "lat": that.data.lat, "lon": that.data.lon, "search": {}, "head": { "cid": "09031114410056975825", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success(res) {
-        console.log(res.data.pois)
         that.setData({
           room_rim_list : res.data.pois
+        })
+      }
+    })
+  },
+
+  /**
+   * 房东信息
+   */
+  landlord(res){
+    var that = this
+    wx.request({
+      url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendOwnerDetail?_fxpcqlniredt=09031114410056975825&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
+      data: { "ownerid": "" + res +"", "pid": that.data.room_id, "head": { "cid": "09031114410056975825", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      method: 'post',
+      success(res) {
+        that.setData({
+          landlord_list: res.data
         })
       }
     })
@@ -182,15 +209,7 @@ Page({
       })
     }
   },
-  /**
-   * 监听用户滑动页面事件
-   */
-  onPageScroll(e) {
-    let isfixed = 0
-    if (parseInt(e.scrollTop) + parseInt(this.data.screenHeight) > this.data.fixedTop) isfixed = 1
-    else isfixed = 0;
-    this.setData({ isfixed });
-  },
+  
   /**
    * 轮播图滑动监听事件
    */
@@ -214,6 +233,26 @@ Page({
     var _this = this;
     _this.setData({
       fixedTop: e.scrollTop
+    })
+    if (e.scrollTop >900){
+      _this.setData({
+        ioc:2
+      })
+    }
+    else if (e.scrollTop <900){
+      _this.setData({
+        ioc: 1
+      })
+    }
+  },
+  intoMap: function () {
+    var that = this
+    wx.openLocation({
+      latitude: that.data.lat,
+      longitude: that.data.lon,
+      name: that.data.address_name,
+      address: that.data.place,
+      scale: 14,
     })
   },
 })
