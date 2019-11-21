@@ -383,9 +383,28 @@ Page({
    * 跳转页面
    */
   refresh(e){
-    // this.setData({
-    //   room_id: e.currentTarget.dataset.room_id
-    // })
-    // this.onLoad()
-  }
+    this.setData({
+      room_id: e.currentTarget.dataset.room_id
+    })
+    this.onLoad()
+    var that = this
+    setTimeout(function () {
+      that.goTop()
+    }, 1000) //延迟时间 这里是1秒
+    
+  },
+
+
+  goTop: function (e) { // 一键回到顶部
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: -10
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
+    }
+  },
 })
