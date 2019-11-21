@@ -11,7 +11,7 @@
       <image src="https://dimg04.c-ctrip.com/images/2B0f0s000000hspxf9A57_R_750_560_Q80.jpg_.webp"></image>
     </view>
     <text class="btn-o">详情</text>
-    <view class="tit">{{title}}</view>
+      <view class="tit">{{title}}</view>
     <view class="con-txt">
       2室1厅 1卫 2床 宜住4人
       </view>
@@ -37,18 +37,18 @@
     <view class="bnbdetail-box bnbdetail-box-date bnbbook-box-date">
       <view class="con-start">
         <text class="tit">入住</text>
-        <text class="txt-date">11月11日</text>
-        <text class="txt-day">周一</text>
+        <text class="txt-date">{{arriveTime1}}月{{arriveTime2}}日</text>
+        <text class="txt-day">{{arriveWeekTime}}</text>
       </view>
       <view class="con-day">
           <text class="txt">
-          1晚
+          {{stayTimes}}
           </text>
       </view>
       <view class="con-end">
         <text class="tit">离店</text>
-        <text class="txt-date">11月12日</text>
-        <text class="txt-day">周二</text>
+        <text class="txt-date">{{leaveTime1}}月{{leaveTime2}}日</text>
+        <text class="txt-day">{{leaveWeekTime}}</text>
       </view>
     </view>
   </view>
@@ -63,19 +63,28 @@
       <view class="con-add J_passengersStore">
         <!-- <text class="txt-tip J_passengerAdd">至少填写一名入住人</text>
         <text class="item item-more is-tpye-1 J_passengerAdd" bindtap="addMessUser_mess">新增</text> -->
-        <text class="item" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default> 孙燕然 </text>
-      <view class="item item-more J_passengerSelect" bindtap="addMessUsermoreShow">
+        <view class="activesafter" bindtap="avticeShow" style="display:{{actives}}">
+         <view class="item actives" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{livepeopleName}} 
+         </view>
+        </view>
+        <view class="activesbefore" style="display:{{active}}">
+         <view class="item active" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{livepeopleName}}
+         </view>
+        </view>
+       <view class="item item-more J_passengerSelect" bindtap="addMessUsermoreShow">
             更多
         </view>
       </view>
-      <view class="con-edit">
+      <view class="con-edit" style="display:{{conEditDel}}">
         <view class="J_selectedPassengers" >
-          <view class="item" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default="true"> 
-          <text class="btn-o-del J_showDeletePassenger" bindtap="cust_MessShow" style="display:{{cusDel}}"></text>
-          <view class="tit" bindtap="cust_MessClose" display="padding-left:{{leftMove}}">孙燕然</view>
-          <view class="txt" bindtap="cust_MessClose" display="padding-left:{{leftMove}}">身份证 410329 20020815 9582</view>
-          <view class="btn-o-del2 J_deletePassenger" data-id="98309944" data-default="true" style="display:{{cust_Mess_del}}">删除</view>
+          <view class="item" style="content:{{showValue}}" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default="true"> 
+            <text class="btn-o-del J_showDeletePassenger" bindtap="cust_MessShow" style="display:{{cusDel}}"></text>
+            <view class="tit" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">{{livepeopleName}}</view>
+            <view class="txt" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">身份证 {{liveperopleCardId}}</view>
+            <view class="btn-o-del2 J_deletePassenger" bindtap="editDel" data-id="98309944" data-default="true" style="display:{{cust_Mess_del}}">删除</view>
+            <view class="items" style="display:{{arrowsShow}}"></view>
           </view> 
+          
         </view>
       </view>
     </view>
@@ -85,7 +94,7 @@
       </view>
       <view class="con-mobile J_telContainer">
         <view class="txt-code J_countryCode">
-          <input class="input-mobile" id="J_tenantPhone" maxlength="13" type="tel" placeholder="用于接收预订信息"></input>
+          <input class="input-mobile" id="J_tenantPhone" value="{{phoneNumber}}" name="{{phoneNumber}}" maxlength="13" type="tel" placeholder="用于接收预订信息"></input>
         </view>
       </view>
     </view>
@@ -164,7 +173,7 @@
       <text class="btn-o-more" id="J_orderDetail" bindtap="ordernotice_show">
         明细
       </text>
-      <text id="J_book" class="btn-o-primary">去支付</text>
+      <text id="J_book" bindtap="spendPrice" class="btn-o-primary">去支付</text>
     </view>
   </view>
   <!--提交 end-->
@@ -209,7 +218,7 @@
       </view>
       <view class="particulars-list payment-list">
         <view>
-          <text class="order-price pay-price">¥413</text>
+          <text class="order-price pay-price">¥{{livePeoplePayPrice}}</text>
           <text class="order-pay">线上支付</text>
         </view>
       </view>
@@ -262,10 +271,10 @@
          <view class="J_productPriceInfo">
            <view class="con-price">
              <text class="txt-price-now">
-               <text class="unit">￥</text>391
+               <text class="unit">￥</text>413
              </text>
              <text class="txt-price-origin">
-               <text class="val">￥488</text>
+               <text class="val">￥458</text>
              </text>
            </view>
          </view>
@@ -689,33 +698,36 @@
   </view>
   <view class="bnb-bodyer-fix bnbpassengerselect-bodyer-fix">
      <view class="addition-list-add" style="position: relative">
-       <view class="add-btn-div">
-         <button class="add-btn J_AddPassenger" size="mini">
-         <text class="btn-add-word">添加</text>
-         </button>
-       </view>
-       <view class="r-more">
-         <view class="J_ChineseName moress ">
-           <text class="addMess-namemore " style="padding-top: .75rem;padding-top:.75rem;">中文姓名 {{inputValue}}</text>
-           <input id="name" type="text" class="add-Mess-input-more" placeholder="请填写证件上的真实姓名"></input>
-         </view>
-         <view class="chin"></view>
-         <view class="J_EnglishLastName moress" style="display: none;">
-           <text class="addMess-namemore" decode="{{true}}">&emsp;英文姓</text>
-           <text class="eng">Surname</text>
-           <input id="Englist_LastName" class="add-Mess-input-more" type="text" placeholder="如张小白填写为“ZHANG”"></input>
-         </view>
-         <view class="J_EnglishFirstName moress" style="display: none;">
-           <text class="addMess-namemore" decode="{{true}}">&emsp;英文名</text>
-           <text class="eng">Given names</text>
-           <input id="Englist_FirstName" class="add-Mess-input-more" type="text" placeholder="如张小白填写为“XIAOBAI”"></input>
-         </view>
-         <view class="J_CardNumber moress">
-           <text class="arr-r J_selectCardType addMess-namemore" decode="{{true}}" style="padding-top: .75rem;padding-top:.75rem;">&emsp;身份证</text>
-           <input id="cardCode" class="add-Mess-input-more" type="text" placeholder="请填写证件号码"></input>
-         </view>
-       </view>
-     </view>
+       <form>
+          <view class="r-more">
+            <view class="J_ChineseName moress ">
+              <text class="addMess-namemore " style="padding-top: .75rem;padding-top:.75rem;">中文姓名 {{inputValue}}</text>
+              <input id="name" type="text" name="chineseName"  class="add-Mess-input-more" placeholder="请填写证件上的真实姓名"></input>
+            </view>
+            <view class="chin"></view>
+            <view class="J_EnglishLastName moress" style="display: none;">
+              <text class="addMess-namemore" decode="{{true}}">&emsp;英文姓</text>
+              <text class="eng">Surname</text>
+              <input id="Englist_LastName" class="add-Mess-input-more" type="text" placeholder="如张小白填写为“ZHANG”"></input>
+            </view>
+            <view class="J_EnglishFirstName moress" style="display: none;">
+              <text class="addMess-namemore" decode="{{true}}">&emsp;英文名</text>
+              <text class="eng">Given names</text>
+              <input id="Englist_FirstName" class="add-Mess-input-more" type="text" placeholder="如张小白填写为“XIAOBAI”"></input>
+            </view>
+            <view class="J_CardNumber moress">
+              <text class="arr-r J_selectCardType addMess-namemore"  decode="{{true}}" style="padding-top: .75rem;padding-top:.75rem;">&emsp;身份证</text>
+              <input id="cardCode" class="add-Mess-input-more" name="cardId" type="text" placeholder="请填写证件号码"></input>
+            </view>
+          </view>
+          <view class="add-btn-div">
+            <button bindtap="fromSubmit" form-type="submit" class="add-btn J_AddPassenger" size="mini">
+             <text class="btn-add-word">添加</text>
+            </button>
+          </view>
+       </form>
+      </view>
+   
      <view class="addition-warning">
        <text>*为顺利入住，请确保出行人姓名与证件上一致</text>
      </view>

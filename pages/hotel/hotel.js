@@ -1,4 +1,5 @@
 const app = getApp()
+var util=require("../../utils/data.js")
 Page({
 
   /**
@@ -6,6 +7,24 @@ Page({
    */
   data: {
     title:'乐蜀民宿近上海乐园设计师高端复式公寓壹号',
+    arriveTime1:'11',
+    arriveTime2: '21',
+    leaveTime1: '11',
+    leaveTime2: '22',
+    stayTimes:'1晚',
+    arriveWeekTime:'周三',
+    leaveWeekTime: '周四',
+    livepeopleName:'孙燕然',
+    chineseName:'',
+    cardId:'',
+    liveperopleCardId:'410329200208159582',
+    livePeoplePayPrice:'413',
+    phoneNumber:'15194537383',
+    peoplenums:'1',
+    despoit:'100',
+    house_type_id:'2',
+    house_num_id:'4',
+    house_num:'1',
     notice:'none',
     ordernotice:'none',
     showAll:'block',
@@ -22,6 +41,10 @@ Page({
     cusDel:'block',
     addMessUsermore:'none',
     editMessUser:'none',
+    arrowsShow:'block',
+    actives:'none',
+    active:'block',
+    conEditDel:'block',
     // leftMove:0,
     // show: false,
     // buttons: [
@@ -95,6 +118,19 @@ Page({
   onShareAppMessage: function () {
     
   },
+  fromSubmit: function (e) {
+    console.log(1556)
+    var name=e.detail.value.chineseName;
+    var cardId=e.deatil.value.cardId;
+    console.log(name)
+   
+    if(name==""||cardId==""){
+      wx.showModal({
+        title: '提示',
+        content: '中文姓名和身份证号不能为空',
+      })
+    }
+  },
   notice_tap_show(){
     this.setData({
       notice:'block'
@@ -165,16 +201,48 @@ Page({
       hotelMess: 'block'
     })
   },
-  cust_MessShow(){
+  // cust_MessShow(){
+  //   var animation= wx.createAnimation({
+  //     duration: 400,
+  //     timingFunction: '"linear"',
+  //     delay: 0,
+  //     transformOrigin: '"50% 50% 0"',
+  //   })
+  //   animation.translate(-50).step()
+  //   this.setData({
+  //     cust_Mess_del:'block',
+  //     cusDel: 'none',
+  //     ani: animation.export
+  //   })
+  // },
+  cust_MessShow:function(){
+    var animation = wx.createAnimation({
+      duration: 400,
+      timingFunction: '"linear"',
+      delay: 0,
+      transformOrigin: '"50% 50% 0"',
+    })
+    animation.translateX(-20).step()
     this.setData({
-      cust_Mess_del:'block',
-      cusDel: 'none'
+      cust_Mess_del: 'block',
+      cusDel: 'none',
+      ain: animation.export(),
+      arrowsShow: 'none'
     })
   },
-  cust_MessClose(){
+  cust_MessClose: function () {
+    var animation = wx.createAnimation({
+      duration: 400,
+      timingFunction: '"linear"',
+      delay: 0,
+      transformOrigin: '"50% 50% 0"',
+    })
+    animation.translateX(3).step()
     this.setData({
-      cust_Mess_del:'none',
-      cusDel: 'block'
+      cust_Mess_del: 'none',
+      cusDel: 'block',
+      ain: animation.export(),
+      arrowsShow: 'block'
     })
   },
   addMessUsermoreShow(){
@@ -200,6 +268,73 @@ Page({
       addMessUsermore: 'block',
       editMessUser: 'none'
     })
+  }, 
+  editDel(){
+    this.setData({
+      actives:'block',
+      active:'none',
+      conEditDel:'none'
+    })
+  },
+  avticeShow(){
+    var animation = wx.createAnimation({
+      duration: 400,
+      timingFunction: '"linear"',
+      delay: 0,
+      transformOrigin: '"50% 50% 0"',
+    })
+    animation.translateX(3).step()
+    this.setData({
+      cust_Mess_del: 'none',
+      cusDel: 'block',
+      ain: animation.export(),
+      actives: 'none',
+      active: 'block',
+      conEditDel: 'block'
+    })
+  },
+  spendPrice(){
+    var that=this;
+    var peopleName = this.data.livepeopleName;
+    var peoplePhone = this.data.phoneNumber;
+    var peopleArriveTime = this.data.arriveTime1;
+    var peopleArriveTime2 = this.data.arriveTime2;
+    var peopleLeaveTime = this.data.leaveTime1;
+    var peopleLeaveTime2 = this.data.leaveTime2;
+    var peopleNums = this.data.peoplenums;
+    var peopleCardId = this.data.liveperopleCardId;
+    var peopleDespoit = this.data.despoit;
+    var peoplePayPrice = this.data.livePeoplePayPrice;
+    var peopleTypeId = this.data.house_type_id;
+    var peopleNumId = this.data.house_num_id;
+    var peopleHouseNum = this.data.house_num;
+    var timestamp = Date.parse(new Date());
+    var date = new Date(timestamp);
+    //获取年份  
+    var Y = date.getFullYear();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    var peoplerarrive = Y + '-' + peopleArriveTime + '-' + peopleArriveTime2 + ' ' + hour + ':' + minute + ':' + second;
+    var peopleleave = Y + '-' + peopleLeaveTime + '-' + peopleLeaveTime2 + ' ' + hour + ':' + minute + ':' + second;
+    console.log(peoplerarrive)
+    console.log(peopleName)
+    wx.request({
+      url: 'http://localhost:8081/addReserveMess', 
+      data: { linkManName: peopleName, phoneNum: peoplePhone, arriveTime: peoplerarrive, leaveTime: peopleleave, peopleNum: peopleNums, cardId: peopleCardId, deposit: peopleDespoit, housePrice: peoplePayPrice, houseTypeId: peopleTypeId, houseNumId: peopleNumId, housNum: peopleHouseNum},
+      // header: { 'Content-type': 'application/x-www-form-urlencoded' } ,
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method:'post',
+      success:function(res){
+        console.log(res.data)
+        wx.showModal({
+          title: '提示',
+          content: '支付成功',
+        })
+      }
+    })
   },
   getMess_image(){
     var that=this
@@ -222,5 +357,5 @@ Page({
   // },
   // buttontap(e) {
   //   console.log(e.detail)
-  // }
+  // },
 })

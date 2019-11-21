@@ -400,6 +400,21 @@ image{
   margin-right: .2rem;
   vertical-align: middle;
 }
+.bnbbook-box-guest-list .con-add .item.active:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-04.v4.png?v=0);
+  background-size: 4.8rem 4.5rem;
+  background-repeat: no-repeat;
+  background-position: -3.9rem -2.9rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.bnbbook-box-guest-list .con-add .item.active::after {
+  border-color: #ff6a50;
+}
 .bnbbook-box-guest-list .con-add .item::after {
   border-color: #d8d8d8;
   border-radius: 0.3rem;
@@ -567,7 +582,7 @@ image{
     padding: 1rem 0;
     text-align: center;
 }
-.bnbbook-box-guest-list .con-edit .item:after {
+.bnbbook-box-guest-list .con-edit .items:after {
     content: '';
     position: absolute;
     background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
@@ -579,6 +594,18 @@ image{
     right: 0;
     top: 1.4rem;
 }
+/* .items{
+  content: '';
+    position: absolute;
+    background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
+    background-size: 8.1rem 7.4rem;
+    background-repeat: no-repeat;
+    background-position: -7.6rem -3.6rem;
+    width: 0.3rem;
+    height: 0.6rem;
+    right: 0;
+    top: 1.4rem;
+} */
 /*发票*/
 .qsw1{
   margin-top: -10px;
