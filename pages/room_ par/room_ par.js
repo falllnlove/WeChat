@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    room_id: 486753476,
+    room_id: 8743852,
     get_room_info_list: null,
     state:0,
     ioc:1,
@@ -24,6 +24,13 @@ Page({
     room_rim_list:null,
     landlord_list:null,
     ownerid : null,
+    is_hide:'0',
+    rim_room_list:null,
+    pop_up_rim_list:null,
+    pop_up_rim_choice : 0,
+    Housing_details : '0',
+    facility:'0',
+    red_heart_choice:'0',
   },
 
   /**
@@ -33,6 +40,9 @@ Page({
     this.get_room_info()
       .then(res =>{
         this.landlord(res)
+      })
+      .then(res => {
+        this.rim_room(res)
       })
     this.coupons()
     this.comment()
@@ -188,6 +198,47 @@ Page({
   },
 
   /**
+   * 周边相似民宿
+   */
+  rim_room(res){
+    var that = this
+    var day2 = new Date();
+    day2.setTime(day2.getTime());
+    var start = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
+    var end = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" +(day2.getDate() + 1);
+    wx.request({
+      url: 'https://m.ctrip.com/restapi/soa2/12455/json/getSimilarProductList?_fxpcqlniredt=09031114410056975825&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
+      data: { "pid": that.data.room_id, "ownerid": "" + res +"", "cityid": 2, "cktime": ""+ start +"", "ottime": ""+ end +"", "pos": { "lat": that.data.lat, "lng": that.data.lon }, "rentType": "0", "head": { "cid": "09031114410056975825", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      method: 'post',
+      success(res) {
+        that.setData({
+          rim_room_list: res.data.product
+        })
+      }
+    })
+  },
+
+  /**
+   * 周边弹窗信息
+   */
+  pop_up_rim(){
+    var that = this
+    that.setData({
+      pop_up_rim_choice: 1
+    })
+    wx.request({
+      url: 'https://m.ctrip.com/restapi/soa2/12455/json/getPoiTraffic?_fxpcqlniredt=09031114410056975825&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
+      data: { "productId": that.data.room_id, "lat": that.data.lat, "lon": that.data.lon, "search": {}, "loadMore": 1, "head": { "cid": "09031114410056975825", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      method: 'post',
+      success(res) {
+        that.setData({
+          pop_up_rim_list: res.data.morePois
+        })
+      }
+    })
+  },
+
+  /**
    * 收藏点击事件
    */
   collect(e){
@@ -229,22 +280,68 @@ Page({
       })
     }
   },
+
+  /**
+   * 周边弹层
+   */
+  rim_choice(){
+    this.setData({
+      pop_up_rim_choice : 0
+    })
+  },
+
+  /**
+   * 房屋详情弹层
+   */
+  Housing_details(e){
+    console.log(e)
+    this.setData({
+      Housing_details: e.currentTarget.dataset.housing_details
+    })
+  },
+
+  /**
+   * 配套设施弹层
+   */
+  facility(e){
+    this.setData({
+      facility: e.currentTarget.dataset.facility
+    })
+  },
+
+  /**
+   * 监听屏幕滑动
+   */
   onPageScroll: function (e) {
     var _this = this;
     _this.setData({
       fixedTop: e.scrollTop
     })
-    if (e.scrollTop >900){
-      _this.setData({
-        ioc:2
-      })
-    }
-    else if (e.scrollTop <900){
+    if (e.scrollTop>0 && e.scrollTop <900){
       _this.setData({
         ioc: 1
       })
     }
+    if (e.scrollTop > 900 && e.scrollTop < 1300){
+      _this.setData({
+        ioc:2
+      })
+    }
+    if(e.scrollTop>1300 && e.scrollTop < 1600){
+      _this.setData({
+        ioc: 3
+      })
+    }
+    if (e.scrollTop > 1600) {
+      _this.setData({
+        ioc: 4
+      })
+    }
   },
+
+  /**
+   * 地图
+   */
   intoMap: function () {
     var that = this
     wx.openLocation({
@@ -255,4 +352,40 @@ Page({
       scale: 14,
     })
   },
+
+  /**
+   *  额外服务 
+   */
+  is_hide(e){
+    var that = this
+    that.setData({
+      is_hide : e.currentTarget.dataset.is_hide
+    })
+  },
+
+  /**
+   * 关注
+   */
+  red_heart(){
+    if (this.data.red_heart_choice == '0'){
+      this.setData({
+        red_heart_choice : '1'
+      })
+    }
+    else {
+      this.setData({
+        red_heart_choice: '0'
+      })
+    }
+  },
+
+  /**
+   * 跳转页面
+   */
+  refresh(e){
+    // this.setData({
+    //   room_id: e.currentTarget.dataset.room_id
+    // })
+    // this.onLoad()
+  }
 })

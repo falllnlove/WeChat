@@ -1,11 +1,11 @@
-var sub_img = function(url){
+var sub_img = function(url) {
   if (url.length == 0 || url == undefined) {
     return;
   }
   return url.substring(0, parseInt(url.length - 6))
 }
 
-var tags_one = function(tag){
+var tags_one = function(tag) {
   console.log(tag.split(','))
   if (tag.length == 0 || tag == undefined) {
     return;
@@ -13,7 +13,7 @@ var tags_one = function(tag){
   console.log(tag.split(','))
 }
 
-var conceal_name = function(name){
+var conceal_name = function(name) {
   if (name.length == 0 || name == undefined) {
     return;
   }
@@ -21,8 +21,27 @@ var conceal_name = function(name){
   var str_sub = str.substring(1, str.length - 3)
   return str.replace(str_sub, '****')
 }
+var distance = function(m) {
+  if (m.length == 0 || m == undefined) {
+    return;
+  }
+  if((typeof m) == 'string'){
+    if (m.length == 3 || m.length < 3) {
+      return '' + m + '米'
+    } else {
+      if (Math.round(m.substring(1, 2) + '.' + m.substring(2, m.lenght)) == '10'){
+        return (parseInt(m.substring(0, 1))+1) + '.' + '0' + '公里'
+      }
+      return m.substring(0, 1) + '.' + Math.round(m.substring(1, 2) + '.' + m.substring(2, m.lenght)) + '公里'
+    }
+  }else{
+    console.log('参数'+m+'不是字符串')
+  }
+}
+
 module.exports = {
-  sub_img : sub_img,
-  tags_one : tags_one,
+  sub_img: sub_img,
+  tags_one: tags_one,
   conceal_name: conceal_name,
+  distance: distance,
 }
