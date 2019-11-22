@@ -1,0 +1,28 @@
+<view class='city_box' style='{{styles}}'>
+  <view class='city_left'>
+    <scroll-view scroll-y style='width:100%;height:100%;' scroll-with-animation scroll-into-view='{{cityListId}}'>
+      <view id="AQ" class='city_first_letter'>当前</view>
+      <view class='city_locate' data-types='locate' catchtap='cityTap'>
+        <text class='city_locate_title'>自动定位</text>
+        <text class='city_locate_text' data-val="{{locateCity}}" catchtap="cityTap" style='{{!locateCity&&"color:#33b9ff;"}}'>{{locateCity||'点击定位'}}</text>
+      </view>
+      <view id="AZ" class='new_city'>
+        <view class='new_city_title'>热门城市</view>
+        <view class='new_city_box'>
+          <text class='new_city_text' wx:for='{{newcity}}' wx:key='this' catchtap='cityTap' data-city_id='{{item.id}}' data-val="{{item.name}}">{{item.name}}</text>
+        </view>
+      </view>
+      <view class='city_list_box'>
+        <block wx:for='{{citylist}}' wx:key='key'>
+          <view id="{{item.group}}" class='city_first_letter'>{{item.group}}</view>
+          <text class='city_name' wx:for='{{item.cities}}' wx:key='this'  wx:for-item="page" catchtap='cityTap' data-val="{{page.name}}" data-city_id="{{page.id}}">{{page.name}}</text>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='city_right'>
+    <text class='letter_item' data-item='AQ' catchtap='letterTap'>当前</text>
+    <text class='letter_item' data-item='AZ' catchtap='letterTap'>热门</text>
+    <text class='letter_item' wx:for='{{letter}}' wx:key='this' catchtap='letterTap' data-item='{{item}}'>{{item}}</text>
+  </view>
+</view>

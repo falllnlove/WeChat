@@ -18,7 +18,7 @@
   <view class="{{Underline_overseas}}"></view>
 </view>
 <view class="con-box">
-  <view class="con-city">
+  <view class="con-city" catchtap="sele_city">
     <view class="btn-o-your-location"><view>当前位置</view></view>
     <view class="con-input"><text class="txt">{{location}}</text></view>
   </view>
@@ -45,7 +45,7 @@
       </view>
     </view>
 </view>
-<view class="btn-o-search j_search_btn">查找民宿</view>
+<view class="btn-o-search j_search_btn" data-city_id="{{city_id}}" data-city="{{city}}" data-lat="{{latitude}}" data-lon="{{longitude}}" bindtap="skip_room_list">查找民宿</view>
 <view class="con-btns">
   <view class="btn-browser j_my_scan">
     <view class="ico"></view>
@@ -119,7 +119,7 @@
     <view class="con">
       <view class="con-1 j_net_red_left" data-ind="2">
         <swiper style="height: 12.38rem;" autoplay="true" circular="true">
-          <block wx:for="{{beauty_lodge_list}}" wx:key="title" wx:if="{{index!=3}}">
+          <block wx:for="{{beauty_lodge_list}}" wx:key="key" wx:if="{{index!=3}}">
             <swiper-item>
               <image src="{{item.subPictureUrl}}"></image>
               <view class="tips">

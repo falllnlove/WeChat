@@ -1,0 +1,384 @@
+<view id="topbar_container" class="bnblist-header-fix">
+  <view class="con">
+    <text class="btn-o-back J_back"></text>
+    <text class="btn-o-map J_map"></text>
+    <view class="input-search">
+      <view class="con-city con-city-word2">
+        <view class="J_cityItem">
+          <text class="J_city">{{city}}</text>
+        </view>
+      </view>
+      <view class="con-date J_selectDate">
+        <view class="txt-checkin">
+          <text class="txt">住</text>
+          <text class="val J_cktime">11-13</text>
+        </view>
+
+        <view class="txt-checkout">
+          <text class="txt">离</text>
+          <text class="val J_ottime">11-14</text>
+        </view>
+      </view>
+      <view class="con-input">
+        <view>
+          <input class="input J_inputKeywords" type="text" name="" readonly="" placeholder="关键字/位置/民宿名"></input>
+        </view>
+      </view>
+    </view>
+    <view class="bnblist-tabs-filter">
+      <view class="item item-sort J_sortFilter">
+        <text class="txt">推荐排序</text>
+      </view>
+      <view class="item item-area J_areaFilter">
+        <text class="txt">位置区域</text>
+      </view>
+      <view class="item item-price J_priceFilterr">
+        <text class="txt">价格区间</text>
+      </view>
+      <view class="item item-filter J_chooseFilterr">
+        <text class="txt">筛选</text>
+      </view>
+    </view>
+  </view>
+  <view class="bnblist-fastfilter J_fastFilter" >
+    <view class="item">连住优惠</view>
+    <view class="item">新房特惠</view>
+    <view class="item">优选PRO</view>
+    <view class="item">闪订</view>
+    <view class="item">市区</view>
+    <view class="item">位置极好</view>
+    <view class="item">干净舒心</view>
+    <view class="item">房东热情 </view>
+  </view>
+
+  <view class="bnblist-pop bnblist-pop-rank J_sortlist is-hide">
+    <view>
+      <text class="active">推荐排序</text>
+      <text class="">\n好评优先</text>
+      <text class="">\n高价优先</text>
+      <text class="">\n低价优先</text>
+    </view>
+  </view>
+  <view class="bnblist-pop bnblist-pop-location J_arealist is-hide">
+    <view class="bnblist-nearby j_distance_wrap">
+      <view class="tit j_tit">我的附近</view>
+      <view class="con j_distance">
+        <view class="item j_dis_1">1km</view>
+        <view class="item j_dis_2">2km</view>
+        <view class="item j_dis_4">4km</view>
+        <view class="item j_dis_8">8km</view>
+        <view class="item j_dis_10">10km</view>
+      </view>
+    </view>
+    <view class="con-list  dflex J_areaContainer" is-hide>
+      <view class="bnb-filter-sort dflex1 j_condition_wrap" style="-webkit-overflow-scrolling:touch">
+        <view class="bnb-filter-fixed J_chooseCondition">
+          <text wx:if="{{position_list.hotData.length>0}}">热门推荐</text>
+
+          <text wx:if="{{position_list.zones.length>0}}">商区</text>
+
+          <text wx:if="{{position_list.scenicSpots.length>0}}">景点</text>
+
+          <text wx:if="{{position_list.districts.length>0}}">行政区</text>
+
+          <text wx:if="{{position_list.airportStation.length>0}}">机车场站</text>
+
+          <text wx:if="{{position_list.subways.length>0}}">地铁线</text>
+
+          <text wx:if="{{position_list.hotcitiies.length>0}}">下辖市县</text>
+
+          <text wx:if="{{position_list.colleges.length>0}}">大学</text>
+
+          <text wx:if="{{position_list.hosptials.length>0}}">医院</text>
+        </view>
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10" style="display:none">
+        <view class="bnb-filter-fixed J_chooseBusiness">
+          <scroll-view style="height:300px" scroll-y="true">
+            <text class="j_li_item active">不限\n</text>
+            <block wx:for="{{position_list.hotData}}" wx:key>
+              <text class="j_li_item">{{item.name}}\n</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10">
+        <view class="bnb-filter-fixed J_chooseBusiness">
+          <scroll-view style="height:300px" scroll-y="{{true}}">
+            <text class="j_li_item active">不限\n</text>
+            <block wx:for="{{position_list.zones}}" wx:key>
+              <text class="j_li_item">{{item.zoneName}}\n</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10" style="display:none">
+        <view class="bnb-filter-fixed J_chooseBusiness">
+          <scroll-view style="height:300px" scroll-y="true" >
+            <text class="j_li_item active">不限\n</text>
+            <block wx:for="{{position_list.scenicSpots}}" wx:key>
+              <text class="j_li_item">{{scenicSpots.name}}\n</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10" style="display:none">
+        <view class="bnb-filter-fixed J_chooseBusiness">
+          <scroll-view style="height:300px" scroll-y="true">
+            <text class="j_li_item active">不限\n</text>
+            <block wx:for="{{position_list.districts}}" wx:key>
+              <text class="j_li_item">{{item.districtName}}\n</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10" style="display:none">
+        <view class="bnb-filter-fixed J_chooseBusiness">
+          <scroll-view style="height:300px" scroll-y="true">
+            <text class="j_li_item active">不限\n</text>
+            <block wx:for="{{position_list.airportStation}}" wx:key>
+              <text class="j_li_item">{{airportStation.placeName}}\n</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10" style="display:none">
+        <view class="bnb-filter-fixed J_chooseBusiness">
+          <scroll-view style="height:300px" scroll-y="true">
+            <text class="j_li_item active">不限\n</text>
+            <block wx:for="{{position_list.subways}}" wx:key>
+              <text class="j_li_item">{{item.placeName}}\n</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10" style="display:none">
+        <view class="bnb-filter-fixed J_chooseBusiness">
+          <scroll-view style="height:300px" scroll-y="true">
+            <text class="j_li_item active">不限\n</text>
+            <block wx:for="{{position_list.hotcitiies}}" wx:key>
+              <text class="j_li_item">{{item.name}}\n</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10" style="display:none">
+        <view class="bnb-filter-fixed J_chooseBusiness">
+          <scroll-view style="height:300px" scroll-y="true">
+            <text class="j_li_item active">不限\n</text>
+            <block wx:for="{{position_list.colleges}}" wx:key>
+              <text class="j_li_item">{{item.name}}\n</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="bnb-filter-unit dflex2 J_condition J_choosePanel_10" style="display:none">
+        <view class="bnb-filter-fixed J_chooseBusiness">
+          <scroll-view style="height:300%" scroll-y="true">
+            <text class="j_li_item active">不限\n</text>
+            <block wx:for="{{position_list.hosptials}}" wx:key>
+              <text class="j_li_item">{{item.name}}\n</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+    <view class="con-btn-box">
+      <view class="btn-o-reset j_reset">重置</view>
+      <view class="btn-o-submit j_sure">确定</view>
+    </view>
+  </view>
+
+  <view class="bnblist-pop bnblist-pop-price J_pricelist is-hide">
+    <view class="pop-bnb-price">
+      <view class="range-slider">
+        <view class="val-txt-box">
+          <text class="txt-min J_pricefilterTxt1">￥0</text>
+          <text class="txt-max J_pricefilterTxt2">￥1500以上</text>
+        </view>
+        <view class="tip is-hide">￥0</view>
+        <view class="range-line-active J_pricefilterRedLine" style="left: 0px; width: 806px;"></view>
+        <input class="J_pricefilter1" type="range" value="" min="0" max="1550" step="50"></input>
+        <input class="J_pricefilter1" type="range" value="" min="0" max="1550" step="50"></input>
+      </view>
+      <view class="con-list">
+        <view class="item">￥150以下</view>
+        <view class="item">￥150-300</view>
+        <view class="item">￥300-500</view>
+        <view class="item">￥500-800</view>
+        <view class="item">￥800-1000</view>
+        <view class="item">￥1500以上</view>
+      </view>
+    </view>
+    <view class="con-btn-box">
+      <view class="btn-o-reset j_reset">重置</view>
+      <view class="btn-o-submit j_sure">确定</view>
+    </view>
+  </view>
+  <view class="bnblist-pop bnblist-pop-filter J_chooselist is-hide">
+    <view class="J_chooseContent">
+      <view class="con-scroll" style="-webkit-overflow-scrolling:touch">
+        <view class="bnblist-listpop-filter bnblist-listpop-filter-0 J_conditionItem ">
+          <view class="tit ">{{filter_list.filters[0].text}}</view>
+          <view class="con J_filtertab_bedroom ">
+            <block wx:for="{{filter_list.filters[0].items}}" wx:key>
+              <view class="item">
+                <text class="txt">{{item.text}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class="bnblist-listpop-filter-flex-2 J_b">
+          <view class="bnblist-listpop-filter bnblist-listpop-filter-2 J_item bnblist-listpop-filter-hasfold">
+            <view class="tit ">{{filter_list.filters[1].text}}</view>
+            <view class="con J_filtertab_numGuests ">
+              <text class="btn-num btn-minus disabled"></text>
+              <text class="btn-num btn-plus "></text>
+              <text class="val J_display">不限</text>
+            </view>
+          </view>
+          <view class="bnblist-listpop-filter bnblist-listpop-filter-2 J_item bnblist-listpop-filter-hasfold">
+            <view class="tit ">{{filter_list.filters[2].text}}</view>
+            <view class="con J_filtertab_bednumber">
+              <text class="btn-num btn-minus disabled"></text>
+              <text class="btn-num btn-plus "></text>
+              <text class="val J_display">不限</text>
+            </view>
+          </view>
+        </view>
+        <view class="bnblist-listpop-filter bnblist-listpop-filter-0 J_conditionItem ">
+          <view class="tit ">{{filter_list.filters[3].text}}</view>
+          <block wx:for="{{filter_list.filters[3].items}}" wx:key>
+            <view class="item">
+              <text class="txt">{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="bnblist-listpop-filter bnblist-listpop-filter-1 J_conditionItem bnblist-listpop-filter-hasfold">
+        <view class="tit J_arrow">{{filter_list.filters[4].text}}</view>
+        <view class="con J_filtertab_bedroom">
+          <block wx:for="{{filter_list.filters[4].items}}" wx:key>
+            <view class="con J_filtertab_sheshi ">
+              <view class="{{item.icon}} ico-device-{{item.icon}}"></view>
+              <text class="txt">{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="bnblist-listpop-filter bnblist-listpop-filter-0 J_conditionItem ">
+        <view class="tit J_arrow">{{filter_list.filters[5].text}}</view>
+        <view class="con J_filtertab_discount">
+          <block wx:for="{{filter_list.filters[5].items}}" wx:key>
+            <view class="item">
+              <text class="txt">{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="bnblist-listpop-filter bnblist-listpop-filter-0 J_conditionItem ">
+        <view class="tit J_arrow">{{filter_list.filters[6].text}}</view>
+        <view class="con J_filtertab_special ">
+          <block wx:for="{{filter_list.filters[6].items}}" wx:key>
+            <view class="item">
+              <text class="txt">{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="bnblist-listpop-filter bnblist-listpop-filter-0 J_conditionItem ">
+        <view class="tit J_arrow">{{filter_list.filters[7].text}}</view>
+        <view class="con J_filtertab_recommend ">
+          <block wx:for="{{filter_list.filters[7].items}}" wx:key>
+            <view class="item">
+              <text class="txt">{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="bnblist-listpop-filter bnblist-listpop-filter-0 J_conditionItem ">
+        <view class="tit J_arrow">{{filter_list.filters[8].text}}</view>
+        <view class="con J_filtertab_commentTag ">
+          <block wx:for="{{filter_list.filters[8].items}}" wx:key>
+            <view class="item">
+              <text class="txt">{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="bnblist-listpop-filter bnblist-listpop-filter-0 J_conditionItem ">
+        <view class="tit J_arrow">{{filter_list.filters[9].text}}</view>
+        <view class="con J_filtertab_decorationStyle ">
+          <block wx:for="{{filter_list.filters[9].items}}" wx:key>
+            <view class="item">
+              <text class="txt">{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+
+
+
+    </view>
+    <view class="con-btn-box">
+      <view class="btn-o-reset j_reset">重置</view>
+      <view class="btn-o-submit j_sure">确定</view>
+    </view>
+  </view>
+</view>
+<view id="J_proList">
+  <view id="J_proulWrap" class="bnblist-product-list-t4  bnb-product-list-t4">
+    <view id="expList">
+      <block wx:for="{{test_my}}" wx:key="pname">
+        <view class="list-item J_favproli" data-room_id="{{item.pid}}" data-city_id="{{city_id}}" bindtap="particulars_room">
+          <view class="bnb-list-photo-t2">
+            <view class="con-slides" style="height: 100% !important;">
+              <swiper indicator-dots="true" style="height:230px;">
+                <block wx:for="{{item.images}}" wx:key="key" wx:for-item="page">
+                  <swiper-item>
+                    <view class="item-slide J_picItem" style="width: 381px;">
+                      <image src="{{page}}"></image>
+                    </view>
+                  </swiper-item>
+                </block>
+              </swiper>
+            </view>
+          </view>
+          <view class="list-item-con">
+            <view class="con-tag">
+              <view class="item-tags">
+                <block wx:for="{{item.tags}}" wx:key="tag" wx:for-item="tag">
+                  <text class="tag tag">{{tag.tagName}}</text>
+                </block>
+              </view>
+              <view class="txt-favor">
+                <text class="val" style="font-weight: 400;">{{item.favorites}}人收藏</text>
+              </view>
+            </view>
+            <text class="tit J_pname" id="tit">{{item.pname}}</text>
+            <view class="con-rule">
+              <text class="txt-point J_commentScore">{{item.commentScore}}</text>
+              <text class="txt-tip">{{item.commentDesc}}</text>
+              <text class="txt-comment J_comment"><text class="val" style="font-weight: 400;">{{item.comment}}条评价</text></text>
+              <text class="txt-size J_rname"><text class="val" style="font-weight: 400;" >{{item.rname}}</text>
+              </text>
+              <text class="txt-bed"><text class="val" style="font-weight: 400;" >{{item.beds}}床</text></text>
+              <text class="txt-num"><text class="val" style="font-weight: 400;" >{{item.people}}人</text></text>
+              <text class="txt-viewpoint">{{item.zone}}</text>
+            </view>
+            <view class="con-price">
+              <text class="txt-price-now  J_price">
+                 <text class="unit">￥</text>{{item.price.price}}
+              </text>
+              <view class="item-tags">
+                <block wx:for="{{item.saleTags}}" wx:key="sale" wx:for-item="sale">
+                  <text class="tag {{sale.icon}}">{{sale.tagName}}</text>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/room_ par/room_ par",
     "pages/myapp/myapp",
-    "pages/success/success",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/city_list/city_list",
+    "pages/houseList/houseList",
+    "pages/room_par/room_par",
+    "pages/success/success"
   ],
   "permission": {
     "scope.userLocation": {
