@@ -9,12 +9,12 @@ Page({
   data: {
     title:'乐蜀民宿近上海乐园设计师高端复式公寓壹号',
     arriveTime1:'11',
-    arriveTime2: '21',
+    arriveTime2: '22',
     leaveTime1: '11',
-    leaveTime2: '22',
+    leaveTime2: '23',
     stayTimes:'1晚',
-    arriveWeekTime:'周三',
-    leaveWeekTime: '周四',
+    arriveWeekTime:'周四',
+    leaveWeekTime: '周五',
     livepeopleName:'孙燕然',
     chinaName:'',
     cardId:'',
@@ -50,6 +50,7 @@ Page({
     cardIds:'',
     englistName:'',
     englistfirstName:'',
+    test: null,
     // leftMove:0,
     // show: false,
     // buttons: [
@@ -349,11 +350,13 @@ Page({
   },
   getMess_image(){
     var that=this
+    var tes = that.data.test;
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/SearchProduct?_fxpcqlniredt=09031047311234998233&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003546&__gw_platform=H5',
       data: { "cityid": 2, "rentType": "0", "orderBy": 0, "pindex": 1, "keywords": "", "filterTitle": null, "cityname": "上海", "conds": [{ "cond": "date", "value": "2019-11-15,2019-11-16" }], "userDataPos": { "cityId": "2", "lat": "31.248194094262946", "lng": "121.4879869806514" }, "sequenceId": "4f4b07ce-16df-5f3e-691b-a1966096bd9b", "pageCode": "600003546", "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success: function(res) {
+        console.log(res.data.product[0])
         that.setData({
           test: res.data.product
         })

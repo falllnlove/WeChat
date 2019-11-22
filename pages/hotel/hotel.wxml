@@ -11,9 +11,9 @@
         <image src="https://dimg04.c-ctrip.com/images/2B0f0s000000hspxf9A57_R_750_560_Q80.jpg_.webp"></image>
       </view>
       <text class="btn-o">详情</text>
-      <view class="tit">{{title}}</view>
+      <view class="tit">{{test[0].pname}}</view>
       <view class="con-txt">
-        2室1厅 1卫 2床 宜住4人
+        {{test[0].rname}} 1卫 2床 宜住4人
       </view>
     </view>
     <!-- 今日甩卖 -->
@@ -266,21 +266,21 @@
 
         </view>
         <view class="bnbdetail-box bnbdetail-box-info bnbbook-box-info">
-          <view class="tit">乐蜀民宿近上海乐园设计师高端复式公寓壹号</view>
+          <view class="tit">{{test[0].pname}}</view>
           <view class="J_productPriceInfo">
             <view class="con-price">
               <text class="txt-price-now">
-               <text class="unit">￥</text>413
+               <text class="unit">￥</text>{{test[0].price.price}}
               </text>
               <text class="txt-price-origin">
-               <text class="val">￥458</text>
+               <text class="val">￥{{test[0].price.originalPrice}}</text>
               </text>
             </view>
           </view>
           <view class="con-rule">
             <view class="item item-room">
               <text class="ico"></text>
-              <text class="txt txt-1">2室1厅 1卫</text>
+              <text class="txt txt-1">{{test[0].rname}} 1卫</text>
               <text class="txt txt-2">
                <text class="val">Loft</text>复式
               <text class="val">/102</text>㎡
