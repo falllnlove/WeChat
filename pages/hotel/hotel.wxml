@@ -1,259 +1,258 @@
 <view style="display:{{hotelMess}}">
-<view class="bnb-header bnbNewBook-header is-fix J_header">
-   <text class="btn-o btn-o-back J_back"></text>
-   <text class="tit">订单填写</text>
-</view>
-<!-- 酒店信息 -->
-<view class="move">
-  <view class="q"></view>
-  <view class="bnbbook-box bnbbook-box-bookinfo J_productDetail" bindtap="detail_Mess_show">
-    <view class="con-img">
-      <image src="https://dimg04.c-ctrip.com/images/2B0f0s000000hspxf9A57_R_750_560_Q80.jpg_.webp"></image>
-    </view>
-    <text class="btn-o">详情</text>
-      <view class="tit">{{title}}</view>
-    <view class="con-txt">
-      2室1厅 1卫 2床 宜住4人
-      </view>
+  <view class="bnb-header bnbNewBook-header is-fix J_header">
+    <text class="btn-o btn-o-back J_back"></text>
+    <text class="tit">订单填写</text>
   </view>
-  <!-- 今日甩卖 -->
-  <view class="J_excitation">
-    <view class="bnbbook-box bnbbook-box-activity">
-      <view class="con">
-        <text class="txt txt-sale">
+  <!-- 酒店信息 -->
+  <view class="move">
+    <view class="q"></view>
+    <view class="bnbbook-box bnbbook-box-bookinfo J_productDetail" bindtap="detail_Mess_show">
+      <view class="con-img">
+        <image src="https://dimg04.c-ctrip.com/images/2B0f0s000000hspxf9A57_R_750_560_Q80.jpg_.webp"></image>
+      </view>
+      <text class="btn-o">详情</text>
+      <view class="tit">{{title}}</view>
+      <view class="con-txt">
+        2室1厅 1卫 2床 宜住4人
+      </view>
+    </view>
+    <!-- 今日甩卖 -->
+    <view class="J_excitation">
+      <view class="bnbbook-box bnbbook-box-activity">
+        <view class="con">
+          <text class="txt txt-sale">
         今日甩卖，已享9.0折！最后10小时
         </text>
-      </view>
-      <view class="con">
-        <text class="txt txt-conform">
+        </view>
+        <view class="con">
+          <text class="txt txt-conform">
         房东确认快，无需等待
         </text>
+        </view>
       </view>
     </view>
-  </view>
-  <!-- 入离时间 -->
-  <view class="qs"></view>
-  <view class="J_newCalendar">
-    <view class="bnbdetail-box bnbdetail-box-date bnbbook-box-date">
-      <view class="con-start">
-        <text class="tit">入住</text>
-        <text class="txt-date">{{arriveTime1}}月{{arriveTime2}}日</text>
-        <text class="txt-day">{{arriveWeekTime}}</text>
-      </view>
-      <view class="con-day">
+    <!-- 入离时间 -->
+    <view class="qs"></view>
+    <view class="J_newCalendar">
+      <view class="bnbdetail-box bnbdetail-box-date bnbbook-box-date">
+        <view class="con-start">
+          <text class="tit">入住</text>
+          <text class="txt-date">{{arriveTime1}}月{{arriveTime2}}日</text>
+          <text class="txt-day">{{arriveWeekTime}}</text>
+        </view>
+        <view class="con-day">
           <text class="txt">
           {{stayTimes}}
           </text>
-      </view>
-      <view class="con-end">
-        <text class="tit">离店</text>
-        <text class="txt-date">{{leaveTime1}}月{{leaveTime2}}日</text>
-        <text class="txt-day">{{leaveWeekTime}}</text>
+        </view>
+        <view class="con-end">
+          <text class="tit">离店</text>
+          <text class="txt-date">{{leaveTime1}}月{{leaveTime2}}日</text>
+          <text class="txt-day">{{leaveWeekTime}}</text>
+        </view>
       </view>
     </view>
-  </view>
-  <!-- 选择入住人 -->
-  <view class="qsw"></view>
-  <view class="bnbbook-box bnbbook-box-guest-list">
-    <view class="tit">
-      选择入住人
-      <text class="tit-tip">(最多4人)</text>
-    </view>
-    <view class="J_passengerInit">
-      <view class="con-add J_passengersStore">
-        <!-- <text class="txt-tip J_passengerAdd">至少填写一名入住人</text>
+    <!-- 选择入住人 -->
+    <view class="qsw"></view>
+    <view class="bnbbook-box bnbbook-box-guest-list">
+      <view class="tit">
+        选择入住人
+        <text class="tit-tip">(最多4人)</text>
+      </view>
+      <view class="J_passengerInit">
+        <view class="con-add J_passengersStore">
+          <!-- <text class="txt-tip J_passengerAdd">至少填写一名入住人</text>
         <text class="item item-more is-tpye-1 J_passengerAdd" bindtap="addMessUser_mess">新增</text> -->
-        <view class="activesafter" bindtap="avticeShow" style="display:{{actives}}">
-         <view class="item actives" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{livepeopleName}} 
-         </view>
-        </view>
-        <view class="activesbefore" style="display:{{active}}">
-         <view class="item active" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{livepeopleName}}
-         </view>
-        </view>
-       <view class="item item-more J_passengerSelect" bindtap="addMessUsermoreShow">
+          <view class="activesafter" bindtap="avticeShow" style="display:{{actives}}">
+            <view class="item actives" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{livepeopleName}}
+            </view>
+          </view>
+          <view class="activesbefore" style="display:{{active}}">
+            <view class="item active" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{livepeopleName}}
+            </view>
+          </view>
+          <view class="item item-more J_passengerSelect" bindtap="addMessUsermoreShow">
             更多
+          </view>
+        </view>
+        <view class="con-edit" style="display:{{conEditDel}}">
+          <view class="J_selectedPassengers">
+            <view class="item" style="content:{{showValue}}" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default="true">
+              <text class="btn-o-del J_showDeletePassenger" bindtap="cust_MessShow" style="display:{{cusDel}}"></text>
+              <view class="tit" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">{{livepeopleName}}</view>
+              <view class="txt" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">身份证 {{liveperopleCardId}}</view>
+              <view class="btn-o-del2 J_deletePassenger" bindtap="editDel" data-id="98309944" data-default="true" style="display:{{cust_Mess_del}}">删除</view>
+              <view class="items" style="display:{{arrowsShow}}"></view>
+            </view>
+
+          </view>
         </view>
       </view>
-      <view class="con-edit" style="display:{{conEditDel}}">
-        <view class="J_selectedPassengers" >
-          <view class="item" style="content:{{showValue}}" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default="true"> 
-            <text class="btn-o-del J_showDeletePassenger" bindtap="cust_MessShow" style="display:{{cusDel}}"></text>
-            <view class="tit" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">{{livepeopleName}}</view>
-            <view class="txt" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">身份证 {{liveperopleCardId}}</view>
-            <view class="btn-o-del2 J_deletePassenger" bindtap="editDel" data-id="98309944" data-default="true" style="display:{{cust_Mess_del}}">删除</view>
-            <view class="items" style="display:{{arrowsShow}}"></view>
-          </view> 
-          
+      <view class="bnbbook-contact-mobile">
+        <view class="J_selectCountry">
+          <text class="txt-lbl J_selectTel">境内手机</text>
+        </view>
+        <view class="con-mobile J_telContainer">
+          <view class="txt-code J_countryCode">
+            <input class="input-mobile" id="J_tenantPhone" value="{{phoneNumber}}" name="{{phoneNumber}}" maxlength="13" type="tel" placeholder="用于接收预订信息"></input>
+          </view>
         </view>
       </view>
     </view>
-    <view class="bnbbook-contact-mobile">
-      <view class="J_selectCountry">
-        <text class="txt-lbl J_selectTel">境内手机</text>
-      </view>
-      <view class="con-mobile J_telContainer">
-        <view class="txt-code J_countryCode">
-          <input class="input-mobile" id="J_tenantPhone" value="{{phoneNumber}}" name="{{phoneNumber}}" maxlength="13" type="tel" placeholder="用于接收预订信息"></input>
+    <!-- 发票 -->
+    <view class="qsw1"></view>
+    <view class="J_invoiceDiv">
+      <view class="bnbbook-box bnbbook-box-invoice J_Invoice is-type-2">
+        <view class="txt-lbl">发票</view>
+        <view class="txt-con">
+          <view class="txt-1 J_InvoiceType">
+            不需要
+            <view class="txt-4">离店后3个月内可在订单页补开电子发票</view>
+          </view>
+          <view class="J_InvoiceDesc"></view>
         </view>
       </view>
     </view>
-  </view>
-  <!-- 发票 -->
-  <view class="qsw1"></view>
-  <view class="J_invoiceDiv">
-    <view class="bnbbook-box bnbbook-box-invoice J_Invoice is-type-2">
-      <view class="txt-lbl">发票</view>
-      <view class="txt-con">
-        <view class="txt-1 J_InvoiceType">
-          不需要
-          <view class="txt-4">离店后3个月内可在订单页补开电子发票</view>
-        </view>
-        <view class="J_InvoiceDesc"></view>
-      </view>
-    </view>
-  </view>
-  <!-- 退订政策 -->
-  <view class="background">
-    <view class="bnbbook-policy" id="J_newRefundRules">
-      <view>
-        <text class="tit">
+    <!-- 退订政策 -->
+    <view class="background">
+      <view class="bnbbook-policy" id="J_newRefundRules">
+        <view>
+          <text class="tit">
           退订政策:
         </text>
-        <text class="txt" decode="{{true}}">&emsp;&emsp;&emsp;&emsp;&emsp;取消订单，将收取80%房费作为违约金支付给房东；若提前退房，将收取全部剩余房费作为违约金支付给房东</text>
+          <text class="txt" decode="{{true}}">&emsp;&emsp;&emsp;&emsp;&emsp;取消订单，将收取80%房费作为违约金支付给房东；若提前退房，将收取全部剩余房费作为违约金支付给房东</text>
+        </view>
       </view>
-    </view>
-    <!--活动声明-->
-    <view class="J_bookActivityDesc">
-      <view class="bnbbook-policy ">
-        <text class="tit">活动说明:</text>
-        <text class="txt" decode="{{true}}">&emsp;&emsp;&emsp;&emsp;&emsp;所有优惠活动不可叠加使用，在您下单过程中，系统会优先为您选择优惠金额最大的优惠活动   </text>
+      <!--活动声明-->
+      <view class="J_bookActivityDesc">
+        <view class="bnbbook-policy ">
+          <text class="tit">活动说明:</text>
+          <text class="txt" decode="{{true}}">&emsp;&emsp;&emsp;&emsp;&emsp;所有优惠活动不可叠加使用，在您下单过程中，系统会优先为您选择优惠金额最大的优惠活动   </text>
+        </view>
       </view>
-    </view>
-    <!--港澳台须知-->
-    <view class="bnbbook-policy bnbbook-policy-foreigner J_overseaTips" bindtap="notice_tap_show">
-      <text class="tit">
+      <!--港澳台须知-->
+      <view class="bnbbook-policy bnbbook-policy-foreigner J_overseaTips" bindtap="notice_tap_show">
+        <text class="tit">
         境外/港澳台人士入住须知
       </text>
-    </view>
-    <!-- 境外人士提示 begin-->
-    <view class="bnb-modal bnbbook-modal bnblbook-modal-overseas J_overseaTipDetails" style="z-index:99999;display:{{notice}}">
-      <view class="modal-box">
-        <view class="box-head">
-          <view class="tit">
-            境外/港澳台人士入住须知
-          </view>
-        </view>
-        <view class="box-body">
-          <text>根据我国法律规定，外国人、港澳台居民应当在抵达住宿地后24小时内办理住宿登记。住宿宾馆的，请在宾馆内办理。住宿宾馆以外地区的，请前往居住地派出所办理。未依法办理住宿登记将承担相应法律责任。</text>
-          <text>\n\n请随身携带您的出入境证件以备公安机关查验。</text>
-          <view class="seas-txt-en">
-            <text>According to the Chinese laws, foreign nationals and residents from Hong Kong, Macao and Taiwan should register their accommodation within 24 hours of arrival. The hotel residents can complete it in the hotel. Those who stay elsewhere should go to the local police station for registration. Failure to comply with the regulations will result in legal liability.</text>
-            <text>\n\nPlease carry your travel document with you for possible examination by the police.</text>
-          </view>
-        </view>
-        <view class="box-foot J_overseaTips" bindtap="notice_tap_close">
-          <view class="btn-o-close"></view>
-        </view>
       </view>
-    
+      <!-- 境外人士提示 begin-->
+      <view class="bnb-modal bnbbook-modal bnblbook-modal-overseas J_overseaTipDetails" style="z-index:99999;display:{{notice}}">
+        <view class="modal-box">
+          <view class="box-head">
+            <view class="tit">
+              境外/港澳台人士入住须知
+            </view>
+          </view>
+          <view class="box-body">
+            <text>根据我国法律规定，外国人、港澳台居民应当在抵达住宿地后24小时内办理住宿登记。住宿宾馆的，请在宾馆内办理。住宿宾馆以外地区的，请前往居住地派出所办理。未依法办理住宿登记将承担相应法律责任。</text>
+            <text>\n\n请随身携带您的出入境证件以备公安机关查验。</text>
+            <view class="seas-txt-en">
+              <text>According to the Chinese laws, foreign nationals and residents from Hong Kong, Macao and Taiwan should register their accommodation within 24 hours of arrival. The hotel residents can complete it in the hotel. Those who stay elsewhere should go to the local police station for registration. Failure to comply with the regulations will result in legal liability.</text>
+              <text>\n\nPlease carry your travel document with you for possible examination by the police.</text>
+            </view>
+          </view>
+          <view class="box-foot J_overseaTips" bindtap="notice_tap_close">
+            <view class="btn-o-close"></view>
+          </view>
+        </view>
+
+      </view>
+      <!-- 境外人士提示 end -->
     </view>
-    <!-- 境外人士提示 end -->
-  </view>
-  <!--提交 begin-->
-  <view class="bnb-footer-fix bnbbook-footer-fix" >
-    <view class="con">
+    <!--提交 begin-->
+    <view class="bnb-footer-fix bnbbook-footer-fix">
+      <view class="con">
         <view class="txt-1 J_priceTxt">线上支付</view>
         <view class="txt-2 J_totalPrice">
           413
         </view>
         <view class="txt-3" id="J_minusOrNot" data-amount="45.00">(优惠已减¥45.00)</view>
-    </view>
-    <view class="con-2">
-      <text class="btn-o-more" id="J_orderDetail" bindtap="ordernotice_show">
+      </view>
+      <view class="con-2">
+        <text class="btn-o-more" id="J_orderDetail" bindtap="ordernotice_show">
         明细
       </text>
-      <text id="J_book" bindtap="spendPrice" class="btn-o-primary">去支付</text>
+        <text id="J_book" bindtap="spendPrice" class="btn-o-primary">去支付</text>
+      </view>
     </view>
-  </view>
-  <!--提交 end-->
-  <!-- 明细弹出层begin -->
-  <view id="J_orderInfo" style="position: fixed; bottom: 0px; left: 0px; right: 0px; z-index: 3001; display:{{ordernotice}};">
-    <view class="view cui-mask" style="box-sizing: border-box; width: 100%; height: 468px; left: 0px; top: 0px; z-index: 2999; position: fixed !important;" id="ui-view-6"  bindtap="ordernotice_close"></view>
-    <view class="pop-order-info pop-order-info-book">
-      <view class="particulars-box">
-        <view class="hd">
-          <text class="culars-sum">1晚，共￥458</text>
-          <text class="culars-name">房费</text>
-          <view class="particulars-list">
-            <view>
-              <text class="order-price">¥458</text>
-              <text class="commit-Date">2019-11-13</text>
+    <!--提交 end-->
+    <!-- 明细弹出层begin -->
+    <view id="J_orderInfo" style="position: fixed; bottom: 0px; left: 0px; right: 0px; z-index: 3001; display:{{ordernotice}};">
+      <view class="view cui-mask" style="box-sizing: border-box; width: 100%; height: 468px; left: 0px; top: 0px; z-index: 2999; position: fixed !important;" id="ui-view-6" bindtap="ordernotice_close"></view>
+      <view class="pop-order-info pop-order-info-book">
+        <view class="particulars-box">
+          <view class="hd">
+            <text class="culars-sum">1晚，共￥458</text>
+            <text class="culars-name">房费</text>
+            <view class="particulars-list">
+              <view>
+                <text class="order-price">¥458</text>
+                <text class="commit-Date">2019-11-13</text>
+              </view>
             </view>
           </view>
         </view>
-      </view>
-      <view class="particulars-box">
-        <view class="hd">
-          <text class="culars-name">优惠</text>
+        <view class="particulars-box">
+          <view class="hd">
+            <text class="culars-name">优惠</text>
+          </view>
+          <view class="particulars-list particulars-list-coupon">
+            <view>
+              <text class="order-price">-¥45</text>
+              <text class="active">特惠活动</text>
+              <text class="order-activity">(已选择最佳优惠)</text>
+            </view>
+          </view>
         </view>
-        <view class="particulars-list particulars-list-coupon">
+        <view class="particulars-box" style="display:none">
+          <view class="hd">
+            <text class="culars-name">发票</text>
+            <view class="particulars-list">
+              <view>
+                <text class="order-price">¥10</text> 配送费
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="particulars-list payment-list">
           <view>
-            <text class="order-price">-¥45</text>
-            <text class="active">特惠活动</text>
-            <text class="order-activity">(已选择最佳优惠)</text>
+            <text class="order-price pay-price">¥{{livePeoplePayPrice}}</text>
+            <text class="order-pay">线上支付</text>
           </view>
-        </view>
-      </view>
-      <view class="particulars-box" style="display:none">
-        <view class="hd">
-          <text class="culars-name">发票</text>
-          <view class="particulars-list">
-            <view>
-              <text class="order-price">¥10</text>
-              配送费
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="particulars-list payment-list">
-        <view>
-          <text class="order-price pay-price">¥{{livePeoplePayPrice}}</text>
-          <text class="order-pay">线上支付</text>
         </view>
       </view>
     </view>
   </view>
-</view>
-<!-- 明细弹出层end -->
+  <!-- 明细弹出层end -->
 
-<!-- 产品详情提示框 begin -->
-<wxs src="../../wxs/utils.wxs" module="tools"></wxs>
-<view id="J_detail" style="display:{{detailMess}}">
-  <view class="cui-mask J_mask" style="display:{{detailMess}}" bindtap="detail_Mess_close"></view>
-  <view class="pop-order-product-box bnbbook-pop-order-product-box">
-    <view class="pop-product-hd pop-product-hd-fix J_fixedHeader" style="display: none;">
-      <image src="https://pic.tujia.com/upload/landlordunit/day_180617/thumb/20180617114938888_700_467.jpg"></image>
-      <!-- 超链接 -->
-      <navigator url="##" title class="close J_close"></navigator>
-    </view>
-    <view class="pop-bodyer">
-       <view class="pop-product-hd J_initHeader">
-         <!--超链接-->
-         <navigator url="##" title class="close J_close" bindtap="detail_Mess_close"></navigator>
-       </view>
-       <view class="focus-box">
-         <view class="focus-mode bnbdetail-focus-mode bnbbook-focus-mode" id="J_pic">
+  <!-- 产品详情提示框 begin -->
+  <wxs src="../../wxs/utils.wxs" module="tools"></wxs>
+  <view id="J_detail" style="display:{{detailMess}}">
+    <view class="cui-mask J_mask" style="display:{{detailMess}}" bindtap="detail_Mess_close"></view>
+    <view class="pop-order-product-box bnbbook-pop-order-product-box">
+      <view class="pop-product-hd pop-product-hd-fix J_fixedHeader" style="display: none;">
+        <image src="https://pic.tujia.com/upload/landlordunit/day_180617/thumb/20180617114938888_700_467.jpg"></image>
+        <!-- 超链接 -->
+        <navigator url="##" title class="close J_close"></navigator>
+      </view>
+      <view class="pop-bodyer">
+        <view class="pop-product-hd J_initHeader">
+          <!--超链接-->
+          <navigator url="##" title class="close J_close" bindtap="detail_Mess_close"></navigator>
+        </view>
+        <view class="focus-box">
+          <view class="focus-mode bnbdetail-focus-mode bnbbook-focus-mode" id="J_pic">
             <view style="transition: all 300ms ease-out 0s; height: 100% !important;">
-             <block wx:for="{{test}}" wx:key="pname">
-               <swiper style="height:245px;">
-                 <block wx:for="{{item.images}}" wx:key="key" wx:for-item="page">
-                   <swiper-item>
-                     <view class="item-slide J_picItem" style="width: 421px;">
-                       <image src="{{page}}"></image>
-                     </view>
-                   </swiper-item>
-                 </block>
+              <block wx:for="{{test}}" wx:key="pname">
+                <swiper style="height:245px;">
+                  <block wx:for="{{item.images}}" wx:key="key" wx:for-item="page">
+                    <swiper-item>
+                      <view class="item-slide J_picItem" style="width: 421px;">
+                        <image src="{{page}}"></image>
+                      </view>
+                    </swiper-item>
+                  </block>
                 </swiper>
               </block>
             </view>
@@ -262,530 +261,536 @@
                 <text class="J_num">1</text>&emsp;/ 29
               </text>
             </view> -->
-            
-         </view>
-        
-       </view>
-       <view class="bnbdetail-box bnbdetail-box-info bnbbook-box-info">
-         <view class="tit">乐蜀民宿近上海乐园设计师高端复式公寓壹号</view>
-         <view class="J_productPriceInfo">
-           <view class="con-price">
-             <text class="txt-price-now">
+
+          </view>
+
+        </view>
+        <view class="bnbdetail-box bnbdetail-box-info bnbbook-box-info">
+          <view class="tit">乐蜀民宿近上海乐园设计师高端复式公寓壹号</view>
+          <view class="J_productPriceInfo">
+            <view class="con-price">
+              <text class="txt-price-now">
                <text class="unit">￥</text>413
-             </text>
-             <text class="txt-price-origin">
+              </text>
+              <text class="txt-price-origin">
                <text class="val">￥458</text>
-             </text>
-           </view>
-         </view>
-         <view class="con-rule">
-           <view class="item item-room">
-             <text class="ico"></text>
-             <text class="txt txt-1">2室1厅 1卫</text>
-             <text class="txt txt-2">
-               <text class="val">Loft</text>复式 <text class="val">/102</text>㎡
-             </text>
-           </view>
-           <view class="item item-bed J_bedTip">
-             <text class="ico"></text>
-             <text class="txt txt-1">宜住4人 2床</text>
-             <text class="txt txt-2">
-               <text class="txt-val">大床 <text class="val">(2×1.8</text>米<text class="val">)</text><text class="val">1</text>张
-               </text>
-             </text>
-           </view>
-         </view>
-       </view>
-       <view class="J_commentInfo">
-         <view class="bnbbook-comment">
-           <view class="con-brief"> 
-             <view class="con-info">
-               <view class="val">4.9</view>
-               <view class="txt">超棒</view>
-             </view>
-             <view class="con-list-parts">
-               <view class="item item-0">
-                 <text class="txt-lbl">卫生</text>
-                 <text class="process">
+              </text>
+            </view>
+          </view>
+          <view class="con-rule">
+            <view class="item item-room">
+              <text class="ico"></text>
+              <text class="txt txt-1">2室1厅 1卫</text>
+              <text class="txt txt-2">
+               <text class="val">Loft</text>复式
+              <text class="val">/102</text>㎡
+              </text>
+            </view>
+            <view class="item item-bed J_bedTip">
+              <text class="ico"></text>
+              <text class="txt txt-1">宜住4人 2床</text>
+              <text class="txt txt-2">
+               <text class="txt-val">大床 <text class="val">(2×1.8</text>米
+              <text class="val">)</text>
+              <text class="val">1</text>张
+              </text>
+              </text>
+            </view>
+          </view>
+        </view>
+        <view class="J_commentInfo">
+          <view class="bnbbook-comment">
+            <view class="con-brief">
+              <view class="con-info">
+                <view class="val">4.9</view>
+                <view class="txt">超棒</view>
+              </view>
+              <view class="con-list-parts">
+                <view class="item item-0">
+                  <text class="txt-lbl">卫生</text>
+                  <text class="process">
                    <text class="val" style="width: 98%;"></text>
-                 </text>
-                 <text class="txt">4.9</text>
-               </view>
-               <view class="item item-1">
-                 <text class="txt-lbl">服务</text>
-                 <text class="process">
+                  </text>
+                  <text class="txt">4.9</text>
+                </view>
+                <view class="item item-1">
+                  <text class="txt-lbl">服务</text>
+                  <text class="process">
                    <text class="val" style="width: 100%;"></text>
-                 </text>
-                 <text class="txt">5.0</text>
-               </view>
-               <view class="item item-2">
-                 <text class="txt-lbl">设施</text>
-                 <text class="process">
+                  </text>
+                  <text class="txt">5.0</text>
+                </view>
+                <view class="item item-2">
+                  <text class="txt-lbl">设施</text>
+                  <text class="process">
                    <text class="val" style="width: 98%;"></text>
-                 </text>
-                 <text class="txt">4.9</text>
-               </view>
-               <view class="item item-3">
-                 <text class="txt-lbl">交通</text>
-                 <text class="process">
+                  </text>
+                  <text class="txt">4.9</text>
+                </view>
+                <view class="item item-3">
+                  <text class="txt-lbl">交通</text>
+                  <text class="process">
                    <text class="val" style="width: 98%;"></text>
-                 </text>
-                 <text class="txt">4.9</text>
-               </view>
-             </view>
-           </view>
-           <view class="con-list-tag">
-             <view class="item J_tagTab" data-idx="3" data-param="4,183">老板不错</view>
-             <view class="item J_tagTab" data-idx="4" data-param="4,196">房间干净</view>
-             <view class="item J_tagTab" data-idx="5" data-param="4,169">交通便利</view>
-             <view class="item J_tagTab" data-idx="6" data-param="4,599">下次还想入住</view>
-             <view class="item J_tagTab" data-idx="7" data-param="4,456">附近有地铁站</view>
-             <view class="item J_tagTab" data-idx="8" data-param="4,59">房间挺好</view>
-             <view class="item J_tagTab" data-idx="9" data-param="4,311">设施齐全</view>
-             <view class="item J_tagTab" data-idx="10" data-param="4,385">适合家庭出游</view>
-           </view>
-         </view>
-       </view> 
-       <view class="bnbdetail-box bnbdetail-box-service J_fac is-hide">
-         <view class="box-head">配套设施</view>
-         <view class="list-device J_showFacilityInfoModal">
-           <text class="item item-device-e062" style="display:block;">
+                  </text>
+                  <text class="txt">4.9</text>
+                </view>
+              </view>
+            </view>
+            <view class="con-list-tag">
+              <view class="item J_tagTab" data-idx="3" data-param="4,183">老板不错</view>
+              <view class="item J_tagTab" data-idx="4" data-param="4,196">房间干净</view>
+              <view class="item J_tagTab" data-idx="5" data-param="4,169">交通便利</view>
+              <view class="item J_tagTab" data-idx="6" data-param="4,599">下次还想入住</view>
+              <view class="item J_tagTab" data-idx="7" data-param="4,456">附近有地铁站</view>
+              <view class="item J_tagTab" data-idx="8" data-param="4,59">房间挺好</view>
+              <view class="item J_tagTab" data-idx="9" data-param="4,311">设施齐全</view>
+              <view class="item J_tagTab" data-idx="10" data-param="4,385">适合家庭出游</view>
+            </view>
+          </view>
+        </view>
+        <view class="bnbdetail-box bnbdetail-box-service J_fac is-hide">
+          <view class="box-head">配套设施</view>
+          <view class="list-device J_showFacilityInfoModal">
+            <text class="item item-device-e062" style="display:block;">
               <text class="ico"></text>
-              <text class="txt">无线网络</text>
-           </text>
-           <text class="item item-device-e04c" style="display:block;">
+            <text class="txt">无线网络</text>
+            </text>
+            <text class="item item-device-e04c" style="display:block;">
               <text class="ico"></text>
-              <text class="txt">空调</text>
-           </text>
-           <text class="item item-device-e043" style="display:block;">
+            <text class="txt">空调</text>
+            </text>
+            <text class="item item-device-e043" style="display:block;">
               <text class="ico"></text>
-              <text class="txt">电视</text>
-           </text>
-           <text class="item item-device-e065" style="display:block;">
+            <text class="txt">电视</text>
+            </text>
+            <text class="item item-device-e065" style="display:block;">
               <text class="ico"></text>
-              <text class="txt">洗衣机</text>
-           </text>
-           <text class="item item-device-e039" style="display:block;">
+            <text class="txt">洗衣机</text>
+            </text>
+            <text class="item item-device-e039" style="display:block;">
               <text class="ico"></text>
-              <text class="txt">冰箱</text>
-           </text>
-           <text class="item item-device-e04d" style="display:block;">
+            <text class="txt">冰箱</text>
+            </text>
+            <text class="item item-device-e04d" style="display:block;">
               <text class="ico"></text>
-              <text class="txt">空气净化器</text>
-           </text>
-           <text class="item item-device-e127" style="display:block;">
+            <text class="txt">空气净化器</text>
+            </text>
+            <text class="item item-device-e127" style="display:block;">
               <text class="ico"></text>
-              <text class="txt">新风系统</text>
-           </text>
-           <text class="item item-device-e049" style="display:block;">
+            <text class="txt">新风系统</text>
+            </text>
+            <text class="item item-device-e049" style="display:block;">
               <text class="ico"></text>
-              <text class="txt">加湿器</text>
-           </text>
-           <text class="item item-device-e055" style="display:{{facility_show}}">
+            <text class="txt">加湿器</text>
+            </text>
+            <text class="item item-device-e055" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">暖气</text>
-           </text>
-           <text class="item item-device-e059" style="display:{{facility_show}}">
+            <text class="txt">暖气</text>
+            </text>
+            <text class="item item-device-e059" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">电热水壶</text>
-           </text>
-           <text class="item item-device-e03d" style="display:{{facility_show}}">
+            <text class="txt">电热水壶</text>
+            </text>
+            <text class="item item-device-e03d" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">电吹风</text>
-           </text>
-           <text class="item item-device-e04f" style="display:{{facility_show}}">
+            <text class="txt">电吹风</text>
+            </text>
+            <text class="item item-device-e04f" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">晾衣架</text>
-           </text>
-           <text class="item item-device-e03e" style="display:{{facility_show}}">
+            <text class="txt">晾衣架</text>
+            </text>
+            <text class="item item-device-e03e" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">打扫工具</text>
-           </text>
-           <text class="item item-device-e05e" style="display:{{facility_show}}">
+            <text class="txt">打扫工具</text>
+            </text>
+            <text class="item item-device-e05e" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">拖鞋</text>
-           </text>
-           <text class="item item-device-e11d" style="display:{{facility_show}}">
+            <text class="txt">拖鞋</text>
+            </text>
+            <text class="item item-device-e11d" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">地毯</text>
-           </text>
-           <text class="item item-device-e121" style="display:{{facility_show}}">
+            <text class="txt">地毯</text>
+            </text>
+            <text class="item item-device-e121" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">装饰字画</text>
-           </text>
-           <text class="item item-device-e12a" style="display:{{facility_show}}">
+            <text class="txt">装饰字画</text>
+            </text>
+            <text class="item item-device-e12a" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">高档沙发</text>
-           </text>
-           <text class="item item-device-e128" style="display:{{facility_show}}">
+            <text class="txt">高档沙发</text>
+            </text>
+            <text class="item item-device-e128" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">休闲椅</text>
-           </text>
-           <text class="item item-device-e11c" style="display:{{facility_show}}">
+            <text class="txt">休闲椅</text>
+            </text>
+            <text class="item item-device-e11c" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">茶几</text>
-           </text>
-           <text class="item item-device-e124" style="display:{{facility_show}}">
+            <text class="txt">茶几</text>
+            </text>
+            <text class="item item-device-e124" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">净水设备</text>
-           </text>
-           <text class="item item-device-e057" style="display:{{facility_show}}">
+            <text class="txt">净水设备</text>
+            </text>
+            <text class="item item-device-e057" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">全天热水</text>
-           </text>
-           <text class="item item-device-e063" style="display:{{facility_show}}">
+            <text class="txt">全天热水</text>
+            </text>
+            <text class="item item-device-e063" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">洗浴用品</text>
-           </text>
-           <text class="item item-device-e051" style="display:{{facility_show}}">
+            <text class="txt">洗浴用品</text>
+            </text>
+            <text class="item item-device-e051" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">毛巾</text>
-           </text>
-           <text class="item item-device-e069" style="display:{{facility_show}}">
+            <text class="txt">毛巾</text>
+            </text>
+            <text class="item item-device-e069" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">牙具</text>
-           </text>
-           <text class="item item-device-e046" style="display:{{facility_show}}">
+            <text class="txt">牙具</text>
+            </text>
+            <text class="item item-device-e046" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">独立卫浴</text>
-           </text>
-           <text class="item item-device-e023" style="display:{{facility_show}}">
+            <text class="txt">独立卫浴</text>
+            </text>
+            <text class="item item-device-e023" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">浴巾</text>
-           </text>
-           <text class="item item-device-e067" style="display:{{facility_show}}">
+            <text class="txt">浴巾</text>
+            </text>
+            <text class="item item-device-e067" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">香皂</text>
-           </text>
-           <text class="item item-device-e061" style="display:{{facility_show}}">
+            <text class="txt">香皂</text>
+            </text>
+            <text class="item item-device-e061" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">卫生纸</text>
-           </text>
-           <text class="item item-device-e060" style="display:{{facility_show}}">
+            <text class="txt">卫生纸</text>
+            </text>
+            <text class="item item-device-e060" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">微波炉</text>
-           </text>
-           <text class="item item-device-e066" style="display:{{facility_show}}">
+            <text class="txt">微波炉</text>
+            </text>
+            <text class="item item-device-e066" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">洗涤用具</text>
-           </text>
-           <text class="item item-device-e12b" style="display:{{facility_show}}">
+            <text class="txt">洗涤用具</text>
+            </text>
+            <text class="item item-device-e12b" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">整体厨柜</text>
-           </text>
-           <text class="item item-device-e02d" style="display:{{facility_show}}">
+            <text class="txt">整体厨柜</text>
+            </text>
+            <text class="item item-device-e02d" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">超市</text>
-           </text>
-           <text class="item item-device-e02e" style="display:{{facility_show}}">
+            <text class="txt">超市</text>
+            </text>
+            <text class="item item-device-e02e" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">菜市场</text>
-           </text>
-           <text class="item item-device-e0d8" style="display:{{facility_show}}">
+            <text class="txt">菜市场</text>
+            </text>
+            <text class="item item-device-e0d8" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">餐厅</text>
-           </text>
-           <text class="item item-device-e031" style="display:{{facility_show}}">
+            <text class="txt">餐厅</text>
+            </text>
+            <text class="item item-device-e031" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">药店</text>
-           </text>
-           <text class="item item-device-e0d9" style="display:{{facility_show}}">
+            <text class="txt">药店</text>
+            </text>
+            <text class="item item-device-e0d9" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">泳池</text>
-           </text>
-           <text class="item item-device-e0da" style="display:{{facility_show}}">
+            <text class="txt">泳池</text>
+            </text>
+            <text class="item item-device-e0da" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">儿童乐园</text>
-           </text>
-           <text class="item item-device-e030" style="display:{{facility_show}}">
+            <text class="txt">儿童乐园</text>
+            </text>
+            <text class="item item-device-e030" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">提款机</text>
-           </text>
-           <text class="item item-device-e02f" style="display:{{facility_show}}">
+            <text class="txt">提款机</text>
+            </text>
+            <text class="item item-device-e02f" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">免费停车</text>
-           </text>
-           <text class="item item-device-e120" style="display:{{facility_show}}">
+            <text class="txt">免费停车</text>
+            </text>
+            <text class="item item-device-e120" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">公共花园</text>
-           </text>
-           <text class="item item-device-e0d2" style="display:{{facility_show}}">
+            <text class="txt">公共花园</text>
+            </text>
+            <text class="item item-device-e0d2" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">观景露台</text>
-           </text>
-           <text class="item item-device-e02b" style="display:{{facility_show}}">
+            <text class="txt">观景露台</text>
+            </text>
+            <text class="item item-device-e02b" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">保安</text>
-           </text>
-           <text class="item item-device-e053" style="display:{{facility_show}}">
+            <text class="txt">保安</text>
+            </text>
+            <text class="item item-device-e053" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">门禁系统</text>
-           </text>
-           <text class="item item-device-e054" style="display:{{facility_show}}">
+            <text class="txt">门禁系统</text>
+            </text>
+            <text class="item item-device-e054" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">灭火器</text>
-           </text>
-           <text class="item item-device-e048" style="display:{{facility_show}}">
+            <text class="txt">灭火器</text>
+            </text>
+            <text class="item item-device-e048" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">火灾警报器</text>
-           </text>
-           <text class="item item-device-e06f" style="display:{{facility_show}}">
+            <text class="txt">火灾警报器</text>
+            </text>
+            <text class="item item-device-e06f" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">电梯</text>
-           </text>
-           <text class="item item-device-e03c" style="display:{{facility_show}}">
+            <text class="txt">电梯</text>
+            </text>
+            <text class="item item-device-e03c" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">有窗户</text>
-           </text>
-           <text class="item item-device-e125" style="display:{{facility_show}}">
+            <text class="txt">有窗户</text>
+            </text>
+            <text class="item item-device-e125" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">落地窗</text>
-           </text>
-           <text class="item item-device-e0db" style="display:{{facility_show}}">
+            <text class="txt">落地窗</text>
+            </text>
+            <text class="item item-device-e0db" style="display:{{facility_show}}">
               <text class="ico"></text>
-              <text class="txt">行李寄存</text>
-           </text>
-         </view>
-         <view class="btn-o-more J_showMoreFac is-type-0" style="display: {{showAll}};" bindtap="messAll_show">
-           查看全部49项设施
-           <text class="ico"></text>
-         </view>
-         <view class="btn-o-more J_hideMoreFac is-type-1" style="display: {{closeAll}};" bindtap="messAll_close">
-           收起
-           <text class="ico"></text>
-         </view>
-       </view> 
-       <view class="bnbdetail-box bnbdetail-box-attention bnbbook-box-attention">
-         <view class="box-head">入住须知</view>
-         <view class="box-body list-attention">
-           <view class="item">
-             <text class="lbl">入离时间</text>
-             <text class="txt">
-               <text class="val">14:00</text> 以后入住<text class="val">12:00</text> 以前退房
-             </text>
-           </view>
-           <view class="item">
-             <text class="lbl">接待时间</text> 
-             <text class="txt"> 
-              <text class="val">00:00-24:00</text>
-             </text>
-           </view>
-           <view class="item">
-             <text class="lbl">卫生打扫</text>
-             <text class="txt"> 
-               <text class="val">1</text>客 <text class="val">1</text>扫
-             </text>
-           </view>
-           <view class="item">
-             <text class="lbl">被单更换</text>
+            <text class="txt">行李寄存</text>
+            </text>
+          </view>
+          <view class="btn-o-more J_showMoreFac is-type-0" style="display: {{showAll}};" bindtap="messAll_show">
+            查看全部49项设施
+            <text class="ico"></text>
+          </view>
+          <view class="btn-o-more J_hideMoreFac is-type-1" style="display: {{closeAll}};" bindtap="messAll_close">
+            收起
+            <text class="ico"></text>
+          </view>
+        </view>
+        <view class="bnbdetail-box bnbdetail-box-attention bnbbook-box-attention">
+          <view class="box-head">入住须知</view>
+          <view class="box-body list-attention">
+            <view class="item">
+              <text class="lbl">入离时间</text>
+              <text class="txt">
+               <text class="val">14:00</text> 以后入住
+              <text class="val">12:00</text> 以前退房
+              </text>
+            </view>
+            <view class="item">
+              <text class="lbl">接待时间</text>
               <text class="txt"> 
-                <text class="val">1</text>客 <text class="val">1</text>换
-             </text>
-           </view>
-           <view class="item">
-             <text class="lbl">洗漱更换</text>  
-             <text class="txt"> 
-               <text class="val">1</text>客 <text class="val">1</text>换
-             </text>
-           </view>
-           <view class="item">
-             <text class="lbl">毛巾更换</text>
-             <text class="txt"> 
-               <text class="val">1</text>客 <text class="val">1</text>换
-             </text>
-           </view>
-           <view class="item">
-             <text class="lbl">房屋守则</text>
-             <view class="txt list-rule">
-               <text class="item is-disabled">接待儿童</text>
-               <text class="item is-disabled">接待老人</text>
-               <text class="item">不接待外宾</text>
-               <text class="item">不可带宠物</text>
-               <text class="item">不可吸烟</text>
-               <text class="item">不可聚会</text>
-               <text class="item">不可做饭</text>
-               <text class="item">不允许商业拍摄</text>
-             </view>
-           </view>
-         </view>
-       </view>    
-       <view class="bnbdetail-box bnbdetail-box-other bnbbook-box-other J_otherRequirementInfo">
-         <view class="box-head">其他要求</view>
-         <view class="box-body list-other">
-           <text class="item" style="display:block">
+              <text class="val">00:00-24:00</text>
+              </text>
+            </view>
+            <view class="item">
+              <text class="lbl">卫生打扫</text>
+              <text class="txt"> 
+               <text class="val">1</text>客
+              <text class="val">1</text>扫
+              </text>
+            </view>
+            <view class="item">
+              <text class="lbl">被单更换</text>
+              <text class="txt"> 
+                <text class="val">1</text>客
+              <text class="val">1</text>换
+              </text>
+            </view>
+            <view class="item">
+              <text class="lbl">洗漱更换</text>
+              <text class="txt"> 
+               <text class="val">1</text>客
+              <text class="val">1</text>换
+              </text>
+            </view>
+            <view class="item">
+              <text class="lbl">毛巾更换</text>
+              <text class="txt"> 
+               <text class="val">1</text>客
+              <text class="val">1</text>换
+              </text>
+            </view>
+            <view class="item">
+              <text class="lbl">房屋守则</text>
+              <view class="txt list-rule">
+                <text class="item is-disabled">接待儿童</text>
+                <text class="item is-disabled">接待老人</text>
+                <text class="item">不接待外宾</text>
+                <text class="item">不可带宠物</text>
+                <text class="item">不可吸烟</text>
+                <text class="item">不可聚会</text>
+                <text class="item">不可做饭</text>
+                <text class="item">不允许商业拍摄</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="bnbdetail-box bnbdetail-box-other bnbbook-box-other J_otherRequirementInfo">
+          <view class="box-head">其他要求</view>
+          <view class="box-body list-other">
+            <text class="item" style="display:block">
              <text class="lbl" decode="{{true}}">&emsp;清洁费</text>
-             <text class="txt">需线下与房东确认</text>
-           </text>
-           <text class="item" style="display:block">
+            <text class="txt">需线下与房东确认</text>
+            </text>
+            <text class="item" style="display:block">
              <text class="lbl" decode="{{true}}">&emsp;&emsp;加人</text>
-             <text class="txt"> 标准入住<text class="val">4</text>人，不可加人</text>
-           </text>
-           <text class="item" style="display:block">
+            <text class="txt"> 标准入住<text class="val">4</text>人，不可加人</text>
+            </text>
+            <text class="item" style="display:block">
              <text class="lbl" decode="{{true}}">&emsp;&emsp;加床</text>
-             <text class="txt">不允许加床</text>           
-           </text>
-           <text class="item" style="display:{{it_show}}">
+            <text class="txt">不允许加床</text>
+            </text>
+            <text class="item" style="display:{{it_show}}">
              <text class="lbl" decode="{{true}}">&emsp;&emsp;做饭</text>
-             <text class="txt">房间内不允许做饭</text>
-           </text>
-           <text class="item" style="display:{{it_show}}">
+            <text class="txt">房间内不允许做饭</text>
+            </text>
+            <text class="item" style="display:{{it_show}}">
              <text class="lbl" decode="{{true}}">&emsp;&emsp;聚会</text>
-             <text class="txt">房间内不允许聚会</text>
-           </text>
-           <text class="item" style="display:{{it_show}}">
+            <text class="txt">房间内不允许聚会</text>
+            </text>
+            <text class="item" style="display:{{it_show}}">
              <text class="lbl">商业拍摄</text>
-             <text class="txt">房间内不允许商业拍摄</text>
-           </text>
-         </view>
-         <view class="btn-o-more J_showOtherRequirementInfoModal is-type-0" style="display: {{itshowAll}};" bindtap="iteclose_show">查看更多
-           <text class="ico"></text>
-         </view>
-         <view class="btn-o-more J_hideOtherRequirementInfoModal is-type-1" style="display: {{itcloseAll}};" bindtap="iteclose_close">收起
-           <text class="ico"></text>
-         </view>
-       </view>
+            <text class="txt">房间内不允许商业拍摄</text>
+            </text>
+          </view>
+          <view class="btn-o-more J_showOtherRequirementInfoModal is-type-0" style="display: {{itshowAll}};" bindtap="iteclose_show">查看更多
+            <text class="ico"></text>
+          </view>
+          <view class="btn-o-more J_hideOtherRequirementInfoModal is-type-1" style="display: {{itcloseAll}};" bindtap="iteclose_close">收起
+            <text class="ico"></text>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
 </view>
-</view>
 <!-- 产品详情提示框 end -->
-<!-- <block  wx:for="{{test}}">
- {{item.pname}}
- <block wx:for="{{test}}" wx:for-item="n">
-   {{n.images}}
- </block>
-</block> -->
+
 <!-- 新增 begin-->
 <view class="a" id="client_id_viewport_4_1573988708407" page-url="/webapp/inn/passengeradd" style="display:{{addMessUser}};" data-view-name="passengeradd">
   <view class="bnb-header-fix bnbpassengeradd-header-fix">
-     <text class="btn-o-back J_back" bindtap="addMess_close"></text>
-     <text class="btn-o-fin J_finish" bindtap="addMess_close">完成</text>
-     <text class="tit">新增入住人</text>
+    <text class="btn-o-back J_back" bindtap="addMess_close"></text>
+    <text class="btn-o-fin J_finish" bindtap="addMess_close">完成</text>
+    <text class="tit">新增入住人</text>
   </view>
   <view class="bnb-bodyer-fix bnbpassengeradd-bodyer-fix">
-     <view class="addition-list">
-       <view class="r">
-         <view class="add-Mess">
-           <text class="addMess-name">真实姓名 {{inputValue}}</text>
-           <input id="name" type="text" class="add-Mess-input" placeholder="请填写证件上的真实姓名"></input>
-         </view>
-         <view class="add-Mess">
-           <text class="addMess-name" decode="{{true}}">&emsp;英文姓</text>
-           <input id="Englist_LastName" class="add-Mess-input" type="text" placeholder="英文姓(Last Name)"></input>
-         </view>
-         <view class="add-Mess">
-           <text class="addMess-name" decode="{{true}}">&emsp;英文名</text>
-           <input id="Englist_FirstName" class="add-Mess-input" type="text" placeholder="英文名(First Name)"></input>
-         </view>
-         <view class="add-Mess">
-           <text class="arr-r J_selectCardType addMess-name" decode="{{true}}">&emsp;身份证</text>
-           <input id="cardCode" class="add-Mess-input" type="text" placeholder="请填写证件号码"></input>
-         </view>
-       </view>
-     </view>
-     <view class="addition-btn">
-       <text class="book-btn-primary btn-ora J_finish">确认</text>
-     </view>
+    <view class="addition-list">
+      <view class="r">
+        <view class="add-Mess">
+          <text class="addMess-name">真实姓名 {{inputValue}}</text>
+          <input id="name" type="text" class="add-Mess-input" placeholder="请填写证件上的真实姓名"></input>
+        </view>
+        <view class="add-Mess">
+          <text class="addMess-name" decode="{{true}}">&emsp;英文姓</text>
+          <input id="Englist_LastName" class="add-Mess-input" type="text" placeholder="英文姓(Last Name)"></input>
+        </view>
+        <view class="add-Mess">
+          <text class="addMess-name" decode="{{true}}">&emsp;英文名</text>
+          <input id="Englist_FirstName" class="add-Mess-input" type="text" placeholder="英文名(First Name)"></input>
+        </view>
+        <view class="add-Mess">
+          <text class="arr-r J_selectCardType addMess-name" decode="{{true}}">&emsp;身份证</text>
+          <input id="cardCode" class="add-Mess-input" type="text" placeholder="请填写证件号码"></input>
+        </view>
+      </view>
+    </view>
+    <view class="addition-btn">
+      <text class="book-btn-primary btn-ora J_finish">确认</text>
+    </view>
   </view>
 </view>
 <!-- 新增 end -->
 <!-- 新增更多 begin  -->
 <view class="a-more" id="client_id_viewport_13_1574061140478" page-url="/webapp/inn/passengerselect" style="display:{{addMessUsermore}};" data-view-name="passengerselect">
   <view class="bnb-header bnbpassengerselect-header is-fix">
-     <text class="btn-os btn-o-back J_back" bindtap="addMessUsermoreClose"></text>
-     <text class="btn-os btn-o-fin J_finish" display="none">完成</text>
-     <text class="tit">选择入住人</text>
+    <text class="btn-os btn-o-back J_back" bindtap="addMessUsermoreClose"></text>
+    <text class="btn-os btn-o-fin J_finish" style="display:none">完成</text>
+    <text class="tit">选择入住人</text>
   </view>
   <view class="bnb-bodyer-fix bnbpassengerselect-bodyer-fix">
-     <view class="addition-list-add" style="position: relative">
-       <form>
-          <view class="r-more">
-            <view class="J_ChineseName moress ">
-              <text class="addMess-namemore " style="padding-top: .75rem;padding-top:.75rem;">中文姓名 {{inputValue}}</text>
-              <input id="name" type="text" name="chineseName"  class="add-Mess-input-more" placeholder="请填写证件上的真实姓名"></input>
-            </view>
-            <view class="chin"></view>
-            <view class="J_EnglishLastName moress" style="display: none;">
-              <text class="addMess-namemore" decode="{{true}}">&emsp;英文姓</text>
-              <text class="eng">Surname</text>
-              <input id="Englist_LastName" class="add-Mess-input-more" type="text" placeholder="如张小白填写为“ZHANG”"></input>
-            </view>
-            <view class="J_EnglishFirstName moress" style="display: none;">
-              <text class="addMess-namemore" decode="{{true}}">&emsp;英文名</text>
-              <text class="eng">Given names</text>
-              <input id="Englist_FirstName" class="add-Mess-input-more" type="text" placeholder="如张小白填写为“XIAOBAI”"></input>
-            </view>
-            <view class="J_CardNumber moress">
-              <text class="arr-r J_selectCardType addMess-namemore"  decode="{{true}}" style="padding-top: .75rem;padding-top:.75rem;">&emsp;身份证</text>
-              <input id="cardCode" class="add-Mess-input-more" name="cardId" type="text" placeholder="请填写证件号码"></input>
-            </view>
+    <view class="addition-list-add" style="position: relative">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="r-more">
+          <view class="J_ChineseName moress ">
+            <text class="addMess-namemore " style="padding-top: .75rem;padding-top:.75rem;">中文姓名 {{inputValue}}</text>
+            <input id="name" type="text" name="chinaName" value="" class="add-Mess-input-more" placeholder="请填写证件上的真实姓名"></input>
           </view>
-          <view class="add-btn-div">
-            <button bindtap="fromSubmit" form-type="submit" class="add-btn J_AddPassenger" size="mini">
-             <text class="btn-add-word">添加</text>
-            </button>
+          <view class="chin"></view>
+          <view class="J_EnglishLastName moress" style="display: none;">
+            <text class="addMess-namemore" decode="{{true}}">&emsp;英文姓</text>
+            <text class="eng">Surname</text>
+            <input id="Englist_LastName" name="englistName" class="add-Mess-input-more" type="text" placeholder="如张小白填写为“ZHANG”"></input>
           </view>
-       </form>
+          <view class="J_EnglishFirstName moress" style="display: none;">
+            <text class="addMess-namemore" decode="{{true}}">&emsp;英文名</text>
+            <text class="eng">Given names</text>
+            <input id="Englist_FirstName" name="englistfirstName" class="add-Mess-input-more" type="text" placeholder="如张小白填写为“XIAOBAI”"></input>
+          </view>
+          <view class="J_CardNumber moress">
+            <text class="arr-r J_selectCardType addMess-namemore" decode="{{true}}" style="padding-top: .75rem;padding-top:.75rem;">&emsp;身份证</text>
+            <input id="cardCode" value="" class="add-Mess-input-more" name="cardId" type="text" placeholder="请填写证件号码"></input>
+          </view>
+        </view>
+        <view class="add-btn-div" >
+          <button formType="submit" class='add-btn J_AddPassenger' size="mini">
+            <text class="btn-add-word">添加</text>
+          </button>
+        </view>
+      </form>
+    </view>
+    <view class="addition-warning">
+      <text>*为顺利入住，请确保出行人姓名与证件上一致</text>
+    </view>
+    <view class="J_passengerContainer">
+      <view class="choice-hd">
+        最多选
+        <text class="cdark">4</text>位，至少
+        <text class="cdark">1</text>位
       </view>
-   
-     <view class="addition-warning">
-       <text>*为顺利入住，请确保出行人姓名与证件上一致</text>
-     </view>
-     <view class="J_passengerContainer">
-       <view class="choice-hd">
-         最多选<text class="cdark">4</text>位，至少<text class="cdark">1</text>位
-       </view>
-       <view class="taker-select">
-         <view class="J_passengerSelect " style="padding-left:1.65rem;height:50px;" data-iscomplete="true" data-id="98309944" data-cardtypename="身份证" data-cardtype="1" data-name="孙燕然" data-enfirstname data-enlastname data-security="0" data-isself="false">
-            <view class="ico-edit J_passengerEdit" bindtap="addMoreEdit"></view>
-            <view class="passenger-content">
-              <input class="in-checkbox" type="checkbox" id="a1" name="invSelect" data-cardtype="1"></input>
-              <text class="in-checkbox-tar in-checkbox-tar2" for="a1" style="display: block"></text>
-              <view class="txt-name">孙燕然
-                 <view class="tak-att-icon"></view>
-              </view>
-              <view class="gray-txt-number" data-cardno="410329200208159582">
-                <text>身份证:</text>
-                410329******82
-              </view>
+      <view class="taker-select">
+        <view class="J_passengerSelect " style="padding-left:1.65rem;height:50px;" data-iscomplete="true" data-id="98309944" data-cardtypename="身份证" data-cardtype="1" data-name="孙燕然" data-enfirstname data-enlastname data-security="0" data-isself="false">
+          <view class="ico-edit J_passengerEdit" bindtap="addMoreEdit"></view>
+          <view class="passenger-content">
+            <text class="in-checkbox-tar in-checkbox-tar2" for="a1" style="display: block"></text>
+            <view class="txt-name">孙燕然
+              <view class="tak-att-icon"></view>
             </view>
-         </view>
-       </view>
-     </view>
+            <view class="gray-txt-number" data-cardno="410329200208159582">
+              <text>身份证:</text> 410329******82
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
 <!-- 新增更多 end -->
 <!-- 修改 begin-->
-<view class="a" id="client_id_viewport_6_1574160051815" page-url="/webapp/inn/passengeredit" style="display:{{editMessUser}};" data-view-name="passengeradd">
-  <view class="bnb-header-fix bnbpassengeradd-header-fix">
-     <text class="btn-o-back J_back" bindtap="editMess_close"></text>
-     <text class="btn-o-fin J_finish" bindtap="editMess_close" style="display:none">完成</text>
-     <text class="tit">新增入住人</text>
+<form bindsubmit="a_formSubmit">
+  <view class="a" id="client_id_viewport_6_1574160051815" page-url="/webapp/inn/passengeredit" style="display:{{editMessUser}};" data-view-name="passengeradd">
+    <view class="bnb-header-fix bnbpassengeradd-header-fix">
+      <text class="btn-o-back J_back" bindtap="editMess_close"></text>
+      <text class="btn-o-fin J_finish" bindtap="editMess_close" style="display:none">完成</text>
+      <text class="tit">编辑入住人</text>
+    </view>
+    <view class="bnb-bodyer-fix bnbpassengeradd-bodyer-fix">
+      <view class="addition-list">
+        <view class="r">
+          <view class="add-Mess">
+            <text class="addMess-name">真实姓名 {{inputValue}}</text>
+            <input id="name" type="text" name="chinaNames" bindconfirm="edit_name" class="add-Mess-input" placeholder="请填写证件上的真实姓名" value="{{livepeopleName}}"></input>
+          </view>
+          <view class="add-Mess">
+            <text class="addMess-name" decode="{{true}}">&emsp;英文姓</text>
+            <input id="Englist_LastName" name="englistName" class="add-Mess-input" type="text" placeholder="英文姓(Last Name)"></input>
+          </view>
+          <view class="add-Mess">
+            <text class="addMess-name" decode="{{true}}">&emsp;英文名</text>
+            <input id="Englist_FirstName" name="englistfirstName" class="add-Mess-input" type="text" placeholder="英文名(First Name)"></input>
+          </view>
+          <view class="add-Mess">
+            <text class="arr-r J_selectCardType addMess-name" decode="{{true}}">&emsp;身份证</text>
+            <input id="cardCode" value="{{liveperopleCardId}}" bindconfirm="edit_cardId" name="cardIds" class="add-Mess-input" type="text" placeholder="请填写证件号码"></input>
+          </view>
+        </view>
+      </view>
+      <view class="addition-btn">
+        <button class="book-btn-primary btn-ora J_finish" formType="submit" style="width: 98%;">
+          <text style="display: block;font-size: 0.9rem;line-height: 1.8rem;">保存</text>
+        </button>
+      </view>
+    </view>
   </view>
-  <view class="bnb-bodyer-fix bnbpassengeradd-bodyer-fix">
-     <view class="addition-list">
-       <view class="r">
-         <view class="add-Mess">
-           <text class="addMess-name">真实姓名 {{inputValue}}</text>
-           <input id="name" type="text" class="add-Mess-input" placeholder="请填写证件上的真实姓名"></input>
-         </view>
-         <view class="add-Mess">
-           <text class="addMess-name" decode="{{true}}">&emsp;英文姓</text>
-           <input id="Englist_LastName" class="add-Mess-input" type="text" placeholder="英文姓(Last Name)"></input>
-         </view>
-         <view class="add-Mess">
-           <text class="addMess-name" decode="{{true}}">&emsp;英文名</text>
-           <input id="Englist_FirstName" class="add-Mess-input" type="text" placeholder="英文名(First Name)"></input>
-         </view>
-         <view class="add-Mess">
-           <text class="arr-r J_selectCardType addMess-name" decode="{{true}}">&emsp;身份证</text>
-           <input id="cardCode" class="add-Mess-input" type="text" placeholder="请填写证件号码"></input>
-         </view>
-       </view>
-     </view>
-     <view class="addition-btn">
-       <text class="book-btn-primary btn-ora J_finish">确认</text>
-     </view>
-  </view>
-</view>
+</form>
 <!-- 修改 end -->

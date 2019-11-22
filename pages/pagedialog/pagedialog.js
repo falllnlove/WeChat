@@ -46,6 +46,9 @@ Page({
   buttontap(e) {
     console.log(e.detail)
   },
+  qwer(){
+     console.log("dsds")
+  },
   formSubmit: function (e) {
 
     var name = e.detail.value.name;

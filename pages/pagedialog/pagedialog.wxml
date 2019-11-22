@@ -9,7 +9,10 @@
   buttons="{{buttons}}"
 ></mp-halfScreenDialog>
 <button class="weui-btn" type="primary" bindtap="open">Open</button>
-
+<form bindsubmit="qwer">
+       大大 <input name="ass"></input>
+       <button form-type="submit">123</button>
+</form>
  <form bindsubmit='formSubmit'>
      
         <view class='form'>

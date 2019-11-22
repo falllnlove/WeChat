@@ -2489,7 +2489,7 @@ input[type="checkbox"]:checked, .checked {
 .in-checkbox-tar {
     width: 0.8rem;
     height: 0.8rem;
-    border: 1px solid #999;
+    border: 1px solid #ff6d57;
     background-color: #fff;
 }
 .in-checkbox:checked + .in-checkbox-tar:after, .voice-checkbox-tar:after {
