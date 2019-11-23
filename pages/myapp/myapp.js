@@ -402,7 +402,6 @@ Page({
           city: res.result.address_component.city.substring(0, parseInt(res.result.address_component.city.length - 1)),
           city_id: city_id
         })
-        console.log(vm.data.city_id)
       },
       fail: function (res) {
         console.log(res);
