@@ -36,6 +36,12 @@ Page({
     optimization_PRO_list: null,
     Recommend_for_me_list: null,
     standby_beauty_lodge_list: null,
+    starTime: util.month_and_day(new Date()),
+    endTime: util.tomorrow(new Date()),
+    day: '1晚',
+    week1:'今天',
+    week2 : '明天',
+    citylist:null,
   },
 
   /**
@@ -53,6 +59,11 @@ Page({
     qqmapsdk = new QQMapWX({
       key: '4MABZ-FIS6F-6FGJK-NH4FN-BYJK7-NQFAX'
     });
+    var _this = this
+    _this.city_list_info()
+      .then( res => {
+        _this.getUserLocation(res)
+      })
   },
 
   /**
@@ -72,10 +83,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (this.data.location == '上海'){
-      let vm = this;
-      vm.getUserLocation();
-    }
+
   },
 
   /**
@@ -133,16 +141,39 @@ Page({
   },
 
   /**
+   * 获取城市
+   */
+  city_list_info() {
+    var that = this
+    return new Promise(function (resolve, reject) {
+      wx.request({
+        url: 'https://m.ctrip.com/restapi/soa2/12455/json/getCity?_fxpcqlniredt=09031107112123131138&__gw_appid=99999999&__gw_ver=1.0&__gw_from=10320666865&__gw_platform=H5',
+        data: { "type": 1, "head": { "cid": "09031107112123131138", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+        method: 'post',
+        success(res) {
+          that.setData({
+            citylist: res.data.cities,
+            // newcity: res.data.hotcitiies
+          })
+          wx.setStorage({
+            key: 'citylist',
+            data: res.data.cities
+          })
+          resolve(res.data.cities)
+        }
+      })
+    })
+    return p
+  },
+
+  /**
    * 获取榜单数据
    */
   bangdan() {
     var that = this
-    var day2 = new Date();
-    day2.setTime(day2.getTime());
-    var s2 = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/gethomepagedata?subEnv=fws&_fxpcqlniredt=09031139211104612799&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003543&__gw_platform=H5',
-      data: { "checkIn": "" + s2 + "", "checkOut": "" + s2 + "", "cityId": that.data.city_id, "type": 6, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "checkIn": "" + that.data.starTime + "", "checkOut": "" + that.data.starTime + "", "cityId": that.data.city_id, "type": 6, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success(res) {
         that.setData({
@@ -156,12 +187,9 @@ Page({
    */
   business() {
     var that = this
-    var day2 = new Date();
-    day2.setTime(day2.getTime());
-    var s2 = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/gethomepagedata?subEnv=fws&_fxpcqlniredt=09031139211104612799&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003543&__gw_platform=H5',
-      data: { "checkIn": "" + s2 + "", "checkOut": "" + s2 + "", "cityId": that.data.city_id, "type": 2, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "25" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "checkIn": "" + that.data.starTime + "", "checkOut": "" + that.data.starTime + "", "cityId": that.data.city_id, "type": 2, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "25" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success(res) {
         that.setData({
@@ -176,13 +204,9 @@ Page({
    */
   room(value) {
     var that = this
-    var day2 = new Date();
-    day2.setTime(day2.getTime());
-    var start = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
-    var end = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + (day2.getDate() + 1);
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/GetHomePageProduct?subEnv=fws&_fxpcqlniredt=09031139211104612799&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003543&__gw_platform=H5',
-      data: { "cityId": that.data.city_id, "type": 2, "conds": [{ "cond": "zoneId", "value": "" + value + "" }, { "cond": "date", "value": "2019-11-14,2019-11-15" }], "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "cityId": that.data.city_id, "type": 2, "conds": [{ "cond": "zoneId", "value": "" + value + "" }, { "cond": "date", "value": "" + that.data.starTime + "," + that.data.endTime +"" }], "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success(res) {
         that.setData({
@@ -196,13 +220,9 @@ Page({
    */
   Brand_home_stay_hall() {
     var that = this
-    var day2 = new Date();
-    day2.setTime(day2.getTime());
-    var start = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
-    var end = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + (day2.getDate() + 1);
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/gethomepagedata?subEnv=fws&_fxpcqlniredt=09031139211104612799&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003543&__gw_platform=H5',
-      data: { "checkIn": "" + start + "", "checkOut": "" + end + "", "cityId": that.data.city_id, "type": 7, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "checkIn": "" + that.data.starTime + "", "checkOut": "" + that.data.endTime + "", "cityId": that.data.city_id, "type": 7, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success(res) {
         that.setData({
@@ -216,13 +236,9 @@ Page({
    */
   beauty_lodge() {
     var that = this
-    var day2 = new Date();
-    day2.setTime(day2.getTime());
-    var start = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
-    var end = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + (day2.getDate() + 1);
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/16593/getPortalConfig?_fxpcqlniredt=09031139211104612799&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003543&__gw_platform=H5',
-      data: { "args": "{\"parameter\":{\"cityId\":"+ that.data.city_id +",\"cityName\":\""+ that.data.city +"\",\"oversea\":false,\"checkInDate\":\"2019-11-22\",\"checkOutDate\":\"2019-11-23\"},\"abTests\":{\"191023_bnbHybrid_hm10\":{\"s\":false,\"v\":\"B\"}}}", "head": { "cid": "09031114410056975825", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "allianceSid", "value": "155952" }, { "name": "allianceId", "value": "4897" }, { "name": "awakeUnion", "value": "{\"OUID\":\"index\",\"AllianceID\":\"4897\",\"SID\":\"155952\",\"SourceID\":\"\",\"AppID\":\"\",\"OpenID\":\"\"}" }, { "name": "terminaltype", "value": "20" }, { "name": "devicetype", "value": "PC" }, { "name": "devicebrand", "value": "undefined" }, { "name": "devicephone", "value": "PC" }, { "name": "browsername", "value": "Chrome" }, { "name": "browserver", "value": "78.0.3904.97" }, { "name": "os", "value": "PC" }, { "name": "osver", "value": "Windows10" }, { "name": "channelid", "value": "2" }, { "name": "page", "value": "600003543" }, { "name": "refpage", "value": "" }, { "name": "currentpage", "value": "03550df3-0623-0e42-f4dc-428f8f3be6c8" }, { "name": "pagename", "value": "home" }, { "name": "vid", "value": "" }, { "name": "la", "value": "" }, { "name": "lo", "value": "" }, { "name": "geoType", "value": "" }, { "name": "traceid", "value": "9e341ac1-edc7-a5bd-4468-3d98df4c7bc7" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "args": "{\"parameter\":{\"cityId\":"+ that.data.city_id +",\"cityName\":\""+ that.data.city +"\",\"oversea\":false,\"checkInDate\":\""+ that.data.starTime +"\",\"checkOutDate\":\""+ that.data.endTime +"\"},\"abTests\":{\"191023_bnbHybrid_hm10\":{\"s\":false,\"v\":\"B\"}}}", "head": { "cid": "09031114410056975825", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "allianceSid", "value": "155952" }, { "name": "allianceId", "value": "4897" }, { "name": "awakeUnion", "value": "{\"OUID\":\"index\",\"AllianceID\":\"4897\",\"SID\":\"155952\",\"SourceID\":\"\",\"AppID\":\"\",\"OpenID\":\"\"}" }, { "name": "terminaltype", "value": "20" }, { "name": "devicetype", "value": "PC" }, { "name": "devicebrand", "value": "undefined" }, { "name": "devicephone", "value": "PC" }, { "name": "browsername", "value": "Chrome" }, { "name": "browserver", "value": "78.0.3904.97" }, { "name": "os", "value": "PC" }, { "name": "osver", "value": "Windows10" }, { "name": "channelid", "value": "2" }, { "name": "page", "value": "600003543" }, { "name": "refpage", "value": "" }, { "name": "currentpage", "value": "03550df3-0623-0e42-f4dc-428f8f3be6c8" }, { "name": "pagename", "value": "home" }, { "name": "vid", "value": "" }, { "name": "la", "value": "" }, { "name": "lo", "value": "" }, { "name": "geoType", "value": "" }, { "name": "traceid", "value": "9e341ac1-edc7-a5bd-4468-3d98df4c7bc7" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success(res) {
         if (JSON.parse(res.data.result).data.popularHomestay != undefined || JSON.parse(res.data.result).data.popularHomestay != null){
@@ -258,13 +274,9 @@ Page({
    */
   optimization_PRO() {
     var that = this
-    var day2 = new Date();
-    day2.setTime(day2.getTime());
-    var start = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
-    var end = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + (day2.getDate() + 1);
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/gethomepagedata?subEnv=fws&_fxpcqlniredt=09031139211104612799&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003543&__gw_platform=H5',
-      data: { "checkIn": "" + start + "", "checkOut": "" + end + "", "cityId": that.data.city_id, "type": 4, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "28" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "checkIn": "" + that.data.starTime + "", "checkOut": "" + that.data.endTime + "", "cityId": that.data.city_id, "type": 4, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "28" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success(res) {
         that.setData({
@@ -278,13 +290,9 @@ Page({
    */
   Recommend_for_me() {
     var that = this
-    var day2 = new Date();
-    day2.setTime(day2.getTime());
-    var start = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
-    var end = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + (day2.getDate() + 1);
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/SearchProduct?_fxpcqlniredt=09031139211104612799&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003543&__gw_platform=H5',
-      data: { "cityid": that.data.city_id, "cityname": "" + that.data.city + "", "conds": [{ "cond": "date", "value": "" + start + "," + end + "" }], "pSize": 10, "searchType": "HOTLIST", "showTitle": true, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "cityid": that.data.city_id, "cityname": "" + that.data.city + "", "conds": [{ "cond": "date", "value": "" + that.data.starTime + "," + that.data.endTime + "" }], "pSize": 10, "searchType": "HOTLIST", "showTitle": true, "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success(res) {
         that.setData({
@@ -296,7 +304,7 @@ Page({
   /**
    * 获取用户经纬度
    */
-  getUserLocation: function () {
+  getUserLocation: function (ress) {
     let vm = this;
     wx.getSetting({
       success: (res) => {
@@ -333,10 +341,10 @@ Page({
             }
           })
         } else if (res.authSetting['scope.userLocation'] == undefined) {
-          vm.getLocation();
+          vm.getLocation(ress);
         }
         else {
-          vm.getLocation();
+          vm.getLocation(ress);
         }
       }
     })
@@ -344,7 +352,7 @@ Page({
   /**
    * 微信获得经纬度
    */
-  getLocation: function () {
+  getLocation: function (ress) {
     let vm = this;
     wx.getLocation({
       type: 'gcj02',
@@ -355,7 +363,7 @@ Page({
         var longitude = res.longitude
         var speed = res.speed
         var accuracy = res.accuracy;
-        vm.getLocal(latitude, longitude)
+        vm.getLocal(latitude, longitude, ress)
       },
       fail: function (res) {
         vm.setData({
@@ -368,8 +376,9 @@ Page({
   /**
    * 获取当前地理位置
    */
-  getLocal: function (latitude, longitude) {
+  getLocal: function (latitude, longitude, ress) {
     let vm = this;
+    var city_id = null;
     qqmapsdk.reverseGeocoder({
       location: {
         latitude: latitude,
@@ -378,13 +387,22 @@ Page({
       success: function (res) {
         let province = res.result.ad_info.province
         let location = res.result.formatted_addresses.recommend
+        ress.forEach(item =>{
+          item.cities.forEach(page =>{
+            if (page.name == res.result.address_component.city.substring(0, parseInt(res.result.address_component.city.length - 1))){
+              city_id = page.id
+            }
+          })
+        })
         vm.setData({
           province: province,
           location: location + '附近',
           latitude: latitude,
           longitude: longitude,
-          city: res.result.address_component.city.substring(0, parseInt(res.result.address_component.city.length - 1))
+          city: res.result.address_component.city.substring(0, parseInt(res.result.address_component.city.length - 1)),
+          city_id: city_id
         })
+        console.log(vm.data.city_id)
       },
       fail: function (res) {
         console.log(res);
@@ -431,9 +449,25 @@ Page({
    * 跳转城市民宿列表
    */
   skip_room_list(e){
+    var that = this
     wx.navigateTo({
-      url: '../houseList/houseList?city_id=' + e.currentTarget.dataset.city_id+'&city='+e.currentTarget.dataset.city,
+      url: '../houseList/houseList?city_id=' + that.data.city_id + '&city=' + that.data.city + '&startTime=' + e.currentTarget.dataset.starTime + '&endTime=' + e.currentTarget.dataset.endTime,
     })
+  },
+
+  /**
+   * 判断星期
+   */
+  getMyDay(date){
+    var week;
+    if(date.getDay() == 0) week = "周日";
+    if (date.getDay() == 1) week = "周一";
+    if (date.getDay() == 2) week = "周二";
+    if (date.getDay() == 3) week = "周三";
+    if (date.getDay() == 4) week = "周四";
+    if (date.getDay() == 5) week = "周五";
+    if (date.getDay() == 6) week = "周六";
+    return week;
   },
 
   dianji: function () {
@@ -447,26 +481,31 @@ Page({
     var endTime = ''
     that.rili.xianShi({
       data: function (res) {
-        console.log(res)//选择的日期
         if (res != null) {
           if (res.length == 1) {
-            starTime = res[0].data
+            starTime = res[0].data.split('-')[1] + '.' + res[0].data.split('-')[2]
           }
           else if (res.length == 2) {
-            starTime = res[0].data
-            endTime = res[1].data
+            var week1 = that.getMyDay(new Date(res[0].data))
+            var week2 = that.getMyDay(new Date(res[1].data))
+            starTime = res[0].data.split('-')[1] + '.' + res[0].data.split('-')[2]
+            endTime = res[1].data.split('-')[1] + '.' + res[1].data.split('-')[2]
             day = res[1].chaDay
           }
         }
         else {
-          starTime = ''
-          day = ''
-          endTime = ''
+          starTime = util.month_and_day(new Date()),
+          endTime = util.tomorrow(new Date()),
+          day = '1晚',
+          week1 = '今天',
+          week2 = '明天'
         }
         that.setData({
           starTime: starTime,
           endTime: endTime,
           day: day,
+          week1: week1,
+          week2: week2
         })
       }
     })

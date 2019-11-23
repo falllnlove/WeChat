@@ -1,5 +1,5 @@
 <!--myapp.wxml-->
-
+<wxs src='../../wxs/utils.wxs' module='tools'/>
 <view class="header">
   <swiper autoplay="true" circular="true">
     <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHVWHQqI8R9rpZeja7Mpibes3d7KVibe6a2sOx2s6Svhj37tIteicibOQQdzJwGKNnnq8oY2Dpcc7QesLA/0"></image></swiper-item>
@@ -22,18 +22,19 @@
     <view class="btn-o-your-location"><view>当前位置</view></view>
     <view class="con-input"><text class="txt">{{location}}</text></view>
   </view>
+  <rili bindmyevent="onMyEvent" id='rili' style="position: absolute;z-index: 5;"></rili>
   <view class="con con-date">
     <view class="btn-o-person">
       <view class="j_person_text">不限人数</view>
     </view>
-    <view class="j_date">
+    <view class="j_date" bindtap='dianji'>
       <view class="txt txt-default j_date_defalut" style="display: none;">入住离店日期</view>
       <view style="display: inline;">
-        <view class="txt-date j_ckin">11.18</view>
-        <view class="txt-week j_ckin_week">今天</view>
-        <view class="txt-day j_night">1晚</view>
-        <view class="txt-date j_ckout">11.19</view>
-        <view class="txt-week j_ckout_week">明天</view>
+        <view class="txt-date j_ckin">{{starTime}}</view>
+        <view class="txt-week j_ckin_week">{{week1}}</view>
+        <view class="txt-day j_night">{{day}}</view>
+        <view class="txt-date j_ckout">{{endTime}}</view>
+        <view class="txt-week j_ckout_week">{{week2}}</view>
       </view>
     </view>
   </view>
@@ -45,7 +46,7 @@
       </view>
     </view>
 </view>
-<view class="btn-o-search j_search_btn" data-city_id="{{city_id}}" data-city="{{city}}" data-lat="{{latitude}}" data-lon="{{longitude}}" bindtap="skip_room_list">查找民宿</view>
+<view class="btn-o-search j_search_btn" data-city_id="{{city_id}}" data-city="{{city}}" data-lat="{{latitude}}" data-lon="{{longitude}}" data-starTime="{{starTime}}" data-endTime="{{endTime}}" bindtap="skip_room_list">查找民宿</view>
 <view class="con-btns">
   <view class="btn-browser j_my_scan">
     <view class="ico"></view>
@@ -183,7 +184,6 @@
     </view>
   </view>
 </view>
-<wxs src='../../wxs/utils.wxs' module='tools'/>
 <view id="j_hot_zone">
   <view class="bnbhome-2-module bnbhome-2-module-hot">
     <view class="box-head">
