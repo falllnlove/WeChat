@@ -360,6 +360,7 @@ Page({
         that.setData({
           test: res.data.product
         })
+        console.log(tes)
       }
     })
   },
@@ -372,14 +373,10 @@ Page({
     var name=e.detail.value.chinaName;
     var card=e.detail.value.cardId;
     if(name=="" || card==""){
-      wx.showModal({
-        title: '提示',
-        content: '请输入完整信息！',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
+      wx.showToast({
+        title: '请输入完整信息',
+        icon: 'none',
+        duration: 2000,
       })
     }
     that.setData({
@@ -395,31 +392,53 @@ Page({
    */
   a_formSubmit(e){
     console.log(e)
+    var peopleName=this.data.livepeopleName;
     var names = e.detail.value.chinaNames;
     var cards = e.detail.value.cardIds
     var namreg = /^[u4E00-u9FA5]+$/;
-    if (names=='') {
+    if (!/^((?![\u3000-\u303F])[\u2E80-\uFE4F]|\·)*(?![\u3000-\u303F])[\u2E80-\uFE4F](\·)*$/.test(names)){
       wx.showToast({
-        title: '请输入姓名',
+        title: '请输入正确的姓名',
         icon: 'none',
         duration: 2000,
       })
     }
     if (!/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(cards)) {
       wx.showToast({
-        title: '请输入正确的证件号',
+        title: '请输入正确的身份证',
         icon: 'none',
         duration: 2000,
       })
-    } else {
-      return true
+    } 
+    if (/^((?![\u3000-\u303F])[\u2E80-\uFE4F]|\·)*(?![\u3000-\u303F])[\u2E80-\uFE4F](\·)*$/.test(names) && /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(cards)){
+      this.setData({
+        chinaNames: names,
+        cardIds: cards,
+        peopleName:names,
+        editMessUser: 'none',
+        addMessUsermore: 'block'
+      })
+      console.log(peopleName)
     }
-    this.setData({
-      chinaNames: e.detail.value.chinaNames,
-      cardIds: e.detail.value.cardIds,
-      editMessUser:'none',
-      addMessUsermore:'block'
-    })
   },
-  
+  // edit_name(e){
+  //   var names = e.detail.value.chinaNames;
+  //   if (!/^((?![\u3000-\u303F])[\u2E80-\uFE4F]|\·)*(?![\u3000-\u303F])[\u2E80-\uFE4F](\·)*$/.test(names)) {
+  //     wx.showToast({
+  //       title: '请输入正确的姓名',
+  //       icon: 'none',
+  //       duration: 2000,
+  //     })
+  //   }
+  // },
+  // edit_cardId(e){
+  //   var cards = e.detail.value.cardIds;
+  //   if (!/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(cards)) {
+  //     wx.showToast({
+  //       title: '请输入正确的身份证',
+  //       icon: 'none',
+  //       duration: 2000,
+  //     })
+  //   }
+  // },
 })

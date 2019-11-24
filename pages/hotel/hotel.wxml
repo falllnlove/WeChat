@@ -302,8 +302,8 @@
           <view class="bnbbook-comment">
             <view class="con-brief">
               <view class="con-info">
-                <view class="val">4.9</view>
-                <view class="txt">超棒</view>
+                <view class="val">{{test[0].commentScore}}</view>
+                <view class="txt">{{test[0].commentDesc}}</view>
               </view>
               <view class="con-list-parts">
                 <view class="item item-0">
@@ -769,7 +769,7 @@
         <view class="r">
           <view class="add-Mess">
             <text class="addMess-name">真实姓名 {{inputValue}}</text>
-            <input id="name" type="text" name="chinaNames" bindconfirm="edit_name" class="add-Mess-input" placeholder="请填写证件上的真实姓名" value="{{livepeopleName}}"></input>
+            <input id="name" type="text" name="chinaNames" bindblur="edit_name" class="add-Mess-input" placeholder="请填写证件上的真实姓名" value="{{livepeopleName}}"></input>
           </view>
           <view class="add-Mess">
             <text class="addMess-name" decode="{{true}}">&emsp;英文姓</text>
@@ -781,7 +781,7 @@
           </view>
           <view class="add-Mess">
             <text class="arr-r J_selectCardType addMess-name" decode="{{true}}">&emsp;身份证</text>
-            <input id="cardCode" value="{{liveperopleCardId}}" bindconfirm="edit_cardId" name="cardIds" class="add-Mess-input" type="text" placeholder="请填写证件号码"></input>
+            <input id="cardCode" value="{{liveperopleCardId}}" bindblur="edit_cardId" name="cardIds" class="add-Mess-input" type="text" placeholder="请填写证件号码"></input>
           </view>
         </view>
       </view>
