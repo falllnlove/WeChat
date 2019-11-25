@@ -4,7 +4,7 @@
       <view id="AQ" class='city_first_letter'>当前</view>
       <view class='city_locate' data-types='locate' catchtap='cityTap'>
         <text class='city_locate_title'>自动定位</text>
-        <text class='city_locate_text' data-val="{{locateCity}}" catchtap="cityTap" style='{{!locateCity&&"color:#33b9ff;"}}'>{{locateCity||'点击定位'}}</text>
+        <text class='city_locate_text' data-val="{{locateCity}}" data-city_id="{{city_id}}" catchtap="cityTap" style='{{!locateCity&&"color:#33b9ff;"}}'>{{locateCity||'点击定位'}}</text>
       </view>
       <view id="AZ" class='new_city'>
         <view class='new_city_title'>热门城市</view>

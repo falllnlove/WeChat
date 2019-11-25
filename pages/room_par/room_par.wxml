@@ -1,7 +1,7 @@
 <!--room_par.wxml-->
 <wxs src='../../wxs/utils.wxs' module='tools' />
 <view class="bnb-header-bgnone bnbdetail-header-bgnone is-fix J_initHeader">
-  <text class="btn-o btn-o-back J_back"></text>
+  <text class="btn-o btn-o-back J_back" style="display:none"></text>
   <view class="btn-o btn-o-favor J_handleFavor {{state==1?'active':''}}" data-state="{{state}}" bindtap="collect">
     <view class="tooltip-favor J_favorTip J_toFavorList" style="{{collect}}">
       <text class="txt txt-1 J_toFavorList">收藏成功！</text>
@@ -10,7 +10,7 @@
   </view>
 </view>
 <view class="bnb-header bnbdetail-header is-fix J_fixedHeader" wx:if="{{fixedTop>0 || fixedTop != 0}}">
-  <text class="btn-o btn-o-back J_back"></text>
+  <text class="btn-o btn-o-back J_back" style="display:none"></text>
   <text class="btn-o btn-o-favor J_handleFavor {{red_heart_choice=='1'?'active':''}}" bindtap="red_heart"></text>
   <view class="tit tit-img J_detailHeaderProName">
     <image class="J_detailHeaderProImage" src="{{tools.sub_img(get_room_info_list.img[0].url)}}"></image>
@@ -26,7 +26,7 @@
   <view class="focus-box">
     <view id="J_pic" class="focus-mode-t2 bnbdetail-focus-mode-t2">
       <view class="J_slideUl" style="height: 100% !important;">
-        <swiper style="height:15rem;" bindchange="img_index" current='{{current_index}}'>
+        <swiper style="height:15rem;" bindchange="img_index" catchtap="img_info_list" current='{{current_index}}'>
           <block wx:for="{{get_room_info_list.img}}" wx:key="key">
             <swiper-item>
               <view class="item-slide J_picItem">

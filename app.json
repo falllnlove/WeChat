@@ -4,6 +4,7 @@
     "pages/city_list/city_list",
     "pages/houseList/houseList",
     "pages/room_par/room_par",
+    "pages/room_par_img/room_par_img",
     "pages/success/success"
   ],
   "permission": {

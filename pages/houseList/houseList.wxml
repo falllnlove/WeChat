@@ -1,6 +1,8 @@
+<!-- houseList.wxml -->
+<wxs src='../../wxs/utils.wxs' module='tools' />
 <view id="topbar_container" class="bnblist-header-fix">
   <view class="con">
-    <text class="btn-o-back J_back"></text>
+    <text class="btn-o-back J_back" style="display:none"></text>
     <text class="btn-o-map J_map"></text>
     <view class="input-search">
       <view class="con-city con-city-word2">
@@ -337,7 +339,7 @@
                 <block wx:for="{{item.images}}" wx:key="key" wx:for-item="page">
                   <swiper-item>
                     <view class="item-slide J_picItem" style="width: 381px;">
-                      <image src="{{page}}"></image>
+                      <image src="{{tools.sub_img(page)}}"></image>
                     </view>
                   </swiper-item>
                 </block>

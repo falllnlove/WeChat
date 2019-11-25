@@ -1,0 +1,46 @@
+<!--room_par_img.wxml-->
+<wxs src='../../wxs/utils.wxs' module='tools' />
+<view class="client_id_viewport_3_1574671487224">
+  <view class="bnb-header bnbgallery-header is-fix">
+    <text class="btn-o btn-o-back J_back" style="display:none"></text>
+    <text class="tit">房屋相册</text>
+    <view class="J_galleryTab">
+      <view class="bnbgallery-tabs">
+        <text class="tab-item J_galleryCat J_galleryCat_0 {{top_0==1?'active':''}}">客厅</text>
+        <text class="tab-item J_galleryCat J_galleryCat_1 {{top_0==2?'active':''}}">卧室</text>
+        <text class="tab-item J_galleryCat J_galleryCat_2 {{top_0==3?'active':''}}">厨房</text>
+        <text class="tab-item J_galleryCat J_galleryCat_3 {{top_0==4?'active':''}}">卫浴</text>
+        <text class="tab-item J_galleryCat J_galleryCat_3 {{top_0==5?'active':''}}">其他</text>
+      </view>
+    </view>
+  </view>
+  <view class="bnb-bodyer-fix bnbgallery-bodyer-fix">
+    <view class="bnbgallery-list J_galleryContainer">
+      <block wx:for="{{img_list}}" wx:key="url" wx:if='{{item.title=="客厅"}}'>
+        <view class="item J_galleryItem J_galleryOffset_{{index}} drawing" data-title="{{item.title}}">
+          <image src="{{tools.sub_img(item.orignalURL)}}" style="width: 100%; border-radius: .15rem;"></image>
+        </view>
+      </block>
+      <block wx:for="{{img_list}}" wx:key="url" wx:if='{{item.title=="卧室"}}'>
+        <view class="item J_galleryItem J_galleryOffset_{{index}} bedchamber" data-title="{{item.title}}">
+          <image src="{{tools.sub_img(item.orignalURL)}}" style="width: 100%; border-radius: .15rem;"></image>
+        </view>
+      </block>
+      <block wx:for="{{img_list}}" wx:key="url" wx:if='{{item.title=="厨房"}}'>
+        <view class="item J_galleryItem J_galleryOffset_{{index}} kitchen" data-title="{{item.title}}">
+          <image src="{{tools.sub_img(item.orignalURL)}}" style="width: 100%; border-radius: .15rem;"></image>
+        </view>
+      </block>
+      <block wx:for="{{img_list}}" wx:key="url" wx:if='{{item.title=="卫生间"}}'>
+        <view class="item J_galleryItem J_galleryOffset_{{index}} toilet" data-title="{{item.title}}">
+          <image src="{{tools.sub_img(item.orignalURL)}}" style="width: 100%; border-radius: .15rem;"></image>
+        </view>
+      </block>
+      <block wx:for="{{img_list}}" wx:key="url" wx:if='{{item.title=="其他"}}'>
+        <view class="item J_galleryItem J_galleryOffset_{{index}} else" data-title="{{item.title}}">
+          <image src="{{tools.sub_img(item.orignalURL)}}" style="width: 100%; border-radius: .15rem;"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

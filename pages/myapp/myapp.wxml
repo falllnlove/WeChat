@@ -1,12 +1,10 @@
 <!--myapp.wxml-->
 <wxs src='../../wxs/utils.wxs' module='tools'/>
 <view class="header">
-  <swiper autoplay="true" circular="true">
-    <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHVWHQqI8R9rpZeja7Mpibes3d7KVibe6a2sOx2s6Svhj37tIteicibOQQdzJwGKNnnq8oY2Dpcc7QesLA/0"></image></swiper-item>
-  <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHUicScREpdI4KdBYhFzchbO7cT37m3RueeA0h8UyofjEzPic530wXLAByHRf1tibC4VdnCBm9NtN58VA/0"></image></swiper-item>
-  <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHVWHQqI8R9rpZeja7Mpibes3rFqpu42TpqiaSX02Mcomu3l2sXE9J0x4W6icRUwSqCgKibf5oFmQx5hEw/0"></image></swiper-item>
-  <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHUicScREpdI4KdBYhFzchbO7icicKiakXXFTQDFp3TeJI2XPxnfZ1NNQPvJmbOq3NdbmXAL9VksEAvHSA/0"></image></swiper-item>
-  <swiper-item bindtap="city"><image src="http://mmbiz.qpic.cn/mmbiz_jpg/VdNmsYQXdHUicScREpdI4KdBYhFzchbO7iaX5QMz1l80osrzlgbamYJMG0BuOuibaPOJicHvaFcbU9bg8OTupnTCIg/0"></image></swiper-item>
+  <swiper class="swiper-box" autoplay="true" circular="true" indicator-dots="true">
+    <block wx:for="{{lunbo_img_list}}" wx:key="SrcUrl">
+      <swiper-item bindtap="city"><image src="{{item.SrcUrl}}"></image></swiper-item>
+    </block>
   </swiper>
 </view>
 <view class="choice_area">

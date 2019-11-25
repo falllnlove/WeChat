@@ -42,6 +42,8 @@ Page({
     week1:'今天',
     week2 : '明天',
     citylist:null,
+    lunbo_img_list : null,
+    ii : 0
   },
 
   /**
@@ -52,7 +54,8 @@ Page({
       this.setData({
         city: options.city_name,
         city_id : options.city_id,
-        location : options.city_name
+        location : options.city_name,
+        ii : 1
       })
     }
 
@@ -62,7 +65,7 @@ Page({
     var _this = this
     _this.city_list_info()
       .then( res => {
-        _this.getUserLocation(res)
+        if ( _this.data.ii == 0) _this.getUserLocation(res)
       })
   },
 
@@ -70,6 +73,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.lunbo_img()
     this.bangdan()
     this.business()
     this.Brand_home_stay_hall()
@@ -137,6 +141,23 @@ Page({
   sele_city(){
     wx.navigateTo({
       url: '../city_list/city_list',
+    })
+  },
+
+  /**
+   * 轮播图
+   */
+  lunbo_img(){
+    var that = this
+    wx.request({
+      url: 'https://sec-m.ctrip.com/restapi/soa2/10245/GetGlobalADListV4.json?_rm=0.7909686730113286',
+      data: { "DeviceInfo": { "ScreenWidth": 1242.0000493526459, "ScreenHeight": 498.00001978874207 }, "SystemCode": 9, "head": { "cid": "09031174410421181703", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null }, "ChannelID": "8888", "SiteID": "", "SiteType": "", "GlobalBusinessInfoList": [{ "BizType": 307, "PageCode": "1" }], "Extensions": [{ "Name": "AllianceID", "Value": "" }, { "Name": "SID", "Value": "" }, { "Name": "OUID", "Value": "" }, { "Name": "requestID", "Value": "c0276679-4e55-6f13-97e4-157466c40a49" }], "AdLocation": { "CityID": "2" } },
+      method:'post',
+      success: res =>{
+        that.setData({
+          lunbo_img_list: res.data.Ads[0].ADContentList
+        })
+      }
     })
   },
 
@@ -450,7 +471,7 @@ Page({
   skip_room_list(e){
     var that = this
     wx.navigateTo({
-      url: '../houseList/houseList?city_id=' + that.data.city_id + '&city=' + that.data.city + '&startTime=' + e.currentTarget.dataset.starTime + '&endTime=' + e.currentTarget.dataset.endTime,
+      url: '../houseList/houseList?city_id=' + that.data.city_id + '&city=' + that.data.city + '&startTime=' + e.currentTarget.dataset.startime + '&endTime=' + e.currentTarget.dataset.endtime,
     })
   },
 

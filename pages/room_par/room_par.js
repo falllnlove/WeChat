@@ -33,6 +33,8 @@ Page({
     facility:'0',
     red_heart_choice:'0',
     current_index:0,
+    startTime : null,
+    endTime : null,
   },
 
   /**
@@ -42,7 +44,9 @@ Page({
     if (options != null){
       this.setData({
         room_id: options.id,
-        city_id: options.city_id
+        city_id: options.city_id,
+        startTime: options.startTime,
+        endTime : options.endTime
       })
     }
     this.get_room_info()
@@ -414,5 +418,14 @@ Page({
         content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
       })
     }
+  },
+
+  /**
+   * 照片详情
+   */
+  img_info_list() {
+    wx.navigateTo({
+      url: `../room_par_img/room_par_img?city_id=${this.data.city_id}&room_id=${this.data.room_id}&startTime=${this.data.startTime}&endTime=${this.data.endTime}`,
+    })
   },
 })

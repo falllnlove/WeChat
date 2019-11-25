@@ -1833,6 +1833,7 @@ page{
   font-size: 0.7rem;
   line-height: 0.9rem;
   color: #333;
+  margin-top: 0.3rem;
 }
 .bnbdetail-modal-other .list-other .lbl {
   color: #999;
@@ -2799,4 +2800,8 @@ bnbdetail-modal-traffic .list-item .ico:after {
   width: 100%;
   display: block;
   padding-right: 0.75rem;
+}
+.bnbdetail-modal-other .list-other .txt {
+  line-height: 1.05rem;
+  color: #3c3c3c;
 }

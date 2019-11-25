@@ -18,7 +18,7 @@ Page({
     city_id : 2,
     lat:null,
     lon:null,
-    starTime: util.month_and_day(new Date()),
+    startTime: util.month_and_day(new Date()),
     endTime: util.tomorrow(new Date()),
   },
 
@@ -37,8 +37,8 @@ Page({
         city_id: options.city_id,
         lat: options.lat,
         lon: options.lon,
-        starTime: options.starTime,
-        endTime: options.endTime
+        startTime: new Date().getFullYear() + '-' + options.startTime.split('.')[0] + '-' + options.startTime.split('.')[1],
+        endTime: new Date().getFullYear() + '-' + options.endTime.split('.')[0] + '-' + options.endTime.split('.')[1]
       })
     }
     this.get_room_list_my(),
@@ -91,7 +91,7 @@ Page({
     });
     wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/SearchProduct?_fxpcqlniredt=09031114311337967831&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003546&__gw_platform=H5',
-      data: { "cityid": that.data.city_id, "rentType": "0", "orderBy": 0, "pindex": that.data.pindex, "keywords": "", "filterTitle": null, "cityname": "" + that.data.city +"", "conds": [{ "cond": "date", "value": ""+that.data.starTime+","+ that.data.endTime +"" }], "userDataPos": { "cityId": ""+ that.data.city_id +"", "lat": ""+ that.data.lat +"", "lng": ""+ that.data.lon +"" }, "sequenceId": "8da98360-bfa5-9a12-f216-7be9e24a3b9a", "pageCode": "600003546", "head": { "cid": "09031114311337967831", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+ that.data.city_id +"" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "cityid": that.data.city_id, "rentType": "0", "orderBy": 0, "pindex": that.data.pindex, "keywords": "", "filterTitle": null, "cityname": "" + that.data.city +"", "conds": [{ "cond": "date", "value": ""+that.data.startTime+","+ that.data.endTime +"" }], "userDataPos": { "cityId": ""+ that.data.city_id +"", "lat": ""+ that.data.lat +"", "lng": ""+ that.data.lon +"" }, "sequenceId": "8da98360-bfa5-9a12-f216-7be9e24a3b9a", "pageCode": "600003546", "head": { "cid": "09031114311337967831", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+ that.data.city_id +"" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'POST',
       success: function (res) {
         if (res.data.info !== null) {
@@ -126,7 +126,7 @@ Page({
     var that = this
     wx: wx.request({
       url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/SearchProduct?_fxpcqlniredt=09031114311337967831&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003546&__gw_platform=H5',
-      data: { "cityid": that.data.city_id, "rentType": "0", "orderBy": 0, "pindex": 1, "keywords": "", "filterTitle": null, "cityname": "" + that.data.city + "", "conds": [{ "cond": "date", "value": "" + that.data.starTime + "," + that.data.endTime +"" }], "userDataPos": { "cityId": ""+ that.data.city_id +"", "lat": ""+ that.data.lat +"", "lng": ""+ that.data.lon +"" }, "sequenceId": "8da98360-bfa5-9a12-f216-7be9e24a3b9a", "pageCode": "600003546", "head": { "cid": "09031114311337967831", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+ that.data.city_id +"" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      data: { "cityid": that.data.city_id, "rentType": "0", "orderBy": 0, "pindex": 1, "keywords": "", "filterTitle": null, "cityname": "" + that.data.city + "", "conds": [{ "cond": "date", "value": "" + that.data.startTime + "," + that.data.endTime +"" }], "userDataPos": { "cityId": ""+ that.data.city_id +"", "lat": ""+ that.data.lat +"", "lng": ""+ that.data.lon +"" }, "sequenceId": "8da98360-bfa5-9a12-f216-7be9e24a3b9a", "pageCode": "600003546", "head": { "cid": "09031114311337967831", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+ that.data.city_id +"" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success: function (res) {
         that.setData({
@@ -170,8 +170,10 @@ Page({
    *  跳转房屋详情页面 
    */
   particulars_room(e){
+    console.log(this.data.startTime)
+    console.log(this.data.endTime)
     wx.redirectTo({
-      url: '../room_par/room_par?id=' + e.currentTarget.dataset.room_id + '&city_id=' + e.currentTarget.dataset.city_id,
+      url: '../room_par/room_par?id=' + e.currentTarget.dataset.room_id + '&city_id=' + e.currentTarget.dataset.city_id+'&startTime='+this.data.startTime+'&endTime='+this.data.endTime,
     })
   },
 })

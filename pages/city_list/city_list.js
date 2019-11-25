@@ -13,7 +13,8 @@ Page({
     cityListId: '',
     citylist:null,
     newcity: null,
-    locateCity: ''
+    locateCity: '',
+    city_id : null,
   },
 
   /**
@@ -109,8 +110,17 @@ Page({
       if (val.indexOf('市') !== -1) {
         val = val.slice(0, val.indexOf('市'));
       }
+      var city_id = null
+      that.data.citylist.forEach(item => {
+        item.cities.forEach(page => {
+          if (page.name == val) city_id = page.id
+          else return
+        })
+        return
+      })
       that.setData({
-        locateCity: val
+        locateCity: val,
+        city_id: city_id
       });
     });
   },
