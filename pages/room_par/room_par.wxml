@@ -213,7 +213,7 @@
       <view class="con-detail">
         <view class="txt">{{comment_list.clist[0].content}}</view>
       </view>
-      <view class="btn-o-more">
+      <view class="btn-o-more" catchtap="look_over_all_discuss">
         查看全部{{comment_list.count}}条点评
       </view>
     </view>

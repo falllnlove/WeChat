@@ -5,6 +5,7 @@
     "pages/houseList/houseList",
     "pages/room_par/room_par",
     "pages/room_par_img/room_par_img",
+    "pages/room_par_discuss/room_par_discuss",
     "pages/success/success"
   ],
   "permission": {

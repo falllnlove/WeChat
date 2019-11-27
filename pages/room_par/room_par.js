@@ -428,4 +428,13 @@ Page({
       url: `../room_par_img/room_par_img?city_id=${this.data.city_id}&room_id=${this.data.room_id}&startTime=${this.data.startTime}&endTime=${this.data.endTime}`,
     })
   },
+
+  /**
+   * 跳转评论列表
+   */
+  look_over_all_discuss(){
+    wx.navigateTo({
+      url: `../room_par_discuss/room_par_discuss?room_id=${this.data.room_id}`,
+    })
+  }
 })

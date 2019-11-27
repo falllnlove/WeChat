@@ -1,0 +1,111 @@
+<!--room_par_discuss.wxml-->
+<wxs src='../../wxs/utils.wxs' module='tools' />
+<view class="bnb-header bnbcommentlist-header is-fix J_header">
+  <text class="tit">住客点评</text>
+</view>
+<view class="bnb-bodyer-fix bnbcommentlist-bodyer-fix">
+  <view class="J_Comment">
+    <view class="bnbcommentlist-brief">
+      <view class="con-info">
+        <text class="val">{{discuss_list.rateStat.avgTotalRate}}</text>
+        <text class="txt">{{discuss_list.rateStat.commentDesc}}</text>
+        <view class="txt-num">共{{discuss_list.count}}条点评</view>
+      </view>
+      <view class="con-list-parts">
+        <view class="item item-0">
+          <text class="txt-lbl">房间卫生</text>
+          <view class="process">
+            <text class="val" style="width: {{discuss_list.rateStat.avgHygieneRate*20}}%;"></text>
+          </view>
+          <text class="txt" wx:if="{{discuss_list.rateStat.avgHygieneRate==5}}">{{discuss_list.rateStat.avgHygieneRate}}.0</text>
+          <text class="txt" wx:if="{{discuss_list.rateStat.avgHygieneRate!=5}}">{{discuss_list.rateStat.avgHygieneRate}}</text>
+        </view>
+        <view class="item item-0">
+          <text class="txt-lbl">房东服务</text>
+          <view class="process">
+            <text class="val" style="width: {{discuss_list.rateStat.avgLandlordServiceRate*20}}%;"></text>
+          </view>
+          <text class="txt" wx:if="{{discuss_list.rateStat.avgLandlordServiceRate==5}}">{{discuss_list.rateStat.avgLandlordServiceRate}}.0</text>
+          <text class="txt" wx:if="{{discuss_list.rateStat.avgLandlordServiceRate!=5}}">{{discuss_list.rateStat.avgLandlordServiceRate}}</text>
+        </view>
+        <view class="item item-0">
+          <text class="txt-lbl">设施设备</text>
+          <view class="process">
+            <text class="val" style="width: {{discuss_list.rateStat.avgFacilityRate*20}}%;"></text>
+          </view>
+          <text class="txt" wx:if="{{discuss_list.rateStat.avgFacilityRate==5}}">{{discuss_list.rateStat.avgFacilityRate}}.0</text>
+          <text class="txt" wx:if="{{discuss_list.rateStat.avgFacilityRate!=5}}">{{discuss_list.rateStat.avgFacilityRate}}</text>
+        </view>
+        <view class="item item-0">
+          <text class="txt-lbl">周边环境</text>
+          <view class="process">
+            <text class="val" style="width: {{discuss_list.rateStat.avgEnvironmentRate*20}}%;"></text>
+          </view>
+          <text class="txt" wx:if="{{discuss_list.rateStat.avgEnvironmentRate==5}}">{{discuss_list.rateStat.avgEnvironmentRate}}.0</text>
+          <text class="txt" wx:if="{{discuss_list.rateStat.avgEnvironmentRate!=5}}">{{discuss_list.rateStat.avgEnvironmentRate}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="bnbcommentlist-list-tag   J_commentTagFold">
+      <view class="con-list">
+        <view id="tagAll" class="item is-type-0 J_tagTab active">全部</view>
+        <view id="tagNew" class="item is-type-0 J_tagTab">最新</view>
+        <block wx:for="{{discuss_list.bnbCommentTags}}" wx:key="key">
+          <view class="item is-type-{{item.tagType==2?'1':'0'}} J_tagTab">
+            {{item.tagName}}
+            <text class="val" data-tagid="{{item.tagId}}">{{item.popularity}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view style="background-color: #F5F5F5;height:0.5rem;"></view>
+  <view class="J_CommentList">
+    <view class="bnbcommentlist-list-comment J_commentComp">
+      <block wx:for="{{discuss_list.clist}}" wx:key="key">
+        <view class="item" data-id="{{item.commentId}}">
+          <view class="con-user">
+            <view class="con-1">
+              <view class="con-photo">
+                <image src="{{item.uinfo.face}}"></image>
+              </view>
+              <view class="txt-username is-type-">{{tools.conceal_name(item.uinfo.userId)}}</view>
+              <view class="txt-rank is-type-{{item.rate-1}}">
+                <view class="ico"></view>
+                <view class="txt-lbl">{{item.commentDesc}}</view>
+              </view>
+            </view>
+            <view class="con-2">
+              <view class="con-2-1">
+                <text class="txt-date">{{item.ctime}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="con-detail has-fold">
+            <view class="txt-ad J_goProduceDetail"></view>
+            <view class="txt J_commentContent">{{item.content}}</view>
+            <view class="btn-o-fold is-unfold J_showMore"></view>
+            <view class="list-photo is-type-9">
+              <block wx:for="{{item.scaledURL}}" wx:key="key" wx:for-item="page" wx:for-index="idx">
+                <view class="list-item J_showCommentPhoto" data-index="{{idx}}">
+                  <image src="{{page}}"></image>
+                </view>
+              </block>
+            </view>
+          </view>
+          <view class="con-reply">
+            <view class="txt J_commentReply">
+              <text class="lbl">房东回复</text>
+              {{item.recommentList[0].recommentContext}}
+            </view>
+            <view class="btn-o-fold J_showMoreReply"></view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<!-- 浏览图片 -->
+<view id="J_pic" class="J_imageBrowser" style="height: 100%; display: none;">
+  
+</view>

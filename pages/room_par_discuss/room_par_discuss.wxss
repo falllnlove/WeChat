@@ -1,0 +1,378 @@
+.bnb-header {
+  text-align: center;
+  height: 2.2rem;
+  opacity: 1;
+  z-index: 4;
+  -webkit-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in;
+}
+.bnb-header.is-fix {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.bnb-header:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: -1;
+  box-shadow: inset 0 -1px 1px -1px #e1e1e1;
+}
+.bnb-header>.tit, .bnb-header>.con>.tit {
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  font-size: 0.85rem;
+  color: #333;
+  line-height: 2.2rem;
+  height: 2.2rem;
+  overflow: hidden;
+  margin-left: 4.2rem;
+  margin-right: 4.2rem;
+  font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
+}
+.bnb-bodyer-fix {
+  padding-top: 2.2rem;
+}
+.bnbcommentlist-brief {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #fff;
+}
+.bnbcommentlist-brief .con-info {
+  border: none;
+  position: relative;
+  width: 6rem;
+  padding-top: 0.15rem;
+}
+.bnbcommentlist-brief .con-info .val {
+  font-weight: 700;
+  display: inline-block;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: #3c3c3c;
+}
+.bnbcommentlist-brief .con-info .val {
+  font-weight: 500;
+}
+.bnbcommentlist-brief .con-info .txt {
+  font-weight: 700;
+  display: inline-block;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  color: #ff6a50;
+}
+.bnbcommentlist-brief .con-info .txt {
+  position: relative;
+  top: -0.1rem;
+}
+.bnbcommentlist-brief .con-info .txt {
+  font-weight: 500;
+  margin-left: 3%;
+}
+.bnbcommentlist-brief .con-info .txt-num {
+  width: 100%;
+  font-size: 0.55rem;
+  line-height: 0.55rem;
+  margin-top: 0.1rem;
+  color: #3c3c3c;
+}
+.bnbcommentlist-brief .con-info:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  background: #e9e9e9;
+  width: 1px;
+  height: 100%;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.bnbcommentlist-brief .con-info:after {
+  top: 0;
+}
+.bnbcommentlist-brief .con-list-parts .item {
+  display: flex;
+  font-size: 0.55rem;
+  line-height: 0.7rem;
+  align-items: center;
+  padding-left: 0.5rem;
+  color: #666;
+}
+.bnbcommentlist-brief .con-list-parts .process {
+  height: 0.2rem;
+  display: block;
+  background: #d8d8d8;
+  border-radius: 0.1rem;
+  margin: 0 0.35rem;
+  position: relative;
+}
+.bnbcommentlist-brief .con-list-parts .process .val {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.bnbcommentlist-brief .con-list-parts .process .val:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  border-radius: 0.1rem;
+  background-image: -webkit-linear-gradient(-89deg, #ffc040 3%, #ffa040 98%);
+  background-image: linear-gradient(-89deg, #ffc040 3%, #ffa040 98%);
+}
+.bnbcommentlist-brief .con-list-parts .process .val:before {
+  width: 5.75rem;
+}
+.bnbcommentlist-list-tag {
+  background: #fff;
+  font-size: 0;
+  padding: 0.4rem 1rem 1rem 0.75rem;
+  position: relative;
+  border: none;
+}
+.bnbcommentlist-list-tag:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  background: #e9e9e9;
+  width: 100%;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.bnbcommentlist-list-tag:before {
+  left: 1rem;
+  right: 1rem;
+  width: auto;
+}
+.bnbcommentlist-list-tag .con-list {
+  max-height: 3.7rem;
+  overflow: hidden;
+}
+.bnbcommentlist-list-tag .item {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 0.6rem;
+  min-width: 2.4rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  padding: 0 0.6rem;
+  text-align: center;
+  background: #fdeeeb;
+  border-radius: 0.625rem;
+  margin-top: 0.6rem;
+  margin-left: 0.25rem;
+}
+.bnbcommentlist-list-tag .item.active {
+  color: #fff;
+  background-image: -webkit-linear-gradient(-91deg, #ff8440 5%, #ff6a50 100%);
+  background-image: linear-gradient(-91deg, #ff8440 5%, #ff6a50 100%);
+}
+.bnbcommentlist-list-tag .item.is-type-1 {
+  background: #f4f4f4;
+}
+.bnbcommentlist-brief .con-list-parts .process {
+  width: 5.75rem;
+}
+.bnbcommentlist-list-comment {
+  margin-top: 0.4rem;
+  background: #fff;
+}
+.bnbcommentlist-list-comment .item {
+  padding: 1rem;
+}
+.bnbcommentlist-list-comment .con-user {
+  min-height: 2.05rem;
+}
+.bnbcommentlist-list-comment .item .con-user {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.bnbcommentlist-list-comment .item .con-user .con-1 {
+  padding-left: 2.4rem;
+}
+.bnbcommentlist-list-comment .item .con-user .con-1 .con-photo {
+  display: block;
+  width: 2.05rem;
+  height: 2.05rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  margin-left: -2.4rem;
+}
+.bnbcommentlist-list-comment .item .con-user .con-1 .con-photo image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.bnbcommentlist-list-comment .item .con-user .con-1 .txt-username {
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+  margin-top: -0.05rem;
+  margin-bottom: -0.05rem;
+  color: #3c3c3c;
+  position: relative;
+}
+.bnbcommentlist-list-comment .con-user .txt-rank {
+  position: absolute;
+}
+.bnbcommentlist-list-comment .item .con-user .con-1 .txt-rank {
+  background: #fff3ca;
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+  display: inline-block;
+}
+.bnbcommentlist-list-comment .item .con-user .txt-rank .ico {
+  background-image: url(//pic.c-ctrip.com/h5/bnb/ico-18.png?v=5);
+  background-size: 5.8rem 5rem;
+  background-repeat: no-repeat;
+  background-position: -1.2rem -3.9rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.bnbcommentlist-list-comment .item .con-user .txt-rank.is-type-2 .ico {
+  background-position: -3.6rem -1.5rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.bnbcommentlist-list-comment .item .con-user .txt-rank.is-type-2 .ico {
+  background-position: -3.6rem -1.5rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.bnbcommentlist-list-comment .item .con-user .txt-rank.is-type-3 .ico {
+  background-position: -2.4rem -3.9rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.bnbcommentlist-list-comment .item .con-user .txt-rank.is-type-4 .ico {
+  background-position: -3.6rem -2.7rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.bnbcommentlist-list-comment .item .con-user .con-1 .txt-rank .ico {
+  text-indent: -249.975rem;
+  display: block;
+  border-radius: 50%;
+  float: left;
+  margin: -0.05rem;
+}
+.bnbcommentlist-list-comment .item .con-user .con-1 .txt-rank .txt-lbl {
+  font-size: 0.6rem;
+  line-height: 1rem;
+  color: #462003;
+  padding-left: 1.2rem;
+  padding-right: 0.35rem;
+}
+.bnbcommentlist-list-comment .item .con-user .con-2 {
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+  font-size: 0.6rem;
+  line-height: 0.75rem;
+  text-align: right;
+  color: #666;
+  white-space: nowrap;
+}
+.bnbcommentlist-list-comment .item .con-user .con-2 .txt-type, .bnbcommentlist-list-comment .item .con-user .con-2 .txt-date {
+  padding-left: 0.3rem;
+}
+.bnbcommentlist-list-comment .item .con-detail {
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+  margin-top: 0.75rem;
+  margin-left: 2.05rem;
+  color: #3c3c3c;
+}
+.bnbcommentlist-list-comment .item .con-detail .txt-ad {
+  font-size: 0.6rem;
+  line-height: 0.7rem;
+  margin-top: -0.2rem;
+  margin-bottom: 0.2rem;
+  color: #ff6a50;
+}
+.bnbcommentlist-list-comment .item .con-detail .txt, .bnbcommentlist-list-comment .item .con-detail .btn-o-fold {
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+}
+.bnbcommentlist-list-comment .item .con-detail.has-fold .txt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 6;
+}
+.bnbcommentlist-list-comment .item .btn-o-fold {
+  color: #ff6a50;
+  line-height: 0.8rem;
+  margin-top: 0.2rem;
+  margin-bottom: -0.05rem;
+  display: none;
+}
+.bnbcommentlist-list-comment .item .con-detail.has-fold .btn-o-fold {
+  display: block;
+}
+.bnbcommentlist-list-comment .item .btn-o-fold:before {
+  content: '\5168\6587';
+}
+.bnbcommentlist-list-comment .item .list-photo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0.5rem -0.05rem -0.25rem -0.25rem;
+}
+.bnbcommentlist-list-comment .item .list-photo .list-item {
+  display: block;
+  width: 4.75rem;
+  height: 4.75rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0.25rem;
+  position: relative;
+  background: #e5e5e5;
+}
+.bnbcommentlist-list-comment .item .list-photo .list-item image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.bnbcommentlist-list-comment .item .con-reply {
+  font-size: 0.6rem;
+  line-height: 0.9rem;
+  color: #666;
+  background: #f5f5f5;
+  border-radius: 0.15rem;
+  padding: 0.75rem;
+  margin-left: 2.05rem;
+  margin-top: 1rem;
+}
+.bnbcommentlist-list-comment .item .con-reply .txt, .bnbcommentlist-list-comment .item .con-reply .btn-o-fold {
+  font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
+  font-weight: 200;
+}
+.bnbcommentlist-list-comment .item .con-reply .lbl {
+  font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
+  font-weight: 400;
+  color: #3c3c3c;
+}
+.bnbcommentlist-list-comment .item .con-reply .lbl:after {
+  content: '\ff1a';
+}
