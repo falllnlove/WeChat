@@ -81,8 +81,8 @@ Page({
       pageindex : that.data.pageindex+1
     })
     wx.request({
-      url: 'https://m.ctrip.com/restapi/soa2/12455/json/BnbCommentList?_fxpcqlniredt=09031174410421181703&__gw_appid=99999999&__gw_ver=1.0&__gw_from=10320662860&__gw_platform=H5',
-      data: `{ "pid": ${that.data.room_id}, "searchType": 2, "pageindex": ${that.data.pageindex}, "head": { "cid": "09031174410421181703", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "${that.data.city_id}" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" }`,
+      url: 'https://m.ctrip.com/restapi/soa2/12455/json/BnbCommentList?_fxpcqlniredt=09031056111930078145&__gw_appid=99999999&__gw_ver=1.0&__gw_from=10320662860&__gw_platform=H5',
+      data: `{ "pid": ${that.data.room_id}, "searchType": 2, "pageindex": ${that.data.pageindex}, "head": { "cid": "09031056111930078145", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "${that.data.city_id}" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" }`,
       method: 'post',
       success: res => {
         res.data.clist.forEach((item,index) => {
