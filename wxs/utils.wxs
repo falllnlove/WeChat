@@ -39,9 +39,17 @@ var distance = function(m) {
   }
 }
 
+var content_leng = function(content){
+  if (content.length == 0 || content == undefined) {
+    return 0;
+  }
+  return content.length
+}
+
 module.exports = {
   sub_img: sub_img,
   tags_one: tags_one,
   conceal_name: conceal_name,
   distance: distance,
+  content_leng: content_leng
 }

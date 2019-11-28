@@ -81,10 +81,10 @@
               </view>
             </view>
           </view>
-          <view class="con-detail has-fold">
+          <view class="con-detail has-fold {{full==index?'is-open':''}}">
             <view class="txt-ad J_goProduceDetail"></view>
             <view class="txt J_commentContent">{{item.content}}</view>
-            <view class="btn-o-fold is-unfold J_showMore"></view>
+            <view class="btn-o-fold is-unfold J_showMore" catchtap="full_text" data-index="{{index}}" wx:if="{{tools.content_leng(item.content) > 100}}"></view>
             <view class="list-photo is-type-9">
               <block wx:for="{{item.scaledURL}}" wx:key="key" wx:for-item="page" wx:for-index="idx">
                 <view class="list-item J_showCommentPhoto" data-index="{{idx}}">
@@ -93,12 +93,12 @@
               </block>
             </view>
           </view>
-          <view class="con-reply">
+          <view class="con-reply has-fold {{text==index?'is-open':''}}" wx:if="{{item.recommentList[0].recommentContext != null}}">
             <view class="txt J_commentReply">
               <text class="lbl">房东回复</text>
               {{item.recommentList[0].recommentContext}}
             </view>
-            <view class="btn-o-fold J_showMoreReply"></view>
+            <view class="btn-o-fold J_showMoreReply" catchtap="full_text" data-text="{{index}}"></view>
           </view>
         </view>
       </block>

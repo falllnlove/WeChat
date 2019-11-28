@@ -196,6 +196,26 @@
 .bnbcommentlist-list-comment .item {
   padding: 1rem;
 }
+.bnbcommentlist-list-comment .item + .item {
+    position: relative;
+    border: none;
+}
+.bnbcommentlist-list-comment .item + .item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  background: #e9e9e9;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+  transform-origin: 0 0;
+}
+.bnbcommentlist-list-comment .item + .item::before {
+  width: auto;
+  left: 0;
+  right: 0;
+  margin: 0 1rem;
+}
 .bnbcommentlist-list-comment .con-user {
   min-height: 2.05rem;
 }
@@ -318,6 +338,9 @@
   overflow: hidden;
   -webkit-line-clamp: 6;
 }
+.bnbcommentlist-list-comment .item .con-detail.has-fold.is-open .txt {
+    -webkit-line-clamp: unset;
+}
 .bnbcommentlist-list-comment .item .btn-o-fold {
   color: #ff6a50;
   line-height: 0.8rem;
@@ -330,6 +353,9 @@
 }
 .bnbcommentlist-list-comment .item .btn-o-fold:before {
   content: '\5168\6587';
+}
+.bnbcommentlist-list-comment .item .con-reply.has-fold.is-open .btn-o-fold:before {
+  content: '\6536\8d77';
 }
 .bnbcommentlist-list-comment .item .list-photo {
   display: -webkit-box;
@@ -367,6 +393,18 @@
 .bnbcommentlist-list-comment .item .con-reply .txt, .bnbcommentlist-list-comment .item .con-reply .btn-o-fold {
   font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
   font-weight: 200;
+}
+.bnbcommentlist-list-comment .item .con-reply.has-fold .txt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+.bnbcommentlist-list-comment .item .con-reply.has-fold.is-open .txt {
+  -webkit-line-clamp: unset;
+}
+.bnbcommentlist-list-comment .item .con-reply.has-fold .btn-o-fold {
+  display: block;
 }
 .bnbcommentlist-list-comment .item .con-reply .lbl {
   font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
