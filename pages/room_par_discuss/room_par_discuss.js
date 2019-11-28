@@ -11,7 +11,11 @@ Page({
     pageindex : 0,
     discuss_list:null,
     full : null,
-    text :null
+    text :null,
+    show : 'displat:none',
+    current :0,
+    img_index_page : 0,
+    img_leng :0,
   },
 
   /**
@@ -138,5 +142,37 @@ Page({
         text: e.currentTarget.dataset.text
       })
     }
+  },
+
+  /**
+   * 大图显示评论照片
+   */
+  show_img(e){
+    var that = this
+    that.setData({
+      show : 'display : block',
+      current: e.currentTarget.dataset.img_index,
+      current_idx: e.currentTarget.dataset.img_index,
+      img_index_page: e.currentTarget.dataset.img_list_index,
+      img_leng: that.data.discuss_list.clist[e.currentTarget.dataset.img_list_index].scaledURL.length
+    })
+  },
+
+  /**
+   * 隐藏照片大图显示
+   */
+  img_hide(){
+    this.setData({
+      show: 'display : none',
+    })
+  },
+
+  /**
+   * 监听照片大图显示滑动
+   */
+  change_current(e){
+    this.setData({
+      current_idx: e.detail.current
+    })
   }
 })

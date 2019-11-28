@@ -87,7 +87,7 @@
             <view class="btn-o-fold is-unfold J_showMore" catchtap="full_text" data-index="{{index}}" wx:if="{{tools.content_leng(item.content) > 100}}"></view>
             <view class="list-photo is-type-9">
               <block wx:for="{{item.scaledURL}}" wx:key="key" wx:for-item="page" wx:for-index="idx">
-                <view class="list-item J_showCommentPhoto" data-index="{{idx}}">
+                <view class="list-item J_showCommentPhoto" data-index="{{idx}}" data-img_list_index="{{index}}" data-img_index="{{idx}}" catchtap="show_img">
                   <image src="{{page}}"></image>
                 </view>
               </block>
@@ -106,6 +106,28 @@
   </view>
 </view>
 <!-- 浏览图片 -->
-<view id="J_pic" class="J_imageBrowser" style="height: 100%; display: none;">
-  
+<view id="J_pic" class="J_imageBrowser" style="{{show}}; height: 100%;" catchtap="img_hide">
+  <view class="pics_show_box">
+    <view class="picPager">
+      <text class="imgPager">1/9</text>
+    </view>
+    <view class="pics_show_box_in">
+      <swiper style="height:90%" current="{{current}}" bindchange="change_current">
+        <block wx:for="{{discuss_list.clist[img_index_page].scaledURL}}" wx:key="key">
+          <swiper-item>
+            <view class="pics_show_box_items">
+              <image class="fade-in opacity-fade-in" src="{{item}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view id="J_picDesc">
+      <view class="imgTitle">暂无描述</view>
+    </view>
+    <view class="img_page">
+      <text class="at_page">{{current_idx+1}}</text>
+      /{{img_leng}}
+    </view>
+  </view>
 </view>
