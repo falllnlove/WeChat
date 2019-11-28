@@ -170,8 +170,6 @@ Page({
    *  跳转房屋详情页面 
    */
   particulars_room(e){
-    console.log(this.data.startTime)
-    console.log(this.data.endTime)
     wx.redirectTo({
       url: '../room_par/room_par?id=' + e.currentTarget.dataset.room_id + '&city_id=' + e.currentTarget.dataset.city_id+'&startTime='+this.data.startTime+'&endTime='+this.data.endTime,
     })

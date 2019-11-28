@@ -148,7 +148,6 @@ Page({
       query.select(`.${item}`).boundingClientRect()
       query.exec(function(res) {
         if (res[0] != null) {
-          console.log(res[0].top)
           that.data.top_info_num.push(res[0].top)
         }
       })

@@ -434,7 +434,7 @@ Page({
    */
   look_over_all_discuss(){
     wx.navigateTo({
-      url: `../room_par_discuss/room_par_discuss?room_id=${this.data.room_id}`,
+      url: `../room_par_discuss/room_par_discuss?room_id=${this.data.room_id}&city_id=${this.data.city_id}`,
     })
   }
 })
