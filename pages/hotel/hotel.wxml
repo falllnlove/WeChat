@@ -8,12 +8,12 @@
     <view class="q"></view>
     <view class="bnbbook-box bnbbook-box-bookinfo J_productDetail" bindtap="detail_Mess_show">
       <view class="con-img">
-        <image src="https://dimg04.c-ctrip.com/images/2B0f0s000000hspxf9A57_R_750_560_Q80.jpg_.webp"></image>
+        <image src="{{tools.sub_img(test.img[0].url)}}"></image>
       </view>
       <text class="btn-o">详情</text>
-      <view class="tit">{{test[0].pname}}</view>
+      <view class="tit">{{test.pname}}</view>
       <view class="con-txt">
-        {{test[0].rname}} 1卫 2床 宜住4人
+        {{test.rmstic.layoutty}} 宜住{{test.rmattr.maxck}}人
       </view>
     </view>
     <!-- 今日甩卖 -->
@@ -37,7 +37,7 @@
       <view class="bnbdetail-box bnbdetail-box-date bnbbook-box-date">
         <view class="con-start">
           <text class="tit">入住</text>
-          <text class="txt-date">{{arriveTime1}}月{{arriveTime2}}日</text>
+          <text class="txt-date">{{tools.mon(startTime)}}</text>
           <text class="txt-day">{{arriveWeekTime}}</text>
         </view>
         <view class="con-day">
@@ -47,7 +47,7 @@
         </view>
         <view class="con-end">
           <text class="tit">离店</text>
-          <text class="txt-date">{{leaveTime1}}月{{leaveTime2}}日</text>
+          <text class="txt-date">{{tools.mon(endTime)}}</text>
           <text class="txt-day">{{leaveWeekTime}}</text>
         </view>
       </view>
@@ -57,20 +57,24 @@
     <view class="bnbbook-box bnbbook-box-guest-list">
       <view class="tit">
         选择入住人
-        <text class="tit-tip">(最多4人)</text>
+        <text class="tit-tip">(最多{{test.rmattr.maxck}}人)</text>
       </view>
       <view class="J_passengerInit">
         <view class="con-add J_passengersStore">
           <!-- <text class="txt-tip J_passengerAdd">至少填写一名入住人</text>
         <text class="item item-more is-tpye-1 J_passengerAdd" bindtap="addMessUser_mess">新增</text> -->
-          <view class="activesafter" bindtap="avticeShow" style="display:{{actives}}">
-            <view class="item actives" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{livepeopleName}}
+        <block wx:for="{{getMessSorts.data}}" wx:key="key">
+          <view class="activesafter" bindtap="activesShow" style="display:{{actives}}">
+            <view class="item actives" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{item.cusName}}
             </view>
           </view>
-          <view class="activesbefore" style="display:{{active}}">
-            <view class="item active" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{livepeopleName}}
+        </block>
+        <block wx:for="{{getMessSorts.data}}" wx:key="key">
+          <view class="activesbefore" bindtap="activeShow" style="display:{{active}}">
+            <view class="item active" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{item.cusName}}
             </view>
           </view>
+        </block>
           <view class="item item-more J_passengerSelect" bindtap="addMessUsermoreShow">
             更多
           </view>
@@ -79,8 +83,8 @@
           <view class="J_selectedPassengers">
             <view class="item" style="content:{{showValue}}" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default="true">
               <text class="btn-o-del J_showDeletePassenger" bindtap="cust_MessShow" style="display:{{cusDel}}"></text>
-              <view class="tit" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">{{livepeopleName}}</view>
-              <view class="txt" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">身份证 {{liveperopleCardId}}</view>
+              <view class="tit" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">{{getMessSorts.data[0].cusName}}</view>
+              <view class="txt" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">身份证 {{getMessSorts.data[0].cusCardId}}</view>
               <view class="btn-o-del2 J_deletePassenger" bindtap="editDel" data-id="98309944" data-default="true" style="display:{{cust_Mess_del}}">删除</view>
               <view class="items" style="display:{{arrowsShow}}"></view>
             </view>
@@ -165,9 +169,9 @@
       <view class="con">
         <view class="txt-1 J_priceTxt">线上支付</view>
         <view class="txt-2 J_totalPrice">
-          413
+          {{test.price.price}}
         </view>
-        <view class="txt-3" id="J_minusOrNot" data-amount="45.00">(优惠已减¥45.00)</view>
+        <view class="txt-3" id="J_minusOrNot" data-amount="45.00" wx:if="{{test.price.originalPrice != test.price.price}}">(优惠已减¥{{test.price.originalPrice}}.00)</view>
       </view>
       <view class="con-2">
         <text class="btn-o-more" id="J_orderDetail" bindtap="ordernotice_show">
@@ -183,12 +187,12 @@
       <view class="pop-order-info pop-order-info-book">
         <view class="particulars-box">
           <view class="hd">
-            <text class="culars-sum">1晚，共￥458</text>
+            <text class="culars-sum">{{stayTimes}}，共￥{{test.price.price}}</text>
             <text class="culars-name">房费</text>
             <view class="particulars-list">
               <view>
-                <text class="order-price">¥458</text>
-                <text class="commit-Date">2019-11-13</text>
+                <text class="order-price">¥{{test.price.price}}</text>
+                <text class="commit-Date">{{tools.mon(endTime)}}</text>
               </view>
             </view>
           </view>
@@ -197,7 +201,7 @@
           <view class="hd">
             <text class="culars-name">优惠</text>
           </view>
-          <view class="particulars-list particulars-list-coupon">
+          <view class="particulars-list particulars-list-coupon" wx:if="{{test.price.originalPrice != test.price.price}}">
             <view>
               <text class="order-price">-¥45</text>
               <text class="active">特惠活动</text>
@@ -244,55 +248,47 @@
         <view class="focus-box">
           <view class="focus-mode bnbdetail-focus-mode bnbbook-focus-mode" id="J_pic">
             <view style="transition: all 300ms ease-out 0s; height: 100% !important;">
-              <block wx:for="{{test}}" wx:key="pname">
-                <swiper style="height:245px;">
-                  <block wx:for="{{item.images}}" wx:key="key" wx:for-item="page">
-                    <swiper-item>
-                      <view class="item-slide J_picItem" style="width: 421px;">
-                        <image src="{{page}}"></image>
-                      </view>
-                    </swiper-item>
-                  </block>
-                </swiper>
-              </block>
+              <swiper style="height:245px;">
+                <block wx:for="{{test.img}}" wx:key="key" wx:for-item="page">
+                  <swiper-item>
+                    <view class="item-slide J_picItem" style="width: 421px;">
+                      <image src="{{tools.sub_img(page.url)}}"></image>
+                    </view>
+                  </swiper-item>
+                </block>
+              </swiper>
             </view>
-            <!-- <view class="product-name">
-              <text class="stage-num"  decode="{{true}}">
-                <text class="J_num">1</text>&emsp;/ 29
-              </text>
-            </view> -->
-
           </view>
 
         </view>
         <view class="bnbdetail-box bnbdetail-box-info bnbbook-box-info">
-          <view class="tit">{{test[0].pname}}</view>
+          <view class="tit">{{test.pname}}</view>
           <view class="J_productPriceInfo">
             <view class="con-price">
               <text class="txt-price-now">
-               <text class="unit">￥</text>{{test[0].price.price}}
+               <text class="unit">￥</text>{{test.price.price}}
               </text>
-              <text class="txt-price-origin">
-               <text class="val">￥{{test[0].price.originalPrice}}</text>
-              </text>
+              <view class="txt-price-origin" wx:if="{{test.price.originalPrice != test.price.price}}">
+               <text class="val">¥{{test.price.originalPrice}}</text>
+              </view>
             </view>
           </view>
           <view class="con-rule">
             <view class="item item-room">
               <text class="ico"></text>
-              <text class="txt txt-1">{{test[0].rname}} 1卫</text>
+              <text class="txt txt-1">{{test.rmstic.layoutty}}</text>
               <text class="txt txt-2">
-               <text class="val">Loft</text>复式
-              <text class="val">/102</text>㎡
+               <text class="val">{{test.rmstic.roomty}}</text>
+              <text class="val">/{{test.rmattr.houseSize}}</text>㎡
               </text>
             </view>
             <view class="item item-bed J_bedTip">
               <text class="ico"></text>
-              <text class="txt txt-1">宜住4人 2床</text>
+              <text class="txt txt-1">宜住{{test.rmattr.maxck}}人 {{test.rmattr.maxck}}床</text>
               <text class="txt txt-2">
-               <text class="txt-val">大床 <text class="val">(2×1.8</text>米
+               <text class="txt-val">{{test.rmattr.bedty}} <text class="val">({{test.rmattr.detailbeds[0].length}}×{{test.rmattr.detailbeds[0].width}}</text>米
               <text class="val">)</text>
-              <text class="val">1</text>张
+              <text class="val">{{test.rmattr.detailbeds[0].quantity}}</text>张
               </text>
               </text>
             </view>
@@ -302,254 +298,109 @@
           <view class="bnbbook-comment">
             <view class="con-brief">
               <view class="con-info">
-                <view class="val">{{test[0].commentScore}}</view>
-                <view class="txt">{{test[0].commentDesc}}</view>
+                <view class="val" wx:if="{{tests.unitDetail.unitCommentSummary.overall == 5}}">{{tests.unitDetail.unitCommentSummary.overall}}.0</view>
+                <view class="val" wx:else>{{tests.unitDetail.unitCommentSummary.overall}}</view>
+                <view class="txt">{{tests.unitDetail.unitCommentSummary.scoreTitle}}</view>       
               </view>
               <view class="con-list-parts">
                 <view class="item item-0">
                   <text class="txt-lbl">卫生</text>
                   <text class="process">
-                   <text class="val" style="width: 98%;"></text>
+                   <text class="val" style="width: {{tests.unitDetail.unitCommentSummary.cleanliness*20}}%;"></text>
                   </text>
-                  <text class="txt">4.9</text>
+                  <text class="txt" wx:if="{{tests.unitDetail.unitCommentSummary.cleanliness == 5}}">{{tests.unitDetail.unitCommentSummary.cleanliness}}.0</text>
+                  <text class="txt" wx:else>{{tests.unitDetail.unitCommentSummary.cleanliness}}</text>
                 </view>
                 <view class="item item-1">
                   <text class="txt-lbl">服务</text>
                   <text class="process">
-                   <text class="val" style="width: 100%;"></text>
+                   <text class="val" style="width: {{tests.unitDetail.unitCommentSummary.services*20}}%;"></text>
                   </text>
-                  <text class="txt">5.0</text>
+                  <text class="txt" wx:if="{{tests.unitDetail.unitCommentSummary.services == 5}}">{{tests.unitDetail.unitCommentSummary.services}}.0</text>
+          <text class="txt" wx:else>{{tests.unitDetail.unitCommentSummary.services}}</text>
                 </view>
                 <view class="item item-2">
                   <text class="txt-lbl">设施</text>
                   <text class="process">
-                   <text class="val" style="width: 98%;"></text>
+                   <text class="val" style="width: {{tests.unitDetail.unitCommentSummary.houseDecoration*20}}%;"></text>
                   </text>
-                  <text class="txt">4.9</text>
+                  <text class="txt" wx:if="{{tests.unitDetail.unitCommentSummary.houseDecoration == 5}}">{{tests.unitDetail.unitCommentSummary.houseDecoration}}.0</text>
+          <text class="txt" wx:else>{{tests.unitDetail.unitCommentSummary.houseDecoration}}</text>
                 </view>
                 <view class="item item-3">
                   <text class="txt-lbl">交通</text>
                   <text class="process">
-                   <text class="val" style="width: 98%;"></text>
+                   <text class="val" style="width: {{tests.unitDetail.unitCommentSummary.traffic-20}}%;"></text>
                   </text>
-                  <text class="txt">4.9</text>
+                  <text class="txt" wx:if="{{tests.unitDetail.unitCommentSummary.traffic == 5}}">{{tests.unitDetail.unitCommentSummary.traffic}}.0</text>
+          <text class="txt" wx:else>{{tests.unitDetail.unitCommentSummary.traffic}}</text>
                 </view>
               </view>
             </view>
             <view class="con-list-tag">
-              <view class="item J_tagTab" data-idx="3" data-param="4,183">老板不错</view>
-              <view class="item J_tagTab" data-idx="4" data-param="4,196">房间干净</view>
-              <view class="item J_tagTab" data-idx="5" data-param="4,169">交通便利</view>
-              <view class="item J_tagTab" data-idx="6" data-param="4,599">下次还想入住</view>
-              <view class="item J_tagTab" data-idx="7" data-param="4,456">附近有地铁站</view>
-              <view class="item J_tagTab" data-idx="8" data-param="4,59">房间挺好</view>
-              <view class="item J_tagTab" data-idx="9" data-param="4,311">设施齐全</view>
-              <view class="item J_tagTab" data-idx="10" data-param="4,385">适合家庭出游</view>
+              <block wx:for="{{tests.unitDetail.unitCommentSummary.commentTagVo}}" wx:key="key" wx:if="{{index>=3}}">
+                <view class="item J_tagTab">{{item.topic}}</view>
+              </block>
             </view>
           </view>
         </view>
         <view class="bnbdetail-box bnbdetail-box-service J_fac is-hide">
           <view class="box-head">配套设施</view>
           <view class="list-device J_showFacilityInfoModal">
-            <text class="item item-device-e062" style="display:block;">
-              <text class="ico"></text>
-            <text class="txt">无线网络</text>
-            </text>
-            <text class="item item-device-e04c" style="display:block;">
-              <text class="ico"></text>
-            <text class="txt">空调</text>
-            </text>
-            <text class="item item-device-e043" style="display:block;">
-              <text class="ico"></text>
-            <text class="txt">电视</text>
-            </text>
-            <text class="item item-device-e065" style="display:block;">
-              <text class="ico"></text>
-            <text class="txt">洗衣机</text>
-            </text>
-            <text class="item item-device-e039" style="display:block;">
-              <text class="ico"></text>
-            <text class="txt">冰箱</text>
-            </text>
-            <text class="item item-device-e04d" style="display:block;">
-              <text class="ico"></text>
-            <text class="txt">空气净化器</text>
-            </text>
-            <text class="item item-device-e127" style="display:block;">
-              <text class="ico"></text>
-            <text class="txt">新风系统</text>
-            </text>
-            <text class="item item-device-e049" style="display:block;">
-              <text class="ico"></text>
-            <text class="txt">加湿器</text>
-            </text>
-            <text class="item item-device-e055" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">暖气</text>
-            </text>
-            <text class="item item-device-e059" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">电热水壶</text>
-            </text>
-            <text class="item item-device-e03d" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">电吹风</text>
-            </text>
-            <text class="item item-device-e04f" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">晾衣架</text>
-            </text>
-            <text class="item item-device-e03e" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">打扫工具</text>
-            </text>
-            <text class="item item-device-e05e" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">拖鞋</text>
-            </text>
-            <text class="item item-device-e11d" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">地毯</text>
-            </text>
-            <text class="item item-device-e121" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">装饰字画</text>
-            </text>
-            <text class="item item-device-e12a" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">高档沙发</text>
-            </text>
-            <text class="item item-device-e128" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">休闲椅</text>
-            </text>
-            <text class="item item-device-e11c" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">茶几</text>
-            </text>
-            <text class="item item-device-e124" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">净水设备</text>
-            </text>
-            <text class="item item-device-e057" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">全天热水</text>
-            </text>
-            <text class="item item-device-e063" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">洗浴用品</text>
-            </text>
-            <text class="item item-device-e051" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">毛巾</text>
-            </text>
-            <text class="item item-device-e069" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">牙具</text>
-            </text>
-            <text class="item item-device-e046" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">独立卫浴</text>
-            </text>
-            <text class="item item-device-e023" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">浴巾</text>
-            </text>
-            <text class="item item-device-e067" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">香皂</text>
-            </text>
-            <text class="item item-device-e061" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">卫生纸</text>
-            </text>
-            <text class="item item-device-e060" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">微波炉</text>
-            </text>
-            <text class="item item-device-e066" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">洗涤用具</text>
-            </text>
-            <text class="item item-device-e12b" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">整体厨柜</text>
-            </text>
-            <text class="item item-device-e02d" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">超市</text>
-            </text>
-            <text class="item item-device-e02e" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">菜市场</text>
-            </text>
-            <text class="item item-device-e0d8" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">餐厅</text>
-            </text>
-            <text class="item item-device-e031" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">药店</text>
-            </text>
-            <text class="item item-device-e0d9" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">泳池</text>
-            </text>
-            <text class="item item-device-e0da" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">儿童乐园</text>
-            </text>
-            <text class="item item-device-e030" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">提款机</text>
-            </text>
-            <text class="item item-device-e02f" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">免费停车</text>
-            </text>
-            <text class="item item-device-e120" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">公共花园</text>
-            </text>
-            <text class="item item-device-e0d2" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">观景露台</text>
-            </text>
-            <text class="item item-device-e02b" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">保安</text>
-            </text>
-            <text class="item item-device-e053" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">门禁系统</text>
-            </text>
-            <text class="item item-device-e054" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">灭火器</text>
-            </text>
-            <text class="item item-device-e048" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">火灾警报器</text>
-            </text>
-            <text class="item item-device-e06f" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">电梯</text>
-            </text>
-            <text class="item item-device-e03c" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">有窗户</text>
-            </text>
-            <text class="item item-device-e125" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">落地窗</text>
-            </text>
-            <text class="item item-device-e0db" style="display:{{facility_show}}">
-              <text class="ico"></text>
-            <text class="txt">行李寄存</text>
-            </text>
+             <block wx:for="{{tests.unitDetail.unitFacilityGroups[0].unitFacilities}}" wx:key="key" wx:for-item="page" wx:if="{{index < 8}}" >
+                  <view class="item item-device-{{page.icon}}" >
+                    <text class="ico"></text>
+                    <text class="txt">{{page.name}}</text>
+                  </view>
+             </block>
+             <block wx:for="{{tests.unitDetail.unitFacilityGroups[0].unitFacilities}}" wx:key="key" wx:for-item="page" wx:if="{{boxSelectMore==1 && index>=8}}" >
+                  <view class="item item-device-{{page.icon}}" >
+                    <text class="ico"></text>
+                    <text class="txt">{{page.name}}</text>
+                  </view>
+             </block>
+              <block wx:for="{{tests.unitDetail.unitFacilityGroups[1].unitFacilities}}" wx:key="key" wx:for-item="page" wx:if="{{boxSelectMore==1}}" >
+                  <view class="item item-device-{{page.icon}}" >
+                    <text class="ico"></text>
+                    <text class="txt">{{page.name}}</text>
+                  </view>
+             </block>
+              <block wx:for="{{tests.unitDetail.unitFacilityGroups[2].unitFacilities}}" wx:key="key" wx:for-item="page" wx:if="{{boxSelectMore==1}}" >
+                  <view class="item item-device-{{page.icon}}" >
+                    <text class="ico"></text>
+                    <text class="txt">{{page.name}}</text>
+                  </view>
+             </block>
+              <block wx:for="{{tests.unitDetail.unitFacilityGroups[3].unitFacilities}}" wx:key="key" wx:for-item="page" wx:if="{{boxSelectMore==1}}" >
+                  <view class="item item-device-{{page.icon}}" >
+                    <text class="ico"></text>
+                    <text class="txt">{{page.name}}</text>
+                  </view>
+             </block>
+              <block wx:for="{{tests.unitDetail.unitFacilityGroups[4].unitFacilities}}" wx:key="key" wx:for-item="page" wx:if="{{boxSelectMore==1}}" >
+                  <view class="item item-device-{{page.icon}}" >
+                    <text class="ico"></text>
+                    <text class="txt">{{page.name}}</text>
+                  </view>
+             </block>
+              <block wx:for="{{tests.unitDetail.unitFacilityGroups[5].unitFacilities}}" wx:key="key" wx:for-item="page" wx:if="{{boxSelectMore==1}}" >
+                  <view class="item item-device-{{page.icon}}" >
+                    <text class="ico"></text>
+                    <text class="txt">{{page.name}}</text>
+                  </view>
+             </block>
+             <!-- <block wx:for="{{tests.unitDetail.unitFacilityGroups}}" wx:key="key">
+                <block wx:for="{{item.unitFacilities}}" wx:key="key" wx:for-item="page" wx:if="{{boxSelectMore==1 && boxIndex>=8}}">
+                  <view class="item item-device-{{page.icon}}">
+                    <text class="ico"></text>
+                    <text class="txt">{{page.name}}</text>
+                  </view>
+                </block>
+             </block> -->
+             
           </view>
           <view class="btn-o-more J_showMoreFac is-type-0" style="display: {{showAll}};" bindtap="messAll_show">
-            查看全部49项设施
+            查看全部51项设施
             <text class="ico"></text>
           </view>
           <view class="btn-o-more J_hideMoreFac is-type-1" style="display: {{closeAll}};" bindtap="messAll_close">
@@ -563,55 +414,45 @@
             <view class="item">
               <text class="lbl">入离时间</text>
               <text class="txt">
-               <text class="val">14:00</text> 以后入住
-              <text class="val">12:00</text> 以前退房
+               <text class="val">{{test.checkInTime}}</text> 以后入住<text class="val">{{test.checkOutTime}}</text> 以前退房
               </text>
             </view>
             <view class="item">
               <text class="lbl">接待时间</text>
               <text class="txt"> 
-              <text class="val">00:00-24:00</text>
+              <text class="val">{{test.receptionStart}}</text>
               </text>
             </view>
             <view class="item">
               <text class="lbl">卫生打扫</text>
               <text class="txt"> 
-               <text class="val">1</text>客
-              <text class="val">1</text>扫
+               <text class="val">{{test.rmattr.extraService[1].desc}}</text>
               </text>
             </view>
             <view class="item">
               <text class="lbl">被单更换</text>
               <text class="txt"> 
-                <text class="val">1</text>客
-              <text class="val">1</text>换
+                <text class="val">{{test.rmattr.extraService[2].desc}}</text>
               </text>
             </view>
             <view class="item">
               <text class="lbl">洗漱更换</text>
               <text class="txt"> 
-               <text class="val">1</text>客
-              <text class="val">1</text>换
+               <text class="val">{{test.rmattr.extraService[3].desc}}</text>
               </text>
             </view>
             <view class="item">
               <text class="lbl">毛巾更换</text>
               <text class="txt"> 
-               <text class="val">1</text>客
-              <text class="val">1</text>换
+               <text class="val">{{test.rmattr.extraService[4].desc}}</text>
               </text>
             </view>
             <view class="item">
               <text class="lbl">房屋守则</text>
               <view class="txt list-rule">
-                <text class="item is-disabled">接待儿童</text>
-                <text class="item is-disabled">接待老人</text>
-                <text class="item">不接待外宾</text>
-                <text class="item">不可带宠物</text>
-                <text class="item">不可吸烟</text>
-                <text class="item">不可聚会</text>
-                <text class="item">不可做饭</text>
-                <text class="item">不允许商业拍摄</text>
+                <block wx:for="{{test.rmattr.specialRule}}" wx:key="key" wx:for-item="item">
+                   <text class="item {{item.value=='允许'?'':'is-disabled'}}">{{item.name}}</text>
+                </block>
               </view>
             </view>
           </view>
@@ -619,30 +460,18 @@
         <view class="bnbdetail-box bnbdetail-box-other bnbbook-box-other J_otherRequirementInfo">
           <view class="box-head">其他要求</view>
           <view class="box-body list-other">
-            <text class="item" style="display:block">
-             <text class="lbl" decode="{{true}}">&emsp;清洁费</text>
-            <text class="txt">需线下与房东确认</text>
-            </text>
-            <text class="item" style="display:block">
-             <text class="lbl" decode="{{true}}">&emsp;&emsp;加人</text>
-            <text class="txt"> 标准入住<text class="val">4</text>人，不可加人</text>
-            </text>
-            <text class="item" style="display:block">
-             <text class="lbl" decode="{{true}}">&emsp;&emsp;加床</text>
-            <text class="txt">不允许加床</text>
-            </text>
-            <text class="item" style="display:{{it_show}}">
-             <text class="lbl" decode="{{true}}">&emsp;&emsp;做饭</text>
-            <text class="txt">房间内不允许做饭</text>
-            </text>
-            <text class="item" style="display:{{it_show}}">
-             <text class="lbl" decode="{{true}}">&emsp;&emsp;聚会</text>
-            <text class="txt">房间内不允许聚会</text>
-            </text>
-            <text class="item" style="display:{{it_show}}">
-             <text class="lbl">商业拍摄</text>
-            <text class="txt">房间内不允许商业拍摄</text>
-            </text>
+            <block wx:for="{{test.rmattr.extraService}}" wx:key="key" wx:for-item="item" wx:if="{{index < 4}}">
+              <view class="item">
+                <text class="lbl" decode="{{true}}">{{item.name}}</text>
+                <text class="txt" decode="{{true}}">{{item.desc}}</text>
+              </view>
+            </block>
+            <block wx:for="{{test.rmattr.extraService}}" wx:key="key" wx:for-item="item" wx:if="{{selectMore==1 && index>=4}}">
+              <view class="item">
+                <text class="lbl" decode="{{true}}">{{item.name}}</text>
+                <text class="txt" decode="{{true}}">{{item.desc}}</text>
+              </view>
+            </block>
           </view>
           <view class="btn-o-more J_showOtherRequirementInfoModal is-type-0" style="display: {{itshowAll}};" bindtap="iteclose_show">查看更多
             <text class="ico"></text>
@@ -704,7 +533,7 @@
         <view class="r-more">
           <view class="J_ChineseName moress ">
             <text class="addMess-namemore " style="padding-top: .75rem;padding-top:.75rem;">中文姓名 {{inputValue}}</text>
-            <input id="name" type="text" name="chinaName" value="" class="add-Mess-input-more" placeholder="请填写证件上的真实姓名"></input>
+            <input id="name" type="text" name="chinaName" value="{{name}}" class="add-Mess-input-more" placeholder="请填写证件上的真实姓名"></input>
           </view>
           <view class="chin"></view>
           <view class="J_EnglishLastName moress" style="display: none;">
@@ -719,11 +548,11 @@
           </view>
           <view class="J_CardNumber moress">
             <text class="arr-r J_selectCardType addMess-namemore" decode="{{true}}" style="padding-top: .75rem;padding-top:.75rem;">&emsp;身份证</text>
-            <input id="cardCode" value="" class="add-Mess-input-more" name="cardId" type="text" placeholder="请填写证件号码"></input>
+            <input id="cardCode" value="{{cardId}}" class="add-Mess-input-more" name="cardId" type="text" placeholder="请填写证件号码"></input>
           </view>
         </view>
-        <view class="add-btn-div" >
-          <button formType="submit" class='add-btn J_AddPassenger' size="mini">
+        <view class="add-btn-div">
+          <button formType="submit" form-type="reset" class='add-btn J_AddPassenger' size="mini">
             <text class="btn-add-word">添加</text>
           </button>
         </view>
@@ -735,22 +564,34 @@
     <view class="J_passengerContainer">
       <view class="choice-hd">
         最多选
-        <text class="cdark">4</text>位，至少
+        <text class="cdark">{{test.rmattr.maxck}}</text>位，至少
         <text class="cdark">1</text>位
       </view>
       <view class="taker-select">
-        <view class="J_passengerSelect " style="padding-left:1.65rem;height:50px;" data-iscomplete="true" data-id="98309944" data-cardtypename="身份证" data-cardtype="1" data-name="孙燕然" data-enfirstname data-enlastname data-security="0" data-isself="false">
-          <view class="ico-edit J_passengerEdit" bindtap="addMoreEdit"></view>
-          <view class="passenger-content">
-            <text class="in-checkbox-tar in-checkbox-tar2" for="a1" style="display: block"></text>
-            <view class="txt-name">孙燕然
-              <view class="tak-att-icon"></view>
-            </view>
-            <view class="gray-txt-number" data-cardno="410329200208159582">
-              <text>身份证:</text> 410329******82
-            </view>
-          </view>
-        </view>
+       <block wx:for="{{getMessCust.data}}" wx:key="key">
+            <view class="J_passengerSelect " style="padding-left:1.65rem;height:50px;" data-iscomplete="true" data-id="98309944" data-cardtypename="身份证" data-cardtype="1" data-name="孙燕然" data-enfirstname data-enlastname data-security="0" data-isself="false">
+              <view class="ico-edit J_passengerEdit" bindtap="addMoreEdit"></view>
+              <view class="passenger-content">
+                <text class="in-checkbox-tar in-checkbox-tar2" bindtap="tarCheckedShow" for="a1" style="{{tarShow}}"></text>
+                <!-- <text class="in-checkbox-tar in-checkbox-tar2" for="a1" style="display: block"></text> -->
+                <!-- <text class="in-checkbox-tar1 in-checkbox-tar3" for="a1" style="display: block"></text> -->
+                <text class="index-tar" bindtap="tarCheckedClose" style="{{tarClose}}"></text>
+                <view class="txt-name">{{item.cusName}}
+                  <view class="tak-att-icon"></view>
+                </view>
+                <view class="gray-txt-number" data-cardno="410329200208159582">
+                  <text>身份证:</text> 
+                  <block wx:for="{{item.cusCardId}}" wx:key="key" wx:for-item="idpage" wx:if="{{index<6}}">
+                  {{idpage}}
+                  </block> 
+                  ******
+                  <block wx:for="{{item.cusCardId}}" wx:key="key" wx:for-item="idpage" wx:if="{{index>15}}">
+                  {{idpage}}
+                  </block> 
+                </view>
+              </view>
+            </view> 
+       </block> 
       </view>
     </view>
   </view>

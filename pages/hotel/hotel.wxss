@@ -173,10 +173,10 @@ image{
   background: #fff;
 }
 
-.txt-sale {
+.J_excitation .bnbbook-box .con .txt-sale {
     color: #ff6a50;
 }
-.txt {
+.J_excitation .bnbbook-box .con .txt {
     font-size: 0.8rem;
     /* color: #2dbeb0; */
     line-height: 0.5rem;
@@ -543,7 +543,7 @@ image{
     height: 0.85rem;
     position: absolute;
     margin-left: -1.3rem;
-    margin-top: 0.5rem;
+    margin-top: 0.7rem;
 }
 .bnbbook-box-guest-list .con-edit .item .btn-o-del:before {
     background-image: url(//pic.c-ctrip.com/h5/bnb/ico-04.v4.png?v=0);
@@ -567,7 +567,7 @@ image{
 .bnbbook-box-guest-list .con-edit .item .txt {
     font-size: 0.7rem;
     color: #3c3c3c;
-    margin-left: -1.5rem;
+    /* margin-left: -1.5rem; */
 }
 .bnbbook-box-guest-list .con-edit .item .btn-o-del2 {
     font-size: 0.9rem;
@@ -696,6 +696,7 @@ image{
   line-height: 1.3;
   font-size: 0.6rem;
   padding-left: 0;
+  display: block;
 }
 /* 港澳台须知 */
 .bnbbook-policy-foreigner {
@@ -1298,7 +1299,7 @@ navigator {
 }
 .pop-order-product-box .bnbdetail-box-info .con-rule .txt {
   display: block;
-  margin-left: 1.25rem;
+  /* margin-left: 1.25rem; */
 }
 .pop-order-product-box .bnbdetail-box-info .con-rule .txt-2 .val, .pop-order-product-box .bnbdetail-box-info .con-rule .txt-3 .val {
   font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
@@ -1344,9 +1345,6 @@ navigator {
   line-height: 0.8rem;
   color: #333;
   text-align: left;
-}
-.pop-order-product-box .bnbdetail-box-info .con-rule .txt {
-margin-left: 1.25rem;
 }
 .pop-order-product-box .bnbdetail-box-info .con-rule .item-bed .txt-2 .txt-val {
   white-space: nowrap;
@@ -1436,9 +1434,9 @@ margin-left: 1.25rem;
 /* .bnbbook-comment .con-brief .con-list-parts .item txt-lbl{
 margin-left: -2rem;
 } */
-.bnbbook-comment .con-brief .con-list-parts .item .txt{
+/* .bnbbook-comment .con-brief .con-list-parts .item .txt{
 margin-left: -1.5rem;
-}
+} */
 .bnbbook-comment .con-brief .con-list-parts .process {
   width: 2.5rem;
 }
@@ -1587,6 +1585,11 @@ margin-left: -1.5rem;
   width: 1.2rem;
   height: 1.2rem;
 }
+.pop-order-product-box .list-device .item-device-e064 .ico {
+    background-position: -3.9rem -2.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
 .pop-order-product-box .list-device .item-device-e059 .ico {
   background-position: -2.6rem -2.6rem;
   width: 1.2rem;
@@ -1606,6 +1609,26 @@ margin-left: -1.5rem;
   background-position: -2.6rem -3.9rem;
   width: 1.2rem;
   height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e056 .ico {
+    background-position: -6.5rem -7.8rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e03a .ico {
+    background-position: -9.1rem -2.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e040 .ico {
+    background-position: -3.9rem -7.8rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.pop-order-product-box .list-device .item-device-e045 .ico {
+    background-position: -9.1rem -3.9rem;
+    width: 1.2rem;
+    height: 1.2rem;
 }
 .pop-order-product-box .list-device .item-device-e05e .ico {
   background-position: -3.9rem -1.3rem;
@@ -1787,6 +1810,7 @@ margin-left: -1.5rem;
   width: 1.2rem;
   height: 1.2rem;
 }
+
 .pop-order-product-box .bnbdetail-box-service .list-device .ico {
   background-image: url(http://pic.c-ctrip.com/h5/bnb/ico-02.v4.png?v=0);
   background-size: 12.9rem 11.6rem;
@@ -1800,9 +1824,9 @@ margin-left: -1.5rem;
   display: block;
   line-height: 0.7rem;
 }
-.pop-order-product-box .list-device .item .txt{
+/* .pop-order-product-box .list-device .item .txt{
   margin-left: -22px;
-}
+} */
 .bnbdetail-box-service .btn-o-more {
   text-align: center;
   color: #ff6a50;
@@ -1887,21 +1911,19 @@ margin-left: -1.5rem;
 .pop-order-product-box .bnbdetail-box-attention .list-attention .txt .val {
   font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
   font-weight: 400;
+  color: #999;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule {
-  margin-top: -0.4rem;
+  margin-top: 6px;
   flex-basis: 80%;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .txt {
   font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
   font-weight: 200;
-  margin-top: 8px;
-  margin-left: -1.35rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item {
   float: left;
   width: 50%;
-  margin-top: 0.5rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
   background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
@@ -1917,7 +1939,7 @@ margin-left: -1.5rem;
   text-indent: -249.975rem;
   display: inline-block;
   vertical-align: top;
-  margin-top: 0.05rem;
+  margin-top: 0.4rem;
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item.is-disabled {
   color: #999;
@@ -1933,6 +1955,8 @@ margin-left: -1.5rem;
   content: '\2717';
   color: #999;
   text-decoration: none;
+  margin-top: 0.3rem;
+
 }
 .pop-order-product-box .bnbdetail-box-attention .list-attention .list-rule>.item::before {
   background-image: url(//pic.c-ctrip.com/h5/bnb/ico-01.v6.png?v=1);
@@ -1944,7 +1968,7 @@ margin-left: -1.5rem;
   text-indent: -249.975rem;
   display: inline-block;
   vertical-align: top;
-  margin-top: 0.05rem;
+  /* margin-top: 0.05rem; */
 }
 /* 入住须知 end */
 /* 透明背景 begin */
@@ -1985,7 +2009,7 @@ background-color: rgba(0, 0, 0, 0.75);
 }
 .pop-order-product-box .bnbdetail-box-other .list-other>.item {
   font-size: 0.7rem;
-  line-height: 2.4rem;
+  line-height: 1.4rem;
   color: #333;
 }
 .pop-order-product-box .bnbdetail-box-other .list-other .lbl {
@@ -1998,7 +2022,7 @@ background-color: rgba(0, 0, 0, 0.75);
 .pop-order-product-box .bnbdetail-box-other .list-other .txt {
   font-family: 'Microsoft YaHei UI Light', 'PingFangSC-Light', Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif-light, sans-serif;
   font-weight: 200;
-  margin-left: 40px;
+  /* margin-left: 48px; */
   margin-top: -23px;
 }
 .pop-order-product-box .bnbdetail-box-other .list-other .txt .val {
@@ -2234,7 +2258,7 @@ background-color: rgba(0, 0, 0, 0.75);
 
 /* 添加更多 */
 .a-more{
-  height: 999px;
+  height: 622px;
   background-color: rgb(244, 244, 244)
 }
 .bnb-header.is-fix {
@@ -2507,6 +2531,37 @@ input[type="checkbox"]:checked, .checked {
     box-shadow: 0 -3px 0 #fff inset, 0 2px 0 #fff;
     transform: rotate(-45deg);
 }
+.taker-select .in-checkbox-tar3 {
+    border-radius: 0;
+    background-clip: content-box;
+}
+.taker-select .in-checkbox-tar1 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -6.9rem;
+    margin-left: 0.35rem;
+}
+.in-checkbox-tar1 {
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 1px solid #999;
+    /*border-radius: 50%;*/
+    background-color: #fff;
+    /*position: absolute;
+    left: 0;
+    top: 0.5rem; */
+}
+.in-checkbox-tar1:after {
+    content: '';
+    position: absolute;
+    width: 0.65rem;
+    height: 0.25rem;
+    border-left: 2px solid #ff6d57;
+    border-bottom: 2px solid #ff6d57;
+    box-shadow: 0 -3px 0 #fff inset, 0 2px 0 #fff;
+    transform: rotate(-45deg);
+}
 .tak-att-icon {
     width: 1.1rem;
     height: 1.1rem;
@@ -2520,6 +2575,17 @@ input[type="checkbox"]:checked, .checked {
 .taker-select .gray-txt-number {
     font-size: 0.65rem;
     /* margin-top:-1.25rem;  */
+}
+.index-tar{
+    border-radius: 0;
+    background-clip: content-box;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 1px solid #999;
+    background-color: #fff;
+    position: absolute;
+    margin-top: 1.2rem;
+    margin-left:-1.3rem;
 }
 .txt-name{
   margin-top: 0.5rem

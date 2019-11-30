@@ -7,11 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title:'乐蜀民宿近上海乐园设计师高端复式公寓壹号',
-    arriveTime1:'11',
-    arriveTime2: '22',
-    leaveTime1: '11',
-    leaveTime2: '23',
     stayTimes:'1晚',
     arriveWeekTime:'周四',
     leaveWeekTime: '周五',
@@ -51,36 +46,51 @@ Page({
     englistName:'',
     englistfirstName:'',
     test: null,
-    // leftMove:0,
-    // show: false,
-    // buttons: [
-    //   {
-    //     type: 'default',
-    //     className: '',
-    //     text: '辅助操作',
-    //     value: 0
-    //   },
-    //   {
-    //     type: 'primary',
-    //     className: '',
-    //     text: '主操作',
-    //     value: 1
-    //   }
-    // ],
+    tests:null,
+    city_id : 2,
+    city : '上海',
+    room_id: 776248552,
+    startTime: '2019-11-25',
+    endTime:'2019-11-26',
+    showmoreMessit:'display:none',
+    selectMore:0,
+    boxSelectMore:0,
+    getMessCust:null,
+    getMessSorts:null,
+    tarShow:'display:block',
+    tarClose:'display:none',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    if(options.room_id != null){
+
+      var start = options.startTime
+      var end = options.endTime
+      var arriveWeekTime = getMyDay(new Date(start))
+      var leaveWeekTime = getMyDay(new Date(end))
+      this.setData({
+        city_id: options.city_id,
+        city: options.city,
+        room_id: options.room_id,
+        startTime: options.startTime,
+        endTime: options.endTime,
+        stayTimes : day,
+        arriveWeekTime: arriveWeekTime,
+        leaveWeekTime: leaveWeekTime
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getMess_image()
+    this.room_infomation()
+    this.room_Mess()
+    this.getMessSort()
   },
 
   /**
@@ -149,6 +159,7 @@ Page({
       facility_show:'block',
       showAll: 'none',
       closeAll: 'block',
+      boxSelectMore:1,
     })
   },
   messAll_close(){
@@ -156,6 +167,7 @@ Page({
       facility_show:'none',
       showAll: 'block',
       closeAll: 'none',
+      boxSelectMore:0,
     })
   },
   detail_Mess_show(){
@@ -172,14 +184,16 @@ Page({
     this.setData({
       itshowAll:'none',
       itcloseAll:'block',
-      it_show:'block'
+      it_show:'block',
+      selectMore:1
     })
   },
   iteclose_close(){
     this.setData({
       itshowAll: 'block',
       itcloseAll: 'none',
-      it_show:'none'
+      it_show:'none',
+      selectMore: 0
     })
   },
   addMessUser_mess(){
@@ -249,6 +263,7 @@ Page({
       addMessUsermore: 'none',
       hotelMess: 'block'
     })
+    this.getMessSort()
   },
   addMoreEdit(){
     this.setData({
@@ -269,7 +284,7 @@ Page({
       conEditDel:'none'
     })
   },
-  avticeShow(){
+  activesShow(){
     var animation = wx.createAnimation({
       duration: 400,
       timingFunction: '"linear"',
@@ -286,10 +301,29 @@ Page({
       conEditDel: 'block'
     })
   },
+  activeShow(){
+    this.setData({
+      actives: 'block',
+      active: 'none',
+      conEditDel: 'none'
+    })
+  },
   chinaNamesInput:function(e){
      this.setData({
        chinaNames: e.detail.value
      })
+  },
+  tarCheckedShow(){
+    this.setData({
+      tarShow: 'display:block',
+      tarClose: 'display:none',
+    })
+  },
+  tarCheckedClose(){
+    this.setData({
+      tarShow: 'display:none',
+      tarClose: 'display:block',
+    })
   },
   /**
    * 获取数据
@@ -348,27 +382,44 @@ Page({
     //   }
     // })
   },
-  getMess_image(){
-    var that=this
-    var tes = that.data.test;
+
+  /**
+   * 获取预订房间信息
+   */
+  room_infomation(){
+    var that = this
     wx.request({
-      url: 'https://m.ctrip.com/restapi/soa2/12455/prod/json/SearchProduct?_fxpcqlniredt=09031047311234998233&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003546&__gw_platform=H5',
-      data: { "cityid": 2, "rentType": "0", "orderBy": 0, "pindex": 1, "keywords": "", "filterTitle": null, "cityname": "上海", "conds": [{ "cond": "date", "value": "2019-11-15,2019-11-16" }], "userDataPos": { "cityId": "2", "lat": "31.248194094262946", "lng": "121.4879869806514" }, "sequenceId": "4f4b07ce-16df-5f3e-691b-a1966096bd9b", "pageCode": "600003546", "head": { "cid": "09031139211104612799", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "2" }, { "name": "platform", "value": "IOS" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
-      method: 'post',
-      success: function(res) {
-        console.log(res.data.product[0])
+      url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendProductDetail?_fxpcqlniredt=09031047311234998233&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
+      data: { "pid": `${that.data.room_id}`, "cktime": "" + that.data.startTime +"", "ottime": ""+that.data.endTime+"", "head": { "cid": "09031047311234998233", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "sauth": "C7DD4447C4498AAAF11B630663B927D1DE248F3F83497F5C5ADEE016265E8D2BAABCFF1792EEF3BA3ABD3582CBEFFC4066F84125158244F65FF64A22FE721186B0ACF221DBB7C263A39A21A76DB91161D71BFEC81DD6198760E2C5A02D53E167", "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+that.data.city_id+"" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      method:'post',
+      success: res =>{
+        console.log(res.data.product)
         that.setData({
           test: res.data.product
         })
-        console.log(tes)
       }
     })
   },
+  room_Mess(){
+    var that = this
+    wx.request({
+      url: 'https://m.ctrip.com/restapi/soa2/16593/getHouse?_fxpcqlniredt=09031020411241191017&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003553&__gw_platform=H5',
+      data: { "args": "{\"parameter\":{\"unitID\":8491554}}", "head": { "cid": "09031020411241191017", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "allianceSid", "value": "1693366" }, { "name": "allianceId", "value": "66672" }, { "name": "awakeUnion", "value": "{\"OUID\":\"\",\"AllianceID\":\"66672\",\"SID\":\"1693366\",\"SourceID\":\"\",\"AppID\":\"\",\"OpenID\":\"\"}" }, { "name": "terminaltype", "value": "20" }, { "name": "devicetype", "value": "iPhone" }, { "name": "devicebrand", "value": "undefined" }, { "name": "devicephone", "value": "iPhone" }, { "name": "browsername", "value": "Safari" }, { "name": "browserver", "value": "604.1" }, { "name": "os", "value": "IOS" }, { "name": "osver", "value": "11.0" }, { "name": "channelid", "value": "2" }, { "name": "page", "value": "600003553" }, { "name": "refpage", "value": "0e6c9d5b-5682-edd2-8fc6-f82fbab725e0" }, { "name": "currentpage", "value": "cae096af-0263-df95-ce64-98f47841b54c" }, { "name": "pagename", "value": "book" }, { "name": "vid", "value": "1574666495251.1ihilu" }, { "name": "la", "value": "" }, { "name": "lo", "value": "" }, { "name": "geoType", "value": "" }, { "name": "traceid", "value": "c1dc266d-646c-a557-b1a0-fd5ebb958c05" }, { "name": "ust", "value": "10001" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      method: 'post',
+      success: (res) => {
+        console.log(JSON.parse(res.data.result).data)
+        that.setData({
+          tests: JSON.parse(res.data.result).data
+        })
+      }
+    })
+  },
+
   /**
    * 选择入住人
    */
   formSubmit(e){
-    console.log(e)
+    // console.log(e)
     var that = this;
     var name=e.detail.value.chinaName;
     var card=e.detail.value.cardId;
@@ -379,14 +430,92 @@ Page({
         duration: 2000,
       })
     }
-    that.setData({
-      chinaName: e.detail.value.chinaName,
-      cardId: e.detail.value.cardId
-    })
+    if (!/^((?![\u3000-\u303F])[\u2E80-\uFE4F]|\·)*(?![\u3000-\u303F])[\u2E80-\uFE4F](\·)*$/.test(name)) {
+      wx.showToast({
+        title: '请输入正确的姓名',
+        icon: 'none',
+        duration: 2000,
+      })
+    }
+    if (!/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(card)) {
+      wx.showToast({
+        title: '请输入正确的身份证',
+        icon: 'none',
+        duration: 2000,
+      })
+    } 
+    if (name !="" && card !="" && /^((?![\u3000-\u303F])[\u2E80-\uFE4F]|\·)*(?![\u3000-\u303F])[\u2E80-\uFE4F](\·)*$/.test(name) && /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(card)){
+      that.setData({
+        chinaName: e.detail.value.chinaName,
+        cardId: e.detail.value.cardId
+      })
+      wx.request({
+        url: 'http://localhost:8081/addMessCustomer',
+        data: { cusName: that.data.chinaName, cusCardId: that.data.cardId },
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        method: 'post',
+        success: (res) => {
+          console.log(res)
+          this.onLoad()
+          that.setData({
+            name: '',
+            cardId: ''
+          })
+        }
+      })
+    }
     console.log(that.data.chinaName)
     console.log(that.data.cardId)
+    
   },
-
+  // getMessCustomerAll(){
+  //   var that = this;
+  //   wx.request({
+  //     url: 'http://localhost:8081/getMessCustomer',
+  //     header: {
+  //       'Content-Type': 'application/x-www-form-urlencoded'
+  //     },
+  //     method: 'post',
+  //     success: (res) => {
+  //       console.log(res.data)
+  //       this.setData({
+  //         getMessCust:res
+  //       })
+  //     }
+  //   })
+  // },
+  onLoad:function(){
+    wx.request({
+      url: 'http://localhost:8081/getMessCustomer',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'post',
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          getMessCust:res
+        })
+      }
+    })
+  },
+  getMessSort(){
+    wx.request({
+      url: 'http://localhost:8081/getMessCustomerSort',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'post',
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          getMessSorts: res
+        })
+      }
+    })
+  },
   /**
    * 编辑入住人
    */
@@ -418,7 +547,6 @@ Page({
         editMessUser: 'none',
         addMessUsermore: 'block'
       })
-      console.log(peopleName)
     }
   },
   // edit_name(e){
@@ -441,4 +569,15 @@ Page({
   //     })
   //   }
   // },
+  getMyDay(date) {
+    var week;
+    if (date.getDay() == 0) week = "周日";
+    if (date.getDay() == 1) week = "周一";
+    if (date.getDay() == 2) week = "周二";
+    if (date.getDay() == 3) week = "周三";
+    if (date.getDay() == 4) week = "周四";
+    if (date.getDay() == 5) week = "周五";
+    if (date.getDay() == 6) week = "周六";
+    return week;
+  },
 })
