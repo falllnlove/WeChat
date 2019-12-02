@@ -19,10 +19,10 @@
     <!-- 今日甩卖 -->
     <view class="J_excitation">
       <view class="bnbbook-box bnbbook-box-activity">
-        <view class="con">
+        <view class="con" wx:if="{{test.price.originalPrice != test.price.price}}">
           <text class="txt txt-sale">
-        今日甩卖，已享9.0折！最后10小时
-        </text>
+           今日甩卖，已享9.0折！最后10小时
+          </text>
         </view>
         <view class="con">
           <text class="txt txt-conform">
@@ -63,15 +63,9 @@
         <view class="con-add J_passengersStore">
           <!-- <text class="txt-tip J_passengerAdd">至少填写一名入住人</text>
         <text class="item item-more is-tpye-1 J_passengerAdd" bindtap="addMessUser_mess">新增</text> -->
-        <block wx:for="{{getMessSorts.data}}" wx:key="key">
-          <view class="activesafter" bindtap="activesShow" style="display:{{actives}}">
-            <view class="item actives" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{item.cusName}}
-            </view>
-          </view>
-        </block>
-        <block wx:for="{{getMessSorts.data}}" wx:key="key">
-          <view class="activesbefore" bindtap="activeShow" style="display:{{active}}">
-            <view class="item active" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default>{{item.cusName}}
+         <block wx:for="{{getMessSorts}}" wx:key="key">
+          <view class="activesbefore" >
+            <view class="item {{item.isSelected?'active':''}}" data-id="{{item.cId}}" data-index="{{index}}" bindtap="activeShow">{{item.cusName}}
             </view>
           </view>
         </block>
@@ -80,16 +74,18 @@
           </view>
         </view>
         <view class="con-edit" style="display:{{conEditDel}}">
+         <block wx:for="{{getMessSorts_show}}" wx:key="key">
           <view class="J_selectedPassengers">
             <view class="item" style="content:{{showValue}}" data-id="98309944" data-name="孙燕然" data-cardno="410329200208159582" data-card="1" data-enfirstname data-enlastname data-security="0" data-isself="false" data-default="true">
               <text class="btn-o-del J_showDeletePassenger" bindtap="cust_MessShow" style="display:{{cusDel}}"></text>
-              <view class="tit" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">{{getMessSorts.data[0].cusName}}</view>
-              <view class="txt" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">身份证 {{getMessSorts.data[0].cusCardId}}</view>
+              <view class="tit" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">{{item.cusName}}</view>
+              <view class="txt" bindtap="cust_MessClose" animation="{{ain}}" display="padding-left:{{leftMove}}">身份证 {{item.cusCardId}}</view>
               <view class="btn-o-del2 J_deletePassenger" bindtap="editDel" data-id="98309944" data-default="true" style="display:{{cust_Mess_del}}">删除</view>
               <view class="items" style="display:{{arrowsShow}}"></view>
             </view>
 
           </view>
+          </block>
         </view>
       </view>
       <view class="bnbbook-contact-mobile">
@@ -171,7 +167,7 @@
         <view class="txt-2 J_totalPrice">
           {{test.price.price}}
         </view>
-        <view class="txt-3" id="J_minusOrNot" data-amount="45.00" wx:if="{{test.price.originalPrice != test.price.price}}">(优惠已减¥{{test.price.originalPrice}}.00)</view>
+        <view class="txt-3" id="J_minusOrNot" data-amount="45.00" wx:if="{{test.price.originalPrice != test.price.price}}">(优惠已减¥{{test.price.discountPrice.discountTotalPrice}}.00)</view>
       </view>
       <view class="con-2">
         <text class="btn-o-more" id="J_orderDetail" bindtap="ordernotice_show">
@@ -203,7 +199,7 @@
           </view>
           <view class="particulars-list particulars-list-coupon" wx:if="{{test.price.originalPrice != test.price.price}}">
             <view>
-              <text class="order-price">-¥45</text>
+              <text class="order-price">-¥{{test.price.discountPrice.discountTotalPrice}}</text>
               <text class="active">特惠活动</text>
               <text class="order-activity">(已选择最佳优惠)</text>
             </view>
@@ -221,7 +217,8 @@
         </view>
         <view class="particulars-list payment-list">
           <view>
-            <text class="order-price pay-price">¥{{livePeoplePayPrice}}</text>
+            <text class="order-price pay-price">¥{{test.price.price}}</text>
+            <text class="order-price pay-price" wx:if="{{test.price.originalPrice != test.price.price}}">¥{{test.price.originalPric}}</text>
             <text class="order-pay">线上支付</text>
           </view>
         </view>
@@ -388,16 +385,7 @@
                     <text class="ico"></text>
                     <text class="txt">{{page.name}}</text>
                   </view>
-             </block>
-             <!-- <block wx:for="{{tests.unitDetail.unitFacilityGroups}}" wx:key="key">
-                <block wx:for="{{item.unitFacilities}}" wx:key="key" wx:for-item="page" wx:if="{{boxSelectMore==1 && boxIndex>=8}}">
-                  <view class="item item-device-{{page.icon}}">
-                    <text class="ico"></text>
-                    <text class="txt">{{page.name}}</text>
-                  </view>
-                </block>
-             </block> -->
-             
+             </block>             
           </view>
           <view class="btn-o-more J_showMoreFac is-type-0" style="display: {{showAll}};" bindtap="messAll_show">
             查看全部51项设施
@@ -568,14 +556,12 @@
         <text class="cdark">1</text>位
       </view>
       <view class="taker-select">
-       <block wx:for="{{getMessCust.data}}" wx:key="key">
+       <block wx:for="{{getMessCust}}" wx:key="key">
             <view class="J_passengerSelect " style="padding-left:1.65rem;height:50px;" data-iscomplete="true" data-id="98309944" data-cardtypename="身份证" data-cardtype="1" data-name="孙燕然" data-enfirstname data-enlastname data-security="0" data-isself="false">
               <view class="ico-edit J_passengerEdit" bindtap="addMoreEdit"></view>
               <view class="passenger-content">
-                <text class="in-checkbox-tar in-checkbox-tar2" bindtap="tarCheckedShow" for="a1" style="{{tarShow}}"></text>
-                <!-- <text class="in-checkbox-tar in-checkbox-tar2" for="a1" style="display: block"></text> -->
-                <!-- <text class="in-checkbox-tar1 in-checkbox-tar3" for="a1" style="display: block"></text> -->
-                <text class="index-tar" bindtap="tarCheckedClose" style="{{tarClose}}"></text>
+                <view class="in-checkbox-tar in-checkbox-tar2 {{item.isSelected?'in-tar::after':''}}" data-index="{{index}}" bindtap="messTar_Show"></view>
+                <view class="index-tar" bindtap="messTar_Close" style="display:{{tarClose}}"></view>
                 <view class="txt-name">{{item.cusName}}
                   <view class="tak-att-icon"></view>
                 </view>

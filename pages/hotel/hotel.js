@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    cusactive:null,
     stayTimes:'1晚',
     arriveWeekTime:'周四',
     leaveWeekTime: '周五',
@@ -50,15 +51,21 @@ Page({
     city_id : 2,
     city : '上海',
     room_id: 776248552,
-    startTime: '2019-11-25',
-    endTime:'2019-11-26',
+    startTime: '2019-12-02',
+    endTime:'2019-12-03',
     showmoreMessit:'display:none',
     selectMore:0,
     boxSelectMore:0,
-    getMessCust:null,
+    getMessCust:[],
     getMessSorts:null,
-    tarShow:'display:block',
-    tarClose:'display:none',
+    tarShow:'block',
+    tarClose:'none',
+    checkedTar:null,
+    ind:false,
+    getMessSorts_show:[],
+    // colorBorder: 'border: 1px solid #999;',
+    checkboxSelected:null,
+    getMessCustomer:null,
   },
 
   /**
@@ -66,7 +73,6 @@ Page({
    */
   onLoad: function (options) {
     if(options.room_id != null){
-
       var start = options.startTime
       var end = options.endTime
       var arriveWeekTime = getMyDay(new Date(start))
@@ -82,6 +88,15 @@ Page({
         leaveWeekTime: leaveWeekTime
       })
     }
+    this.onLoads()
+    var that = this
+    that.onLoads()
+      .then(res => {
+        that.data.getMessCust['0'].isSelected = true
+        that.setData({
+          getMessCust: that.data.getMessCust
+        })
+      })
   },
 
   /**
@@ -90,7 +105,15 @@ Page({
   onReady: function () {
     this.room_infomation()
     this.room_Mess()
-    this.getMessSort()
+    var that = this
+    that.getMessSort()
+    .then(res => {
+      that.data.getMessSorts['0'].isSelected = true
+      that.setData({
+        getMessSorts: that.data.getMessSorts
+      })
+    })
+    
   },
 
   /**
@@ -208,20 +231,6 @@ Page({
       hotelMess: 'block'
     })
   },
-  // cust_MessShow(){
-  //   var animation= wx.createAnimation({
-  //     duration: 400,
-  //     timingFunction: '"linear"',
-  //     delay: 0,
-  //     transformOrigin: '"50% 50% 0"',
-  //   })
-  //   animation.translate(-50).step()
-  //   this.setData({
-  //     cust_Mess_del:'block',
-  //     cusDel: 'none',
-  //     ani: animation.export
-  //   })
-  // },
   cust_MessShow:function(){
     var animation = wx.createAnimation({
       duration: 400,
@@ -253,17 +262,33 @@ Page({
     })
   },
   addMessUsermoreShow(){
+    var that = this
+    that.onLoads()
+      .then(res => {
+        that.data.getMessCust['0'].isSelected = true
+        that.setData({
+          getMessCust: that.data.getMessCust
+        })
+      })
     this.setData({
       addMessUsermore:'block',
       hotelMess:'none'
     })
+    
   },
   addMessUsermoreClose(){
-    this.setData({
+    var that=this
+    that.getMessSort()
+      .then(res => {
+        that.data.getMessSorts['0'].isSelected = true
+        that.setData({
+          getMessSorts: that.data.getMessSorts
+        })
+    })
+    that.setData({
       addMessUsermore: 'none',
       hotelMess: 'block'
     })
-    this.getMessSort()
   },
   addMoreEdit(){
     this.setData({
@@ -301,86 +326,46 @@ Page({
       conEditDel: 'block'
     })
   },
-  activeShow(){
-    this.setData({
-      actives: 'block',
-      active: 'none',
-      conEditDel: 'none'
-    })
+  activeShow(e){
+    var index = e.currentTarget.dataset.index;
+    var item = this.data.getMessSorts[index];
+    item.isSelected = !item.isSelected;
+    if (item.isSelected){
+      this.data.getMessSorts_show.push(item)
+      this.setData({
+        getMessSorts: this.data.getMessSorts,
+        getMessSorts_show: this.data.getMessSorts_show
+      });
+    }else{
+      this.data.getMessSorts_show.splice((index-1),1)
+      this.setData({
+        getMessSorts: this.data.getMessSorts,
+        getMessSorts_show: this.data.getMessSorts_show
+      });
+    }
   },
   chinaNamesInput:function(e){
      this.setData({
        chinaNames: e.detail.value
      })
   },
-  tarCheckedShow(){
-    this.setData({
-      tarShow: 'display:block',
-      tarClose: 'display:none',
-    })
-  },
-  tarCheckedClose(){
-    this.setData({
-      tarShow: 'display:none',
-      tarClose: 'display:block',
-    })
-  },
-  /**
-   * 获取数据
-   */
-  spendPrice(){
-    wx.request({
-      url: 'http://cuinef.natappfree.cc/index',
-      success(res){
-        console.log(res)
-      }
-    })
-    // var that=this;
-    // var peopleName = this.data.livepeopleName;
-    // var peoplePhone = this.data.phoneNumber;
-    // var peopleArriveTime = this.data.arriveTime1;
-    // var peopleArriveTime2 = this.data.arriveTime2;
-    // var peopleLeaveTime = this.data.leaveTime1;
-    // var peopleLeaveTime2 = this.data.leaveTime2;
-    // var peopleNums = this.data.peoplenums;
-    // var peopleCardId = this.data.liveperopleCardId;
-    // var peopleDespoit = this.data.despoit;
-    // var peoplePayPrice = this.data.livePeoplePayPrice;
-    // var peopleTypeId = this.data.house_type_id;
-    // var peopleNumId = this.data.house_num_id;
-    // var peopleHouseNum = this.data.house_num;
-    // var timestamp = Date.parse(new Date());
-    // var date = new Date(timestamp);
-    // //获取年份  
-    // var Y = date.getFullYear();
-    // var hour = date.getHours();
-    // var minute = date.getMinutes();
-    // var second = date.getSeconds();
-    // var peoplerarrive = Y + '-' + peopleArriveTime + '-' + peopleArriveTime2 + ' ' + hour + ':' + minute + ':' + second;
-    // var peopleleave = Y + '-' + peopleLeaveTime + '-' + peopleLeaveTime2 + ' ' + hour + ':' + minute + ':' + second;
-    // console.log(peoplerarrive)
-    // console.log(peopleName)
-    // wx.request({
-    //   url: 'http://localhost:8081/addReserveMess', 
-    //   data: { linkManName: peopleName, phoneNum: peoplePhone, arriveTime: peoplerarrive, leaveTime: peopleleave, peopleNum: peopleNums, cardId: peopleCardId, deposit: peopleDespoit, housePrice: peoplePayPrice, houseTypeId: peopleTypeId, houseNumId: peopleNumId, housNum: peopleHouseNum},
-    //   // header: { 'Content-type': 'application/x-www-form-urlencoded' } ,
-    //   header: {
-    //     'Content-Type': 'application/x-www-form-urlencoded'
-    //   },
-    //   method:'post',
-    //   success:function(res){
-    //     console.log(res.data)
-    //     wx.showModal({
-    //       title: '提示',
-    //       content: '支付成功',
-    //       success: function (res) {
-    //         if (res.confirm) {
-    //           console.log('用户点击确定')
-    //         }
-    //       }
-    //     })
-    //   }
+  messTar_Show(e){
+    // this.setData({
+    //   checkboxSelected: e.currentTarget.dataset.index,
     // })
+    var index = e.currentTarget.dataset.index;
+    var item = this.data.getMessCust[index];
+    console.log(item)
+    item.isSelected = !item.isSelected;
+    this.setData({
+      getMessCust: this.data.getMessCust,
+    });
+  },
+  messTar_Close(){
+    this.setData({
+      tarShow: 'block',
+      tarClose: 'none',
+    })
   },
 
   /**
@@ -389,8 +374,8 @@ Page({
   room_infomation(){
     var that = this
     wx.request({
-      url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendProductDetail?_fxpcqlniredt=09031047311234998233&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
-      data: { "pid": `${that.data.room_id}`, "cktime": "" + that.data.startTime +"", "ottime": ""+that.data.endTime+"", "head": { "cid": "09031047311234998233", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "sauth": "C7DD4447C4498AAAF11B630663B927D1DE248F3F83497F5C5ADEE016265E8D2BAABCFF1792EEF3BA3ABD3582CBEFFC4066F84125158244F65FF64A22FE721186B0ACF221DBB7C263A39A21A76DB91161D71BFEC81DD6198760E2C5A02D53E167", "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+that.data.city_id+"" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendProductDetail?_fxpcqlniredt=09031051411400011450&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
+      data: { "pid": `${that.data.room_id}`, "cktime": "" + that.data.startTime + "", "ottime": "" + that.data.endTime + "", "head": { "cid": "09031051411400011450", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "sauth": "C7DD4447C4498AAAF11B630663B927D1DE248F3F83497F5C5ADEE016265E8D2BAABCFF1792EEF3BA3ABD3582CBEFFC4066F84125158244F65FF64A22FE721186B0ACF221DBB7C263A39A21A76DB91161D71BFEC81DD6198760E2C5A02D53E167", "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+that.data.city_id+"" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method:'post',
       success: res =>{
         console.log(res.data.product)
@@ -399,6 +384,7 @@ Page({
         })
       }
     })
+    
   },
   room_Mess(){
     var that = this
@@ -407,7 +393,6 @@ Page({
       data: { "args": "{\"parameter\":{\"unitID\":8491554}}", "head": { "cid": "09031020411241191017", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "allianceSid", "value": "1693366" }, { "name": "allianceId", "value": "66672" }, { "name": "awakeUnion", "value": "{\"OUID\":\"\",\"AllianceID\":\"66672\",\"SID\":\"1693366\",\"SourceID\":\"\",\"AppID\":\"\",\"OpenID\":\"\"}" }, { "name": "terminaltype", "value": "20" }, { "name": "devicetype", "value": "iPhone" }, { "name": "devicebrand", "value": "undefined" }, { "name": "devicephone", "value": "iPhone" }, { "name": "browsername", "value": "Safari" }, { "name": "browserver", "value": "604.1" }, { "name": "os", "value": "IOS" }, { "name": "osver", "value": "11.0" }, { "name": "channelid", "value": "2" }, { "name": "page", "value": "600003553" }, { "name": "refpage", "value": "0e6c9d5b-5682-edd2-8fc6-f82fbab725e0" }, { "name": "currentpage", "value": "cae096af-0263-df95-ce64-98f47841b54c" }, { "name": "pagename", "value": "book" }, { "name": "vid", "value": "1574666495251.1ihilu" }, { "name": "la", "value": "" }, { "name": "lo", "value": "" }, { "name": "geoType", "value": "" }, { "name": "traceid", "value": "c1dc266d-646c-a557-b1a0-fd5ebb958c05" }, { "name": "ust", "value": "10001" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
       method: 'post',
       success: (res) => {
-        console.log(JSON.parse(res.data.result).data)
         that.setData({
           tests: JSON.parse(res.data.result).data
         })
@@ -419,7 +404,6 @@ Page({
    * 选择入住人
    */
   formSubmit(e){
-    // console.log(e)
     var that = this;
     var name=e.detail.value.chinaName;
     var card=e.detail.value.cardId;
@@ -457,7 +441,6 @@ Page({
         },
         method: 'post',
         success: (res) => {
-          console.log(res)
           this.onLoad()
           that.setData({
             name: '',
@@ -466,27 +449,11 @@ Page({
         }
       })
     }
-    console.log(that.data.chinaName)
-    console.log(that.data.cardId)
     
   },
-  // getMessCustomerAll(){
-  //   var that = this;
-  //   wx.request({
-  //     url: 'http://localhost:8081/getMessCustomer',
-  //     header: {
-  //       'Content-Type': 'application/x-www-form-urlencoded'
-  //     },
-  //     method: 'post',
-  //     success: (res) => {
-  //       console.log(res.data)
-  //       this.setData({
-  //         getMessCust:res
-  //       })
-  //     }
-  //   })
-  // },
-  onLoad:function(){
+  onLoads:function(){
+    var that = this
+    return new Promise(function (resolve, reject) {
     wx.request({
       url: 'http://localhost:8081/getMessCustomer',
       header: {
@@ -494,33 +461,46 @@ Page({
       },
       method: 'post',
       success: (res) => {
-        console.log(res)
-        this.setData({
-          getMessCust:res
+        var getMessCust = []
+        res.data.forEach(item => {
+          item['isSelected'] = false
+          getMessCust.push(item)
         })
+        that.setData({
+          getMessCust:res.data
+        })
+        console.log(that.data.getMessCust)
       }
+    })
     })
   },
   getMessSort(){
-    wx.request({
-      url: 'http://localhost:8081/getMessCustomerSort',
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      method: 'post',
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          getMessSorts: res
-        })
-      }
+    var that = this
+    return new Promise(function (resolve, reject) {
+      wx.request({
+        url: 'http://localhost:8081/getMessCustomerSort',
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        method: 'post',
+        success: (res) => {
+          var getMessSorts = []
+          res.data.forEach(item => {
+            item['isSelected'] = false
+            getMessSorts.push(item)
+          })
+          that.setData({
+            getMessSorts: getMessSorts
+          })
+          resolve(222)
+        }
+      })
     })
   },
   /**
    * 编辑入住人
    */
   a_formSubmit(e){
-    console.log(e)
     var peopleName=this.data.livepeopleName;
     var names = e.detail.value.chinaNames;
     var cards = e.detail.value.cardIds

@@ -2513,7 +2513,7 @@ input[type="checkbox"]:checked, .checked {
 .in-checkbox-tar {
     width: 0.8rem;
     height: 0.8rem;
-    border: 1px solid #ff6d57;
+    border: 1px solid #999;
     background-color: #fff;
 }
 .in-checkbox:checked + .in-checkbox-tar:after, .voice-checkbox-tar:after {
@@ -2521,7 +2521,10 @@ input[type="checkbox"]:checked, .checked {
     top: 1px;
     left: 0.15rem;
 }
-.in-checkbox-tar:after {
+.in-tar{
+    border: 1px solid #ff6d57;
+}
+.in-tar::after{
     content: '';
     position: absolute;
     width: 0.65rem;
@@ -2531,6 +2534,16 @@ input[type="checkbox"]:checked, .checked {
     box-shadow: 0 -3px 0 #fff inset, 0 2px 0 #fff;
     transform: rotate(-45deg);
 }
+/* .in-checkbox-tar:after {
+    content: '';
+    position: absolute;
+    width: 0.65rem;
+    height: 0.25rem;
+    border-left: 2px solid #ff6d57;
+    border-bottom: 2px solid #ff6d57;
+    box-shadow: 0 -3px 0 #fff inset, 0 2px 0 #fff;
+    transform: rotate(-45deg);
+} */
 .taker-select .in-checkbox-tar3 {
     border-radius: 0;
     background-clip: content-box;
