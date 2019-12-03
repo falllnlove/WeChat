@@ -43,7 +43,9 @@ Page({
     week2 : '明天',
     citylist:null,
     lunbo_img_list : null,
-    ii : 0
+    ii : 0,
+    sTime: `${new Date().getFullYear()}-${(new Date().getMonth() + 1)}-${new Date().getDate().toString().length >= 2 ? '' + new Date().getDate() : '0' + new Date().getDate()}`,
+    eTime: `${new Date().getFullYear()}-${(new Date().getMonth() + 1)}-${(new Date().getDate() + 1).toString().length >= 2 ? '' + (new Date().getDate() + 1) : '0' + (new Date().getDate() + 1)}`,
   },
 
   /**
@@ -471,7 +473,7 @@ Page({
   skip_room_list(e){
     var that = this
     wx.navigateTo({
-      url: '../houseList/houseList?city_id=' + that.data.city_id + '&city=' + that.data.city + '&startTime=' + e.currentTarget.dataset.startime + '&endTime=' + e.currentTarget.dataset.endtime,
+      url: '../houseList/houseList?city_id=' + that.data.city_id + '&city=' + that.data.city + '&startTime=' + e.currentTarget.dataset.starttime + '&endTime=' + e.currentTarget.dataset.endtime,
     })
   },
 
@@ -501,6 +503,8 @@ Page({
     var endTime = ''
     that.rili.xianShi({
       data: function (res) {
+        var sTime = null
+        var eTime = null
         if (res != null) {
           if (res.length == 1) {
             starTime = res[0].data.split('-')[1] + '.' + res[0].data.split('-')[2]
@@ -508,6 +512,8 @@ Page({
           else if (res.length == 2) {
             var week1 = that.getMyDay(new Date(res[0].data))
             var week2 = that.getMyDay(new Date(res[1].data))
+            sTime = res[0].data
+            eTime = res[1].data
             starTime = res[0].data.split('-')[1] + '.' + res[0].data.split('-')[2]
             endTime = res[1].data.split('-')[1] + '.' + res[1].data.split('-')[2]
             day = res[1].chaDay
@@ -521,6 +527,8 @@ Page({
           week2 = '明天'
         }
         that.setData({
+          sTime: sTime,
+          eTime: eTime,
           starTime: starTime,
           endTime: endTime,
           day: day,

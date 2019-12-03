@@ -20,6 +20,8 @@ Page({
     lon:null,
     startTime: util.month_and_day(new Date()),
     endTime: util.tomorrow(new Date()),
+    sTime :null,
+    eTime : null
   },
 
   /**
@@ -37,8 +39,10 @@ Page({
         city_id: options.city_id,
         lat: options.lat,
         lon: options.lon,
-        startTime: new Date().getFullYear() + '-' + options.startTime.split('.')[0] + '-' + options.startTime.split('.')[1],
-        endTime: new Date().getFullYear() + '-' + options.endTime.split('.')[0] + '-' + options.endTime.split('.')[1]
+        startTime: options.startTime,
+        endTime: options.endTime,
+        sTime: options.startTime.split('-')[1] + '-' + options.startTime.split('-')[2],
+        eTime: options.endTime.split('-')[1] + '-' + options.endTime.split('-')[2]
       })
     }
     this.get_room_list_my(),

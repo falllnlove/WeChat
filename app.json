@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/cate/cate",
-    "pages/myapp/myapp",
     
+    "pages/myapp/myapp",
+    "pages/cate/cate",
     "pages/city_list/city_list",
     "pages/houseList/houseList",
     "pages/room_par/room_par",

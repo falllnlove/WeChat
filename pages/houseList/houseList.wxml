@@ -13,12 +13,12 @@
       <view class="con-date J_selectDate">
         <view class="txt-checkin">
           <text class="txt">住</text>
-          <text class="val J_cktime">11-13</text>
+          <text class="val J_cktime">{{sTime}}</text>
         </view>
 
         <view class="txt-checkout">
           <text class="txt">离</text>
-          <text class="val J_ottime">11-14</text>
+          <text class="val J_ottime">{{eTime}}</text>
         </view>
       </view>
       <view class="con-input">

@@ -116,13 +116,9 @@ Page({
   get_room_info(){
     var that = this
     return new Promise(function (resolve, reject) {
-      var day2 = new Date();
-      day2.setTime(day2.getTime());
-      var start = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
-      var end = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + (day2.getDate() + 1);
       wx.request({
         url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendProductDetail?_fxpcqlniredt=09031090411970318120&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
-        data: { "pid": that.data.room_id, "cktime": ""+ start +"", "ottime": ""+ end +"", "head": { "cid": "09031090411970318120", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+ that.data.city_id +"" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+        data: { "pid": that.data.room_id, "cktime": ""+ that.data.startTime +"", "ottime": ""+ that.data.endTime +"", "head": { "cid": "09031090411970318120", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+ that.data.city_id +"" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
         method: 'post',
         success(res) {
           that.setData({
@@ -137,7 +133,6 @@ Page({
         }
       })
     })
-    return p
   },
 
   /**

@@ -44,7 +44,7 @@
       </view>
     </view>
 </view>
-<view class="btn-o-search j_search_btn" data-city_id="{{city_id}}" data-city="{{city}}" data-lat="{{latitude}}" data-lon="{{longitude}}" data-starTime="{{starTime}}" data-endTime="{{endTime}}" bindtap="skip_room_list">查找民宿</view>
+<view class="btn-o-search j_search_btn" data-city_id="{{city_id}}" data-city="{{city}}" data-lat="{{latitude}}" data-lon="{{longitude}}" data-startTime="{{sTime}}" data-endTime="{{eTime}}" bindtap="skip_room_list">查找民宿</view>
 <view class="con-btns">
   <view class="btn-browser j_my_scan">
     <view class="ico"></view>
