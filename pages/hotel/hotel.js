@@ -51,12 +51,12 @@ Page({
     city_id : 2,
     city : '上海',
     room_id: 776248552,
-    startTime: '2019-12-02',
-    endTime:'2019-12-03',
+    startTime: '2019-12-03',
+    endTime:'2019-12-04',
     showmoreMessit:'display:none',
     selectMore:0,
     boxSelectMore:0,
-    getMessCust:[],
+    getMessCust:'',
     getMessSorts:null,
     tarShow:'block',
     tarClose:'none',
@@ -66,6 +66,7 @@ Page({
     // colorBorder: 'border: 1px solid #999;',
     checkboxSelected:null,
     getMessCustomer:null,
+    dex:0,
   },
 
   /**
@@ -89,14 +90,6 @@ Page({
       })
     }
     this.onLoads()
-    var that = this
-    that.onLoads()
-      .then(res => {
-        that.data.getMessCust['0'].isSelected = true
-        that.setData({
-          getMessCust: that.data.getMessCust
-        })
-      })
   },
 
   /**
@@ -112,8 +105,16 @@ Page({
       that.setData({
         getMessSorts: that.data.getMessSorts
       })
+      var item = this.data.getMessSorts['0'];
+      item.isSelected = item.isSelected;
+      if (item.isSelected) {
+        this.data.getMessSorts_show.push(item)
+        this.setData({
+          getMessSorts: this.data.getMessSorts,
+          getMessSorts_show: this.data.getMessSorts_show
+        });
+      }
     })
-    
   },
 
   /**
@@ -261,30 +262,24 @@ Page({
       arrowsShow: 'block'
     })
   },
-  addMessUsermoreShow(){
+  addMessUsermoreShow(e){
     var that = this
-    that.onLoads()
-      .then(res => {
-        that.data.getMessCust['0'].isSelected = true
-        that.setData({
-          getMessCust: that.data.getMessCust
-        })
-      })
-    this.setData({
-      addMessUsermore:'block',
-      hotelMess:'none'
+    that.data.getMessCust['0'].isSelected = true
+    that.setData({
+      getMessCust: that.data.getMessCust,
+      addMessUsermore: 'block',
+      hotelMess: 'none',
     })
-    
   },
   addMessUsermoreClose(){
     var that=this
-    that.getMessSort()
-      .then(res => {
-        that.data.getMessSorts['0'].isSelected = true
-        that.setData({
-          getMessSorts: that.data.getMessSorts
-        })
-    })
+    // that.getMessSort()
+    //   .then(res => {
+    //     that.data.getMessSorts['0'].isSelected = true
+    //     that.setData({
+    //       getMessSorts: that.data.getMessSorts
+    //     })
+    // })
     that.setData({
       addMessUsermore: 'none',
       hotelMess: 'block'
@@ -343,6 +338,10 @@ Page({
         getMessSorts_show: this.data.getMessSorts_show
       });
     }
+    this.setData({
+      dex:index
+    })
+    // console.log(this.data.dex)
   },
   chinaNamesInput:function(e){
      this.setData({
@@ -355,11 +354,11 @@ Page({
     // })
     var index = e.currentTarget.dataset.index;
     var item = this.data.getMessCust[index];
-    console.log(item)
     item.isSelected = !item.isSelected;
     this.setData({
       getMessCust: this.data.getMessCust,
     });
+    console.log(item)
   },
   messTar_Close(){
     this.setData({
@@ -374,8 +373,8 @@ Page({
   room_infomation(){
     var that = this
     wx.request({
-      url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendProductDetail?_fxpcqlniredt=09031051411400011450&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
-      data: { "pid": `${that.data.room_id}`, "cktime": "" + that.data.startTime + "", "ottime": "" + that.data.endTime + "", "head": { "cid": "09031051411400011450", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "sauth": "C7DD4447C4498AAAF11B630663B927D1DE248F3F83497F5C5ADEE016265E8D2BAABCFF1792EEF3BA3ABD3582CBEFFC4066F84125158244F65FF64A22FE721186B0ACF221DBB7C263A39A21A76DB91161D71BFEC81DD6198760E2C5A02D53E167", "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": ""+that.data.city_id+"" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" },
+      url: 'https://m.ctrip.com/restapi/soa2/12455/json/LegendProductDetail?_fxpcqlniredt=09031079310803566627&__gw_appid=99999999&__gw_ver=1.0&__gw_from=600003547&__gw_platform=H5',
+      data: `{ "pid": ${that.data.room_id}, "cktime": "${that.data.startTime}", "ottime": "${that.data.endTime}", "head": { "cid": "09031079310803566627", "ctok": "", "cver": "1.0", "lang": "01", "sid": "8888", "syscode": "09", "auth": null, "extension": [{ "name": "webp", "value": "1" }, { "name": "cityid", "value": "${that.data.city_id}" }, { "name": "platform", "value": "Other" }, { "name": "source", "value": "2" }, { "name": "protocal", "value": "https" }] }, "contentType": "json" }`,
       method:'post',
       success: res =>{
         console.log(res.data.product)
@@ -451,7 +450,7 @@ Page({
     }
     
   },
-  onLoads:function(){
+  onLoads(){
     var that = this
     return new Promise(function (resolve, reject) {
     wx.request({
@@ -467,9 +466,8 @@ Page({
           getMessCust.push(item)
         })
         that.setData({
-          getMessCust:res.data
+          getMessCust: getMessCust
         })
-        console.log(that.data.getMessCust)
       }
     })
     })

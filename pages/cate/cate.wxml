@@ -1,0 +1,81 @@
+<!--cate.wxml-->
+<wxs src='../../wxs/utils.wxs' module='tools' />
+<view class="js_c_pane l-sightheadouter homeg_outer ">
+  <view class="l-sightheadouter__headwrap js_transparent" style="opacity: 1;">
+    <view class="l-customhead">
+      <view class="l-customhead__center">
+        <view class="searchbox">
+          <view class="searchbox__city js_choice_city">
+            <text class="js_title_district_name">上海</text>
+          </view>
+          <view class="searchbox__text js_search_input">
+            <text class="common-iconfont ui-search"></text>
+            <text class="js_input_tip">输入餐厅名、关键字</text>
+          </view>
+        </view>
+      </view>
+      <view class="l-customhead__right js_correctinfo">
+        <text class="common-iconfont ui-icon-collect"></text>
+      </view>
+    </view>
+    <view class="view_collect js_view_collect" style="display:none">
+      在此查看收藏
+      <text class="close">+</text>
+      <text></text>
+    </view>
+  </view>
+  <view class="l-sightheadouter__headwrap l-sightheadouter__headwrap--white js_grey" style="z-index: 1005; opacity: 0;">
+    <view class="l-customhead">
+      <view class="l-customhead__center">
+        <view class="searchbox">
+          <view class="searchbox__city js_choice_city">
+            <text class="js_title_district_name">上海</text>
+          </view>
+          <view class="searchbox__text js_search_input">
+            <text class="common-iconfont ui-search"></text>
+            <text class="js_input_tip">输入餐厅名、关键字</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view id="scroll_main_pane" class="l-sightheadouter__head-srollview home_e_wrap js_scroll_main_pane home_f_wrap" style="padding-bottom: 50px; height: 754px;">
+    <view style="top: 49px; left: 0px; width: 100%; position: static;">
+      <view class="homeg_topic_swiper js_rank_msl new_food_home">
+        <view class="js_msl_food_rank_box msl_food_rank_box">
+          <view class="headBox">
+            <view class="left">
+              <view class="redLine"></view>
+              <image class="rank_hasname" src="https://pages.c-ctrip.com/you/foods/food_home_rank_hasname.png?v=20191128_16_51"></image>
+              <view class="rank_head_eat">跟着榜单吃</view>
+            </view>
+            <view class="js_msl_strategy right">
+              查看全部
+              <view class="rightArrow"></view>
+            </view>
+          </view>
+          <image class="js_bg_pic bg_pic" src="https://pages.c-ctrip.com/you/foods/food_home_head_bg_pic.jpg?v=20191128_16_51" style="top: -40%;"></image>
+          <view class="js_scroll_wrapper">
+            <view class="scrollBoxTestB js_scroll_box">
+              <scroll-view scroll-x="true" style="width: 100%;white-space:nowrap;">
+                <block wx:for="{{announcement_list}}" wx:key="key">
+                  <view class="js_msl_rank itemBox firstBox" wx:if="{{index==0}}">
+                    <image src="https://dimg02.c-ctrip.com/images/1008190000017sajwBED7_D_250_300_Q90.png"></image>
+                  </view>
+                  <view data-id="{{item.id}}" class="js_msl_rank itemBox firstBox">
+                    <view class="itemImg">
+                      <image src="{{item.PicUrl}}"></image>
+                      <text class="label" wx:if="{{item.Label!=null}}">{{item.Label}}</text>
+                    </view>
+                    <view class="name">{{item.Title}}</view>
+                    <view class="desc">{{item.SubTitle}}</view>
+                  </view>
+                </block>
+              </scroll-view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
