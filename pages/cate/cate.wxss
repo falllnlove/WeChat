@@ -412,3 +412,36 @@ image{
      top:-7.6rem;
    }
 }
+.homeg_outer .l-sightheadouter__headwrap .view_collect {
+  display: inline-block;
+  color: #FFF;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  padding: 0px 12px;
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.6);
+  margin-top: -6px;
+  height: 22px;
+  line-height: 16px;
+}
+.homeg_outer .l-sightheadouter__headwrap .view_collect .close {
+  font-size: 18px;
+  margin-left: 5px;
+  display: inline-block;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: relative;
+  top: 1px;
+}
+.homeg_outer .l-sightheadouter__headwrap .view_collect text:last-child {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

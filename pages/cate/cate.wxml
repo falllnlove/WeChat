@@ -21,7 +21,7 @@
     <view class="view_collect js_view_collect" style="display:none">
       在此查看收藏
       <text class="close">+</text>
-      <text></text>
+      <text class="close_top"></text>
     </view>
   </view>
   <view class="l-sightheadouter__headwrap l-sightheadouter__headwrap--white js_grey" style="z-index: 1005; opacity: 0;">
@@ -40,7 +40,7 @@
     </view>
   </view>
   <view id="scroll_main_pane" class="l-sightheadouter__head-srollview home_e_wrap js_scroll_main_pane home_f_wrap" style="padding-bottom: 50px; height: 754px;">
-    <view style="top: 49px; left: 0px; width: 100%; position: static;">
+    <view style="top: -0.8px; left: 0px; width: 100%; position: static;">
       <view class="homeg_topic_swiper js_rank_msl new_food_home">
         <view class="js_msl_food_rank_box msl_food_rank_box">
           <view class="headBox">
@@ -75,6 +75,9 @@
             </view>
           </view>
         </view>
+      </view>
+      <view class="js_special_dish_box">
+
       </view>
     </view>
   </view>
