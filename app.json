@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/myapp/myapp",
     "pages/cate/cate",
     "pages/city_list/city_list",
