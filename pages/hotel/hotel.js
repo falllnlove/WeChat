@@ -7,13 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cusactive:null,
+    getMessById:null,
     stayTimes:'1晚',
     arriveWeekTime:'周四',
     leaveWeekTime: '周五',
     livepeopleName:'孙燕然',
     chinaName:'',
     cardId:'',
+    cusId:'',
     liveperopleCardId:'410329200208159582',
     livePeoplePayPrice:'413',
     phoneNumber:'15194537383',
@@ -51,8 +52,8 @@ Page({
     city_id : 2,
     city : '上海',
     room_id: 776248552,
-    startTime: '2019-12-03',
-    endTime:'2019-12-04',
+    startTime: '2019-12-06',
+    endTime:'2019-12-07',
     showmoreMessit:'display:none',
     selectMore:0,
     boxSelectMore:0,
@@ -286,9 +287,24 @@ Page({
     })
   },
   addMoreEdit(){
+    var that=this
+    wx.request({
+      url: 'http://hotel.51mypc.cn/getMessById',
+      data: { cusId: this.data.getMessCust[0].cId},
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'post',
+      success:(res)=>{
+        console.log(res.data)
+        that.setData({
+          getMessById:res.data
+        })
+      }
+    })
     this.setData({
       addMessUsermore:'none',
-      editMessUser:'block'
+      editMessUser:'block',
     })
   },
   editMess_close(){
@@ -406,6 +422,7 @@ Page({
     var that = this;
     var name=e.detail.value.chinaName;
     var card=e.detail.value.cardId;
+
     if(name=="" || card==""){
       wx.showToast({
         title: '请输入完整信息',
@@ -433,7 +450,7 @@ Page({
         cardId: e.detail.value.cardId
       })
       wx.request({
-        url: 'http://localhost:8081/addMessCustomer',
+        url: 'http://hotel.51mypc.cn/addMessCustomer',
         data: { cusName: that.data.chinaName, cusCardId: that.data.cardId },
         header: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -454,7 +471,7 @@ Page({
     var that = this
     return new Promise(function (resolve, reject) {
     wx.request({
-      url: 'http://localhost:8081/getMessCustomer',
+      url: 'http://hotel.51mypc.cn/getMessCustomer',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
@@ -466,7 +483,7 @@ Page({
           getMessCust.push(item)
         })
         that.setData({
-          getMessCust: getMessCust
+          getMessCust: getMessCust,
         })
       }
     })
@@ -476,7 +493,7 @@ Page({
     var that = this
     return new Promise(function (resolve, reject) {
       wx.request({
-        url: 'http://localhost:8081/getMessCustomerSort',
+        url: 'http://hotel.51mypc.cn/getMessCustomerSort',
         header: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -557,5 +574,33 @@ Page({
     if (date.getDay() == 5) week = "周五";
     if (date.getDay() == 6) week = "周六";
     return week;
+  },
+  spendPrice:function(){
+    console.log(this.data.test.price.price)
+    wx.navigateTo({
+      url: '../baidu/baidu',
+      success:(res)=>{
+        console.log(1)
+        console.log(res)
+        
+      }
+    })
+    // wx.request({
+    //   url: `http://127.0.0.1:8089/page1?price=${this.data.test.price.price}`,
+    //   method:'get',
+    //   header: {'Content-Type': 'application/x-www-form-urlencoded'},
+    //   success:(res)=>{
+    //     console.log(1)
+    //     console.log(res)
+    //     wx.navigateTo({
+    //       url: 'http://127.0.0.1:8089/success.html', //调转页面路径
+    //       success: function () {
+
+    //       }, //成功后的回调；
+    //       fail: function () { }, //失败后的回调；
+    //       complete: function () { } //结束后的回调(成功，失败都会执行)
+    //     })
+    //   }
+    // })
   },
 })

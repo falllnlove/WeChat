@@ -4,7 +4,8 @@
     "pages/hotel/hotel",
     "pages/pagedialog/pagedialog",
     "pages/logs/logs",
-    "pages/cate/cate"
+    "pages/cate/cate",
+    "pages/baidu/baidu"
   ],
   "tabBar": {
     "list": [
