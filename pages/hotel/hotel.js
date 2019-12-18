@@ -8,9 +8,11 @@ Page({
    */
   data: {
     getMessById:null,
-    stayTimes:'1晚',
-    arriveWeekTime:'周四',
-    leaveWeekTime: '周五',
+    days:1,
+    dayy:1,
+    day:'1晚',
+    arriveWeekTime:'今天',
+    leaveWeekTime: '明天',
     livepeopleName:'孙燕然',
     chinaName:'',
     cardId:'',
@@ -52,8 +54,8 @@ Page({
     city_id : 2,
     city : '上海',
     room_id: 776248552,
-    startTime: '2019-12-06',
-    endTime:'2019-12-07',
+    startTime: '2019-12-18',
+    endTime:'2019-12-19',
     showmoreMessit:'display:none',
     selectMore:0,
     boxSelectMore:0,
@@ -64,7 +66,6 @@ Page({
     checkedTar:null,
     ind:false,
     getMessSorts_show:[],
-    // colorBorder: 'border: 1px solid #999;',
     checkboxSelected:null,
     getMessCustomer:null,
     dex:0,
@@ -116,8 +117,13 @@ Page({
         });
       }
     })
+    this.lalal()
   },
-
+  lalal(){
+    this.data.dayy = this.data.days
+    console.log(this.data.days)
+    console.log(this.data.dayy)
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -578,7 +584,7 @@ Page({
   spendPrice:function(){
     console.log(this.data.test.price.price)
     wx.navigateTo({
-      url: '../baidu/baidu',
+      url:'../baidu/baidu',
       success:(res)=>{
         console.log(1)
         console.log(res)
@@ -592,15 +598,51 @@ Page({
     //   success:(res)=>{
     //     console.log(1)
     //     console.log(res)
-    //     wx.navigateTo({
-    //       url: 'http://127.0.0.1:8089/success.html', //调转页面路径
-    //       success: function () {
-
-    //       }, //成功后的回调；
-    //       fail: function () { }, //失败后的回调；
-    //       complete: function () { } //结束后的回调(成功，失败都会执行)
-    //     })
     //   }
     // })
+  },
+  dianji(){
+    this.yunxin();
+    this.lalal()
+  },
+  yunxin: function () {
+    var that = this;
+    that.rili = that.selectComponent("#rili")
+    var starTime = ''
+    var day = ''
+    var endTime = ''
+    that.rili.xianShi({
+      data: function (res) {
+        console.log(res)//选择的日期
+        if (res != null) {
+          if (res.length == 1) {
+            starTime = res[0].data
+          }
+          else if (res.length == 2) {
+            var week1 = that.getMyDay(new Date(res[0].data))
+            var week2 = that.getMyDay(new Date(res[1].data))
+            starTime = res[0].data
+            endTime = res[1].data
+            day = res[1].chaDay
+          }
+        }
+        else {
+          starTime = ''
+          day = ''
+          endTime = ''
+          arriveWeekTime: '今天'
+          leaveWeekTime: '明天'
+        }
+        that.setData({
+          starTime: starTime,
+          endTime: endTime,
+          day: day,
+          arriveWeekTime:week1,
+          leaveWeekTime:week2,
+        })
+      }
+     
+    })
+    that.data.days = that.data.day.substring(0, 1)
   },
 })

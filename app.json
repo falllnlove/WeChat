@@ -1,32 +1,15 @@
 {
   "pages": [
-    
     "pages/hotel/hotel",
+    "pages/baidu/baidu",
     "pages/pagedialog/pagedialog",
     "pages/logs/logs",
-    "pages/cate/cate",
-    "pages/baidu/baidu"
+    "pages/cate/cate"
   ],
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/pagedialog/pagedialog",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
-      },
-      {
-        "pagePath": "pages/hotel/hotel",
-        "text": "测试"
-      }
-    ]
-  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "",
+    "navigationBarTitleText": "订单填写",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

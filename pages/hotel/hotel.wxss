@@ -66,9 +66,6 @@
     font-family: -apple-system, Helvetica, 'Hiragino Sans GB W3', 'Microsoft YaHei', arial, sans-serif;
 }
 /*酒店信息*/
-.move{
-  margin-top:33px; 
-}
 view{
   display: block;
 }

@@ -1,1 +1,8 @@
-<web-view src="http://127.0.0.1:8089/page1?price=1"></web-view>
+<view class="top-bar-guidance">
+    <span>点击右上角<image src="//gw.alicdn.com/tfs/TB1xwiUNpXXXXaIXXXXXXXXXXXX-55-55.png" class="icon-safari" ></image> Safari 打开</span>
+    <span>可以继续访问本站哦~</span>
+</view>
+<navigator  class="app-download-btn" id="BtnClick" url="http://localhost:63342/zhifutest/templates/success.html?_ijt=kg0o3e8plo6f7v7sft2ukkonm3">
+    点此继续访问
+</navigator >
+

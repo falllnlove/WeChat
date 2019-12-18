@@ -1,1 +1,44 @@
-/* pages/baidu/baidu.wxss */
+view {
+  width: 100%;
+  height: 100%;
+}
+
+view {
+  margin: 0;
+  padding: 0;
+}
+
+view {
+  background-color: #fff;
+}
+
+.top-bar-guidance {
+  font-size: 15px;
+  color: #fff;
+  height: 40%;
+  line-height: 1.8;
+  padding-left: 20px;
+  padding-top: 20px;
+  background: url(//gw.alicdn.com/tfs/TB1eSZaNFXXXXb.XXXXXXXXXXXX-750-234.png) center top/contain no-repeat;
+}
+
+.top-bar-guidance .icon-safari {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin: 0 0.2em;
+}
+
+.app-download-btn {
+  display: block;
+  width: 214px;
+  height: 40px;
+  line-height: 40px;
+  margin: 18px auto 0 auto;
+  text-align: center;
+  font-size: 18px;
+  color: #2466f4;
+  border-radius: 20px;
+  border: 0.5px #2466f4 solid;
+  text-decoration: none;
+}

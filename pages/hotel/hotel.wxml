@@ -1,8 +1,8 @@
 <view style="display:{{hotelMess}}">
-  <view class="bnb-header bnbNewBook-header is-fix J_header">
+  <!-- <view class="bnb-header bnbNewBook-header is-fix J_header">
     <text class="btn-o btn-o-back J_back"></text>
     <text class="tit">订单填写</text>
-  </view>
+  </view> -->
   <!-- 酒店信息 -->
   <view class="move">
     <view class="q"></view>
@@ -33,8 +33,9 @@
     </view>
     <!-- 入离时间 -->
     <view class="qs"></view>
+    <rili bindmyevent="onMyEvent" id='rili' style="position: absolute;z-index: 5;"></rili>
     <view class="J_newCalendar">
-      <view class="bnbdetail-box bnbdetail-box-date bnbbook-box-date">
+      <view class="bnbdetail-box bnbdetail-box-date bnbbook-box-date" bindtap="dianji">
         <view class="con-start">
           <text class="tit">入住</text>
           <text class="txt-date">{{tools.mon(startTime)}}</text>
@@ -42,7 +43,7 @@
         </view>
         <view class="con-day">
           <text class="txt">
-          {{stayTimes}}
+          {{day}}
           </text>
         </view>
         <view class="con-end">
@@ -164,10 +165,14 @@
     <view class="bnb-footer-fix bnbbook-footer-fix">
       <view class="con">
         <view class="txt-1 J_priceTxt">线上支付</view>
-        <view class="txt-2 J_totalPrice">
+        <!-- <view class="txt-2 J_totalPrice" wx:if="{{days==1}}">
           {{test.price.price}}
+        </view> -->
+        <view class="txt-2 J_totalPrice" >
+        {{dayy}}
+          {{ dayy > 1 ? test.price.price*dayy:test.price.price }}
         </view>
-        <view class="txt-3" id="J_minusOrNot" data-amount="45.00" wx:if="{{test.price.originalPrice != test.price.price}}">(优惠已减¥{{test.price.discountPrice.discountTotalPrice}}.00)</view>
+        <view class="txt-3" id="J_minusOrNot" data-amount="45.00" wx:if="{{test.price.originalPrice != test.price.price}}">(优惠已减¥{{ dayy > 1 ? test.price.discountPrice.discountTotalPrice*dayy:test.price.discountPrice.discountTotalPrice }}.00)</view>
       </view>
       <view class="con-2">
         <text class="btn-o-more" id="J_orderDetail" bindtap="ordernotice_show">
@@ -179,11 +184,11 @@
     <!--提交 end-->
     <!-- 明细弹出层begin -->
     <view id="J_orderInfo" style="position: fixed; bottom: 0px; left: 0px; right: 0px; z-index: 3001; display:{{ordernotice}};">
-      <view class="view cui-mask" style="box-sizing: border-box; width: 100%; height: 468px; left: 0px; top: 0px; z-index: 2999; position: fixed !important;" id="ui-view-6" bindtap="ordernotice_close"></view>
+      <view class="view cui-mask" style="box-sizing: border-box; width: 100%; height: 498px; left: 0px; top: 0px; z-index: 2999; position: fixed !important;" id="ui-view-6" bindtap="ordernotice_close"></view>
       <view class="pop-order-info pop-order-info-book">
         <view class="particulars-box">
           <view class="hd">
-            <text class="culars-sum">{{stayTimes}}，共￥{{test.price.price}}</text>
+            <text class="culars-sum">{{day}}，共￥{{test.price.price}}</text>
             <text class="culars-name">房费</text>
             <view class="particulars-list">
               <view>
@@ -217,7 +222,7 @@
         </view>
         <view class="particulars-list payment-list">
           <view>
-            <text class="order-price pay-price">¥{{test.price.price}}</text>
+            <text class="order-price pay-price">{{test.price.price}}</text>
             <text class="order-price pay-price" wx:if="{{test.price.originalPrice != test.price.price}}">¥{{test.price.originalPric}}</text>
             <text class="order-pay">线上支付</text>
           </view>
